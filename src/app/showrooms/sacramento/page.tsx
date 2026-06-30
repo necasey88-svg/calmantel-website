@@ -1,0 +1,183 @@
+import Link from "next/link";
+
+const services = [
+  "Gas fireplace installation & service",
+  "Electric fireplace installation",
+  "Outdoor fireplace installation",
+  "Fireplace repair & maintenance (all major brands)",
+  "Custom mantel sales & installation",
+  "In-house manufacturing & installation",
+];
+
+const cities = [
+  "Sacramento", "Roseville", "Elk Grove", "Folsom", "Rancho Cordova",
+  "Citrus Heights", "Lincoln", "Auburn", "Davis", "Woodland",
+];
+
+export default function SacramentoShowroomPage() {
+  return (
+    <>
+      <section className="bg-stone-900 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="text-sm text-stone-400 mb-4">
+            <Link href="/showrooms" className="hover:text-amber-400 transition-colors">
+              Showrooms
+            </Link>
+            <span className="mx-2">›</span>
+            <span className="text-stone-200">Sacramento</span>
+          </nav>
+          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
+            Northern California — Corporate Headquarters
+          </p>
+          <h1
+            className="text-4xl md:text-5xl font-bold mb-2"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Sacramento Showroom
+          </h1>
+          <p className="text-stone-400 italic mb-6">
+            &ldquo;Northern California&apos;s most complete fireplace destination&rdquo;
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="tel:9166650627"
+              className="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded font-semibold transition-colors"
+            >
+              (916) 665-0627
+            </a>
+            <Link
+              href="/estimate"
+              className="border border-white text-white hover:bg-white hover:text-stone-900 px-6 py-3 rounded font-semibold transition-colors"
+            >
+              Request Estimate
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="lg:col-span-2 space-y-8">
+          <div>
+            <h2
+              className="text-2xl font-bold text-stone-900 mb-4"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              About This Showroom
+            </h2>
+            <div className="space-y-4 text-stone-600 leading-relaxed">
+              <p>
+                Our Sacramento showroom is our corporate headquarters and the heart of
+                California Mantel &amp; Fireplace. Established in 1987, this is our
+                flagship location — home to our largest team of certified hearth
+                consultants, our most extensive live-burning display gallery, and our
+                full custom mantel manufacturing operation.
+              </p>
+              <p>
+                When you visit Sacramento, you&apos;re visiting the source. You can meet
+                the artisans who build our mantels, walk through a wide variety of
+                live-burning gas and electric fireplace displays, and work directly
+                with our most experienced designers to plan your project.
+              </p>
+              <p>
+                Factory-trained and licensed installers handle every project from
+                design through final inspection — all in-house, all accountable, all
+                backed by 38 years of experience.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2
+              className="text-2xl font-bold text-stone-900 mb-4"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              Services Offered
+            </h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {services.map((s) => (
+                <li key={s} className="flex items-start gap-2 text-stone-600 text-sm">
+                  <span className="text-amber-700 mt-0.5 flex-shrink-0 font-bold">✓</span>
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2
+              className="text-2xl font-bold text-stone-900 mb-4"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              Cities We Serve
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {cities.map((c) => (
+                <span key={c} className="bg-stone-100 text-stone-600 text-sm px-3 py-1 rounded-full">
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <div className="border border-stone-200 rounded-xl p-6">
+            <h3
+              className="text-lg font-bold text-stone-900 mb-4"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              Location & Hours
+            </h3>
+            <div className="space-y-4 text-sm">
+              <div>
+                <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Address</p>
+                <p className="text-stone-700">4141 N Freeway Blvd</p>
+                <p className="text-stone-700">Sacramento, CA 95834</p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Hours</p>
+                <p className="text-stone-700">Mon–Fri: 9:00 AM – 5:00 PM</p>
+                <p className="text-stone-700">Sat: 10:00 AM – 3:00 PM</p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Phone</p>
+                <a href="tel:9166650627" className="text-amber-700 font-semibold hover:text-amber-800">
+                  (916) 665-0627
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-amber-700 text-white rounded-xl p-6">
+            <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
+              Free Estimate
+            </h3>
+            <p className="text-amber-100 text-sm mb-4">
+              Start your project with a free consultation from our Sacramento team.
+            </p>
+            <Link
+              href="/estimate"
+              className="block text-center bg-white text-amber-700 hover:bg-amber-50 px-5 py-2.5 rounded font-semibold text-sm transition-colors"
+            >
+              Request Estimate
+            </Link>
+          </div>
+
+          <div className="border border-stone-200 rounded-xl p-6">
+            <h3 className="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-3">
+              Other Showrooms
+            </h3>
+            <div className="space-y-2">
+              <Link href="/showrooms/anaheim" className="block text-sm text-stone-700 hover:text-amber-700 transition-colors">
+                → Anaheim (Southern CA)
+              </Link>
+              <Link href="/showrooms/dublin" className="block text-sm text-stone-700 hover:text-amber-700 transition-colors">
+                → Dublin (Bay Area)
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

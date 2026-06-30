@@ -1,0 +1,895 @@
+export interface MantelProduct {
+  slug: string;
+  name: string;
+  type: "precast" | "wood" | "overmantel" | "beam";
+  style: "contemporary" | "traditional" | "transitional";
+  description: string;
+  specs?: string;
+  cadPdf?: string; // path relative to /public, e.g. "/cad/nullarbor.pdf"
+}
+
+export const mantelProducts: MantelProduct[] = [
+  // --- Overmantels ---
+  {
+    slug: "macquarie",
+    name: "Macquarie",
+    type: "overmantel",
+    style: "traditional",
+    cadPdf: "/cad/macquarie.pdf",
+    description:
+      "The Macquarie Overmantel is a beautifully designed fireplace surround that blends timeless elegance with architectural precision. Expertly crafted from high-quality precast materials, this fireplace overmantel features a broad central panel framed by detailed pilasters, creating a symmetrical and balanced focal point above your hearth. With its refined molding profiles and clean lines, the Macquarie enhances the visual height and grandeur of your fireplace, adding depth and dimension without overwhelming the room. Its classic architectural detailing makes it versatile enough to complement both traditional fireplace designs and modern interior styles. Suited for gas fireplaces, electric fireplaces, or custom hearth installations, this precast overmantel combines durability, strength, and lasting beauty.",
+  },
+  {
+    slug: "coonawarra",
+    name: "Coonawarra",
+    type: "overmantel",
+    style: "traditional",
+    cadPdf: "/cad/coonawarra.pdf",
+    description:
+      "The Coonawarra Overmantel is a beautifully crafted fireplace surround that blends timeless elegance with classic architectural detail. Designed with a wide rectangular frame, recessed central panel, and bold crown molding, this fireplace mantel extension adds height, depth, and sophistication to any hearth. Its smooth finish and clean lines make it a versatile choice, seamlessly enhancing both traditional fireplaces and contemporary fireplace designs. Perfect for gas fireplaces, electric fireplaces, or custom hearths, the Coonawarra serves as an elegant focal point while providing a refined backdrop for mirrors, artwork, or decorative accents.",
+  },
+  {
+    slug: "cobar",
+    name: "Cobar",
+    type: "overmantel",
+    style: "traditional",
+    cadPdf: "/cad/cobar.pdf",
+    description:
+      "The Cobar Overmantel is a luxuriously crafted fireplace surround that combines timeless elegance with traditional architectural design. Featuring a central raised panel framed by symmetrical pilasters and topped with a prominent cornice shelf, this fireplace mantel instantly adds height, grandeur, and balance to any hearth. Its clean lines, subtle molding, and refined proportions showcase the artistry of classic fireplace architecture. Constructed from durable, high-quality materials, the Cobar provides a long-lasting centerpiece that enhances both traditional and transitional interiors.",
+  },
+  {
+    slug: "monash",
+    name: "Monash",
+    type: "overmantel",
+    style: "traditional",
+    cadPdf: "/cad/monash.pdf",
+    description:
+      "The Monash Mantel is a luxuriously crafted wood fireplace overmantel that brings timeless sophistication and architectural charm to any living space. Built from high-quality wood, this fireplace surround features a symmetrical layout with a prominent central panel framed by two narrower side panels, offering balance, proportion, and refined elegance. Accented with subtle molding details and a beautifully sculpted crown molding, the Monash adds depth, height, and visual grandeur to your hearth. Its versatile design makes it the perfect complement for both gas fireplaces and electric fireplaces.",
+  },
+  // --- Wood Surrounds ---
+  {
+    slug: "hobart-1",
+    name: "Hobart",
+    type: "beam",
+    style: "traditional",
+    description:
+      "The Hobart Mantel is a classic wood fireplace surround that blends traditional design, architectural balance, and lasting craftsmanship. Handcrafted from premium solid wood with a rich natural finish, this fireplace mantel surround features a wide, prominent top shelf — perfect for displaying décor, artwork, or seasonal accents — supported by sturdy vertical pillars that add both structural strength and refined symmetry. Subtle beveled edges and clean lines highlight its classic appeal, making it versatile enough to complement traditional, transitional, or contemporary interiors.",
+  },
+  {
+    slug: "adelaide",
+    name: "Adelaide",
+    type: "wood",
+    style: "traditional",
+    description:
+      "The Adelaide Mantel is a classic wood fireplace surround that blends timeless elegance with durable craftsmanship, making it a stunning focal point for any hearth. Designed with clean, straight lines and a perfectly symmetrical layout, this fireplace mantel features a wide mantel shelf ideal for displaying artwork, mirrors, or decorative accents. Elegant fluted vertical columns provide subtle architectural detail, while the smooth wood finish highlights the natural grain and texture, adding warmth and charm to your living space.",
+  },
+  {
+    slug: "brisbane",
+    name: "Brisbane",
+    type: "wood",
+    style: "transitional",
+    description:
+      "The Brisbane Mantel is a handcrafted wood fireplace surround that combines timeless design, architectural detail, and lasting durability. Featuring a substantial rectangular frame with a subtly beveled edge, this wood fireplace mantel offers a clean, symmetrical design that creates a refined focal point above your fireplace. Its rich natural wood finish highlights the grain and texture, bringing warmth, character, and sophistication to any living space. A broad mantel shelf provides generous space for displaying artwork, mirrors, or seasonal décor.",
+  },
+  {
+    slug: "kendall-1",
+    name: "Kendall",
+    type: "beam",
+    style: "traditional",
+    description:
+      "The Kendall Mantel is a classic wood fireplace surround that blends traditional design, refined detailing, and enduring craftsmanship. Expertly constructed from high-quality solid wood with a smooth finish, it beautifully highlights the natural wood grain, adding warmth and sophistication to any room. This wood fireplace mantel features a broad, flat mantel shelf, perfect for showcasing décor, family heirlooms, or seasonal accents, while its elegantly carved trim and pilasters provide both structural integrity and decorative charm.",
+  },
+  {
+    slug: "fremantle",
+    name: "Fremantle",
+    type: "wood",
+    style: "traditional",
+    description:
+      "The Fremantle Mantel is a classic wood fireplace surround that blends timeless elegance, refined style, and solid durability. Handcrafted from high-quality solid wood, this fireplace mantel surround features a smooth finish that enhances the natural wood grain and rich texture, bringing warmth, character, and charm to your living space. With its clean lines, balanced proportions, and subtle architectural detailing, the Fremantle creates a sophisticated focal point that complements both traditional fireplaces and modern hearth designs.",
+  },
+  {
+    slug: "canberra",
+    name: "Canberra",
+    type: "wood",
+    style: "transitional",
+    description:
+      "The Canberra Mantel is a classic wood fireplace surround that blends timeless elegance, durable craftsmanship, and versatile design. Expertly crafted from high-quality wood, this fireplace mantel surround features a sturdy frame with clean lines and subtle detailing, creating a refined and sophisticated centerpiece for your hearth. Its slightly projecting mantel shelf provides both functional display space and architectural balance. The vertical supports with gently recessed paneling add depth, dimension, and texture, enhancing the mantel's traditional charm.",
+  },
+  // --- Contemporary Precast ---
+  {
+    slug: "broken-hill",
+    name: "Broken Hill",
+    type: "precast",
+    style: "contemporary",
+    cadPdf: "/cad/broken-hill.pdf",
+    description:
+      "The Broken Hill Mantel is a contemporary precast fireplace surround that combines clean lines, minimalist styling, and durable craftsmanship. Designed for today's modern fireplaces, this elegant fireplace mantel delivers a seamless balance of style and functionality. Crafted from premium, long-lasting materials with a subtle texture and neutral finish that complements a wide variety of interiors. Its versatile design works beautifully with gas fireplaces, electric fireplaces, and traditional hearths.",
+  },
+  {
+    slug: "nullarbor",
+    name: "Nullarbor",
+    type: "precast",
+    style: "contemporary",
+    cadPdf: "/cad/nullarbor.pdf",
+    description:
+      "The Nullarbor Mantel is a sleek precast fireplace surround that blends modern fireplace design with exceptional durability and craftsmanship. Featuring clean lines, a smooth finish, and a streamlined profile, this fireplace mantel adds understated elegance to any living room, great room, or open-concept space. With its subtle detailing and timeless design, the Nullarbor Mantel provides a sophisticated backdrop for gas fireplaces, electric fireplaces, or traditional hearths.",
+  },
+  {
+    slug: "brighton",
+    name: "Brighton",
+    type: "precast",
+    style: "contemporary",
+    cadPdf: "/cad/brighton.pdf",
+    description:
+      "The Brighton Mantel is a luxury precast fireplace surround crafted with clean, sleek lines and a refined minimalist profile. Perfect for today's modern fireplace designs, this versatile fireplace mantel complements a wide range of interiors, from contemporary living rooms to open-concept great rooms. Built with precision and durability, the Brighton Mantel offers lasting beauty while serving as an elegant focal point for gas fireplaces, electric fireplaces, or traditional hearth installations.",
+  },
+  {
+    slug: "clarendon",
+    name: "Clarendon",
+    type: "precast",
+    style: "contemporary",
+    cadPdf: "/cad/clarendon.pdf",
+    description:
+      "The Clarendon Mantel is a modern precast fireplace surround that seamlessly combines sleek design with exceptional craftsmanship. Featuring clean architectural lines, a smooth finish, and a versatile neutral tone, this fireplace mantel serves as a sophisticated focal point for living rooms, great rooms, and open-concept interiors. Crafted from durable, high-quality precast materials, the Clarendon Mantel offers long-lasting performance, easy installation, and low maintenance.",
+  },
+  {
+    slug: "woomera",
+    name: "Woomera",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Woomera Mantel is a contemporary precast fireplace surround that blends clean architectural lines with minimalist elegance, making it an ideal addition to today's modern homes. Expertly crafted from durable, high-quality materials, this fireplace mantel delivers lasting strength, refined style, and reliable performance. Designed as a versatile centerpiece, the Woomera creates a sleek frame for gas fireplaces, electric fireplaces, or traditional hearth designs, enhancing warmth, ambiance, and sophistication in any living space.",
+  },
+  {
+    slug: "urrbrae",
+    name: "Urrbrae",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Urrbrae Mantel is a sleek precast fireplace surround that blends modern sophistication with minimalist design, creating a refined focal point for any home. Featuring clean architectural lines, a smooth polished finish, and durable craftsmanship, this fireplace mantel delivers both timeless beauty and long-lasting performance. Perfect for gas fireplaces, electric fireplaces, or traditional hearth installations, the Urrbrae enhances warmth, ambiance, and architectural character in living rooms, great rooms, and open-concept spaces.",
+  },
+  {
+    slug: "koonunga",
+    name: "Koonunga",
+    type: "precast",
+    style: "contemporary",
+    cadPdf: "/cad/koonunga.pdf",
+    description:
+      "The Koonunga Mantel is a modern precast fireplace surround that combines clean architectural lines with refined minimalist design, making it a sophisticated focal point in any living space. Crafted from high-quality precast materials with a smooth, durable finish, this fireplace mantel delivers long-lasting performance and timeless style. Suited for gas fireplaces, electric fireplaces, or traditional fireboxes, the Koonunga enhances both warmth and ambiance while maintaining a sleek, understated profile.",
+  },
+  {
+    slug: "willunga",
+    name: "Willunga",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Willunga Mantel is a modern precast fireplace surround that combines clean architectural lines with a refined minimalist profile, making it the perfect choice for today's interiors. Expertly crafted for both style and durability, this fireplace mantel creates a sophisticated backdrop for gas fireplaces, electric fireplaces, and traditional hearth installations. With its versatile neutral finish, the Willunga blends seamlessly into a wide variety of décor styles.",
+  },
+  {
+    slug: "bolte",
+    name: "Bolte",
+    type: "precast",
+    style: "contemporary",
+    cadPdf: "/cad/bolte.pdf",
+    description:
+      "The Bolte Mantel is a contemporary precast fireplace surround that showcases sleek modern design with clean lines, a smooth finish, and minimalist elegance. Crafted from premium, durable materials, this fireplace mantel offers both style and strength. With its refined geometric profile, the Bolte is the perfect focal point for gas fireplaces, electric fireplaces, or traditional firebox openings. Designed for versatility, it complements modern interiors while adding warmth, architectural depth, and sophisticated character to any space.",
+  },
+  {
+    slug: "flutted-filler",
+    name: "Flutted Filler",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Flutted Filler Mantel is a contemporary fireplace surround designed to enhance modern living spaces with elegance, warmth, and style. Featuring a sleek, streamlined profile and clean panels, this fireplace mantel beautifully frames the flame display, creating a striking focal point that blends ambiance with comfort. Expertly crafted from durable, high-quality materials, the Flutted Filler delivers long-lasting performance while adding sophisticated architectural detail to any room.",
+  },
+  {
+    slug: "sausalito",
+    name: "Sausalito",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Sausalito Mantel is a modern precast fireplace surround that blends minimalist design with refined elegance, making it the perfect centerpiece for today's interiors. Defined by its clean lines, geometric simplicity, and smooth polished finish, this fireplace mantel adds sophistication and architectural character to any living space. Expertly crafted from durable, high-quality precast materials, the Sausalito offers both style and long-lasting performance.",
+  },
+  {
+    slug: "belmont",
+    name: "Belmont",
+    type: "precast",
+    style: "transitional",
+    cadPdf: "/cad/belmont.pdf",
+    description:
+      "The Belmont Mantel is a luxury precast fireplace surround that combines graceful curves with sleek architectural lines, making it a stunning upgrade for any hearth. Featuring a smooth white finish, an elegant arched opening, and finely detailed columns, this fireplace mantel brings timeless sophistication and modern charm to your home. Perfect for both traditional fireplaces and contemporary fireplace inserts, the Belmont enhances living rooms and great rooms with lasting warmth and style.",
+  },
+  {
+    slug: "boomerang",
+    name: "Boomerang",
+    type: "precast",
+    style: "contemporary",
+    cadPdf: "/cad/boomerang.pdf",
+    description:
+      "The Boomerang Mantel is a modern precast fireplace surround that combines clean lines, a minimalist profile, and durable craftsmanship. Designed for today's modern fireplaces, this sleek fireplace mantel is crafted from high-quality materials to ensure both elegance and long-lasting performance. Its versatile neutral tone and streamlined silhouette make the Boomerang a sophisticated focal point for gas fireplaces, electric fireplaces, or traditional firebox openings.",
+  },
+  {
+    slug: "whyalla",
+    name: "Whyalla",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Whyalla Mantel is a sleek precast fireplace surround that combines modern elegance with minimalist geometry, creating a refined architectural focal point for today's homes. Featuring clean lines, a smooth polished finish, and durable craftsmanship, this fireplace mantel delivers both long-lasting beauty and reliable performance. Suited for gas fireplaces, electric fireplaces, or traditional hearth installations, the Whyalla enhances warmth, ambiance, and sophistication in any living space.",
+  },
+  {
+    slug: "sienna",
+    name: "Sienna",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Sienna Mantel is a stunning precast fireplace surround that combines clean architectural lines with sleek modern design, making it an eye-catching centerpiece for any home. Crafted with meticulous attention to detail and premium-quality materials, this fireplace mantel delivers both durability and timeless sophistication. Featuring a minimalist silhouette and a smooth refined finish, the Sienna complements a wide variety of interior styles.",
+  },
+  {
+    slug: "rockhampton",
+    name: "Rockhampton",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Rockhampton Mantel is a modern precast fireplace surround that blends clean lines, smooth finishes, and minimalist geometry to create a timeless focal point in any home. Designed with precision and crafted from durable, high-quality materials, this fireplace mantel delivers both refined style and long-lasting strength. Suited for gas fireplaces, electric fireplaces, and traditional hearth designs, the Rockhampton adds warmth, ambiance, and architectural elegance.",
+  },
+  {
+    slug: "reynella",
+    name: "Reynella",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Reynella Mantel is a sleek precast fireplace surround that combines clean architectural lines with refined minimalist design, making it a sophisticated focal point in any home. Expertly crafted from durable precast concrete, this fireplace mantel delivers both strength and timeless style, ensuring long-lasting performance and beauty. Designed to complement gas fireplaces, electric fireplaces, and traditional hearth installations, the Reynella features a smooth surface and subtle detailing.",
+  },
+  {
+    slug: "mingary",
+    name: "Mingary",
+    type: "precast",
+    style: "contemporary",
+    cadPdf: "/cad/mingary.pdf",
+    description:
+      "The Mingary Mantel is a contemporary precast fireplace surround that combines clean architectural lines, a smooth refined finish, and superior craftsmanship. Designed to complement a wide variety of interior styles, this fireplace mantel delivers both durability and timeless appeal. Perfect for framing gas fireplaces, electric fireplaces, or traditional hearth openings, the Mingary transforms any living room or great room into a sophisticated gathering area.",
+  },
+  {
+    slug: "casden",
+    name: "Casden",
+    type: "precast",
+    style: "contemporary",
+    cadPdf: "/cad/casden.pdf",
+    description:
+      "The Casden Mantel is a sleek precast fireplace surround designed to enhance the beauty and functionality of any modern fireplace installation. With its clean lines, smooth finish, and refined minimalist design, this fireplace mantel blends contemporary style with lasting durability. Crafted from high-quality, durable materials, the Casden serves as a timeless centerpiece for gas fireplaces, electric fireplaces, or traditional fireboxes.",
+  },
+  {
+    slug: "onkaparinga",
+    name: "Onkaparinga",
+    type: "precast",
+    style: "contemporary",
+    cadPdf: "/cad/onkaparinga.pdf",
+    description:
+      "The Onkaparinga Mantel is a contemporary precast fireplace surround that combines modern design with exceptional craftsmanship, creating a refined centerpiece for any living space. Featuring clean architectural lines, a smooth finish, and a minimalist silhouette, this fireplace mantel enhances both style and function in today's homes. Its versatile neutral tone allows it to seamlessly blend with a wide range of interior design styles.",
+  },
+  {
+    slug: "wayville",
+    name: "Wayville",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Wayville Mantel is a contemporary precast fireplace surround that enhances modern living spaces with clean architectural lines and minimalist design. Expertly crafted from high-quality, durable materials, this fireplace mantel offers both strength and sophistication. Featuring neutral tones and a refined geometric silhouette, the Wayville provides a versatile aesthetic that blends seamlessly with a wide variety of interiors — from contemporary lofts to transitional living rooms.",
+  },
+  {
+    slug: "milagro",
+    name: "Milagro",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Milagro Mantel is a sleek precast fireplace surround that blends clean architectural lines with refined modern design, making it a striking centerpiece for any contemporary fireplace installation. Expertly crafted with precision and durability, this fireplace mantel features a smooth, lasting finish that highlights its minimalist elegance while ensuring long-term strength and performance. The Milagro offers versatile design flexibility with its neutral tones, complementing a wide range of interiors.",
+  },
+  {
+    slug: "yarra",
+    name: "Yarra",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Yarra Mantel is a contemporary precast fireplace surround that combines sleek, clean lines with modern sophistication, making it a striking architectural focal point in any living space. Expertly designed for both durability and style, this fireplace mantel offers long-lasting beauty, reliable functionality, and versatile appeal for today's homes. Crafted with precision and backed by nearly four decades of family-owned expertise, the Yarra reflects a legacy of quality and craftsmanship.",
+  },
+  {
+    slug: "ballarat",
+    name: "Ballarat",
+    type: "precast",
+    style: "traditional",
+    description:
+      "The Ballarat Mantel is a luxury precast fireplace surround that blends modern design with classic craftsmanship. Featuring a smooth crisp white finish, layered moldings, and intricate rope accents, this fireplace mantel creates a sophisticated focal point in any living room, great room, or open-concept space. Perfect for both traditional fireplaces and modern fireplace inserts, the Ballarat complements a wide range of interiors — whether you're designing a classic hearth or a sleek contemporary fireplace wall.",
+  },
+  {
+    slug: "turin",
+    name: "Turin",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Turin Mantel is a contemporary precast fireplace surround that combines modern design with exceptional craftsmanship, creating a refined architectural statement for today's homes. With its clean lines, sleek profile, and minimalist aesthetic, this fireplace mantel serves as an elegant focal point for any living space. Expertly manufactured from high-quality, durable precast materials, the Turin ensures long-lasting beauty, strength, and easy maintenance.",
+  },
+  {
+    slug: "rosella",
+    name: "Rosella",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Rosella Mantel is a sleek precast fireplace surround that combines modern fireplace design with timeless sophistication. Featuring clean architectural lines, a smooth refined finish, and a minimalist profile, this fireplace mantel creates a striking focal point for gas fireplaces, electric fireplaces, or traditional hearth installations. Expertly crafted from durable, high-quality precast materials, the Rosella ensures long-lasting strength, easy installation, and enduring beauty.",
+  },
+  {
+    slug: "ashford",
+    name: "Ashford",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Ashford Mantel is a sleek precast fireplace surround designed to elevate modern interiors with its clean lines, minimalist frame, and refined elegance. Featuring a crisp white finish and smooth architectural profile, this contemporary fireplace mantel serves as a striking focal point that blends functionality with timeless style. Expertly crafted from high-quality precast materials, the Ashford delivers durability, easy installation, and lasting beauty.",
+  },
+  // --- Traditional Precast ---
+  {
+    slug: "australian",
+    name: "Australian",
+    type: "precast",
+    style: "traditional",
+    description:
+      "The Australian Mantel is a classically proportioned precast fireplace surround that draws on timeless European design traditions. Featuring symmetrical pilasters, refined molding profiles, and a generous mantel shelf, this traditional mantel creates an elegant focal point suited to formal living rooms and grand interiors. Crafted from durable precast concrete, it combines the beauty of carved stone with long-lasting performance.",
+  },
+  {
+    slug: "barossa",
+    name: "Barossa",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/barossa.pdf",
+    description:
+      "The Barossa Mantel is a richly detailed precast fireplace surround with fluted pilasters, decorative corbels, and a deep mantel shelf. One of our most popular traditional styles, the Barossa brings classic European craftsmanship to any living room, study, or formal space. Its bold proportions and refined ornamentation make it a natural centerpiece above gas or wood-burning fireplaces.",
+  },
+  {
+    slug: "bathurst",
+    name: "Bathurst",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/bathurst-picture-frame.pdf",
+    description:
+      "The Bathurst Mantel is a stately precast fireplace surround that balances classic symmetry with refined architectural detail. Featuring clean pilaster legs, elegant crown molding, and a broad shelf, the Bathurst adds presence and sophistication to traditional and transitional interiors alike. Constructed from high-quality precast concrete for lasting beauty and durability.",
+  },
+  {
+    slug: "beltana",
+    name: "Beltana",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/beltana.pdf",
+    description:
+      "The Beltana Mantel is a beautifully crafted traditional precast fireplace surround featuring layered molding details, refined pilasters, and a substantial mantel shelf. Its classic proportions and decorative ornamentation bring timeless elegance to any hearth, complementing both gas fireplaces and traditional wood-burning fireboxes.",
+  },
+  {
+    slug: "bendigo",
+    name: "Bendigo",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/bendigo.pdf",
+    description:
+      "The Bendigo Mantel is a grand traditional precast fireplace surround featuring bold architectural columns, ornate corbels, and a wide decorative frieze. Designed for rooms that demand a dramatic focal point, the Bendigo delivers depth, height, and classic elegance in equal measure. Ideal for formal dining rooms, studies, and large living spaces.",
+  },
+  {
+    slug: "bondi",
+    name: "Bondi",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/bondi.pdf",
+    description:
+      "The Bondi Mantel is a refined traditional precast fireplace surround with clean pilaster legs and a subtly detailed frieze. Its balanced proportions and classic styling make it a versatile choice for both formal and relaxed traditional interiors. Crafted from durable precast concrete with a smooth finish that accepts any of our standard color options.",
+  },
+  {
+    slug: "cairns",
+    name: "Cairns",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/cairns.pdf",
+    description:
+      "The Cairns Mantel is a classically styled precast fireplace surround with elegant symmetry, decorative pilasters, and a prominent mantel shelf. Its timeless design bridges traditional and transitional interiors, providing a sophisticated hearth feature that works beautifully with gas inserts, electric fireplaces, and custom hearth installations.",
+  },
+  {
+    slug: "camberwell",
+    name: "Camberwell",
+    type: "beam",
+    style: "traditional",
+    cadPdf: "/cad/camberwell.pdf",
+    description:
+      "The Camberwell Mantel is a traditionally styled precast fireplace surround with refined molding details and a well-proportioned silhouette. Its classic design and smooth precast finish create a polished focal point for formal living rooms, master suites, and studies.",
+  },
+  {
+    slug: "cambridge",
+    name: "Cambridge",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/cambridge.pdf",
+    description:
+      "The Cambridge Mantel is an elegantly proportioned precast fireplace surround inspired by classic English architecture. Featuring clean pilasters, a decorative entablature, and a generous shelf, the Cambridge delivers understated grandeur that suits both traditional and transitional interiors.",
+  },
+  {
+    slug: "cannes",
+    name: "Cannes",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/cannes.pdf",
+    description:
+      "The Cannes Mantel is a European-inspired precast fireplace surround with graceful proportions, refined pilaster detailing, and a smooth polished finish. Evoking the elegance of French provincial design, the Cannes adds sophistication and warmth to formal living rooms and traditional interiors.",
+  },
+  {
+    slug: "cassis",
+    name: "Cassis",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/cassis.pdf",
+    description:
+      "The Cassis Mantel is a beautifully detailed traditional precast fireplace surround with carved column legs, a decorative frieze, and a wide mantel shelf. Drawing on the charm of southern French design, the Cassis creates an elegant and welcoming hearth feature for classic interiors.",
+  },
+  {
+    slug: "castellina",
+    name: "Castellina",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/castellina.pdf",
+    description:
+      "The Castellina Mantel is an Italian-inspired precast fireplace surround with richly detailed corbels, fluted pilasters, and a bold cornice shelf. Its ornate craftsmanship and classic proportions make it a stunning centerpiece for formal living rooms, dining rooms, and grand entry halls.",
+  },
+  {
+    slug: "cazadero",
+    name: "Cazadero",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/cazadero.pdf",
+    description:
+      "The Cazadero Mantel is a traditionally styled precast fireplace surround with layered molding profiles, elegant legs, and a substantial shelf. Its refined proportions and classic detailing suit a wide range of traditional and transitional interior styles, from craftsman homes to formal estates.",
+  },
+  {
+    slug: "ceduna",
+    name: "Ceduna",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/ceduna.pdf",
+    description:
+      "The Ceduna Mantel is a classically proportioned precast fireplace surround with clean pilaster legs, a detailed frieze, and a generous mantel shelf. Its timeless design pairs beautifully with gas inserts, electric fireplaces, and traditional hearth openings, adding warmth and architectural character to any interior.",
+  },
+  {
+    slug: "chateau",
+    name: "Chateau",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/chateau.pdf",
+    description:
+      "The Chateau Mantel is a grand precast fireplace surround inspired by classic French château architecture. Featuring ornate corbels, detailed pilasters, and a sweeping cornice shelf, the Chateau makes a commanding statement in formal living rooms, libraries, and large open-plan spaces.",
+  },
+  {
+    slug: "clare",
+    name: "Clare",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/clare.pdf",
+    description:
+      "The Clare Mantel is an elegantly carved precast fireplace surround featuring decorative column legs, an arched or flat opening, and a broad mantel shelf. Its classic styling and refined ornamentation make it a standout focal point in traditional and transitional interiors of any scale.",
+  },
+  {
+    slug: "classique",
+    name: "Classique",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/classique.pdf",
+    description:
+      "The Classique Mantel is a timeless precast fireplace surround with symmetrical pilasters, a decorative frieze, and a refined cornice. True to its name, the Classique draws on centuries of European mantel design to deliver a sophisticated and enduring focal point for formal living spaces.",
+  },
+  {
+    slug: "coober-pedy",
+    name: "Coober Pedy",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/coober-pedy.pdf",
+    description:
+      "The Coober Pedy Mantel is a boldly styled traditional precast fireplace surround with substantial column legs, layered molding, and a wide mantel shelf. Its generous proportions and classic detailing create a dramatic hearth feature suited to large rooms and statement interiors.",
+  },
+  {
+    slug: "corvallis",
+    name: "Corvallis",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/corvallis.pdf",
+    description:
+      "The Corvallis Mantel is a traditionally inspired precast fireplace surround with refined pilasters, subtle corbel details, and a clean mantel shelf. Its classic proportions and versatile design suit a wide range of traditional and transitional interior styles.",
+  },
+  {
+    slug: "covington",
+    name: "Covington",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/covington.pdf",
+    description:
+      "The Covington Mantel is a classically styled precast fireplace surround with elegant column legs, a decorative entablature, and a prominent shelf. Its refined symmetry and timeless proportions make the Covington a popular choice for formal living rooms, master bedrooms, and traditional estate homes.",
+  },
+  {
+    slug: "dominique",
+    name: "Dominique",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/dominique.pdf",
+    description:
+      "The Dominique Mantel is a French-inspired precast fireplace surround with graceful tapered legs, a delicately carved frieze, and a generous mantel shelf. Its elegant proportions and refined detailing bring a touch of Parisian sophistication to traditional and transitional living spaces.",
+  },
+  {
+    slug: "eudunda",
+    name: "Eudunda",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/eudunda.pdf",
+    description:
+      "The Eudunda Mantel is a classically proportioned precast fireplace surround with clean pilaster legs, a refined frieze, and a wide mantel shelf. Its balanced design and traditional styling provide a timeless focal point for living rooms, dining rooms, and formal spaces.",
+  },
+  {
+    slug: "flinders",
+    name: "Flinders",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/flinders.pdf",
+    description:
+      "The Flinders Mantel is a stately traditional precast fireplace surround with bold decorative columns, layered cornice molding, and a substantial shelf. Its commanding presence and classic detailing make it an ideal centerpiece for grand living rooms and formal entertaining spaces.",
+  },
+  {
+    slug: "gambier",
+    name: "Gambier",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/gambier.pdf",
+    description:
+      "The Gambier Mantel is a beautifully detailed traditional precast fireplace surround featuring ornate corbels, refined pilasters, and a broad cornice shelf. Its rich architectural character and classic proportions suit both formal and relaxed traditional interiors, adding depth and elegance to any hearth.",
+  },
+  {
+    slug: "gosford",
+    name: "Gosford",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/gosford.pdf",
+    description:
+      "The Gosford Mantel is a classically styled precast fireplace surround with symmetrical column legs, a detailed entablature, and a generous mantel shelf. Its traditional proportions and refined finish create a welcoming and sophisticated focal point for living rooms and formal spaces.",
+  },
+  {
+    slug: "gundagai",
+    name: "Gundagai",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/gundagai.pdf",
+    description:
+      "The Gundagai Mantel is a traditionally designed precast fireplace surround with elegant pilasters, subtle molding details, and a wide shelf. Its classic styling and durable precast construction make it a lasting investment for any traditional or transitional interior.",
+  },
+  {
+    slug: "hindmarsh",
+    name: "Hindmarsh",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/hindmarsh.pdf",
+    description:
+      "The Hindmarsh Mantel is a grand traditional precast fireplace surround featuring broad decorative columns, a richly detailed frieze, and a commanding cornice shelf. Its bold proportions and refined craftsmanship make it a striking focal point for large formal rooms and estate-style interiors.",
+  },
+  {
+    slug: "kensington",
+    name: "Kensington",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/kensington.pdf",
+    description:
+      "The Kensington Mantel is an English-inspired traditional precast fireplace surround with refined column legs, classic entablature detailing, and a generous shelf. Its elegant proportions and understated ornamentation bring timeless British sophistication to formal living rooms and studies.",
+  },
+  {
+    slug: "lancelot",
+    name: "Lancelot",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/lancelot.pdf",
+    description:
+      "The Lancelot Mantel is a nobly styled traditional precast fireplace surround with bold decorative columns, carved corbels, and a dramatic cornice shelf. Its rich architectural detail and commanding proportions evoke the grandeur of classic European fireplace design, making it a natural centerpiece in formal and heritage-inspired interiors.",
+  },
+  {
+    slug: "mannix",
+    name: "Mannix",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/mannix.pdf",
+    description:
+      "The Mannix Mantel is a classically proportioned precast fireplace surround with symmetrical pilasters, refined molding profiles, and a wide mantel shelf. Its traditional styling and smooth precast finish suit formal living rooms, libraries, and elegant entertaining spaces.",
+  },
+  {
+    slug: "millicent",
+    name: "Millicent",
+    type: "precast",
+    style: "traditional",
+    description:
+      "The Millicent Mantel is a gracefully designed traditional precast fireplace surround with tapered column legs, a decorative frieze, and a generous shelf. Its refined proportions and classic detailing make it a versatile and enduring choice for traditional and transitional interiors.",
+  },
+  {
+    slug: "mornington",
+    name: "Mornington",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/mornington.pdf",
+    description:
+      "The Mornington Mantel is a refined transitional precast fireplace surround that bridges classic and contemporary design with tapered legs, a clean frieze panel, and a wide shelf. Its balanced proportions and subtle detailing complement a broad range of interior styles from traditional to modern transitional.",
+  },
+  {
+    slug: "noarlunga",
+    name: "Noarlunga",
+    type: "beam",
+    style: "traditional",
+    description:
+      "The Noarlunga Mantel is a traditionally styled precast fireplace surround with clean pilasters, layered molding details, and a substantial mantel shelf. Its classic design and durable precast construction deliver lasting elegance for any traditional interior.",
+  },
+  {
+    slug: "paddington",
+    name: "Paddington",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/paddington.pdf",
+    description:
+      "The Paddington Mantel is a classically proportioned precast fireplace surround inspired by Victorian-era design. Featuring decorative column legs, a detailed entablature, and a generous cornice shelf, the Paddington adds period charm and architectural character to formal living rooms and heritage-style homes.",
+  },
+  {
+    slug: "padthaway",
+    name: "Padthaway",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/padthaway.pdf",
+    description:
+      "The Padthaway Mantel is a refined traditional precast fireplace surround with elegant pilasters, a decorative frieze, and a wide mantel shelf. Its clean lines and classic proportions make it a timeless choice for traditional and transitional living spaces.",
+  },
+  {
+    slug: "parliament",
+    name: "Parliament",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/parliament.pdf",
+    description:
+      "The Parliament Mantel is a stately precast fireplace surround with grand architectural columns, ornate corbel details, and a sweeping cornice shelf. Named for its commanding presence, the Parliament makes a bold statement in formal living rooms, boardrooms, and large-scale residential spaces.",
+  },
+  {
+    slug: "parramatta",
+    name: "Parramatta",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/parramatta.pdf",
+    description:
+      "The Parramatta Mantel is a classically styled precast fireplace surround with symmetrical pilasters, refined molding details, and a broad mantel shelf. Its traditional proportions and smooth precast finish create an elegant and welcoming focal point for formal living rooms and traditional homes.",
+  },
+  {
+    slug: "penfold",
+    name: "Penfold",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/penfold.pdf",
+    description:
+      "The Penfold Mantel is a distinguished traditional precast fireplace surround with decorative column legs, a richly detailed frieze, and a generous cornice shelf. Its classic architectural styling and premium precast construction make it a lasting investment for formal and traditional living spaces.",
+  },
+  {
+    slug: "pitcairn",
+    name: "Pitcairn",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/pitcairn.pdf",
+    description:
+      "The Pitcairn Mantel is a classically proportioned precast fireplace surround with elegant pilasters, subtle cornice molding, and a wide mantel shelf. Its refined design and traditional styling provide a timeless focal point for living rooms, dining rooms, and formal entertaining spaces.",
+  },
+  {
+    slug: "queensland",
+    name: "Queensland",
+    type: "precast",
+    style: "traditional",
+    cadPdf: "/cad/queensland.pdf",
+    description:
+      "The Queensland Mantel is a boldly proportioned traditional precast fireplace surround with broad decorative columns, a detailed entablature, and a commanding shelf. Its generous scale and classic detailing make it a natural focal point in grand living rooms, formal dining spaces, and estate-style interiors.",
+  },
+  {
+    slug: "melbourne",
+    name: "Melbourne",
+    type: "wood",
+    style: "traditional",
+    description:
+      "The Melbourne Mantel is a classic wood fireplace surround with clean lines, a generous shelf, and refined symmetry. Handcrafted from premium solid wood, its smooth finish highlights the natural grain, bringing warmth and sophistication to traditional and transitional living spaces.",
+  },
+  {
+    slug: "perth",
+    name: "Perth",
+    type: "wood",
+    style: "traditional",
+    description:
+      "The Perth Mantel is a beautifully crafted wood fireplace surround with a clean, symmetrical profile and a wide display shelf. Its elegant proportions and rich wood finish make it a timeless focal point for traditional and transitional living rooms.",
+  },
+  {
+    slug: "peterborough",
+    name: "Peterborough",
+    type: "wood",
+    style: "traditional",
+    description:
+      "The Peterborough Mantel is a traditionally styled wood fireplace surround with decorative column legs, a detailed frieze, and a broad mantel shelf. Its classic English-inspired design adds warmth, character, and architectural charm to any hearth.",
+  },
+  {
+    slug: "sydney",
+    name: "Sydney",
+    type: "wood",
+    style: "transitional",
+    description:
+      "The Sydney Mantel is a versatile wood fireplace surround that blends clean contemporary lines with the warmth of solid wood craftsmanship. Its transitional design suits a broad range of interiors, from modern open-plan homes to classic California living rooms.",
+  },
+  {
+    slug: "randino",
+    name: "Randino",
+    type: "wood",
+    style: "transitional",
+    description:
+      "The Randino Mantel is a refined wood fireplace surround with a sleek profile and understated detailing. Its clean silhouette and quality wood finish create a sophisticated hearth feature that bridges traditional and modern interior styles.",
+  },
+  // --- Beams ---
+  {
+    slug: "collingwood",
+    name: "Collingwood",
+    type: "beam",
+    style: "traditional",
+    description:
+      "The Collingwood Beam Mantel is a classic wood fireplace beam with rich natural character and a substantial profile. Crafted for warmth and rustic charm, it creates an inviting focal point above gas or wood-burning fireplaces in traditional and transitional homes.",
+  },
+  {
+    slug: "essendon",
+    name: "Essendon",
+    type: "beam",
+    style: "traditional",
+    description:
+      "The Essendon Beam Mantel is a handcrafted wood fireplace beam with clean proportions and natural wood grain. Its classic styling suits farmhouse, craftsman, and traditional interiors, delivering timeless warmth and character above any hearth.",
+  },
+  {
+    slug: "geelong",
+    name: "Geelong",
+    type: "beam",
+    style: "traditional",
+    description:
+      "The Geelong Beam Mantel is a solid wood fireplace beam with a substantial, rustic profile and natural finish. Its generous proportions and warm character make it a natural centerpiece in farmhouse, craftsman, and traditional living rooms.",
+  },
+  {
+    slug: "gippsland",
+    name: "Gippsland",
+    type: "beam",
+    style: "traditional",
+    description:
+      "The Gippsland Beam Mantel is a robustly crafted wood fireplace beam with a bold, natural profile. Ideal for rustic, farmhouse, and lodge-style interiors, the Gippsland delivers enduring warmth and character above gas or wood-burning fireplaces.",
+  },
+  {
+    slug: "norwood",
+    name: "Norwood",
+    type: "beam",
+    style: "traditional",
+    description:
+      "The Norwood Beam Mantel is a classically proportioned wood fireplace beam with a smooth finish and refined profile. Its versatile design suits traditional, transitional, and craftsman-style interiors, providing a clean and warm focal point above any hearth.",
+  },
+  {
+    slug: "yalumba",
+    name: "Yalumba",
+    type: "beam",
+    style: "traditional",
+    description:
+      "The Yalumba Beam Mantel is a beautifully finished wood fireplace beam with natural grain character and warm tones. Its classic proportions and quality craftsmanship make it a timeless addition to farmhouse, traditional, and transitional living spaces.",
+  },
+  {
+    slug: "architectural",
+    name: "Architectural",
+    type: "beam",
+    style: "transitional",
+    description:
+      "The Architectural Beam Mantel is a clean-lined wood fireplace beam designed for modern and transitional interiors. Its precise profile and refined finish deliver understated sophistication, making it a versatile choice for contemporary homes that want the warmth of wood without rustic ornamentation.",
+  },
+  {
+    slug: "cosmo-with-darlinghurst",
+    name: "Cosmo with Darlinghurst",
+    type: "beam",
+    style: "transitional",
+    description:
+      "The Cosmo with Darlinghurst is a paired wood fireplace beam and surround combination that blends the warmth of a natural wood beam with the refined detailing of the Darlinghurst surround. Together they create a layered, sophisticated hearth feature suited to transitional and contemporary interiors.",
+  },
+  {
+    slug: "darlinghurst",
+    name: "Darlinghurst",
+    type: "beam",
+    style: "transitional",
+    description:
+      "The Darlinghurst Beam Mantel is a sleek, transitional wood fireplace surround with clean lines and a refined wood finish. Its understated profile works beautifully in modern, transitional, and contemporary interiors where warmth and simplicity are equally valued.",
+  },
+  {
+    slug: "hackney",
+    name: "Hackney",
+    type: "beam",
+    style: "transitional",
+    description:
+      "The Hackney Beam Mantel is a contemporary wood fireplace beam with a clean, architectural profile and smooth finish. Its modern sensibility and warm wood character make it ideal for transitional homes seeking a refined yet natural hearth feature.",
+  },
+  {
+    slug: "payneham",
+    name: "Payneham",
+    type: "beam",
+    style: "traditional",
+    description:
+      "The Payneham Beam Mantel is a traditionally styled wood fireplace beam with natural character and warm proportions. Its classic design and quality wood construction make it a timeless choice for traditional, farmhouse, and craftsman-style living spaces.",
+  },
+  {
+    slug: "santa-ana",
+    name: "Santa Ana",
+    type: "beam",
+    style: "transitional",
+    description:
+      "The Santa Ana Beam Mantel is a refined wood fireplace beam with clean lines and a warm natural finish. Its versatile transitional design bridges rustic and contemporary styles, making it a popular choice for California-style interiors and open-concept living spaces.",
+  },
+];
+
+export const overstockProducts = [
+  {
+    slug: "heritage",
+    name: "Heritage",
+    color: "PG",
+    finish: "PG",
+    size: '73-1/2"',
+    cadPdf: "/cad/heritage.pdf",
+    description:
+      "The Heritage Mantel is a traditional precast fireplace surround that captures classic elegance with its clean lines, refined molding, and timeless design. Built from durable precast stone, it delivers the beauty of a handcrafted wood mantel while eliminating the need for ongoing maintenance. Easy to install and designed to complement a wide range of interiors, the Heritage serves as a sophisticated focal point for both gas and electric fireplaces, offering lasting style and functionality for any living space.",
+  },
+  {
+    slug: "nullarbor",
+    name: "Custom Nullarbor",
+    color: "PG",
+    finish: "PG",
+    size: '46"',
+    description:
+      "The Custom Nullarbor Mantel brings contemporary elegance to your fireplace with a precast design tailored to your space. Its clean lines, smooth finish, and sleek profile create a refined, modern statement while maintaining exceptional durability. Subtle detailing complements both gas and electric fireplaces, offering a versatile centerpiece that balances style with function.",
+  },
+  {
+    slug: "manly",
+    name: "Manly",
+    color: "Seaside",
+    finish: "Old World",
+    size: '66"',
+    cadPdf: "/cad/manly.pdf",
+    description:
+      "The Manly Mantel is a traditional precast fireplace surround that combines classic architectural details with timeless elegance. Designed with clean lines, symmetrical structure, and subtle ornamental molding, it creates a refined frame that enhances the beauty of any fireplace. Expertly crafted from high-quality precast material, this mantel delivers lasting durability while maintaining the sophistication of traditional craftsmanship.",
+  },
+  {
+    slug: "sausalito",
+    name: "Sausalito",
+    color: "PG",
+    finish: "PG",
+    size: '43-1/12"',
+    description:
+      "The Sausalito Mantel is a sleek precast fireplace surround that combines modern elegance with minimalist design. Featuring clean lines, geometric simplicity, and a smooth polished finish, this contemporary mantel creates a sophisticated focal point for any living space. Crafted from durable, high-quality materials, it delivers both style and longevity, making it ideal for gas or electric fireplaces.",
+  },
+];
+
+export function getMantelProduct(slug: string) {
+  return mantelProducts.find((p) => p.slug === slug);
+}
+
+export interface OverstockProduct {
+  slug: string;
+  name: string;
+  color: string;
+  finish: string;
+  size: string;
+  description: string;
+  cadPdf?: string;
+}
+
+export function getOverstockProduct(slug: string): OverstockProduct | undefined {
+  return overstockProducts.find((p) => p.slug === slug);
+}
+
+const typeLabel: Record<MantelProduct["type"], string> = {
+  precast: "Precast Concrete",
+  wood: "Wood Surround",
+  overmantel: "Overmantel",
+  beam: "Fireplace Beam",
+};
+
+const styleLabel: Record<MantelProduct["style"], string> = {
+  contemporary: "Contemporary",
+  traditional: "Traditional",
+  transitional: "Transitional",
+};
+
+export { typeLabel, styleLabel };
