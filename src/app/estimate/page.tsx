@@ -31,18 +31,28 @@ export default function EstimatePage() {
     setError("");
 
     const form = e.currentTarget;
-    const data = new FormData(form);
-    data.append("access_key", ACCESS_KEY);
+    const formData = new FormData(form);
 
-    // Attach photos
-    files.forEach((file) => {
-      data.append("photos", file);
+    // Build a plain JSON payload (Web3Forms doesn't support file uploads)
+    const payload: Record<string, string> = {
+      access_key: ACCESS_KEY,
+      subject: "New Estimate Request — calmantel.com",
+    };
+    formData.forEach((value, key) => {
+      if (typeof value === "string") payload[key] = value;
     });
+
+    // List the photo filenames in the message so staff know to follow up
+    if (files.length > 0) {
+      const fileNames = files.map((f) => `• ${f.name} (${(f.size / 1024 / 1024).toFixed(1)} MB)`).join("\n");
+      payload.message = (payload.message || "") + `\n\n--- Photos attached by customer ---\n${fileNames}\n(Customer will email photos separately or staff should request them.)`;
+    }
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: data,
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
       });
       const json = await res.json();
       if (json.success) {
@@ -194,7 +204,7 @@ export default function EstimatePage() {
             {/* Photo upload */}
             <div>
               <label className="block text-sm font-medium text-stone-700 mb-1">
-                Photos of Your Space <span className="text-stone-400 font-normal">(optional — up to 5, max 10 MB each)</span>
+                Photos of Your Space <span className="text-stone-400 font-normal">(optional — list them here and email to info@calmantel.com)</span>
               </label>
               <div
                 className="border-2 border-dashed border-stone-300 rounded-lg p-6 text-center cursor-pointer hover:border-amber-700 transition-colors"
