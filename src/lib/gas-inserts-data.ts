@@ -408,6 +408,53 @@ export const gasInserts: GasInsert[] = [
       },
     ],
   },
+  {
+    slug: "ortal-wilderness",
+    brand: "Ortal",
+    brandSlug: "ortal",
+    name: "Ortal Wilderness Gas Insert",
+    tagline: "Wilderness firelog technology · Cool glass · Two sizes",
+    description:
+      "The Ortal Wilderness Insert is the first gas insert to incorporate Ortal's coveted Wilderness Firelog Technology — a stunning, ultra-realistic log fire experience inside your existing masonry fireplace. Available in 29\" and 34\" sizes, it fits most standard fireboxes with zero clearance to combustibles.",
+    startingPrice: "Call for pricing",
+    image: "https://www.ortalheat.com/hubfs/6.28.23%20-%20Inserts/34/900-INSERT%2034-DB%20RED%20f-3%20(1).jpg",
+    features: [
+      "Wilderness Firelog Technology — the most realistic log fire in any insert",
+      "Ortal's signature cool glass — safe to touch during operation",
+      "Fits most existing masonry gas fireplaces",
+      "Zero clearance to combustibles for flexible installation",
+      "Clean, architectural frame design",
+      "Available in 29\" and 34\" viewing widths",
+    ],
+    variants: [
+      {
+        name: "Wilderness Insert 29",
+        viewingWidth: "29\"",
+        btu: "Contact us for specs",
+        fireboxOpening: "Fits most standard fireboxes",
+      },
+      {
+        name: "Wilderness Insert 34",
+        viewingWidth: "34\"",
+        btu: "Contact us for specs",
+        fireboxOpening: "Fits most standard fireboxes",
+      },
+    ],
+    options: [
+      {
+        label: "Log Technology",
+        choices: ["Wilderness Firelog (standard — ultra-realistic)"],
+      },
+      {
+        label: "Surround Finishes",
+        choices: ["Burnished Copper", "Dark Bronze", "Black", "Custom finishes available"],
+      },
+      {
+        label: "Controls",
+        choices: ["Remote control", "Smart home integration"],
+      },
+    ],
+  },
 ];
 
 export function getGasInsert(slug: string): GasInsert | undefined {
