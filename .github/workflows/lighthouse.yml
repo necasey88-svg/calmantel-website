@@ -1,0 +1,46 @@
+name: Lighthouse Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+jobs:
+  lighthouse:
+    name: Lighthouse audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Serve build
+        run: |
+          npm install -g serve
+          serve -s .next -l 8080 &
+          n=0; until curl -sSf http://127.0.0.1:8080 >/dev/null 2>&1 || [ $n -ge 30 ]; do n=$((n+1)); sleep 1; done
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Run Lighthouse (JSON)
+        run: |
+          npx -y lighthouse http://127.0.0.1:8080 --chrome-flags="--no-sandbox --headless" --output=json --output-path=./lighthouse-report.json --quiet
+
+      - name: Upload Lighthouse report
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: lighthouse-report.json
