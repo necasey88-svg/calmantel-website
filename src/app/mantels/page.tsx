@@ -2,6 +2,13 @@ import Link from "next/link";
 import MantelSearch from "@/components/MantelSearch";
 import PricingCTA from "@/components/PricingCTA";
 
+export const metadata = {
+  title: "Precast & Wood Fireplace Mantels | California Mantel",
+  description:
+    "Browse handcrafted fireplace mantels — contemporary, traditional, wood surrounds, beams & overmantels. Precast concrete & solid wood, manufactured in California since 1987.",
+  alternates: { canonical: "/mantels" },
+};
+
 const mantelCategories = [
   {
     title: "Contemporary",

@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
+import ZoomableImage from "@/components/ZoomableImage";
 import {
   getMantelProduct,
   mantelProducts,
@@ -8,6 +10,8 @@ import {
 } from "@/lib/mantel-products-data";
 import PricingCTA from "@/components/PricingCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import JsonLd from "@/components/JsonLd";
+import { business, SITE_URL } from "@/lib/business-data";
 
 export function generateStaticParams() {
   return mantelProducts.map((p) => ({ slug: p.slug }));
@@ -18,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const product = getMantelProduct(slug);
   if (!product) return {};
   return {
-    title: `${product.name} Mantel | California Mantel & Fireplace`,
+    title: `${product.name} Mantel | California Mantel`,
     description: product.description.slice(0, 160),
   };
 }
@@ -32,8 +36,21 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
     .filter((p) => p.slug !== slug && p.style === product.style)
     .slice(0, 4);
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `${product.name} Mantel`,
+    description: product.description,
+    ...(product.image ? { image: `${SITE_URL}${product.image}` } : {}),
+    category: `${styleLabel[product.style]} ${typeLabel[product.type]}`,
+    brand: { "@type": "Brand", name: business.name },
+    manufacturer: { "@type": "Organization", name: business.name },
+    url: `${SITE_URL}/mantels/p/${product.slug}`,
+  };
+
   return (
     <>
+      <JsonLd data={productSchema} />
       {/* Breadcrumb + hero */}
       <section className="bg-stone-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,10 +83,12 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
       {/* Main content */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Image placeholder */}
-          <div className="bg-stone-100 rounded-2xl flex items-center justify-center h-80 text-7xl">
-            🪨
-          </div>
+          {/* Product image */}
+          {product.image ? (
+            <ZoomableImage src={product.image} alt={product.name} />
+          ) : (
+            <div className="relative bg-stone-100 rounded-2xl overflow-hidden h-80 flex items-center justify-center text-7xl">🪨</div>
+          )}
 
           {/* Details */}
           <div>

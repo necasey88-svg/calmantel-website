@@ -1,5 +1,12 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Contact Us | California Mantel & Fireplace",
+  description:
+    "Get in touch with California Mantel & Fireplace. Call or visit our Anaheim, Dublin, or Sacramento showrooms for custom mantels, fireplace installation, and free estimates.",
+  alternates: { canonical: "/contact" },
+};
+
 const showrooms = [
   {
     city: "Anaheim",
@@ -11,8 +18,8 @@ const showrooms = [
   },
   {
     city: "Dublin",
-    address: "6681-D Sierra Lane, Dublin, CA 94568",
-    hours: "Mon–Fri: 10:00 AM – 5:00 PM · Sat by appt",
+    address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
+    hours: "Mon–Fri: 8:30 AM – 5:00 PM · Sat by appt",
     phone: "(925) 436-1731",
     tel: "9254361731",
     href: "/showrooms/dublin",
@@ -20,7 +27,7 @@ const showrooms = [
   {
     city: "Sacramento",
     address: "4141 N Freeway Blvd, Sacramento, CA 95834",
-    hours: "Mon–Fri: 9:00 AM – 5:00 PM · Sat 10–3",
+    hours: "Mon–Sat: 8:30 AM – 5:00 PM",
     phone: "(916) 665-0627",
     tel: "9166650627",
     href: "/showrooms/sacramento",

@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const category = getFireplaceCategory(slug);
   if (!category) return {};
   return {
-    title: `${category.title} | California Mantel & Fireplace`,
+    title: `${category.title} | California Mantel`,
     description: category.description,
   };
 }

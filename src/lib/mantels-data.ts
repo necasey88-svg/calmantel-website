@@ -4,6 +4,7 @@ export interface MantelProduct {
   finishes?: string[];
   sizes?: string;
   note?: string;
+  image?: string;
 }
 
 export interface MantelCategory {
@@ -50,6 +51,14 @@ export const mantelCategories: MantelCategory[] = [
         finishes: ["Le Marais", "Kingsbury", "Bianco"],
         sizes: "Available in 42\", 48\", 54\"",
       },
+      {
+        name: "Broken Hill",
+        description:
+          "A bold contemporary surround with strong geometric shoulders, stepped detailing, and a commanding shelf — striking in both modern and transitional rooms.",
+        finishes: ["Kingsbury", "Bianco", "Le Marais"],
+        sizes: "Available in 42\", 48\", 54\", 60\"",
+        image: "/mantels/broken-hill.png",
+      },
     ],
   },
   {
@@ -94,31 +103,8 @@ export const mantelCategories: MantelCategory[] = [
     title: "Fireplace Beams",
     tagline: "Rustic · Warm · Handcrafted",
     description:
-      "Fireplace beams add immediate warmth and character to any room. Our solid wood and faux-wood beam mantels suit farmhouse, craftsman, mountain, and rustic-modern interiors. Each beam can be customized in length, depth, and finish.",
-    products: [
-      {
-        name: "Reclaimed Pine Beam",
-        description:
-          "Authentic reclaimed pine with natural saw marks, checking, and color variation. No two are alike.",
-        finishes: ["Natural", "Dark Walnut", "Ebony"],
-        sizes: "Custom lengths from 48\" to 84\"",
-        note: "Solid wood — natural variations are part of the character",
-      },
-      {
-        name: "Alder Beam",
-        description:
-          "Smooth-grained alder with a consistent tone, ideal for a cleaner rustic look.",
-        finishes: ["Light Oak", "Walnut", "Whitewash"],
-        sizes: "48\" to 72\"",
-      },
-      {
-        name: "Faux Wood Beam",
-        description:
-          "Lightweight polyurethane construction that looks and feels like solid wood. Easy to install over any surround.",
-        finishes: ["Barnwood", "Driftwood", "Chestnut"],
-        sizes: "48\", 60\", 72\", 84\"",
-      },
-    ],
+      "Fireplace beams add immediate warmth and character to any room. Our solid wood beam mantels suit farmhouse, craftsman, mountain, and rustic-modern interiors.",
+    products: [],
   },
   {
     slug: "hearths",

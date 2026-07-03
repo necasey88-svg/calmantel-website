@@ -4,31 +4,31 @@ import Image from "next/image";
 import Link from "next/link";
 import PricingCTA from "@/components/PricingCTA";
 
-const BASE = "https://images.squarespace-cdn.com/content/v1/6898bc1516ea8a1fd077995f";
+const BASE = "/masonry-gallery";
 
 const residential = [
   {
-    src: `${BASE}/180d8e52-9754-4a75-ab98-1d21b76879a7/`,
+    src: `${BASE}/180d8e52-9754-4a75-ab98-1d21b76879a7.webp`,
     alt: "Residential home with landscaped garden and flower beds",
     caption: "Residential Exterior",
   },
   {
-    src: `${BASE}/1fee6c1c-57d4-43d0-94a6-f5d3646105e9/`,
+    src: `${BASE}/1fee6c1c-57d4-43d0-94a6-f5d3646105e9.webp`,
     alt: "Row of contemporary white homes with dark roofs",
     caption: "Residential Development",
   },
   {
-    src: `${BASE}/e839b1e6-2450-4a91-91df-ae5c72bb71d6/`,
+    src: `${BASE}/e839b1e6-2450-4a91-91df-ae5c72bb71d6.webp`,
     alt: "Two-story home with lit windows and landscaped front yard at dusk",
     caption: "Single Family Residence",
   },
   {
-    src: `${BASE}/f9eae93a-830f-4d2c-9c69-23341e1db930/`,
+    src: `${BASE}/f9eae93a-830f-4d2c-9c69-23341e1db930.webp`,
     alt: "Multi-story residential building with balconies and outdoor seating",
     caption: "Multi-Unit Residential",
   },
   {
-    src: `${BASE}/673bc382-353e-46c6-a60a-ec02a3c5c039/`,
+    src: `${BASE}/673bc382-353e-46c6-a60a-ec02a3c5c039.webp`,
     alt: "Apartment complex with trees and parking area",
     caption: "Apartment Complex",
   },
@@ -36,47 +36,47 @@ const residential = [
 
 const commercial = [
   {
-    src: `${BASE}/2eb435ce-15b2-41b1-8fa0-bc96450253a7/Masonry+Project`,
+    src: `${BASE}/2eb435ce-15b2-41b1-8fa0-bc96450253a7.webp`,
     alt: "Cal Mantel mason laying herringbone tile on fireplace surround",
     caption: "Fireplace Tile Installation",
   },
   {
-    src: `${BASE}/1d921cf6-0a69-4f6a-9248-4c398b0c20ae/Masonry+Project`,
+    src: `${BASE}/1d921cf6-0a69-4f6a-9248-4c398b0c20ae.webp`,
     alt: "Cal Mantel masonry crew working on commercial exterior",
     caption: "Commercial Exterior Masonry",
   },
   {
-    src: `${BASE}/3df0e529-20e2-4e56-958b-1afbf5980855/`,
+    src: `${BASE}/3df0e529-20e2-4e56-958b-1afbf5980855.webp`,
     alt: "In-N-Out Burger entrance with customers",
     caption: "In-N-Out Burger",
   },
   {
-    src: `${BASE}/a8f6f783-cc7f-4013-b514-008ad3d09204/`,
+    src: `${BASE}/a8f6f783-cc7f-4013-b514-008ad3d09204.webp`,
     alt: "In-N-Out Burger exterior with yellow and red signage",
     caption: "In-N-Out Burger — Exterior",
   },
   {
-    src: `${BASE}/0062bbaa-eae6-4f2f-8c22-38fa09bb3022/`,
+    src: `${BASE}/0062bbaa-eae6-4f2f-8c22-38fa09bb3022.webp`,
     alt: "In-N-Out Burger customers inside and outside",
     caption: "In-N-Out Burger — Entry",
   },
   {
-    src: `${BASE}/219128e7-e569-4c47-a900-48d735a108d4/`,
+    src: `${BASE}/219128e7-e569-4c47-a900-48d735a108d4.webp`,
     alt: "Burger King restaurant at sunset with illuminated logo",
     caption: "Burger King",
   },
   {
-    src: `${BASE}/d60c1825-a103-4d09-89e2-049818cd9815/`,
+    src: `${BASE}/d60c1825-a103-4d09-89e2-049818cd9815.webp`,
     alt: "Chase Bank branch with brick and white facade",
     caption: "Chase Bank",
   },
   {
-    src: `${BASE}/0c6f59b9-7608-4c68-a0b0-a88f264dba1b/`,
+    src: `${BASE}/0c6f59b9-7608-4c68-a0b0-a88f264dba1b.webp`,
     alt: "7-Eleven convenience store with gas station pumps",
     caption: "7-Eleven",
   },
   {
-    src: `${BASE}/f43c8ee5-383f-4055-97e5-6e1d608c8a26/`,
+    src: `${BASE}/f43c8ee5-383f-4055-97e5-6e1d608c8a26.webp`,
     alt: "Outdoor courtyard with red umbrellas and seating at sunset",
     caption: "Commercial Courtyard",
   },

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { gasInserts, getGasInsert } from "@/lib/gas-inserts-data";
 import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import ProductGallery from "@/components/ProductGallery";
+import PopularOptionsScroll from "@/components/PopularOptionsScroll";
 
 export function generateStaticParams() {
   return gasInserts.map((g) => ({ model: g.slug }));
@@ -13,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ model: st
   const insert = getGasInsert(model);
   if (!insert) return {};
   return {
-    title: `${insert.name} | California Mantel & Fireplace`,
+    title: `${insert.name} | California Mantel`,
     description: insert.description,
   };
 }
@@ -54,15 +56,11 @@ export default async function GasInsertModelPage({ params }: { params: Promise<{
       {/* Product image + key features */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Image */}
-          <div className="rounded-2xl overflow-hidden bg-stone-100 aspect-[4/3]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={insert.image}
-              alt={insert.name}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          {/* Gallery */}
+          <ProductGallery
+            images={insert.gallery ?? [insert.image]}
+            alt={insert.name}
+          />
 
           {/* Features */}
           <div>
@@ -99,6 +97,20 @@ export default async function GasInsertModelPage({ params }: { params: Promise<{
                 Instant Estimate
               </Link>
             </div>
+
+            {insert.brandConfigUrl && (
+              <a
+                href={insert.brandConfigUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-2 text-sm text-stone-500 hover:text-amber-700 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Design your insert on the Mendota website →
+              </a>
+            )}
           </div>
         </div>
       </section>
@@ -196,6 +208,75 @@ export default async function GasInsertModelPage({ params }: { params: Promise<{
           and we&apos;ll walk you through every choice in person.
         </p>
       </section>
+
+      {/* Popular options showcase */}
+      {(insert.optionsShowcase || (insert.popularOptions && insert.popularOptions.length > 0)) && (
+        <section className="bg-amber-50 border-y border-amber-100 py-14">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-end justify-between mb-6">
+              <div>
+                <h2
+                  className="text-2xl font-bold text-stone-900 mb-1"
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
+                  Popular Configurations
+                </h2>
+                <p className="text-stone-500 text-sm">
+                  A few of our customers&apos; favorite front, finish, and media combinations.
+                </p>
+              </div>
+              {insert.brandConfigUrl && (
+                <a
+                  href={insert.brandConfigUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-amber-700 hover:underline flex-shrink-0"
+                >
+                  Build your own →
+                </a>
+              )}
+            </div>
+
+            {insert.optionsShowcase ? (
+              <a
+                href={insert.brandConfigUrl ?? "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md transition-shadow"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={insert.optionsShowcase}
+                  alt={`${insert.name} popular configuration options`}
+                  className="w-full object-cover"
+                />
+              </a>
+            ) : insert.popularOptions && (
+              <PopularOptionsScroll
+                options={insert.popularOptions}
+                brandConfigUrl={insert.brandConfigUrl}
+                fallbackImage={insert.image}
+              />
+            )}
+
+            {insert.brandConfigUrl && insert.optionsShowcase && (
+              <div className="mt-6 text-center">
+                <a
+                  href={insert.brandConfigUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-800 text-white text-sm font-semibold px-7 py-3 rounded-full transition-colors"
+                >
+                  Design Your Own on Mendota&apos;s Website
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Other models */}
       <section className="bg-stone-50 py-14">

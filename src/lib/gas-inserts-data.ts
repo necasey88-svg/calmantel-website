@@ -13,6 +13,12 @@ export type OptionGroup = {
   choices: string[];
 };
 
+export type PopularOption = {
+  name: string;
+  subtitle: string;
+  image: string;
+};
+
 export type GasInsert = {
   slug: string;
   brand: string;
@@ -22,6 +28,10 @@ export type GasInsert = {
   description: string;
   startingPrice: string;
   image: string;
+  gallery?: string[];
+  brandConfigUrl?: string;
+  popularOptions?: PopularOption[];
+  optionsShowcase?: string;
   features: string[];
   variants: Variant[];
   options: OptionGroup[];
@@ -32,7 +42,7 @@ export const gasInserts: GasInsert[] = [
     slug: "supreme",
     brand: "Heat & Glo",
     brandSlug: "heat-and-glo",
-    name: "Supreme Gas Fireplace Insert",
+    name: "Heat & Glo Supreme Gas Fireplace Insert",
     tagline: "Big flames · Classic style · Three sizes",
     description:
       "The Supreme is Heat & Glo's flagship insert — built for homeowners who want the widest variety of log styles, the biggest ember bed, and reliable high-efficiency heating. Available in 25\", 30\", and 35\" viewing widths to fit virtually any existing firebox.",
@@ -96,7 +106,7 @@ export const gasInserts: GasInsert[] = [
     slug: "supremex",
     brand: "Heat & Glo",
     brandSlug: "heat-and-glo",
-    name: "SupremeX Gas Fireplace Insert",
+    name: "Heat & Glo SupremeX Gas Fireplace Insert",
     tagline: "Next-gen flames · LED ember bed · Two sizes",
     description:
       "The SupremeX is the newest addition to the Supreme family — featuring an advanced LED ember bed and flames that wrap naturally around hand-painted logs. The result is an even more lifelike fire experience, now available in 30\" and 35\" widths.",
@@ -153,12 +163,18 @@ export const gasInserts: GasInsert[] = [
     slug: "escape",
     brand: "Heat & Glo",
     brandSlug: "heat-and-glo",
-    name: "Escape Gas Fireplace Insert",
+    name: "Heat & Glo Escape Gas Fireplace Insert",
     tagline: "Maximum view · FireBrick technology · European style",
     description:
       "The Escape delivers the biggest, clearest view of the fire in its class. Anti-reflective ClearVue™ glass reduces glare by up to 89%, while patented FireBrick technology produces up to 25% more heat. A favorite for homeowners who want to see every detail of the flame.",
     startingPrice: "$5,656",
     image: `${HNG}4bde9f78-2b6b-4ca3-8fd2-03dd2e85af48/img-pdp-escape-jpg`,
+    gallery: [
+      `${HNG}4bde9f78-2b6b-4ca3-8fd2-03dd2e85af48/img-pdp-escape-jpg`,
+      `${HNG}fd05f9fa-dfdf-45a2-a1f3-cc96b64929ae/img-pdp-escape-room-shot-01-jpg`,
+      `${HNG}37d9bfe4-00fd-4131-9d1c-60c6c6b2680d/Escape35-IFT_Halston-NewBronze_Room_7-2-Update-tif`,
+      `${HNG}e36b4d37-9f2b-4350-8756-0fd88f372bef/Escape35-IFT_Galleria-NewBronze_Room-tif`,
+    ],
     features: [
       "ClearVue™ anti-reflective glass — up to 89% less glare",
       "FireBrick ceramic interior — up to 25% more heat output",
@@ -210,7 +226,7 @@ export const gasInserts: GasInsert[] = [
     slug: "cosmo",
     brand: "Heat & Glo",
     brandSlug: "heat-and-glo",
-    name: "Cosmo Gas Fireplace Insert",
+    name: "Heat & Glo Cosmo Gas Fireplace Insert",
     tagline: "Modern design · Glass media · Contemporary style",
     description:
       "The Cosmo brings a contemporary aesthetic to the gas insert category. With a black fluted glass interior and the option for crushed glass media in multiple colors, it's the perfect choice for modern or transitional homes looking for something beyond the traditional log-set look.",
@@ -267,7 +283,7 @@ export const gasInserts: GasInsert[] = [
     slug: "provident",
     brand: "Heat & Glo",
     brandSlug: "heat-and-glo",
-    name: "Provident Gas Fireplace Insert",
+    name: "Heat & Glo Provident Gas Fireplace Insert",
     tagline: "Reliable · Efficient · Great value",
     description:
       "The Provident delivers proven Heat & Glo quality at an accessible price point. With IntelliFire® ignition and direct vent technology, it's a reliable, efficient upgrade for any existing wood-burning fireplace — ideal for homeowners focused on warmth and value.",
@@ -317,94 +333,192 @@ export const gasInserts: GasInsert[] = [
     ],
   },
   {
-    slug: "mendota-fv46i",
+    slug: "mendota-firein",
     brand: "Mendota",
     brandSlug: "mendota",
-    name: "Mendota FV46i Gas Insert",
-    tagline: "American made · Largest view · 55,000 BTU",
+    name: "Mendota FireIn™ Gas Insert",
+    tagline: "Ultra-realistic flame · Logs wrap the burner · American made",
     description:
-      "The FV46i is Mendota's flagship insert — and arguably the finest gas insert made in America. With an industry-leading 46\" viewing width and 55,000 BTU output, it's the choice for homeowners who want the most dramatic, powerful gas insert available. Made in Wisconsin, USA.",
+      "The FireIn™ design takes realism to the next level. FireIn™ technology wraps the logs around the burner to create an ultra-realistic flame that dances around and through the logs. Mendota's signature glowing embers and hand-painted, high-definition oak and birch logs complete the effect. Available in FV44i and FV33i sizes.",
     startingPrice: "Call for pricing",
-    image: "https://www.mendotahearth.com/wp-content/uploads/2022/01/FV46i-with-Birch-Hero-Marquee-1800x1013.jpg",
+    brandConfigUrl: "https://mendotahearth.com/design-your-fireplace-or-insert/select-insert-model/",
+    image: "/brands/mendota/firein-copper-birch.png",
+    gallery: [
+      "/brands/mendota/firein-copper-birch.png",
+      "/brands/mendota/firein-room.png",
+    ],
+    optionsShowcase: "/brands/mendota/firein-scroll.png",
     features: [
-      "46\" viewing width — widest in class",
-      "Up to 55,000 BTU — powerful zone heating",
-      "Patented MendotaDXV™ flame technology for exceptional realism",
+      "FireIn™ technology — logs wrap around the burner for 360° flame realism",
+      "Hand-painted, high-definition oak and birch log sets",
+      "Mendota's signature glowing ember bed",
       "American made in Madison, Wisconsin",
-      "Titanium glass ceramic for superior clarity",
-      "Full-view design — no obstruction to the flame",
+      "Available in FV44i (large) and FV33i (mid-size)",
+      "Multiple front, liner, and surround configurations",
     ],
     variants: [
       {
-        name: "FV46i",
-        viewingWidth: "46\"",
-        btu: "Up to 55,000",
-        efficiency: "Up to 82%",
-        fireboxOpening: "Min 50\"W × 28\"H",
+        name: "FV44i FireIn",
+        viewingWidth: "32 3/8\" W × 23\" H",
+        btu: "Call for specs",
+        fireboxOpening: "Contact us for sizing",
+      },
+      {
+        name: "FV33i FireIn",
+        viewingWidth: "28 3/4\" W × 18 1/8\" H",
+        btu: "Call for specs",
+        fireboxOpening: "Contact us for sizing",
       },
     ],
     options: [
-      {
-        label: "Controls",
-        choices: ["SIT Nova SIT Thermostat", "IntelliFire Plus® Remote", "Wall Switch"],
-      },
       {
         label: "Log Sets",
-        choices: ["Charred Birch", "Charred Oak", "Driftwood"],
+        choices: ["High-Definition Oak", "High-Definition Birch"],
       },
       {
-        label: "Interiors",
+        label: "Fronts",
+        choices: ["Classic Black", "Arch Front", "Prairie Front", "Mission Front"],
+      },
+      {
+        label: "Liners",
         choices: ["Black Reflective Glass", "Aged Brick", "Herringbone"],
       },
-      {
-        label: "Fronts & Surrounds",
-        choices: ["Classic Black", "Arch Front", "Insert Trim Kits (multiple sizes and finishes)"],
-      },
-    ],
-  },
-  {
-    slug: "mendota-fv36i",
-    brand: "Mendota",
-    brandSlug: "mendota",
-    name: "Mendota FV36i Gas Insert",
-    tagline: "Full-view design · Premium performance · 42,000 BTU",
-    description:
-      "The FV36i brings Mendota's legendary full-view design and flame realism to a more accessible size. At 36\" viewing width and up to 42,000 BTU, it's a premium upgrade for medium to large fireplaces — and still made right here in the USA.",
-    startingPrice: "Call for pricing",
-    image: "https://www.mendotahearth.com/wp-content/uploads/2022/01/FV36i-Hero-1800x1013.jpg",
-    features: [
-      "36\" viewing width with full-view glass",
-      "Up to 42,000 BTU for powerful zone heating",
-      "MendotaDXV™ flame technology",
-      "American made in Madison, Wisconsin",
-      "Titanium glass ceramic for superior clarity",
-      "Broad selection of logs, interiors, and surrounds",
-    ],
-    variants: [
-      {
-        name: "FV36i",
-        viewingWidth: "36\"",
-        btu: "Up to 42,000",
-        efficiency: "Up to 80%",
-        fireboxOpening: "Min 38\"W × 26\"H",
-      },
-    ],
-    options: [
       {
         label: "Controls",
         choices: ["IntelliFire Plus® Remote", "Wall Switch", "Smart Home Integration"],
       },
+    ],
+  },
+  {
+    slug: "mendota-timberline",
+    brand: "Mendota",
+    brandSlug: "mendota",
+    name: "Mendota Timberline™ Gas Insert",
+    tagline: "Rugged realism · Natural log sets · Classic wood fire look",
+    description:
+      "The Timberline line features natural log sets intentionally placed to simulate the rugged look of a wood fire — and to burn more efficiently. An almost limitless combination of fronts, liners, and log sets can be created to match your style and create an ambiance that brings people together. Available in FV44i and FV33i sizes.",
+    startingPrice: "Call for pricing",
+    brandConfigUrl: "https://mendotahearth.com/design-your-fireplace-or-insert/select-insert-model/",
+    image: "/brands/mendota/timberline.png",
+    optionsShowcase: "/brands/mendota/timberline-scroll.png",
+    popularOptions: [
       {
-        label: "Log Sets",
-        choices: ["Charred Birch", "Charred Oak", "Driftwood"],
+        name: "Prairie Front · Black · Birch",
+        subtitle: "Classic wood-fire look in a timeless black finish",
+        image: "/brands/mendota/timberline.png",
       },
       {
-        label: "Interiors",
+        name: "Mission Front · Gunmetal · Oak",
+        subtitle: "Arts & Crafts style with a cool gunmetal finish",
+        image: "https://www.mendotahearth.com/wp-content/uploads/2022/01/FV44i-Timberline-Mission-Gunmetal-Oak.jpg",
+      },
+      {
+        name: "Arch Front · New Bronze · Birch",
+        subtitle: "Warm bronze curves with natural birch logs",
+        image: "https://www.mendotahearth.com/wp-content/uploads/2022/01/FV44i-Timberline-Arch-NewBronze-Birch.jpg",
+      },
+      {
+        name: "Chateau Front · Black · Oak",
+        subtitle: "Ornate detailing with rich oak log set",
+        image: "https://www.mendotahearth.com/wp-content/uploads/2022/01/FV44i-Timberline-Chateau-Black-Oak.jpg",
+      },
+      {
+        name: "Prairie Front · New Bronze · Oak",
+        subtitle: "Prairie lines in a warm bronze finish",
+        image: "https://www.mendotahearth.com/wp-content/uploads/2022/01/FV44i-Timberline-Prairie-NewBronze-Oak.jpg",
+      },
+    ],
+    features: [
+      "Natural log sets placed for maximum wood-fire realism",
+      "Designed to simulate a rugged, authentic wood fire",
+      "Virtually limitless combinations of fronts and liners",
+      "American made in Madison, Wisconsin",
+      "Available in FV44i (large) and FV33i (mid-size)",
+      "Efficient gas heating with classic aesthetics",
+    ],
+    variants: [
+      {
+        name: "FV44i Timberline",
+        viewingWidth: "32 3/8\" W × 23\" H",
+        btu: "Call for specs",
+        fireboxOpening: "Contact us for sizing",
+      },
+      {
+        name: "FV33i Timberline",
+        viewingWidth: "28 3/4\" W × 18 1/8\" H",
+        btu: "Call for specs",
+        fireboxOpening: "Contact us for sizing",
+      },
+    ],
+    options: [
+      {
+        label: "Log Sets",
+        choices: ["Oak", "Birch", "Split Oak"],
+      },
+      {
+        label: "Fronts",
+        choices: ["Classic Black", "Arch Front", "Prairie Front", "Mission Front"],
+      },
+      {
+        label: "Liners",
         choices: ["Black Reflective Glass", "Aged Brick", "Herringbone"],
       },
       {
-        label: "Fronts & Surrounds",
-        choices: ["Classic Black", "Arch Front", "Insert Trim Kits"],
+        label: "Controls",
+        choices: ["IntelliFire Plus® Remote", "Wall Switch", "Smart Home Integration"],
+      },
+    ],
+  },
+  {
+    slug: "mendota-decor",
+    brand: "Mendota",
+    brandSlug: "mendota",
+    name: "Mendota Décor™ Gas Insert",
+    tagline: "Contemporary fire · Unique media · Sleek aesthetics",
+    description:
+      "The Décor line presents fire in unexpected ways. Unique media options like liquid clear glass diamonds or natural river rocks bring a sleek aesthetic to your home. Choose from a variety of fronts and liners to create a fireplace experience that makes your style come alive in any room. Available in FV44i and FV33i sizes.",
+    startingPrice: "Call for pricing",
+    brandConfigUrl: "https://mendotahearth.com/design-your-fireplace-or-insert/select-insert-model/",
+    image: "/brands/mendota/decor.png",
+    optionsShowcase: "/brands/mendota/decor-scroll.png",
+    features: [
+      "Unique fire media — liquid clear glass diamonds or natural river rocks",
+      "Sleek, contemporary aesthetic with bold flame presentation",
+      "Choose from a variety of fronts and liners",
+      "American made in Madison, Wisconsin",
+      "Available in FV44i (large) and FV33i (mid-size)",
+      "Perfect for modern and transitional interiors",
+    ],
+    variants: [
+      {
+        name: "FV44i Décor",
+        viewingWidth: "32 3/8\" W × 23\" H",
+        btu: "Call for specs",
+        fireboxOpening: "Contact us for sizing",
+      },
+      {
+        name: "FV33i Décor",
+        viewingWidth: "28 3/4\" W × 18 1/8\" H",
+        btu: "Call for specs",
+        fireboxOpening: "Contact us for sizing",
+      },
+    ],
+    options: [
+      {
+        label: "Fire Media",
+        choices: ["Liquid Clear Glass Diamonds", "Natural River Rocks"],
+      },
+      {
+        label: "Fronts",
+        choices: ["Classic Black", "Copper Accent Front", "Arch Front", "Mission Front"],
+      },
+      {
+        label: "Liners",
+        choices: ["Black Reflective Glass", "Aged Brick", "Herringbone"],
+      },
+      {
+        label: "Controls",
+        choices: ["IntelliFire Plus® Remote", "Wall Switch", "Smart Home Integration"],
       },
     ],
   },
@@ -417,7 +531,49 @@ export const gasInserts: GasInsert[] = [
     description:
       "The Ortal Wilderness Insert is the first gas insert to incorporate Ortal's coveted Wilderness Firelog Technology — a stunning, ultra-realistic log fire experience inside your existing masonry fireplace. Available in 29\" and 34\" sizes, it fits most standard fireboxes with zero clearance to combustibles.",
     startingPrice: "Call for pricing",
-    image: "https://www.ortalheat.com/hubfs/6.28.23%20-%20Inserts/34/900-INSERT%2034-DB%20RED%20f-3%20(1).jpg",
+    image: "/brands/ortal/room-lake-view.jpg",
+    gallery: [
+      "/brands/ortal/room-lake-view.jpg",
+      "/brands/ortal/room-mountain-cabin.jpg",
+      "/brands/ortal/room-boho.jpg",
+      "/brands/ortal/room-built-in-bronze.jpg",
+      "/brands/ortal/room-classic-library.jpg",
+      "/brands/ortal/room-brick-rustic.jpg",
+      "/brands/ortal/room-green-traditional.jpg",
+      "/brands/ortal/wilderness-44h-room.png",
+    ],
+    popularOptions: [
+      {
+        name: "29\" · Black Frame",
+        subtitle: "Clean architectural black frame in a modern living room",
+        image: "/brands/ortal/wilderness-29-room.jpg",
+      },
+      {
+        name: "29\" · Bronze Frame",
+        subtitle: "Warm bronze trim for a transitional look",
+        image: "/brands/ortal/room-29-bronze.jpg",
+      },
+      {
+        name: "29\" · Chrome Frame",
+        subtitle: "Polished chrome for a sleek contemporary finish",
+        image: "/brands/ortal/room-29-chrome.jpg",
+      },
+      {
+        name: "34\" · Black Frame",
+        subtitle: "Larger viewing area with a bold black surround",
+        image: "/brands/ortal/room-34-black.jpg",
+      },
+      {
+        name: "34\" · Bronze Frame",
+        subtitle: "34\" insert with a rich bronze accent frame",
+        image: "/brands/ortal/room-34-bronze.jpg",
+      },
+      {
+        name: "34\" · Chrome Frame",
+        subtitle: "34\" insert in polished chrome — bright and modern",
+        image: "/brands/ortal/room-34-chrome.jpg",
+      },
+    ],
     features: [
       "Wilderness Firelog Technology — the most realistic log fire in any insert",
       "Ortal's signature cool glass — safe to touch during operation",

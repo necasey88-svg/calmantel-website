@@ -1,9 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
+
+export const metadata = {
+  title: "About Us | California Mantel & Fireplace",
+  description:
+    "Aussie-American family-owned since 1987, California Mantel & Fireplace manufactures custom mantels and installs fireplaces with full project oversight from consultation to inspection.",
+  alternates: { canonical: "/about" },
+};
 
 const showrooms = [
   {
     city: "Sacramento",
-    address: "4141 N Freeway Blvd, Sacramento, CA 95843",
+    address: "4141 N Freeway Blvd, Sacramento, CA 95834",
     hours: "Mon–Sat: 8:30 AM – 5:00 PM",
     phone: "(916) 665-0627",
     tel: "9166650627",
@@ -17,7 +25,7 @@ const showrooms = [
   },
   {
     city: "Dublin",
-    address: "6681 Sierra Lane Suite D, Dublin, CA 94568",
+    address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
     hours: "Mon–Fri: 8:30 AM – 5:00 PM · Sat by appointment",
     phone: "(925) 436-1731",
     tel: "9254361731",
@@ -45,8 +53,21 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Company photo */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4">
+        <div className="relative w-full rounded-2xl overflow-hidden aspect-[16/7]">
+          <Image
+            src="/about/company-photo.png"
+            alt="California Mantel & Fireplace team"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </section>
+
       {/* Story */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2
           className="text-3xl font-bold text-stone-900 mb-6"
           style={{ fontFamily: "var(--font-playfair)" }}
@@ -77,6 +98,70 @@ export default function AboutPage() {
             recurring donations help provide medical care, food, and shelter for rescued
             dogs in need — because every family member deserves a safe, warm home.
           </p>
+        </div>
+      </section>
+
+      {/* Meet the family */}
+      <section className="bg-amber-50 border-y border-amber-100 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-amber-700 uppercase tracking-widest text-xs font-semibold mb-3 text-center">
+            Family Owned &amp; Operated
+          </p>
+          <h2
+            className="text-3xl font-bold text-stone-900 mb-12 text-center"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Meet the Family
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            {/* Founders */}
+            <div className="flex flex-col items-center text-center">
+              <div className="relative w-full rounded-2xl overflow-hidden aspect-[3/4] mb-5">
+                <Image
+                  src="/about/owners-parents.jpg"
+                  alt="Stephen and Carla Casey, founders of California Mantel & Fireplace"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              <h3
+                className="text-xl font-bold text-stone-900 mb-1"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Stephen &amp; Carla Casey
+              </h3>
+              <p className="text-amber-700 text-sm font-semibold mb-3">Founders</p>
+              <p className="text-stone-500 text-sm leading-relaxed max-w-sm">
+                Stephen and Carla founded California Mantel &amp; Fireplace in 1987 with a
+                commitment to quality craftsmanship and personal service that still defines
+                everything we do today.
+              </p>
+            </div>
+
+            {/* Daughters */}
+            <div className="flex flex-col items-center text-center">
+              <div className="relative w-full rounded-2xl overflow-hidden aspect-[4/3] mb-5">
+                <Image
+                  src="/about/daughters.jpg"
+                  alt="Cory, Melanie, and Natalie Casey"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3
+                className="text-xl font-bold text-stone-900 mb-1"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Cory, Melanie &amp; Natalie Casey
+              </h3>
+              <p className="text-amber-700 text-sm font-semibold mb-3">Second Generation</p>
+              <p className="text-stone-500 text-sm leading-relaxed max-w-sm">
+                The three Casey daughters grew up in the business and now carry it forward —
+                bringing fresh energy and the same family values their parents built the
+                company on.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

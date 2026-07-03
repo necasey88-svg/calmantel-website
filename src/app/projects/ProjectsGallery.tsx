@@ -266,6 +266,15 @@ const projects: Project[] = [
     after:  `${SVC}service-28191-after.jpg`,
     categories: ["gas"],
   },
+  {
+    title: "Superior DRT3540 — Clare Smooth Seaside Mantel",
+    fireplace: { label: "Gas Fireplaces", href: "/fireplaces/gas-inserts" },
+    mantel: { label: "Traditional Mantels", href: "/mantels/traditional" },
+    description: "Complete fireplace replacement — existing unit fully removed down to the studs and rebuilt with a Superior DRT3540 gas fireplace and an ornate white Clare Smooth Seaside precast mantel surround.",
+    before: `${SVC}superior-drt3540-before.jpg`,
+    after:  `${SVC}superior-drt3540-after.jpg`,
+    categories: ["gas", "mantel"],
+  },
 
   // ── NEW CONSTRUCTION ──────────────────────────────────────────────────────
   {

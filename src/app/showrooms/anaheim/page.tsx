@@ -1,4 +1,13 @@
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { getShowroom, showroomSchema } from "@/lib/business-data";
+
+export const metadata = {
+  title: "Anaheim Fireplace & Mantel Showroom | California Mantel",
+  description:
+    "Visit our Anaheim showroom at 1430 S Anaheim Blvd — Orange County's most complete hearth destination. Gas & electric fireplaces, custom mantels, and masonry since 1987. Call (714) 908-7388.",
+  alternates: { canonical: "/showrooms/anaheim" },
+};
 
 const services = [
   "Gas fireplace installation & service",
@@ -16,8 +25,10 @@ const cities = [
 ];
 
 export default function AnaheimShowroomPage() {
+  const showroom = getShowroom("anaheim")!;
   return (
     <>
+      <JsonLd data={showroomSchema(showroom)} />
       <section className="bg-stone-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-stone-400 mb-4">

@@ -1,4 +1,13 @@
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { getShowroom, showroomSchema } from "@/lib/business-data";
+
+export const metadata = {
+  title: "Sacramento Fireplace & Mantel Showroom | California Mantel",
+  description:
+    "Visit our Sacramento showroom at 4141 N Freeway Blvd, serving Northern California — gas & electric fireplaces, custom mantels, and in-house manufacturing since 1987. Call (916) 665-0627.",
+  alternates: { canonical: "/showrooms/sacramento" },
+};
 
 const services = [
   "Gas fireplace installation & service",
@@ -15,8 +24,10 @@ const cities = [
 ];
 
 export default function SacramentoShowroomPage() {
+  const showroom = getShowroom("sacramento")!;
   return (
     <>
+      <JsonLd data={showroomSchema(showroom)} />
       <section className="bg-stone-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-stone-400 mb-4">
@@ -136,8 +147,7 @@ export default function SacramentoShowroomPage() {
               </div>
               <div>
                 <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Hours</p>
-                <p className="text-stone-700">Mon–Fri: 9:00 AM – 5:00 PM</p>
-                <p className="text-stone-700">Sat: 10:00 AM – 3:00 PM</p>
+                <p className="text-stone-700">Mon–Sat: 8:30 AM – 5:00 PM</p>
               </div>
               <div>
                 <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Phone</p>

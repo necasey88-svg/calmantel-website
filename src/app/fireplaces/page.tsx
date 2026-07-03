@@ -2,6 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import PricingCTA from "@/components/PricingCTA";
 
+export const metadata = {
+  title: "Gas, Electric & Outdoor Fireplaces | California Mantel",
+  description:
+    "Explore gas inserts, electric fireplaces, and outdoor fireplaces from 30+ top brands. Professional installation & service across California since 1987.",
+  alternates: { canonical: "/fireplaces" },
+};
+
 const types = [
   {
     title: "Gas Inserts",
@@ -47,7 +54,7 @@ const brands = [
   { name: "SimpliFire", logo: "/brands/simplifire.jpg", href: "/fireplaces" },
   { name: "Dimplex", logo: "/brands/dimplex.png", href: "/fireplaces" },
   { name: "Net Zero Fire", logo: "/brands/netzero.png", href: "/fireplaces" },
-  { name: "Isokern", logo: "/brands/isokern.png", href: "/fireplaces" },
+  { name: "Isokern", logo: "/brands/isokern.png", href: "/fireplaces/isokern" },
   { name: "HPC Fire", logo: "/brands/hpc-fire.png", href: "/fireplaces" },
   { name: "Forno Bravo", logo: "/brands/fornobravo.png", href: "/fireplaces" },
   { name: "Outdoor Great Room", logo: "/brands/outdoor-great-room.webp", href: "/fireplaces" },

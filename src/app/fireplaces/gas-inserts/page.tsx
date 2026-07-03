@@ -59,6 +59,29 @@ export default function GasInsertsPage() {
         </div>
       </section>
 
+      {/* Education video */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2
+          className="text-xl font-bold text-stone-900 mb-2 text-center"
+          style={{ fontFamily: "var(--font-playfair)" }}
+        >
+          How Gas Inserts Work
+        </h2>
+        <p className="text-stone-500 text-sm text-center mb-6">
+          A quick overview of what a gas insert is and how it converts your wood-burning fireplace.
+        </p>
+        <div className="rounded-2xl overflow-hidden shadow-lg bg-stone-900">
+          <video
+            controls
+            preload="metadata"
+            poster=""
+            className="w-full"
+          >
+            <source src="/videos/hng-inserts-education.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
       {/* Model grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2

@@ -20,12 +20,11 @@ const fireplaceLinks = [
   { label: "Electric Fireplaces", href: "/fireplaces/electric" },
   { label: "Outdoor Fireplaces", href: "/fireplaces/outdoor" },
   { label: "Heat & Glo", href: "/fireplaces/heat-and-glo" },
-  { label: "Heatilator", href: "/fireplaces/heatilator" },
   { label: "Napoleon", href: "/fireplaces/napoleon" },
   { label: "Mendota", href: "/fireplaces/mendota" },
-  { label: "Modern Flames", href: "/fireplaces/modern-flames" },
   { label: "Ortal", href: "/fireplaces/ortal" },
   { label: "Flare", href: "/fireplaces/flare" },
+  { label: "Isokern", href: "/fireplaces/isokern" },
   { label: "Overstock Sale", href: "/fireplaces/overstock" },
 ];
 

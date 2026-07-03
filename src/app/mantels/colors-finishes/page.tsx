@@ -8,7 +8,7 @@ export const metadata = {
     "Explore our full range of precast mantel colors and finishes — Smooth, Old World, Stone World, and Travertine — available across our entire mantel collection.",
 };
 
-const CDN = "https://images.squarespace-cdn.com/content/v1/6898bc1516ea8a1fd077995f/";
+const CDN = "/finishes/";
 
 type Finish = {
   name: string;
@@ -18,43 +18,43 @@ type Finish = {
 
 const finishes: Finish[] = [
   // Smooth
-  { name: "Aspen",         type: "Smooth",     img: "c4369818-49e5-4269-9088-dddfe2be26f3/Aspen0.jpg" },
-  { name: "Grecian",       type: "Smooth",     img: "4ad7ea22-cb18-4684-948b-9c0e0572ff1e/Grecian0.jpg" },
-  { name: "Indian Summer", type: "Smooth",     img: "f2f22265-c636-493c-8ce2-a38154717776/IndianSummer0.jpg" },
-  { name: "Kingsbury",     type: "Smooth",     img: "1655710b-f82b-42e5-aa25-0cb48fe03c57/Kingsbury0.jpg" },
-  { name: "Le Marais",     type: "Smooth",     img: "7d7cbdaa-573f-4eb0-b982-94a59a6ee29e/LaMarais0.jpg" },
-  { name: "London Fog",    type: "Smooth",     img: "22b9c835-6a07-4764-881c-dbe6167b8de2/LondonFog0.jpg" },
-  { name: "Macambo",       type: "Smooth",     img: "88097dd6-caa5-487f-aa95-7bdeea0d277a/Macambo0.jpg" },
-  { name: "Milano",        type: "Smooth",     img: "7daf139e-1bd5-4461-a72e-1bf205c4a59d/Milano+SM.jpeg" },
+  { name: "Aspen",         type: "Smooth",     img: "Aspen0.jpg" },
+  { name: "Grecian",       type: "Smooth",     img: "Grecian0.jpg" },
+  { name: "Indian Summer", type: "Smooth",     img: "IndianSummer0.jpg" },
+  { name: "Kingsbury",     type: "Smooth",     img: "Kingsbury0.jpg" },
+  { name: "Le Marais",     type: "Smooth",     img: "LaMarais0.jpg" },
+  { name: "London Fog",    type: "Smooth",     img: "LondonFog0.jpg" },
+  { name: "Macambo",       type: "Smooth",     img: "Macambo0.jpg" },
+  { name: "Milano",        type: "Smooth",     img: "Milano+SM.jpeg" },
 
   // Old World
-  { name: "Aspen",         type: "Old World",  img: "cf3363dd-4a8c-4c8e-9fae-0e460b72f7e5/AspenOW0.jpg" },
-  { name: "Grecian",       type: "Old World",  img: "6b469dc9-ba4b-47e6-9651-1a8802233bc2/GrecianOW0.jpg" },
-  { name: "Indian Summer", type: "Old World",  img: "fa5ae432-91be-447a-95ad-134b98a093c4/IndianSummerOW0.jpg" },
-  { name: "Kingsbury",     type: "Old World",  img: "57e98384-da3b-40ec-920f-0b558364b9c1/KingsburyOW0.jpg" },
-  { name: "Le Marais",     type: "Old World",  img: "19fdd24e-fc8f-43e5-b615-e7b2f3e5fa89/LeMaraisOW0.jpg" },
-  { name: "London Fog",    type: "Old World",  img: "b3d83417-cbf7-4884-88d2-6a0ac0c46fb3/LondonFogOW0.jpg" },
-  { name: "Macambo",       type: "Old World",  img: "b1c156d7-a760-471a-be99-b87b1c179972/MacamboOW0.jpg" },
-  { name: "Milano",        type: "Old World",  img: "1040ada5-f4db-4c1c-8cbe-31733de9364a/Old+World+Milano.jpg" },
+  { name: "Aspen",         type: "Old World",  img: "AspenOW0.jpg" },
+  { name: "Grecian",       type: "Old World",  img: "GrecianOW0.jpg" },
+  { name: "Indian Summer", type: "Old World",  img: "IndianSummerOW0.jpg" },
+  { name: "Kingsbury",     type: "Old World",  img: "KingsburyOW0.jpg" },
+  { name: "Le Marais",     type: "Old World",  img: "LeMaraisOW0.jpg" },
+  { name: "London Fog",    type: "Old World",  img: "LondonFogOW0.jpg" },
+  { name: "Macambo",       type: "Old World",  img: "MacamboOW0.jpg" },
+  { name: "Milano",        type: "Old World",  img: "Old+World+Milano.jpg" },
 
   // Stone World
-  { name: "Aspen",         type: "Stone World", img: "61e55eb8-accb-4d1a-81db-5c2fefc0fcc0/AspenSW0-6000-TransparentWhite-1.jpg" },
-  { name: "Atlantic",      type: "Stone World", img: "bd7c2615-1b1f-4036-9028-5e30562986ea/AtlanticSW0.jpg" },
-  { name: "Grecian",       type: "Stone World", img: "6b134123-a0d6-4ad0-8d2b-e45ccd49faa8/GrecianSW0.jpg" },
-  { name: "Indian Summer", type: "Stone World", img: "b5668893-cfb1-4f2f-8ee3-637a16e63de7/IndianSummerSW0.jpg" },
-  { name: "Kingsbury",     type: "Stone World", img: "9095939f-4b88-490d-85e4-20a913656ce0/KingsburySW0.jpg" },
-  { name: "Le Marais",     type: "Stone World", img: "a7b3d0b1-160a-43ef-b8db-04a3da9784ac/LeMaraisSW0.jpg" },
-  { name: "Limestone",     type: "Stone World", img: "55ec6ad0-eddd-4782-b2b8-4287dc7cb4f6/LimestoneSW0.jpg" },
-  { name: "London Fog",    type: "Stone World", img: "05f9fe3b-631b-4a5f-b556-03cf7bb34538/LondonFogSW0.jpg" },
+  { name: "Aspen",         type: "Stone World", img: "AspenSW0-6000-TransparentWhite-1.jpg" },
+  { name: "Atlantic",      type: "Stone World", img: "AtlanticSW0.jpg" },
+  { name: "Grecian",       type: "Stone World", img: "GrecianSW0.jpg" },
+  { name: "Indian Summer", type: "Stone World", img: "IndianSummerSW0.jpg" },
+  { name: "Kingsbury",     type: "Stone World", img: "KingsburySW0.jpg" },
+  { name: "Le Marais",     type: "Stone World", img: "LeMaraisSW0.jpg" },
+  { name: "Limestone",     type: "Stone World", img: "LimestoneSW0.jpg" },
+  { name: "London Fog",    type: "Stone World", img: "LondonFogSW0.jpg" },
 
   // Travertine
-  { name: "Atlantic",      type: "Travertine",  img: "6e56de36-2efa-4a95-a9da-ef118135b236/AtlanticRT0.jpg" },
-  { name: "Grecian",       type: "Travertine",  img: "ef8ffdd4-fe8a-494b-ba9e-a5623f8c1153/GrecianRT0.jpg" },
-  { name: "Indian Summer", type: "Travertine",  img: "0ac6bd41-7e1f-4d21-9feb-9061471c673b/IndianSummerRT0.jpg" },
-  { name: "Kingsbury",     type: "Travertine",  img: "7dc6775c-3580-4b7d-b858-29dbce465502/KingsburyRT0.jpg" },
-  { name: "Le Marais",     type: "Travertine",  img: "f343eb31-51f3-4cd2-8dd7-8549022e9f85/LeMaraisRT0-6000-TransparentWhite-1.jpg" },
-  { name: "Limestone",     type: "Travertine",  img: "ada4c766-a28c-49ee-a62a-37b63e5cadc6/LimestoneRT0.jpg" },
-  { name: "London Fog",    type: "Travertine",  img: "0ed64e68-618c-4708-9a3c-a1501c33ab9c/LondonFogRT0.jpg" },
+  { name: "Atlantic",      type: "Travertine",  img: "AtlanticRT0.jpg" },
+  { name: "Grecian",       type: "Travertine",  img: "GrecianRT0.jpg" },
+  { name: "Indian Summer", type: "Travertine",  img: "IndianSummerRT0.jpg" },
+  { name: "Kingsbury",     type: "Travertine",  img: "KingsburyRT0.jpg" },
+  { name: "Le Marais",     type: "Travertine",  img: "LeMaraisRT0-6000-TransparentWhite-1.jpg" },
+  { name: "Limestone",     type: "Travertine",  img: "LimestoneRT0.jpg" },
+  { name: "London Fog",    type: "Travertine",  img: "LondonFogRT0.jpg" },
 ];
 
 const finishTypes = ["Smooth", "Old World", "Stone World", "Travertine"] as const;

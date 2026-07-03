@@ -72,9 +72,9 @@ const suppliers = [
 ];
 
 const showrooms = [
-  { city: "Sacramento", address: "4141 N Freeway Blvd, Sacramento, CA 95843", phone: "(916) 665-0627", tel: "9166650627", hours: "Mon–Sat: 8:30 AM – 5:00 PM" },
+  { city: "Sacramento", address: "4141 N Freeway Blvd, Sacramento, CA 95834", phone: "(916) 665-0627", tel: "9166650627", hours: "Mon–Sat: 8:30 AM – 5:00 PM" },
   { city: "Anaheim", address: "1430 S Anaheim Blvd, Anaheim, CA 92805", phone: "(714) 908-7388", tel: "7149087388", hours: "Mon–Sat: 9:00 AM – 5:00 PM" },
-  { city: "Dublin", address: "6681 Sierra Lane Suite D, Dublin, CA 94568", phone: "(925) 436-1731", tel: "9254361731", hours: "Mon–Fri: 8:30 AM – 5:00 PM · Sat by appt" },
+  { city: "Dublin", address: "6681 Sierra Ln Ste D, Dublin, CA 94568", phone: "(925) 436-1731", tel: "9254361731", hours: "Mon–Fri: 8:30 AM – 5:00 PM · Sat by appt" },
 ];
 
 export default function MasonryPage() {

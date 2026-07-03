@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const product = getOverstockProduct(slug);
   if (!product) return {};
   return {
-    title: `${product.name} — Overstock Sale | California Mantel & Fireplace`,
+    title: `${product.name} — Overstock Sale | California Mantel`,
     description: product.description.slice(0, 160),
   };
 }

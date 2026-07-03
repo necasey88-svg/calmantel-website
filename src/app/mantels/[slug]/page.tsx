@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getMantelCategory, mantelCategories } from "@/lib/mantels-data";
 import { mantelProducts, typeLabel, styleLabel } from "@/lib/mantel-products-data";
 import PricingCTA from "@/components/PricingCTA";
@@ -11,13 +12,13 @@ function getProductsForCategory(slug: string) {
     case "contemporary":
       return mantelProducts.filter((p) => p.style === "contemporary" && p.type !== "overmantel");
     case "traditional":
-      return mantelProducts.filter((p) => p.style === "traditional" && p.type !== "overmantel");
+      return mantelProducts.filter((p) => p.style === "traditional" && p.type !== "overmantel" && p.type !== "wood" && p.type !== "beam");
     case "overmantels":
       return mantelProducts.filter((p) => p.type === "overmantel");
     case "wood-surrounds":
-      return mantelProducts.filter((p) => p.type === "wood" || p.slug === "hobart-1" || p.slug === "kendall-1");
+      return mantelProducts.filter((p) => p.type === "wood" || (p.type === "beam" && p.slug !== "noarlunga") || p.slug === "hobart-1" || p.slug === "kendall-1");
     case "beams":
-      return mantelProducts.filter((p) => p.type === "beam");
+      return mantelProducts.filter((p) => p.slug === "noarlunga");
     default:
       return [];
   }
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const category = getMantelCategory(slug);
   if (!category) return {};
   return {
-    title: `${category.title} | California Mantel & Fireplace`,
+    title: `${category.title} | California Mantel`,
     description: category.description,
   };
 }
@@ -81,7 +82,19 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
                 href={`/mantels/p/${product.slug}`}
                 className="group border border-stone-200 rounded-xl overflow-hidden hover:border-amber-700 hover:shadow-md transition-all"
               >
-                <div className="h-48 bg-stone-100 flex items-center justify-center text-6xl">🪨</div>
+                <div className="relative h-72 bg-stone-100 overflow-hidden">
+                  {product.image ? (
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-full text-6xl">🪨</div>
+                  )}
+                </div>
                 <div className="p-6">
                   <div className="flex gap-2 mb-3">
                     <span className="text-xs bg-stone-100 text-stone-500 px-2 py-0.5 rounded">

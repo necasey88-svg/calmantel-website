@@ -1,4 +1,13 @@
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { getShowroom, showroomSchema } from "@/lib/business-data";
+
+export const metadata = {
+  title: "Dublin Fireplace & Mantel Showroom | California Mantel",
+  description:
+    "Visit our Dublin showroom at 6681 Sierra Ln Ste D, serving the Bay Area — gas & electric fireplaces, gas inserts, and custom mantels since 1987. Call (925) 436-1731.",
+  alternates: { canonical: "/showrooms/dublin" },
+};
 
 const services = [
   "Gas fireplace & insert installation",
@@ -15,8 +24,10 @@ const cities = [
 ];
 
 export default function DublinShowroomPage() {
+  const showroom = getShowroom("dublin")!;
   return (
     <>
+      <JsonLd data={showroomSchema(showroom)} />
       <section className="bg-stone-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-stone-400 mb-4">
@@ -131,12 +142,13 @@ export default function DublinShowroomPage() {
             <div className="space-y-4 text-sm">
               <div>
                 <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Address</p>
-                <p className="text-stone-700">6681-D Sierra Lane</p>
+                <p className="text-stone-700">6681 Sierra Ln Ste D</p>
                 <p className="text-stone-700">Dublin, CA 94568</p>
               </div>
               <div>
                 <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Hours</p>
-                <p className="text-stone-700">Mon–Fri: 10:00 AM – 5:00 PM</p>
+                <p className="text-stone-700">Mon–Fri: 8:30 AM – 5:00 PM</p>
+                <p className="text-stone-700">Sat: By appointment</p>
                 <p className="text-amber-700 text-xs mt-1">Sat: By appointment only</p>
               </div>
               <div>

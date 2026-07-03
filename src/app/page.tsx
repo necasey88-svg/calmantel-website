@@ -2,43 +2,52 @@ import Link from "next/link";
 import Image from "next/image";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import InstantEstimateCTA from "@/components/InstantEstimateCTA";
+import JsonLd from "@/components/JsonLd";
+import { organizationSchema } from "@/lib/business-data";
+
+export const metadata = {
+  title: "California Mantel & Fireplace | Custom Mantels & Fireplaces",
+  description:
+    "Aussie-American family-owned since 1987. We manufacture wood & precast concrete fireplace mantels and install gas, electric & outdoor fireplaces. Showrooms in Anaheim, Dublin & Sacramento.",
+  alternates: { canonical: "/" },
+};
 
 const categories = [
   {
     title: "Contemporary Mantels",
     description: "Clean lines and modern profiles to complement today's interiors.",
     href: "/mantels/contemporary",
-    icon: "▭",
+    image: "/mantels/bolte-fv46.png",
   },
   {
     title: "Traditional Mantels",
     description: "Classic carved designs with timeless elegance and warmth.",
     href: "/mantels/traditional",
-    icon: "🏛",
+    image: "/hero-fireplace.png",
   },
   {
     title: "Gas Fireplaces",
     description: "Efficient, beautiful gas inserts from the top brands in the industry.",
     href: "/fireplaces/gas-inserts",
-    icon: "🔥",
+    image: "/brands/ortal/room-mountain-cabin.jpg",
   },
   {
     title: "Electric Fireplaces",
     description: "Modern electric fireplaces — no venting required.",
     href: "/fireplaces/electric",
-    icon: "⚡",
+    image: "/brands/modern-flames/redstone.png",
   },
   {
     title: "Outdoor Fireplaces",
     description: "Extend your living space outdoors with a stunning fireplace.",
     href: "/fireplaces/outdoor",
-    icon: "🌿",
+    image: "/brands/ortal/outdoor.png",
   },
   {
     title: "Wood Surrounds",
     description: "Handcrafted wood mantel surrounds in a variety of styles.",
     href: "/mantels/wood-surrounds",
-    icon: "🪵",
+    image: "/brands/mendota/firein-room.png",
   },
 ];
 
@@ -76,18 +85,19 @@ const stats = [
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={organizationSchema()} />
       {/* Hero */}
-      <section className="relative bg-stone-900 text-white overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-25"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1600&auto=format&fit=crop')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+      <section className="relative text-white overflow-hidden min-h-[90vh] flex items-center">
+        <Image
+          src="/hero-fireplace.png"
+          alt="Padthaway FV46 gas fireplace with white mantel surround"
+          fill
+          className="object-cover object-center"
+          priority
         />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-48">
+        {/* gradient: transparent right side → dark left side so text is readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/10" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-48 w-full">
           <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-4">
             Family-owned since 1987
           </p>
@@ -97,7 +107,7 @@ export default function HomePage() {
           >
             Enhance Your Fireplace Now
           </h1>
-          <p className="text-stone-300 text-lg max-w-xl mb-10 leading-relaxed">
+          <p className="text-stone-200 text-lg max-w-xl mb-10 leading-relaxed">
             California Mantel &amp; Fireplace manufactures premium mantels and installs
             gas &amp; electric fireplaces across California and Nevada. Three showrooms — Anaheim,
             Dublin &amp; Sacramento — serving homeowners from Southern California to Reno &amp; Lake Tahoe.
@@ -105,13 +115,13 @@ export default function HomePage() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/estimate"
-              className="bg-amber-700 hover:bg-amber-800 text-white px-8 py-3.5 rounded font-semibold transition-colors"
+              className="bg-amber-700 hover:bg-amber-800 text-white px-8 py-3.5 rounded-full font-semibold transition-colors"
             >
               Request Estimate
             </Link>
             <Link
               href="/projects"
-              className="border border-white text-white hover:bg-white hover:text-stone-900 px-8 py-3.5 rounded font-semibold transition-colors"
+              className="border border-white text-white hover:bg-white hover:text-stone-900 px-8 py-3.5 rounded-full font-semibold transition-colors"
             >
               View Projects
             </Link>
@@ -133,21 +143,37 @@ export default function HomePage() {
             technology — we have everything you need.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {categories.map((cat) => (
             <Link
               key={cat.href}
               href={cat.href}
-              className="group border border-stone-200 rounded-xl p-7 hover:border-amber-700 hover:shadow-md transition-all"
+              className="group relative rounded-2xl overflow-hidden aspect-[4/3] block"
             >
-              <div className="text-4xl mb-4">{cat.icon}</div>
-              <h3
-                className="text-xl font-bold text-stone-900 mb-2 group-hover:text-amber-700 transition-colors"
-                style={{ fontFamily: "var(--font-playfair)" }}
-              >
-                {cat.title}
-              </h3>
-              <p className="text-stone-500 text-sm leading-relaxed">{cat.description}</p>
+              <Image
+                src={cat.image}
+                alt={cat.title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+              {/* dark gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+              {/* text */}
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3
+                  className="text-xl font-bold text-white mb-1 leading-tight"
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
+                  {cat.title}
+                </h3>
+                <p className="text-stone-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden">
+                  {cat.description}
+                </p>
+                <span className="inline-block mt-2 text-amber-400 text-sm font-semibold group-hover:underline">
+                  Explore →
+                </span>
+              </div>
             </Link>
           ))}
         </div>
@@ -232,15 +258,15 @@ export default function HomePage() {
               {[
                 {
                   q: "Gas, electric, or wood — which is right for me?",
-                  a: "Gas inserts are the most popular — realistic flames, simple operation, and they work during power outages. Electric fireplaces require no venting and are great for apartments or rooms without a gas line. Wood-burning is the most traditional but requires a chimney and regular maintenance.",
+                  a: "Gas fireplaces are the most popular — realistic flames, simple operation, and they work during power outages. Electric fireplaces require no venting and are great for apartments or rooms without a gas line. Wood-burning is the most traditional, but note that California requires all wood-burning fireplaces to be EPA-rated.",
                 },
                 {
-                  q: "Do I need a permit?",
-                  a: "Most gas fireplace installations in California require a permit. We handle all permitting as part of our installation service — you don't need to worry about it. Our team knows local codes across Anaheim, Dublin, and Sacramento.",
+                  q: "How do I know which fireplace fits my space?",
+                  a: "Firebox size, clearances, venting requirements, and your existing opening all factor in. That's exactly what our showroom consultations are for — bring your room dimensions and we'll match you with the right unit and surround combination.",
                 },
                 {
                   q: "How long does installation take?",
-                  a: "A typical gas insert with mantel surround takes 1–2 days to install. Custom mantel manufacturing adds 2–4 weeks lead time. We'll give you an exact timeline during your showroom consultation.",
+                  a: "Gas insert installation is typically same-day. Custom mantel manufacturing adds 1–3 weeks lead time. We'll give you an exact timeline during your showroom consultation.",
                 },
               ].map((item) => (
                 <div key={item.q}>

@@ -4,7 +4,7 @@ import Image from "next/image";
 const showrooms = [
   {
     city: "Sacramento",
-    address: "4141 N Freeway Blvd, Sacramento, CA 95843",
+    address: "4141 N Freeway Blvd, Sacramento, CA 95834",
     hours: "Mon–Sat: 8:30 AM – 5:00 PM",
     phone: "(916) 665-0627",
     tel: "9166650627",
@@ -18,7 +18,7 @@ const showrooms = [
   },
   {
     city: "Dublin",
-    address: "6681 Sierra Lane Suite D, Dublin, CA 94568",
+    address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
     hours: "Mon–Fri: 8:30 AM – 5:00 PM · Sat by appt",
     phone: "(925) 436-1731",
     tel: "9254361731",

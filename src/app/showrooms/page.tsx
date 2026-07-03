@@ -1,4 +1,13 @@
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { organizationSchema } from "@/lib/business-data";
+
+export const metadata = {
+  title: "Anaheim, Dublin & Sacramento Showrooms | California Mantel",
+  description:
+    "Visit a California Mantel & Fireplace showroom in Anaheim, Dublin, or Sacramento. Live-burning fireplace displays, custom mantel galleries, and expert hearth advice since 1987.",
+  alternates: { canonical: "/showrooms" },
+};
 
 const showrooms = [
   {
@@ -19,11 +28,11 @@ const showrooms = [
     city: "Dublin",
     subtitle: "Bay Area",
     tagline: "Serving the Tri-Valley and East Bay",
-    address: "6681-D Sierra Lane, Dublin, CA 94568",
+    address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
     phone: "(925) 436-1731",
     tel: "9254361731",
     hours: [
-      "Mon–Fri: 10:00 AM – 5:00 PM",
+      "Mon–Fri: 8:30 AM – 5:00 PM",
       "Sat: By appointment only",
     ],
     serviceArea: "Dublin, Pleasanton, San Ramon, Livermore, Danville, Walnut Creek, Fremont, Castro Valley, Hayward, and surrounding Tri-Valley and East Bay communities",
@@ -38,8 +47,7 @@ const showrooms = [
     phone: "(916) 665-0627",
     tel: "9166650627",
     hours: [
-      "Mon–Fri: 9:00 AM – 5:00 PM",
-      "Sat: 10:00 AM – 3:00 PM",
+      "Mon–Sat: 8:30 AM – 5:00 PM",
     ],
     serviceArea: "Sacramento, Roseville, Elk Grove, Folsom, Rancho Cordova, Citrus Heights, Lincoln, Auburn, Davis, and surrounding Northern California communities",
     href: "/showrooms/sacramento",
@@ -59,6 +67,7 @@ const amenities = [
 export default function ShowroomsPage() {
   return (
     <>
+      <JsonLd data={organizationSchema()} />
       <section className="bg-stone-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
