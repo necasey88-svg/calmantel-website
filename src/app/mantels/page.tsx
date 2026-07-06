@@ -1,5 +1,6 @@
 import Link from "next/link";
 import MantelSearch from "@/components/MantelSearch";
+import MantelFitFinder from "@/components/MantelFitFinder";
 import PricingCTA from "@/components/PricingCTA";
 
 export const metadata = {
@@ -79,6 +80,11 @@ export default function MantelsPage() {
 
       {/* Search */}
       <MantelSearch />
+
+      {/* Fit finder */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <MantelFitFinder />
+      </section>
 
       {/* Categories */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

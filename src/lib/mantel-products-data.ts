@@ -1,3 +1,15 @@
+export interface MantelDimensions {
+  // Each mantel is offered in one or more sizes. Values are inches, read from the CAD.
+  openingWidths: number[];   // firebox-opening width option(s), e.g. [37.125, 43]
+  openingHeight: number;     // opening height (inches)
+  overallWidths: number[];   // outer/shelf width option(s) — used for wall-space fit
+  overallHeight: number;     // top of shelf to floor
+  shelfDepth?: number;       // projection of the shelf from the wall (inches)
+  // Wood only: needed for combustible-clearance check.
+  shelfHeightAboveOpening?: number; // underside of shelf to top of firebox opening
+  cadVerified?: boolean;     // true once a human has confirmed the extracted numbers
+}
+
 export interface MantelProduct {
   slug: string;
   name: string;
@@ -7,6 +19,7 @@ export interface MantelProduct {
   specs?: string;
   cadPdf?: string; // path relative to /public, e.g. "/cad/nullarbor.pdf"
   image?: string;
+  // Physical dimensions live in mantel-dimensions.ts (keyed by slug), extracted from the CADs.
 }
 
 export const mantelProducts: MantelProduct[] = [
@@ -808,6 +821,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "tonso",
     name: "Tonso",
+    image: "/mantels/tonso.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/tonso.pdf",
@@ -817,6 +831,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "torrens",
     name: "Torrens",
+    image: "/mantels/torrens.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/torrens.pdf",
@@ -826,6 +841,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "tusmore",
     name: "Tusmore",
+    image: "/mantels/tusmore.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/tusmore.pdf",
@@ -835,6 +851,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "ucolta",
     name: "Ucolta",
+    image: "/mantels/ucolta.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/ucolta.pdf",
@@ -844,6 +861,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "venice",
     name: "Venice",
+    image: "/mantels/venice.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/venice.pdf",
@@ -862,6 +880,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "victorian",
     name: "Victorian",
+    image: "/mantels/victorian.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/victorian.pdf",
@@ -871,6 +890,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "wallaroo",
     name: "Wallaroo",
+    image: "/mantels/wallaroo.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/wallaroo.pdf",
@@ -880,6 +900,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "warradale",
     name: "Warradale",
+    image: "/mantels/warradale.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/warradale.pdf",
@@ -889,6 +910,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "west-linn",
     name: "West Linn",
+    image: "/mantels/west-linn.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/west-linn.pdf",
@@ -898,6 +920,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "wilcannia",
     name: "Wilcannia",
+    image: "/mantels/wilcannia.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/wilcannia.pdf",
@@ -916,6 +939,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "windsor",
     name: "Windsor",
+    image: "/mantels/windsor.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/windsor.pdf",
@@ -925,6 +949,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "yongala",
     name: "Yongala",
+    image: "/mantels/yongala.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/yongala.pdf",
