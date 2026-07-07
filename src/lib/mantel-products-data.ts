@@ -337,14 +337,6 @@ export const mantelProducts: MantelProduct[] = [
       "The Turin Mantel is a contemporary precast fireplace surround that combines modern design with exceptional craftsmanship, creating a refined architectural statement for today's homes. With its clean lines, sleek profile, and minimalist aesthetic, this fireplace mantel serves as an elegant focal point for any living space. Expertly manufactured from high-quality, durable precast materials, the Turin ensures long-lasting beauty, strength, and easy maintenance.",
   },
   {
-    slug: "rosella",
-    name: "Rosella",
-    type: "precast",
-    style: "contemporary",
-    description:
-      "The Rosella Mantel is a sleek precast fireplace surround that combines modern fireplace design with timeless sophistication. Featuring clean architectural lines, a smooth refined finish, and a minimalist profile, this fireplace mantel creates a striking focal point for gas fireplaces, electric fireplaces, or traditional hearth installations. Expertly crafted from durable, high-quality precast materials, the Rosella ensures long-lasting strength, easy installation, and enduring beauty.",
-  },
-  {
     slug: "ashford",
     name: "Ashford",
     image: "/mantels/ashford.png",
