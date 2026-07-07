@@ -5,8 +5,9 @@ import type { MantelDimensions } from "./mantel-products-data";
 // Opening width = firebox size + ~1" (a 36" firebox uses a ~37" opening).
 // `cadVerified: false` = machine-extracted, awaiting human confirmation against the CAD.
 //
-// EXTRACTION PROGRESS: 29 / ~60 CADs done. Batches added alphabetically.
-// (cobar, coonawarra are overmantels — read but excluded, no firebox opening.)
+// EXTRACTION PROGRESS: 37 / ~60 CADs done. Batches added alphabetically.
+// (cobar, coonawarra, macquarie, monash are overmantels — read but excluded,
+//  no firebox opening.)
 //
 // NOTE ON WIDTHS: overallWidths = the SHELF/body width (the widest part of the
 // mantel at wall height). The wider "base" number on some CADs is the HEARTH
@@ -261,6 +262,75 @@ export const mantelDimensions: Record<string, MantelDimensions> = {
     overallWidths: [67.625], // shelf; hearth reads 72
     overallHeight: 60.625,
     shelfDepth: 8.375,
+    cadVerified: false,
+  },
+
+  // ── Batch 7: kensington → nullarbor (awaiting verification) ──────────────
+  // (macquarie + monash are OVERMANTELS — no firebox opening — excluded.
+  //  manly-line.pdf / manly-no-peds.pdf = alternate Manly drawings not tied to
+  //  any product slug — the Manly product uses manly.pdf; skipped.)
+  kensington: {
+    openingWidths: [37, 43], // two sizes
+    openingHeight: 40, // smaller (larger = 48)
+    overallWidths: [60.625, 66.625], // shelf; hearth reads 60/66
+    overallHeight: 59.125, // smaller (larger = 67⅛)
+    shelfDepth: 6.875,
+    cadVerified: false,
+  },
+  koonunga: {
+    openingWidths: [38, 43.125, 50], // arched, three sizes
+    openingHeight: 43.375, // to arch spring — VERIFY
+    overallWidths: [70.5, 75.5, 84.125], // shelf; hearth reads 72/80
+    overallHeight: 69.5, // (69½/69¾)
+    shelfDepth: 11.125, // side reads 11⅛/12⅛/11¾
+    cadVerified: false,
+  },
+  lancelot: {
+    openingWidths: [36.125, 42.125, 44.125], // three sizes
+    openingHeight: 35.75, // smaller (larger = 40)
+    overallWidths: [58.125, 64.125, 66.125], // shelf; hearth reads 60/66
+    overallHeight: 47.875, // smaller (larger = 52⅛)
+    shelfDepth: 8,
+    cadVerified: false,
+  },
+  manly: {
+    openingWidths: [37.875, 44.625], // two sizes (Gold Coast)
+    openingHeight: 24, // smaller — unusually short; larger = 40 — VERIFY
+    overallWidths: [65.5, 72.25], // shelf; hearth reads 66/72
+    overallHeight: 43.625, // smaller (larger = 59⅝)
+    shelfDepth: 8,
+    cadVerified: false,
+  },
+  mannix: {
+    openingWidths: [33.125, 37.125, 43.25], // three sizes
+    openingHeight: 40, // smaller (larger = 48)
+    overallWidths: [56.125, 60.125, 66.25], // shelf; hearth reads 60/66/72
+    overallHeight: 53.25, // smaller (larger = 61¼)
+    shelfDepth: 6.75,
+    cadVerified: false,
+  },
+  mingary: {
+    openingWidths: [38.375, 44.375], // two sizes; slim frame surround
+    openingHeight: 40.125,
+    overallWidths: [54.375, 60.375], // shelf; hearth reads 60/66
+    overallHeight: 54.375,
+    shelfDepth: 3.25, // slim frame
+    cadVerified: false,
+  },
+  mornington: {
+    openingWidths: [48.625], // single (Kings Cross)
+    openingHeight: 48,
+    overallWidths: [72], // shelf; hearth reads 72
+    overallHeight: 61.375,
+    shelfDepth: 10,
+    cadVerified: false,
+  },
+  nullarbor: {
+    openingWidths: [42.25], // single; flat frame surround
+    openingHeight: 36,
+    overallWidths: [67.25], // shelf & hearth both 67¼
+    overallHeight: 56.25,
+    shelfDepth: 3, // flat frame
     cadVerified: false,
   },
 };
