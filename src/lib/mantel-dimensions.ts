@@ -5,7 +5,8 @@ import type { MantelDimensions } from "./mantel-products-data";
 // Opening width = firebox size + ~1" (a 36" firebox uses a ~37" opening).
 // `cadVerified: false` = machine-extracted, awaiting human confirmation against the CAD.
 //
-// EXTRACTION PROGRESS: 13 / ~60 CADs done. Batches added alphabetically.
+// EXTRACTION PROGRESS: 19 / ~60 CADs done. Batches added alphabetically.
+// (cobar, coonawarra are overmantels — read but excluded, no firebox opening.)
 //
 // NOTE ON WIDTHS: overallWidths = the SHELF/body width (the widest part of the
 // mantel at wall height). The wider "base" number on some CADs is the HEARTH
@@ -119,6 +120,59 @@ export const mantelDimensions: Record<string, MantelDimensions> = {
     overallWidths: [66.25], // shelf; hearth reads 66
     overallHeight: 63,
     shelfDepth: 10.25,
+    cadVerified: false,
+  },
+
+  // ── Batch 3: ceduna → … (awaiting verification) ──────────────────────────
+  ceduna: {
+    openingWidths: [38.125, 44.25], // two sizes
+    openingHeight: 36,
+    overallWidths: [57.25, 63.375], // shelf; hearth reads 60/66
+    overallHeight: 54.25,
+    shelfDepth: 5.5,
+    cadVerified: false,
+  },
+  chateau: {
+    openingWidths: [38.625, 43.5], // arched, two sizes
+    openingHeight: 29, // to arch spring; peak +17¾ — VERIFY
+    overallWidths: [65.75, 73.625], // shelf; hearth reads 72/80
+    overallHeight: 52.375,
+    shelfDepth: 9.375,
+    cadVerified: false,
+  },
+  clare: {
+    openingWidths: [54.5], // single, arched
+    openingHeight: 37.25, // to arch spring; peak +11¾ — VERIFY
+    overallWidths: [73], // shelf; hearth reads 80
+    overallHeight: 51,
+    shelfDepth: 12.25,
+    cadVerified: false,
+  },
+  clarendon: {
+    openingWidths: [38, 44], // two sizes; flat ornate surround
+    openingHeight: 45.75,
+    overallWidths: [57.5, 63.5], // shelf; hearth reads 66/72
+    overallHeight: 54.25,
+    shelfDepth: 4.25,
+    cadVerified: false,
+  },
+
+  // ── Batch 4: classique → coober-pedy (awaiting verification) ─────────────
+  // (cobar + coonawarra are OVERMANTELS — no firebox opening — excluded.)
+  classique: {
+    openingWidths: [54.5], // single, arched (9⅞ + 54½ + 9⅞)
+    openingHeight: 43.125,
+    overallWidths: [81], // shelf; hearth reads 80
+    overallHeight: 65.625,
+    shelfDepth: 9.5,
+    cadVerified: false,
+  },
+  "coober-pedy": {
+    openingWidths: [50], // single width; two heights offered
+    openingHeight: 40, // smaller size (larger = 48) — VERIFY
+    overallWidths: [80.75], // shelf; hearth reads 90
+    overallHeight: 61.5, // smaller size (larger = 69½)
+    shelfDepth: 13.5,
     cadVerified: false,
   },
 };
