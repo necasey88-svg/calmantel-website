@@ -5,7 +5,7 @@ import type { MantelDimensions } from "./mantel-products-data";
 // Opening width = firebox size + ~1" (a 36" firebox uses a ~37" opening).
 // `cadVerified: false` = machine-extracted, awaiting human confirmation against the CAD.
 //
-// EXTRACTION PROGRESS: 37 / ~60 CADs done. Batches added alphabetically.
+// EXTRACTION PROGRESS: 45 / ~60 CADs done. Batches added alphabetically.
 // (cobar, coonawarra, macquarie, monash are overmantels — read but excluded,
 //  no firebox opening.)
 //
@@ -331,6 +331,72 @@ export const mantelDimensions: Record<string, MantelDimensions> = {
     overallWidths: [67.25], // shelf & hearth both 67¼
     overallHeight: 56.25,
     shelfDepth: 3, // flat frame
+    cadVerified: false,
+  },
+
+  // ── Batch 8: onkaparinga → queensland (awaiting verification) ─────────────
+  onkaparinga: {
+    openingWidths: [38.125, 44.25], // two sizes; slim frame surround (Tasmania)
+    openingHeight: 36,
+    overallWidths: [50.125, 56.25], // shelf; hearth reads 60/66
+    overallHeight: 50,
+    shelfDepth: 3.75, // slim frame
+    cadVerified: false,
+  },
+  paddington: {
+    openingWidths: [38.375, 44.375], // two sizes; flat frame surround (Southern Cross)
+    openingHeight: 40.125,
+    overallWidths: [60.25, 66.25], // shelf; hearth reads 60/66
+    overallHeight: 54.375,
+    shelfDepth: 3.25, // slim frame
+    cadVerified: false,
+  },
+  padthaway: {
+    openingWidths: [41.25, 47.25, 55.25], // three sizes (Ayers Rock)
+    openingHeight: 45.75,
+    overallWidths: [70.25, 76.25, 84.25], // shelf; hearth reads 72/80/88
+    overallHeight: 62.5,
+    shelfDepth: 12.25, // side reads 8
+    cadVerified: false,
+  },
+  parliament: {
+    openingWidths: [50], // single, corbels (Ayers Rock)
+    openingHeight: 40.25,
+    overallWidths: [82.25], // shelf; hearth reads 88
+    overallHeight: 63.5,
+    shelfDepth: 10.875,
+    cadVerified: false,
+  },
+  parramatta: {
+    openingWidths: [43.5], // single opening; hearth offered 66/72
+    openingHeight: 28.25, // unusually short — VERIFY
+    overallWidths: [64.75], // shelf; hearth reads 66/72
+    overallHeight: 57.5,
+    shelfDepth: 11.375,
+    cadVerified: false,
+  },
+  penfold: {
+    openingWidths: [38, 44], // two sizes; ornate flat surround
+    openingHeight: 36,
+    overallWidths: [67.5, 73.5], // shelf; hearth reads 66/72
+    overallHeight: 60.25,
+    shelfDepth: 8.25,
+    cadVerified: false,
+  },
+  pitcairn: {
+    openingWidths: [37.125, 43.125], // two sizes (Southern Cross)
+    openingHeight: 34.25, // smaller (larger = 40¼)
+    overallWidths: [60.625, 66.625], // shelf; hearth reads 66/72
+    overallHeight: 51, // smaller (larger = 57)
+    shelfDepth: 8.75,
+    cadVerified: false,
+  },
+  queensland: {
+    openingWidths: [43], // single; stepped frame surround (Tasmania)
+    openingHeight: 37.25,
+    overallWidths: [67], // shelf; hearth reads 72
+    overallHeight: 51.25,
+    shelfDepth: 5.5,
     cadVerified: false,
   },
 };
