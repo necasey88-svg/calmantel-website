@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import MantelSearch from "@/components/MantelSearch";
+import MantelFitFinder from "@/components/MantelFitFinder";
+import { bestSellerSlugs } from "@/lib/mantel-fit";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import JsonLd from "@/components/JsonLd";
@@ -198,12 +200,18 @@ export default function HomePage() {
           </p>
         </div>
         <MantelSearch />
-        <div className="text-center">
+
+        {/* Browsable fit finder — best sellers only on the homepage */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+          <MantelFitFinder restrictSlugs={bestSellerSlugs} heading="Our Best-Selling Mantels" />
+        </div>
+
+        <div className="text-center mt-8">
           <Link
             href="/mantels"
             className="inline-block bg-amber-700 text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-amber-800 transition-colors"
           >
-            Find your fit →
+            Browse all mantels →
           </Link>
         </div>
       </section>

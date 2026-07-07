@@ -15,7 +15,13 @@ function fmt(n: number): string {
   return `${whole + carry}${carry ? "" : map[eighths]}"`;
 }
 
-export default function MantelFitFinder() {
+export default function MantelFitFinder({
+  restrictSlugs,
+  heading = "Find a Mantel That Fits",
+}: {
+  restrictSlugs?: string[];
+  heading?: string;
+} = {}) {
   const [firebox, setFirebox] = useState<number | "">("");
   const [fireboxHeight, setFireboxHeight] = useState<number | "">("");
   const [wallLimited, setWallLimited] = useState(false);
@@ -43,10 +49,16 @@ export default function MantelFitFinder() {
     return findFittingMantels(criteria);
   }, [hasFirebox, firebox, fireboxHeight, wallLimited, wallWidth, maxHeight, material, style]);
 
+  // Optionally restrict to a curated shortlist (e.g. best sellers on the homepage).
+  const shown = useMemo(
+    () => (restrictSlugs ? results.filter((r) => restrictSlugs.includes(r.product.slug)) : results),
+    [results, restrictSlugs]
+  );
+
   return (
     <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6 sm:p-8">
       <h2 className="text-2xl font-bold text-stone-900 mb-1" style={{ fontFamily: "var(--font-playfair)" }}>
-        Find a Mantel That Fits
+        {heading}
       </h2>
       <p className="text-stone-500 text-sm mb-6">
         Browse the full collection below, or enter your firebox opening and (optionally) how much wall
@@ -186,17 +198,19 @@ export default function MantelFitFinder() {
       {/* Results */}
       <div>
         <p className="text-sm text-stone-500 mb-4">
-          {results.length === 0
+          {shown.length === 0
             ? hasFirebox
               ? "No mantels with published dimensions fit those measurements yet."
               : "No mantels match those filters yet."
             : hasFirebox
-              ? `${results.length} mantel${results.length === 1 ? "" : "s"} fit your ${fmt(Number(firebox))}${fireboxHeight !== "" && fireboxHeight > 0 ? ` × ${fmt(Number(fireboxHeight))}` : ""} firebox${wallLimited && wallWidth !== "" ? ` within ${fmt(Number(wallWidth))} of wall space` : ""}.`
-              : `Showing all ${results.length} mantels with published sizes — enter your firebox width above to find your fit.`}
+              ? `${shown.length} mantel${shown.length === 1 ? "" : "s"} fit your ${fmt(Number(firebox))}${fireboxHeight !== "" && fireboxHeight > 0 ? ` × ${fmt(Number(fireboxHeight))}` : ""} firebox${wallLimited && wallWidth !== "" ? ` within ${fmt(Number(wallWidth))} of wall space` : ""}.`
+              : restrictSlugs
+                ? `Our ${shown.length} best-selling mantels — enter your firebox width above to find your fit.`
+                : `Showing all ${shown.length} mantels with published sizes — enter your firebox width above to find your fit.`}
         </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {results.map(({ product, fittingSizes, clearance, overallHeight }) => {
+            {shown.map(({ product, fittingSizes, clearance, overallHeight }) => {
               const snug = fittingSizes[0];
               return (
                 <Link

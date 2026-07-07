@@ -158,6 +158,21 @@ export function listAllMantels(
   return results.sort((a, b) => a.product.name.localeCompare(b.product.name));
 }
 
+/**
+ * Best-seller slugs — the curated shortlist shown in the homepage fit finder.
+ * EDIT THIS LIST to match actual best sellers. The full /mantels finder is unaffected.
+ */
+export const bestSellerSlugs: string[] = [
+  "barossa",
+  "covington",
+  "manly",
+  "heritage",
+  "clarendon",
+  "mornington",
+  "kensington",
+  "nullarbor",
+];
+
 /** How many mantels currently have dimension data (for progress display). */
 export function mantelsWithDimensions(): number {
   return Object.keys(mantelDimensions).length;
