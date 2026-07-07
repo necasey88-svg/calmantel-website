@@ -41,6 +41,7 @@ export type ClearanceStatus = "na" | "ok" | "verify";
 
 export interface FitCriteria {
   fireboxWidth: number;        // firebox opening width, inches
+  fireboxHeight?: number;      // firebox opening height, inches (optional — extra check)
   maxWallWidth?: number;       // available wall space, inches (omit = no restriction)
   material?: "any" | "precast" | "wood";
 }
@@ -67,7 +68,7 @@ function woodClearance(slug: string): ClearanceStatus {
 
 /** Returns every mantel (with dimension data) that fits the given firebox + wall space. */
 export function findFittingMantels(criteria: FitCriteria): FitResult[] {
-  const { fireboxWidth, maxWallWidth, material = "any" } = criteria;
+  const { fireboxWidth, fireboxHeight, maxWallWidth, material = "any" } = criteria;
   const results: FitResult[] = [];
 
   for (const product of mantelProducts) {
@@ -78,6 +79,9 @@ export function findFittingMantels(criteria: FitCriteria): FitResult[] {
 
     const d = mantelDimensions[product.slug];
     if (!d) continue; // no dimensions yet → can't size-match
+
+    // Opening must be tall enough for the firebox (extra height = top reveal, coverable).
+    if (fireboxHeight != null && d.openingHeight < fireboxHeight) continue;
 
     const fittingSizes: FittingSize[] = [];
     d.openingWidths.forEach((ow, i) => {

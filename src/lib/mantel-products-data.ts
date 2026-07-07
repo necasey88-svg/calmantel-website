@@ -133,6 +133,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "brighton",
     name: "Brighton",
+    image: "/mantels/brighton.png",
     type: "precast",
     style: "contemporary",
     cadPdf: "/cad/brighton.pdf",
@@ -142,6 +143,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "clarendon",
     name: "Clarendon",
+    image: "/mantels/clarendon.png",
     type: "precast",
     style: "contemporary",
     cadPdf: "/cad/clarendon.pdf",
@@ -151,6 +153,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "woomera",
     name: "Woomera",
+    image: "/mantels/woomera.png",
     type: "precast",
     style: "contemporary",
     description:
@@ -159,6 +162,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "urrbrae",
     name: "Urrbrae",
+    image: "/mantels/urrbrae.png",
     type: "precast",
     style: "contemporary",
     description:
@@ -177,6 +181,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "willunga",
     name: "Willunga",
+    image: "/mantels/willunga.png",
     type: "precast",
     style: "contemporary",
     description:
@@ -212,6 +217,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "belmont",
     name: "Belmont",
+    image: "/mantels/belmont.png",
     type: "precast",
     style: "transitional",
     cadPdf: "/cad/belmont.pdf",
@@ -221,6 +227,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "boomerang",
     name: "Boomerang",
+    image: "/mantels/boomerang.png",
     type: "precast",
     style: "contemporary",
     cadPdf: "/cad/boomerang.pdf",
@@ -230,6 +237,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "whyalla",
     name: "Whyalla",
+    image: "/mantels/whyalla.png",
     type: "precast",
     style: "contemporary",
     description:
@@ -238,6 +246,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "sienna",
     name: "Sienna",
+    image: "/mantels/sienna.png",
     type: "precast",
     style: "contemporary",
     description:
@@ -255,6 +264,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "reynella",
     name: "Reynella",
+    image: "/mantels/reynella.png",
     type: "precast",
     style: "contemporary",
     description:
@@ -263,6 +273,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "mingary",
     name: "Mingary",
+    image: "/mantels/mingary.png",
     type: "precast",
     style: "contemporary",
     cadPdf: "/cad/mingary.pdf",
@@ -272,6 +283,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "casden",
     name: "Casden",
+    image: "/mantels/casden.png",
     type: "precast",
     style: "contemporary",
     cadPdf: "/cad/casden.pdf",
@@ -290,6 +302,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "wayville",
     name: "Wayville",
+    image: "/mantels/wayville.png",
     type: "precast",
     style: "contemporary",
     description:
@@ -306,6 +319,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "yarra",
     name: "Yarra",
+    image: "/mantels/yarra.png",
     type: "precast",
     style: "contemporary",
     description:
@@ -323,6 +337,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "turin",
     name: "Turin",
+    image: "/mantels/turin.png",
     type: "precast",
     style: "contemporary",
     description:
@@ -339,6 +354,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "ashford",
     name: "Ashford",
+    image: "/mantels/ashford.png",
     type: "precast",
     style: "contemporary",
     description:
@@ -871,6 +887,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "versailles",
     name: "Versailles",
+    image: "/mantels/versailles.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/versailles.pdf",
@@ -930,6 +947,7 @@ export const mantelProducts: MantelProduct[] = [
   {
     slug: "willamette",
     name: "Willamette",
+    image: "/mantels/willamette.png",
     type: "precast",
     style: "traditional",
     cadPdf: "/cad/willamette.pdf",

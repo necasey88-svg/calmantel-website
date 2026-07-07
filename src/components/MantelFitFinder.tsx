@@ -17,6 +17,7 @@ function fmt(n: number): string {
 
 export default function MantelFitFinder() {
   const [firebox, setFirebox] = useState<number | "">("");
+  const [fireboxHeight, setFireboxHeight] = useState<number | "">("");
   const [wallLimited, setWallLimited] = useState(false);
   const [wallWidth, setWallWidth] = useState<number | "">("");
   const [material, setMaterial] = useState<"any" | "precast" | "wood">("any");
@@ -26,11 +27,12 @@ export default function MantelFitFinder() {
     if (firebox === "" || firebox <= 0) return [];
     const criteria: FitCriteria = {
       fireboxWidth: Number(firebox),
+      fireboxHeight: fireboxHeight !== "" && fireboxHeight > 0 ? Number(fireboxHeight) : undefined,
       maxWallWidth: wallLimited && wallWidth !== "" ? Number(wallWidth) : undefined,
       material,
     };
     return findFittingMantels(criteria);
-  }, [firebox, wallLimited, wallWidth, material]);
+  }, [firebox, fireboxHeight, wallLimited, wallWidth, material]);
 
   return (
     <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6 sm:p-8">
@@ -54,22 +56,44 @@ export default function MantelFitFinder() {
               inputMode="decimal"
               value={firebox}
               onChange={(e) => { setFirebox(e.target.value === "" ? "" : Number(e.target.value)); setSearched(true); }}
-              placeholder="e.g. 36"
+              placeholder="any size, e.g. 44"
               className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
             />
             <span className="text-stone-400 text-sm">in</span>
           </div>
-          <div className="flex gap-2 mt-2">
-            {[36, 42].map((v) => (
+          <div className="flex flex-wrap gap-2 mt-2 items-center">
+            <span className="text-[11px] text-stone-400">Common:</span>
+            {[36, 42, 48, 50].map((v) => (
               <button
                 key={v}
                 onClick={() => { setFirebox(v); setSearched(true); }}
                 className="text-xs border border-stone-300 rounded-full px-3 py-1 text-stone-600 hover:border-amber-700 hover:text-amber-700 transition-colors"
               >
-                {v}&quot; firebox
+                {v}&quot;
               </button>
             ))}
           </div>
+          <p className="text-[11px] text-stone-400 mt-1.5">
+            Measure the <strong>inside width</strong> of your firebox opening. Any size works — just type it in.
+          </p>
+
+          <label className="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1.5 mt-4">
+            Firebox opening height <span className="text-stone-400 normal-case font-normal">(optional)</span>
+          </label>
+          <div className="flex items-center gap-2">
+            <input
+              type="number"
+              inputMode="decimal"
+              value={fireboxHeight}
+              onChange={(e) => setFireboxHeight(e.target.value === "" ? "" : Number(e.target.value))}
+              placeholder="e.g. 30"
+              className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
+            />
+            <span className="text-stone-400 text-sm">in</span>
+          </div>
+          <p className="text-[11px] text-stone-400 mt-1.5">
+            Add height to rule out mantels whose opening is too short for a tall firebox.
+          </p>
         </div>
 
         {/* Wall space */}
@@ -123,7 +147,7 @@ export default function MantelFitFinder() {
           <p className="text-sm text-stone-500 mb-4">
             {results.length === 0
               ? "No mantels with published dimensions fit those measurements yet."
-              : `${results.length} mantel${results.length === 1 ? "" : "s"} fit your ${fmt(Number(firebox))} firebox${wallLimited && wallWidth !== "" ? ` within ${fmt(Number(wallWidth))} of wall space` : ""}.`}
+              : `${results.length} mantel${results.length === 1 ? "" : "s"} fit your ${fmt(Number(firebox))}${fireboxHeight !== "" && fireboxHeight > 0 ? ` × ${fmt(Number(fireboxHeight))}` : ""} firebox${wallLimited && wallWidth !== "" ? ` within ${fmt(Number(wallWidth))} of wall space` : ""}.`}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
