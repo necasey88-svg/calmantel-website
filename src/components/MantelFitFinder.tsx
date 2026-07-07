@@ -20,7 +20,9 @@ export default function MantelFitFinder() {
   const [fireboxHeight, setFireboxHeight] = useState<number | "">("");
   const [wallLimited, setWallLimited] = useState(false);
   const [wallWidth, setWallWidth] = useState<number | "">("");
+  const [maxHeight, setMaxHeight] = useState<number | "">("");
   const [material, setMaterial] = useState<"any" | "precast" | "wood">("any");
+  const [style, setStyle] = useState<"any" | "contemporary" | "traditional" | "transitional">("any");
   const [searched, setSearched] = useState(false);
 
   const results = useMemo(() => {
@@ -29,10 +31,12 @@ export default function MantelFitFinder() {
       fireboxWidth: Number(firebox),
       fireboxHeight: fireboxHeight !== "" && fireboxHeight > 0 ? Number(fireboxHeight) : undefined,
       maxWallWidth: wallLimited && wallWidth !== "" ? Number(wallWidth) : undefined,
+      maxOverallHeight: maxHeight !== "" && maxHeight > 0 ? Number(maxHeight) : undefined,
       material,
+      style,
     };
     return findFittingMantels(criteria);
-  }, [firebox, fireboxHeight, wallLimited, wallWidth, material]);
+  }, [firebox, fireboxHeight, wallLimited, wallWidth, maxHeight, material, style]);
 
   return (
     <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6 sm:p-8">
@@ -122,6 +126,24 @@ export default function MantelFitFinder() {
               <span className="text-stone-400 text-sm">in</span>
             </div>
           )}
+
+          <label className="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1.5 mt-4">
+            Max overall height <span className="text-stone-400 normal-case font-normal">(optional)</span>
+          </label>
+          <div className="flex items-center gap-2">
+            <input
+              type="number"
+              inputMode="decimal"
+              value={maxHeight}
+              onChange={(e) => setMaxHeight(e.target.value === "" ? "" : Number(e.target.value))}
+              placeholder="e.g. 72"
+              className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
+            />
+            <span className="text-stone-400 text-sm">in</span>
+          </div>
+          <p className="text-[11px] text-stone-400 mt-1.5">
+            Rule out mantels too tall for your ceiling or wall. Measure floor to the top of the available space.
+          </p>
         </div>
 
         {/* Material */}
@@ -138,6 +160,20 @@ export default function MantelFitFinder() {
             <option value="precast">Precast concrete</option>
             <option value="wood">Wood</option>
           </select>
+
+          <label className="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1.5 mt-4">
+            Style
+          </label>
+          <select
+            value={style}
+            onChange={(e) => setStyle(e.target.value as "any" | "contemporary" | "traditional" | "transitional")}
+            className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
+          >
+            <option value="any">Any style</option>
+            <option value="contemporary">Contemporary</option>
+            <option value="traditional">Traditional</option>
+            <option value="transitional">Transitional</option>
+          </select>
         </div>
       </div>
 
@@ -151,7 +187,7 @@ export default function MantelFitFinder() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {results.map(({ product, fittingSizes, clearance }) => {
+            {results.map(({ product, fittingSizes, clearance, overallHeight }) => {
               const snug = fittingSizes[0];
               return (
                 <Link
@@ -181,6 +217,7 @@ export default function MantelFitFinder() {
                         </li>
                       ))}
                     </ul>
+                    <p className="text-[11px] text-stone-400 mt-1">Overall height {fmt(overallHeight)}</p>
                     {clearance === "verify" && (
                       <p className="text-[11px] text-amber-700 mt-2">⚠ Wood clearance verified at consult</p>
                     )}

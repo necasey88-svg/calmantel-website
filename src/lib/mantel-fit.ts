@@ -43,7 +43,9 @@ export interface FitCriteria {
   fireboxWidth: number;        // firebox opening width, inches
   fireboxHeight?: number;      // firebox opening height, inches (optional — extra check)
   maxWallWidth?: number;       // available wall space, inches (omit = no restriction)
+  maxOverallHeight?: number;   // ceiling / available height, inches (omit = no restriction)
   material?: "any" | "precast" | "wood";
+  style?: "any" | "contemporary" | "traditional" | "transitional";
 }
 
 export interface FittingSize {
@@ -57,6 +59,7 @@ export interface FitResult {
   fittingSizes: FittingSize[];
   clearance: ClearanceStatus;  // wood only; "na" for precast
   snuggestReveal: number;      // smallest reveal among fitting sizes (for sorting)
+  overallHeight: number;       // full mantel height, inches
 }
 
 function woodClearance(slug: string): ClearanceStatus {
@@ -68,7 +71,7 @@ function woodClearance(slug: string): ClearanceStatus {
 
 /** Returns every mantel (with dimension data) that fits the given firebox + wall space. */
 export function findFittingMantels(criteria: FitCriteria): FitResult[] {
-  const { fireboxWidth, fireboxHeight, maxWallWidth, material = "any" } = criteria;
+  const { fireboxWidth, fireboxHeight, maxWallWidth, maxOverallHeight, material = "any", style = "any" } = criteria;
   const results: FitResult[] = [];
 
   for (const product of mantelProducts) {
@@ -76,12 +79,16 @@ export function findFittingMantels(criteria: FitCriteria): FitResult[] {
     if (product.type === "overmantel" || product.type === "beam") continue;
     if (material === "precast" && product.type !== "precast") continue;
     if (material === "wood" && product.type !== "wood") continue;
+    if (style !== "any" && product.style !== style) continue;
 
     const d = mantelDimensions[product.slug];
     if (!d) continue; // no dimensions yet → can't size-match
 
     // Opening must be tall enough for the firebox (extra height = top reveal, coverable).
     if (fireboxHeight != null && d.openingHeight < fireboxHeight) continue;
+
+    // Overall height must clear the ceiling / available height.
+    if (maxOverallHeight != null && d.overallHeight > maxOverallHeight) continue;
 
     const fittingSizes: FittingSize[] = [];
     d.openingWidths.forEach((ow, i) => {
@@ -102,6 +109,7 @@ export function findFittingMantels(criteria: FitCriteria): FitResult[] {
       fittingSizes,
       clearance: product.type === "wood" ? woodClearance(product.slug) : "na",
       snuggestReveal: Math.min(...fittingSizes.map((s) => s.revealPerSide)),
+      overallHeight: d.overallHeight,
     });
   }
 
