@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { findFittingMantels, type FitCriteria } from "@/lib/mantel-fit";
+import { findFittingMantels, listAllMantels, type FitCriteria } from "@/lib/mantel-fit";
 
 // Fractions → readable inches (e.g. 37.125 → 37⅛")
 function fmt(n: number): string {
@@ -23,20 +23,25 @@ export default function MantelFitFinder() {
   const [maxHeight, setMaxHeight] = useState<number | "">("");
   const [material, setMaterial] = useState<"any" | "precast" | "wood">("any");
   const [style, setStyle] = useState<"any" | "contemporary" | "traditional" | "transitional">("any");
-  const [searched, setSearched] = useState(false);
+  const hasFirebox = firebox !== "" && Number(firebox) > 0;
 
   const results = useMemo(() => {
-    if (firebox === "" || firebox <= 0) return [];
+    const maxWallWidth = wallLimited && wallWidth !== "" ? Number(wallWidth) : undefined;
+    const maxOverallHeight = maxHeight !== "" && maxHeight > 0 ? Number(maxHeight) : undefined;
+    if (!hasFirebox) {
+      // Browse mode — show the whole collection, narrowed only by the optional filters.
+      return listAllMantels({ maxWallWidth, maxOverallHeight, material, style });
+    }
     const criteria: FitCriteria = {
       fireboxWidth: Number(firebox),
       fireboxHeight: fireboxHeight !== "" && fireboxHeight > 0 ? Number(fireboxHeight) : undefined,
-      maxWallWidth: wallLimited && wallWidth !== "" ? Number(wallWidth) : undefined,
-      maxOverallHeight: maxHeight !== "" && maxHeight > 0 ? Number(maxHeight) : undefined,
+      maxWallWidth,
+      maxOverallHeight,
       material,
       style,
     };
     return findFittingMantels(criteria);
-  }, [firebox, fireboxHeight, wallLimited, wallWidth, maxHeight, material, style]);
+  }, [hasFirebox, firebox, fireboxHeight, wallLimited, wallWidth, maxHeight, material, style]);
 
   return (
     <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6 sm:p-8">
@@ -44,8 +49,9 @@ export default function MantelFitFinder() {
         Find a Mantel That Fits
       </h2>
       <p className="text-stone-500 text-sm mb-6">
-        Enter your firebox opening and (optionally) how much wall space you have. We&apos;ll show every
-        mantel that fits — you can always size up and cover the extra reveal with fillers.
+        Browse the full collection below, or enter your firebox opening and (optionally) how much wall
+        space you have to narrow it to just the mantels that fit — you can always size up and cover the
+        extra reveal with fillers.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-6">
@@ -59,7 +65,7 @@ export default function MantelFitFinder() {
               type="number"
               inputMode="decimal"
               value={firebox}
-              onChange={(e) => { setFirebox(e.target.value === "" ? "" : Number(e.target.value)); setSearched(true); }}
+              onChange={(e) => setFirebox(e.target.value === "" ? "" : Number(e.target.value))}
               placeholder="any size, e.g. 44"
               className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
             />
@@ -70,7 +76,7 @@ export default function MantelFitFinder() {
             {[36, 42, 48, 50].map((v) => (
               <button
                 key={v}
-                onClick={() => { setFirebox(v); setSearched(true); }}
+                onClick={() => setFirebox(v)}
                 className="text-xs border border-stone-300 rounded-full px-3 py-1 text-stone-600 hover:border-amber-700 hover:text-amber-700 transition-colors"
               >
                 {v}&quot;
@@ -178,13 +184,16 @@ export default function MantelFitFinder() {
       </div>
 
       {/* Results */}
-      {firebox !== "" && (
-        <div>
-          <p className="text-sm text-stone-500 mb-4">
-            {results.length === 0
+      <div>
+        <p className="text-sm text-stone-500 mb-4">
+          {results.length === 0
+            ? hasFirebox
               ? "No mantels with published dimensions fit those measurements yet."
-              : `${results.length} mantel${results.length === 1 ? "" : "s"} fit your ${fmt(Number(firebox))}${fireboxHeight !== "" && fireboxHeight > 0 ? ` × ${fmt(Number(fireboxHeight))}` : ""} firebox${wallLimited && wallWidth !== "" ? ` within ${fmt(Number(wallWidth))} of wall space` : ""}.`}
-          </p>
+              : "No mantels match those filters yet."
+            : hasFirebox
+              ? `${results.length} mantel${results.length === 1 ? "" : "s"} fit your ${fmt(Number(firebox))}${fireboxHeight !== "" && fireboxHeight > 0 ? ` × ${fmt(Number(fireboxHeight))}` : ""} firebox${wallLimited && wallWidth !== "" ? ` within ${fmt(Number(wallWidth))} of wall space` : ""}.`
+              : `Showing all ${results.length} mantels with published sizes — enter your firebox width above to find your fit.`}
+        </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {results.map(({ product, fittingSizes, clearance, overallHeight }) => {
@@ -221,7 +230,7 @@ export default function MantelFitFinder() {
                     {clearance === "verify" && (
                       <p className="text-[11px] text-amber-700 mt-2">⚠ Wood clearance verified at consult</p>
                     )}
-                    {snug.revealPerSide <= 0.5 && (
+                    {hasFirebox && snug.revealPerSide <= 0.5 && (
                       <p className="text-[11px] text-green-700 mt-2">✓ Snug fit — minimal filler</p>
                     )}
                   </div>
@@ -229,12 +238,7 @@ export default function MantelFitFinder() {
               );
             })}
           </div>
-        </div>
-      )}
-
-      {firebox === "" && searched && (
-        <p className="text-sm text-stone-400">Enter your firebox opening width to see matching mantels.</p>
-      )}
+      </div>
     </div>
   );
 }

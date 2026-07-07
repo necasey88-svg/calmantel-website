@@ -117,6 +117,47 @@ export function findFittingMantels(criteria: FitCriteria): FitResult[] {
   return results.sort((a, b) => a.snuggestReveal - b.snuggestReveal);
 }
 
+/**
+ * Browse mode: every mantel with dimension data, no firebox floor applied.
+ * Honors the material / style / wall-width / height filters so the same controls
+ * narrow the full list. Sorted alphabetically by name. revealPerSide is 0 (n/a).
+ */
+export function listAllMantels(
+  criteria: Omit<FitCriteria, "fireboxWidth" | "fireboxHeight"> = {}
+): FitResult[] {
+  const { maxWallWidth, maxOverallHeight, material = "any", style = "any" } = criteria;
+  const results: FitResult[] = [];
+
+  for (const product of mantelProducts) {
+    if (product.type === "overmantel" || product.type === "beam") continue;
+    if (material === "precast" && product.type !== "precast") continue;
+    if (material === "wood" && product.type !== "wood") continue;
+    if (style !== "any" && product.style !== style) continue;
+
+    const d = mantelDimensions[product.slug];
+    if (!d) continue;
+    if (maxOverallHeight != null && d.overallHeight > maxOverallHeight) continue;
+
+    const fittingSizes: FittingSize[] = [];
+    d.openingWidths.forEach((ow, i) => {
+      const overall = d.overallWidths[i] ?? d.overallWidths[d.overallWidths.length - 1];
+      if (maxWallWidth != null && overall > maxWallWidth) return;
+      fittingSizes.push({ openingWidth: ow, overallWidth: overall, revealPerSide: 0 });
+    });
+    if (fittingSizes.length === 0) continue;
+
+    results.push({
+      product,
+      fittingSizes,
+      clearance: product.type === "wood" ? woodClearance(product.slug) : "na",
+      snuggestReveal: 0,
+      overallHeight: d.overallHeight,
+    });
+  }
+
+  return results.sort((a, b) => a.product.name.localeCompare(b.product.name));
+}
+
 /** How many mantels currently have dimension data (for progress display). */
 export function mantelsWithDimensions(): number {
   return Object.keys(mantelDimensions).length;
