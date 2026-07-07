@@ -5,7 +5,9 @@ import type { MantelDimensions } from "./mantel-products-data";
 // Opening width = firebox size + ~1" (a 36" firebox uses a ~37" opening).
 // `cadVerified: false` = machine-extracted, awaiting human confirmation against the CAD.
 //
-// EXTRACTION PROGRESS: 45 / ~60 CADs done. Batches added alphabetically.
+// EXTRACTION PROGRESS: 50 entries — all product CADs extracted.
+// Remaining CAD files are overmantels (excluded) or alternate/-line drawings not
+// tied to a product slug. Batches added alphabetically.
 // (cobar, coonawarra, macquarie, monash are overmantels — read but excluded,
 //  no firebox opening.)
 //
@@ -397,6 +399,43 @@ export const mantelDimensions: Record<string, MantelDimensions> = {
     overallWidths: [67], // shelf; hearth reads 72
     overallHeight: 51.25,
     shelfDepth: 5.5,
+    cadVerified: false,
+  },
+
+  // ── Batch 9: earlier-skipped b-range CADs (awaiting verification) ─────────
+  // (bathurst uses bathurst-picture-frame.pdf — its only drawing. barossa-picture-frame.pdf
+  //  and bolte-picture-frame.pdf are alternates not tied to a slug — barossa/bolte
+  //  products use barossa.pdf/bolte.pdf; skipped. barossa already in Batch 1.)
+  bathurst: {
+    openingWidths: [43], // single; picture-frame surround
+    openingHeight: 17.25, // shallow picture-frame slot — VERIFY
+    overallWidths: [73], // shelf/cap; body base reads 66
+    overallHeight: 45,
+    shelfDepth: 9.75, // shelf height reads 16¼
+    cadVerified: false,
+  },
+  bolte: {
+    openingWidths: [37.25, 43.25], // two sizes; frame surround (Tasmania)
+    openingHeight: 36.5,
+    overallWidths: [60.25, 66.25], // shelf; hearth base reads 72
+    overallHeight: 50,
+    shelfDepth: 6.25,
+    cadVerified: false,
+  },
+  bondi: {
+    openingWidths: [47.75], // single (Ayers Rock)
+    openingHeight: 44,
+    overallWidths: [80.5], // shelf; hearth base reads 80
+    overallHeight: 66.75,
+    shelfDepth: 14.5,
+    cadVerified: false,
+  },
+  boomerang: {
+    openingWidths: [34.25], // single, arched (Tasmania)
+    openingHeight: 36.25, // side to arch spring; peak +5½ (41¾) — VERIFY
+    overallWidths: [54.375], // whole arch surround; thin profile
+    overallHeight: 41.75,
+    shelfDepth: 2.75, // thin
     cadVerified: false,
   },
 };
