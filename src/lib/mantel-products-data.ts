@@ -295,6 +295,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Onkaparinga",
     type: "precast",
     style: "contemporary",
+    image: "/mantels/onkaparinga.png",
     cadPdf: "/cad/onkaparinga.pdf",
     description:
       "The Onkaparinga Mantel is a contemporary precast fireplace surround that combines modern design with exceptional craftsmanship, creating a refined centerpiece for any living space. Featuring clean architectural lines, a smooth finish, and a minimalist silhouette, this fireplace mantel enhances both style and function in today's homes. Its versatile neutral tone allows it to seamlessly blend with a wide range of interior design styles.",
