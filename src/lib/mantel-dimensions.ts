@@ -5,7 +5,7 @@ import type { MantelDimensions } from "./mantel-products-data";
 // Opening width = firebox size + ~1" (a 36" firebox uses a ~37" opening).
 // `cadVerified: false` = machine-extracted, awaiting human confirmation against the CAD.
 //
-// EXTRACTION PROGRESS: 22 / ~60 CADs done. Batches added alphabetically.
+// EXTRACTION PROGRESS: 29 / ~60 CADs done. Batches added alphabetically.
 // (cobar, coonawarra are overmantels — read but excluded, no firebox opening.)
 //
 // NOTE ON WIDTHS: overallWidths = the SHELF/body width (the widest part of the
@@ -201,6 +201,66 @@ export const mantelDimensions: Record<string, MantelDimensions> = {
     overallWidths: [73.75, 79.625, 87.5], // shelf; hearth reads 80/88/96
     overallHeight: 62.75, // (62¾/62¾/63)
     shelfDepth: 12,
+    cadVerified: false,
+  },
+
+  // ── Batch 6: eudunda → hindmarsh (awaiting verification) ─────────────────
+  // (gambier-line.pdf = a second Ayers Rock "Gambier" drawing not tied to any
+  //  product slug — the Gambier product uses gambier.pdf (Opera House); skipped.)
+  eudunda: {
+    openingWidths: [36.625, 42.625], // two sizes (Opera House columns)
+    openingHeight: 30,
+    overallWidths: [61.5, 67.5], // shelf; hearth reads 72
+    overallHeight: 55.25,
+    shelfDepth: 7.875,
+    cadVerified: false,
+  },
+  flinders: {
+    openingWidths: [37, 43], // arched, two sizes
+    openingHeight: 33, // to arch spring, smaller (larger = 42) — VERIFY
+    overallWidths: [62.5, 68.5], // shelf; hearth reads 66/72
+    overallHeight: 49.875, // smaller (larger = 58⅞)
+    shelfDepth: 7.25,
+    cadVerified: false,
+  },
+  gambier: {
+    openingWidths: [40, 46.125], // arched, two sizes (Opera House)
+    openingHeight: 40, // to arch spring — VERIFY
+    overallWidths: [65.5, 71.625], // shelf; hearth reads 66/72
+    overallHeight: 59.875,
+    shelfDepth: 11.25,
+    cadVerified: false,
+  },
+  gosford: {
+    openingWidths: [37.25, 43.25], // two sizes
+    openingHeight: 40.125,
+    overallWidths: [61.375, 67.375], // shelf; hearth reads 60/66
+    overallHeight: 55.375,
+    shelfDepth: 8.75,
+    cadVerified: false,
+  },
+  gundagai: {
+    openingWidths: [38.25, 44.25], // two sizes
+    openingHeight: 50.5,
+    overallWidths: [59.5, 65.5], // shelf; hearth reads 60/66
+    overallHeight: 69.25,
+    shelfDepth: 7.25,
+    cadVerified: false,
+  },
+  heritage: {
+    openingWidths: [44.625], // single (Opera House fluted columns)
+    openingHeight: 40,
+    overallWidths: [73.625], // shelf; hearth reads 72
+    overallHeight: 60.625,
+    shelfDepth: 9,
+    cadVerified: false,
+  },
+  hindmarsh: {
+    openingWidths: [38], // single, Tudor arch
+    openingHeight: 38, // side height to spring; arch peak +13⅛ — VERIFY
+    overallWidths: [67.625], // shelf; hearth reads 72
+    overallHeight: 60.625,
+    shelfDepth: 8.375,
     cadVerified: false,
   },
 };
