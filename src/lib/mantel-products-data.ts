@@ -310,14 +310,6 @@ export const mantelProducts: MantelProduct[] = [
       "The Wayville Mantel is a contemporary precast fireplace surround that enhances modern living spaces with clean architectural lines and minimalist design. Expertly crafted from high-quality, durable materials, this fireplace mantel offers both strength and sophistication. Featuring neutral tones and a refined geometric silhouette, the Wayville provides a versatile aesthetic that blends seamlessly with a wide variety of interiors — from contemporary lofts to transitional living rooms.",
   },
   {
-    slug: "milagro",
-    name: "Milagro",
-    type: "precast",
-    style: "contemporary",
-    description:
-      "The Milagro Mantel is a sleek precast fireplace surround that blends clean architectural lines with refined modern design, making it a striking centerpiece for any contemporary fireplace installation. Expertly crafted with precision and durability, this fireplace mantel features a smooth, lasting finish that highlights its minimalist elegance while ensuring long-term strength and performance. The Milagro offers versatile design flexibility with its neutral tones, complementing a wide range of interiors.",
-  },
-  {
     slug: "yarra",
     name: "Yarra",
     image: "/mantels/yarra.png",
