@@ -15,6 +15,9 @@ export interface MantelProduct {
   name: string;
   type: "precast" | "wood" | "overmantel" | "beam";
   style: "contemporary" | "traditional" | "transitional" | "beams";
+  // Sub-classification for traditional precast mantels (drives the /mantels/traditional-* facets).
+  // Provisional — assigned from descriptions/CAD shape; review against product images.
+  subStyle?: "classical" | "french" | "ornate" | "rustic";
   description: string;
   specs?: string;
   cadPdf?: string; // path relative to /public, e.g. "/cad/nullarbor.pdf"
@@ -323,6 +326,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Ballarat",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     image: "/mantels/ballarat.png",
     description:
       "The Ballarat Mantel is a luxury precast fireplace surround that blends modern design with classic craftsmanship. Featuring a smooth crisp white finish, layered moldings, and intricate rope accents, this fireplace mantel creates a sophisticated focal point in any living room, great room, or open-concept space. Perfect for both traditional fireplaces and modern fireplace inserts, the Ballarat complements a wide range of interiors — whether you're designing a classic hearth or a sleek contemporary fireplace wall.",
@@ -351,6 +355,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Australian",
     type: "precast",
     style: "traditional",
+    subStyle: "ornate",
     image: "/mantels/australian.png",
     description:
       "The Australian Mantel is a classically proportioned precast fireplace surround that draws on timeless European design traditions. Featuring symmetrical pilasters, refined molding profiles, and a generous mantel shelf, this traditional mantel creates an elegant focal point suited to formal living rooms and grand interiors. Crafted from durable precast concrete, it combines the beauty of carved stone with long-lasting performance.",
@@ -360,6 +365,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Barossa",
     type: "precast",
     style: "traditional",
+    subStyle: "ornate",
     cadPdf: "/cad/barossa.pdf",
     image: "/mantels/barossa.png",
     description:
@@ -370,6 +376,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Bathurst",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/bathurst-picture-frame.pdf",
     image: "/mantels/bathurst.png",
     description:
@@ -380,6 +387,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Beltana",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/beltana.pdf",
     image: "/mantels/beltana.png",
     description:
@@ -390,6 +398,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Bendigo",
     type: "precast",
     style: "traditional",
+    subStyle: "ornate",
     cadPdf: "/cad/bendigo.pdf",
     image: "/mantels/bendigo.png",
     description:
@@ -400,6 +409,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Bondi",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/bondi.pdf",
     image: "/mantels/bondi.png",
     description:
@@ -410,6 +420,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Cairns",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/cairns.pdf",
     image: "/mantels/cairns.png",
     description:
@@ -429,6 +440,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Cambridge",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/cambridge.pdf",
     image: "/mantels/cambridge.png",
     description:
@@ -439,6 +451,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Cannes",
     type: "precast",
     style: "traditional",
+    subStyle: "french",
     image: "/mantels/cannes.png",
     cadPdf: "/cad/cannes.pdf",
     description:
@@ -449,6 +462,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Cassis",
     type: "precast",
     style: "traditional",
+    subStyle: "french",
     image: "/mantels/cassis.png",
     cadPdf: "/cad/cassis.pdf",
     description:
@@ -459,6 +473,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Castellina",
     type: "precast",
     style: "traditional",
+    subStyle: "ornate",
     image: "/mantels/castellina.png",
     cadPdf: "/cad/castellina.pdf",
     description:
@@ -469,6 +484,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Cazadero",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     image: "/mantels/cazadero.png",
     cadPdf: "/cad/cazadero.pdf",
     description:
@@ -479,6 +495,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Ceduna",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     image: "/mantels/ceduna.png",
     cadPdf: "/cad/ceduna.pdf",
     description:
@@ -489,6 +506,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Chateau",
     type: "precast",
     style: "traditional",
+    subStyle: "french",
     image: "/mantels/chateau.png",
     cadPdf: "/cad/chateau.pdf",
     description:
@@ -500,6 +518,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/clare.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/clare.pdf",
     description:
       "The Clare Mantel is an elegantly carved precast fireplace surround featuring decorative column legs, an arched or flat opening, and a broad mantel shelf. Its classic styling and refined ornamentation make it a standout focal point in traditional and transitional interiors of any scale.",
@@ -510,6 +529,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/classique.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/classique.pdf",
     description:
       "The Classique Mantel is a timeless precast fireplace surround with symmetrical pilasters, a decorative frieze, and a refined cornice. True to its name, the Classique draws on centuries of European mantel design to deliver a sophisticated and enduring focal point for formal living spaces.",
@@ -519,6 +539,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Coober Pedy",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/coober-pedy.pdf",
     image: "/mantels/coober-pedy.png",
     description:
@@ -530,6 +551,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/corvallis.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/corvallis.pdf",
     description:
       "The Corvallis Mantel is a traditionally inspired precast fireplace surround with refined pilasters, subtle corbel details, and a clean mantel shelf. Its classic proportions and versatile design suit a wide range of traditional and transitional interior styles.",
@@ -540,6 +562,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/covington.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/covington.pdf",
     description:
       "The Covington Mantel is a classically styled precast fireplace surround with elegant column legs, a decorative entablature, and a prominent shelf. Its refined symmetry and timeless proportions make the Covington a popular choice for formal living rooms, master bedrooms, and traditional estate homes.",
@@ -550,6 +573,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/dominique.png",
     style: "traditional",
+    subStyle: "french",
     cadPdf: "/cad/dominique.pdf",
     description:
       "The Dominique Mantel is a French-inspired precast fireplace surround with graceful tapered legs, a delicately carved frieze, and a generous mantel shelf. Its elegant proportions and refined detailing bring a touch of Parisian sophistication to traditional and transitional living spaces.",
@@ -560,6 +584,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/eudunda.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/eudunda.pdf",
     description:
       "The Eudunda Mantel is a classically proportioned precast fireplace surround with clean pilaster legs, a refined frieze, and a wide mantel shelf. Its balanced design and traditional styling provide a timeless focal point for living rooms, dining rooms, and formal spaces.",
@@ -570,6 +595,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/flinders.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/flinders.pdf",
     description:
       "The Flinders Mantel is a stately traditional precast fireplace surround with bold decorative columns, layered cornice molding, and a substantial shelf. Its commanding presence and classic detailing make it an ideal centerpiece for grand living rooms and formal entertaining spaces.",
@@ -580,6 +606,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/gambier.png",
     style: "traditional",
+    subStyle: "ornate",
     cadPdf: "/cad/gambier.pdf",
     description:
       "The Gambier Mantel is a beautifully detailed traditional precast fireplace surround featuring ornate corbels, refined pilasters, and a broad cornice shelf. Its rich architectural character and classic proportions suit both formal and relaxed traditional interiors, adding depth and elegance to any hearth.",
@@ -590,6 +617,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/gosford.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/gosford.pdf",
     description:
       "The Gosford Mantel is a classically styled precast fireplace surround with symmetrical column legs, a detailed entablature, and a generous mantel shelf. Its traditional proportions and refined finish create a welcoming and sophisticated focal point for living rooms and formal spaces.",
@@ -600,6 +628,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/gundagai.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/gundagai.pdf",
     description:
       "The Gundagai Mantel is a traditionally designed precast fireplace surround with elegant pilasters, subtle molding details, and a wide shelf. Its classic styling and durable precast construction make it a lasting investment for any traditional or transitional interior.",
@@ -610,6 +639,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/hindmarsh.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/hindmarsh.pdf",
     description:
       "The Hindmarsh Mantel is a grand traditional precast fireplace surround featuring broad decorative columns, a richly detailed frieze, and a commanding cornice shelf. Its bold proportions and refined craftsmanship make it a striking focal point for large formal rooms and estate-style interiors.",
@@ -620,6 +650,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/kensington.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/kensington.pdf",
     description:
       "The Kensington Mantel is an English-inspired traditional precast fireplace surround with refined column legs, classic entablature detailing, and a generous shelf. Its elegant proportions and understated ornamentation bring timeless British sophistication to formal living rooms and studies.",
@@ -630,6 +661,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/lancelot.png",
     style: "traditional",
+    subStyle: "ornate",
     cadPdf: "/cad/lancelot.pdf",
     description:
       "The Lancelot Mantel is a nobly styled traditional precast fireplace surround with bold decorative columns, carved corbels, and a dramatic cornice shelf. Its rich architectural detail and commanding proportions evoke the grandeur of classic European fireplace design, making it a natural centerpiece in formal and heritage-inspired interiors.",
@@ -639,6 +671,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Mannix",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/mannix.pdf",
     image: "/mantels/mannix.png",
     description:
@@ -649,6 +682,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Heritage",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/heritage.pdf",
     image: "/mantels/heritage.png",
     description:
@@ -659,6 +693,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Manly",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/manly.pdf",
     image: "/mantels/manly.png",
     description:
@@ -669,6 +704,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Milagro",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     image: "/mantels/milagro.png",
     description:
       "The Milagro Mantel is a traditionally styled precast fireplace surround with graceful proportions, refined pilaster detailing, and a generous mantel shelf. Its classic lines and smooth finish make it a versatile and enduring choice for traditional and transitional interiors.",
@@ -679,6 +715,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/millicent.png",
     style: "traditional",
+    subStyle: "classical",
     description:
       "The Millicent Mantel is a gracefully designed traditional precast fireplace surround with tapered column legs, a decorative frieze, and a generous shelf. Its refined proportions and classic detailing make it a versatile and enduring choice for traditional and transitional interiors.",
   },
@@ -688,6 +725,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/mornington.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/mornington.pdf",
     description:
       "The Mornington Mantel is a refined transitional precast fireplace surround that bridges classic and contemporary design with tapered legs, a clean frieze panel, and a wide shelf. Its balanced proportions and subtle detailing complement a broad range of interior styles from traditional to modern transitional.",
@@ -706,6 +744,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/paddington.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/paddington.pdf",
     description:
       "The Paddington Mantel is a classically proportioned precast fireplace surround inspired by Victorian-era design. Featuring decorative column legs, a detailed entablature, and a generous cornice shelf, the Paddington adds period charm and architectural character to formal living rooms and heritage-style homes.",
@@ -716,6 +755,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/padthaway.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/padthaway.pdf",
     description:
       "The Padthaway Mantel is a refined traditional precast fireplace surround with elegant pilasters, a decorative frieze, and a wide mantel shelf. Its clean lines and classic proportions make it a timeless choice for traditional and transitional living spaces.",
@@ -726,6 +766,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/parliament.png",
     style: "traditional",
+    subStyle: "ornate",
     cadPdf: "/cad/parliament.pdf",
     description:
       "The Parliament Mantel is a stately precast fireplace surround with grand architectural columns, ornate corbel details, and a sweeping cornice shelf. Named for its commanding presence, the Parliament makes a bold statement in formal living rooms, boardrooms, and large-scale residential spaces.",
@@ -736,6 +777,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/parramatta.png",
     style: "traditional",
+    subStyle: "ornate",
     cadPdf: "/cad/parramatta.pdf",
     description:
       "The Parramatta Mantel is a classically styled precast fireplace surround with symmetrical pilasters, refined molding details, and a broad mantel shelf. Its traditional proportions and smooth precast finish create an elegant and welcoming focal point for formal living rooms and traditional homes.",
@@ -746,6 +788,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/penfold.png",
     style: "traditional",
+    subStyle: "ornate",
     cadPdf: "/cad/penfold.pdf",
     description:
       "The Penfold Mantel is a distinguished traditional precast fireplace surround with decorative column legs, a richly detailed frieze, and a generous cornice shelf. Its classic architectural styling and premium precast construction make it a lasting investment for formal and traditional living spaces.",
@@ -756,6 +799,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/pitcairn.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/pitcairn.pdf",
     description:
       "The Pitcairn Mantel is a classically proportioned precast fireplace surround with elegant pilasters, subtle cornice molding, and a wide mantel shelf. Its refined design and traditional styling provide a timeless focal point for living rooms, dining rooms, and formal entertaining spaces.",
@@ -766,6 +810,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/queensland.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/queensland.pdf",
     description:
       "The Queensland Mantel is a boldly proportioned traditional precast fireplace surround with broad decorative columns, a detailed entablature, and a commanding shelf. Its generous scale and classic detailing make it a natural focal point in grand living rooms, formal dining spaces, and estate-style interiors.",
@@ -776,6 +821,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/quorn.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/quorn.pdf",
     description:
       "The Quorn Mantel is a classically styled precast fireplace surround with symmetrical column legs, a refined frieze, and a broad cornice shelf. Its traditional proportions and premium precast finish make it a timeless addition to formal living rooms and traditional homes.",
@@ -786,6 +832,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/regency.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/regency.pdf",
     description:
       "The Regency Mantel is an elegantly proportioned precast fireplace surround inspired by the refined English Regency style. Decorative pilasters, a detailed entablature, and a generous shelf combine to create a distinguished focal point in formal and traditional interiors.",
@@ -796,6 +843,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/renmark.png",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/renmark.pdf",
     description:
       "The Renmark Mantel is a traditionally styled precast fireplace surround with clean pilasters, a smooth frieze panel, and a wide display shelf. Its balanced design and premium precast construction bring understated elegance to traditional and transitional living spaces.",
@@ -806,6 +854,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     image: "/mantels/rostrevor.png",
     style: "traditional",
+    subStyle: "ornate",
     cadPdf: "/cad/rostrevor.pdf",
     description:
       "The Rostrevor Mantel is a richly detailed traditional precast fireplace surround with decorative column legs, ornate frieze carving, and a commanding cornice shelf. Its classic proportions make it a natural focal point in grand living rooms and formal entertaining spaces.",
@@ -815,6 +864,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "St. Tropez",
     type: "precast",
     style: "traditional",
+    subStyle: "french",
     cadPdf: "/cad/st-tropez.pdf",
     description:
       "The St. Tropez Mantel is a gracefully styled precast fireplace surround with refined European proportions, elegant pilasters, and a smooth decorative frieze. Its timeless character suits formal living rooms and sophisticated traditional interiors.",
@@ -825,6 +875,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/tonso.png",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/tonso.pdf",
     description:
       "The Tonso Mantel is a classically proportioned precast fireplace surround with tapered column legs, a clean frieze panel, and a wide mantel shelf. Its refined styling and quality precast finish make it a versatile choice for traditional and transitional homes.",
@@ -835,6 +886,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/torrens.png",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/torrens.pdf",
     description:
       "The Torrens Mantel is a symmetrically designed traditional precast fireplace surround with decorative pilasters, a smooth entablature, and a generous display shelf. Its classic South Australian-inspired name and timeless proportions suit formal and traditional living rooms.",
@@ -845,6 +897,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/tusmore.png",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/tusmore.pdf",
     description:
       "The Tusmore Mantel is a distinguished traditional precast fireplace surround with broad decorative columns, a detailed frieze, and a commanding shelf. Its generous proportions and refined finish create a bold architectural statement in formal living rooms and grand estates.",
@@ -855,6 +908,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/ucolta.png",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/ucolta.pdf",
     description:
       "The Ucolta Mantel is a traditionally proportioned precast fireplace surround with tapered column legs, a clean frieze, and a wide cornice shelf. Its understated elegance and premium precast construction suit a range of traditional and transitional interior styles.",
@@ -865,6 +919,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/venice.png",
     type: "precast",
     style: "traditional",
+    subStyle: "french",
     cadPdf: "/cad/venice.pdf",
     description:
       "The Venice Mantel is a graceful precast fireplace surround with European-inspired proportions, refined pilasters, and a smooth decorative frieze. Its elegant silhouette brings old-world sophistication to traditional living rooms and formal entertaining spaces.",
@@ -875,6 +930,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/versailles.png",
     type: "precast",
     style: "traditional",
+    subStyle: "french",
     cadPdf: "/cad/versailles.pdf",
     description:
       "The Versailles Mantel is a grand traditional precast fireplace surround inspired by the opulent French palace style. Ornate column legs, an elaborately detailed frieze, and a commanding cornice shelf make it a showpiece for formal living rooms and estate interiors.",
@@ -885,6 +941,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/victorian.png",
     type: "precast",
     style: "traditional",
+    subStyle: "ornate",
     cadPdf: "/cad/victorian.pdf",
     description:
       "The Victorian Mantel is a richly detailed traditional precast fireplace surround with decorative column legs, an ornate carved frieze, and a generous cornice shelf. Its classic Victorian styling brings warmth, character, and historical elegance to formal and traditional living spaces.",
@@ -895,6 +952,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/wallaroo.png",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/wallaroo.pdf",
     description:
       "The Wallaroo Mantel is a solidly proportioned traditional precast fireplace surround with symmetrical pilasters, a smooth frieze panel, and a wide display shelf. Its classic styling and durable precast construction make it a lasting investment for traditional homes.",
@@ -905,6 +963,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/warradale.png",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/warradale.pdf",
     description:
       "The Warradale Mantel is a refined traditional precast fireplace surround with tapered column legs, a clean entablature, and a generous mantel shelf. Its balanced proportions and premium precast finish suit formal living rooms and traditional Australian-inspired interiors.",
@@ -915,6 +974,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/west-linn.png",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/west-linn.pdf",
     description:
       "The West Linn Mantel is a classically styled precast fireplace surround with decorative pilasters, a smooth frieze, and a wide cornice shelf. Its traditional proportions and quality precast construction create a distinguished hearth feature for formal and traditional living spaces.",
@@ -925,6 +985,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/wilcannia.png",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/wilcannia.pdf",
     description:
       "The Wilcannia Mantel is a cleanly proportioned traditional precast fireplace surround with symmetrical column legs, an understated frieze panel, and a broad display shelf. Its timeless styling and premium precast finish provide a refined focal point for traditional homes.",
@@ -935,6 +996,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/willamette.png",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/willamette.pdf",
     description:
       "The Willamette Mantel is a gracefully proportioned precast fireplace surround with tapered pilasters, a refined decorative frieze, and a generous mantel shelf. Its classic styling bridges traditional and transitional aesthetics, suiting a wide range of formal interiors.",
@@ -945,6 +1007,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/windsor.png",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/windsor.pdf",
     description:
       "The Windsor Mantel is a boldly styled traditional precast fireplace surround with broad decorative columns, a richly detailed frieze, and a commanding cornice shelf. Its classic English-inspired proportions bring regal elegance to formal living rooms and traditional estate interiors.",
@@ -955,6 +1018,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/yongala.png",
     type: "precast",
     style: "traditional",
+    subStyle: "classical",
     cadPdf: "/cad/yongala.pdf",
     description:
       "The Yongala Mantel is a traditionally proportioned precast fireplace surround with symmetrical column legs, a smooth frieze panel, and a wide mantel shelf. Its understated classical styling and premium precast finish make it a versatile and enduring choice for traditional homes.",
@@ -1173,4 +1237,11 @@ const styleLabel: Record<MantelProduct["style"], string> = {
   beams: "Beams",
 };
 
-export { typeLabel, styleLabel };
+const subStyleLabel: Record<NonNullable<MantelProduct["subStyle"]>, string> = {
+  classical: "Classical",
+  french: "French",
+  ornate: "Ornate",
+  rustic: "Rustic",
+};
+
+export { typeLabel, styleLabel, subStyleLabel };

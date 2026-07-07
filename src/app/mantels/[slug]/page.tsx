@@ -6,6 +6,14 @@ import { mantelProducts, typeLabel, styleLabel } from "@/lib/mantel-products-dat
 import PricingCTA from "@/components/PricingCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
 
+// Traditional sub-style facets — shown as a cross-link nav on the traditional pages.
+const traditionalFacets = [
+  { slug: "traditional", label: "All Traditional" },
+  { slug: "traditional-classical", label: "Classical" },
+  { slug: "traditional-french", label: "French" },
+  { slug: "traditional-ornate", label: "Ornate" },
+];
+
 // Which mantel-products-data products belong on each category page
 function getProductsForCategory(slug: string) {
   switch (slug) {
@@ -13,6 +21,12 @@ function getProductsForCategory(slug: string) {
       return mantelProducts.filter((p) => p.style === "contemporary" && p.type !== "overmantel");
     case "traditional":
       return mantelProducts.filter((p) => p.style === "traditional" && p.type !== "overmantel" && p.type !== "wood" && p.type !== "beam");
+    case "traditional-classical":
+      return mantelProducts.filter((p) => p.style === "traditional" && p.type === "precast" && p.subStyle === "classical");
+    case "traditional-french":
+      return mantelProducts.filter((p) => p.style === "traditional" && p.type === "precast" && p.subStyle === "french");
+    case "traditional-ornate":
+      return mantelProducts.filter((p) => p.style === "traditional" && p.type === "precast" && p.subStyle === "ornate");
     case "overmantels":
       return mantelProducts.filter((p) => p.type === "overmantel");
     case "wood-surrounds":
@@ -71,6 +85,28 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
           <p className="text-stone-300 max-w-2xl leading-relaxed">{category.description}</p>
         </div>
       </section>
+
+      {/* Traditional sub-style facets */}
+      {traditionalFacets.some((f) => f.slug === slug) && (
+        <section className="border-b border-stone-200 bg-stone-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap gap-2">
+            {traditionalFacets.map((f) => (
+              <Link
+                key={f.slug}
+                href={`/mantels/${f.slug}`}
+                aria-current={f.slug === slug ? "page" : undefined}
+                className={`text-sm px-4 py-1.5 rounded-full border transition-colors ${
+                  f.slug === slug
+                    ? "bg-amber-700 text-white border-amber-700"
+                    : "bg-white text-stone-600 border-stone-200 hover:border-amber-700 hover:text-amber-700"
+                }`}
+              >
+                {f.label}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Products */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

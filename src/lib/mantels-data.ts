@@ -99,6 +99,30 @@ export const mantelCategories: MantelCategory[] = [
     ],
   },
   {
+    slug: "traditional-classical",
+    title: "Classical Mantels",
+    tagline: "Columns · Pilasters · Symmetry",
+    description:
+      "Our classical precast mantels draw on Greek and Roman architectural orders — fluted columns, pilasters, and clean symmetrical proportions. A refined, formal focal point for traditional and transitional interiors.",
+    products: [],
+  },
+  {
+    slug: "traditional-french",
+    title: "French & Old-World Mantels",
+    tagline: "European · Limestone · Château",
+    description:
+      "Inspired by French limestone surrounds and old-world European fireplaces, these precast mantels bring château elegance and softened, aged character to formal living spaces.",
+    products: [],
+  },
+  {
+    slug: "traditional-ornate",
+    title: "Ornate & Carved Mantels",
+    tagline: "Relief Carving · Corbels · Victorian",
+    description:
+      "Our most richly detailed traditional precast mantels — deep relief carving, decorative corbels, and Victorian ornamentation. Statement surrounds for grand and formal rooms.",
+    products: [],
+  },
+  {
     slug: "beams",
     title: "Fireplace Beams",
     tagline: "Rustic · Warm · Handcrafted",
