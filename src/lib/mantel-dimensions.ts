@@ -5,7 +5,7 @@ import type { MantelDimensions } from "./mantel-products-data";
 // Opening width = firebox size + ~1" (a 36" firebox uses a ~37" opening).
 // `cadVerified: false` = machine-extracted, awaiting human confirmation against the CAD.
 //
-// EXTRACTION PROGRESS: 19 / ~60 CADs done. Batches added alphabetically.
+// EXTRACTION PROGRESS: 22 / ~60 CADs done. Batches added alphabetically.
 // (cobar, coonawarra are overmantels — read but excluded, no firebox opening.)
 //
 // NOTE ON WIDTHS: overallWidths = the SHELF/body width (the widest part of the
@@ -173,6 +173,34 @@ export const mantelDimensions: Record<string, MantelDimensions> = {
     overallWidths: [80.75], // shelf; hearth reads 90
     overallHeight: 61.5, // smaller size (larger = 69½)
     shelfDepth: 13.5,
+    cadVerified: false,
+  },
+
+  // ── Batch 5: corvallis → dominique (awaiting verification) ───────────────
+  // (covington-line.pdf = a second Gold Coast Covington drawing not tied to any
+  //  product slug — the Covington product uses covington.pdf; skipped.)
+  corvallis: {
+    openingWidths: [33.25, 39.25, 41.25], // three sizes
+    openingHeight: 36, // smaller (larger = 40)
+    overallWidths: [56.125, 62.125, 64.125], // shelf; hearth reads 60/66
+    overallHeight: 48.25, // smaller (larger = 52¼)
+    shelfDepth: 7,
+    cadVerified: false,
+  },
+  covington: {
+    openingWidths: [37, 43], // two widths; three heights offered (Opera House)
+    openingHeight: 26, // smallest (26/32/48)
+    overallWidths: [66, 72], // shelf; hearth reads 66/72
+    overallHeight: 51.5, // smallest (51½/57½/73½)
+    shelfDepth: 8,
+    cadVerified: false,
+  },
+  dominique: {
+    openingWidths: [42.5, 48.375, 56], // three sizes
+    openingHeight: 41.125,
+    overallWidths: [73.75, 79.625, 87.5], // shelf; hearth reads 80/88/96
+    overallHeight: 62.75, // (62¾/62¾/63)
+    shelfDepth: 12,
     cadVerified: false,
   },
 };
