@@ -7,6 +7,9 @@ const mantelsLinks = [
   { label: "All Mantels", href: "/mantels" },
   { label: "Contemporary", href: "/mantels/contemporary" },
   { label: "Traditional", href: "/mantels/traditional" },
+  { label: "Classical", href: "/mantels/traditional-classical", indent: true },
+  { label: "French & Old-World", href: "/mantels/traditional-french", indent: true },
+  { label: "Ornate & Carved", href: "/mantels/traditional-ornate", indent: true },
   { label: "Beams", href: "/mantels/beams" },
   { label: "Hearths", href: "/mantels/hearths" },
   { label: "Overmantels", href: "/mantels/overmantels" },
@@ -74,14 +77,16 @@ export default function Header() {
                 </svg>
               </button>
               {mantelsOpen && (
-                <div className="absolute top-full left-0 bg-white shadow-lg border border-gray-100 rounded-b-md w-52 py-1 z-50">
+                <div className="absolute top-full left-0 bg-white shadow-lg border border-gray-100 rounded-b-md w-60 py-1 z-50">
                   {mantelsLinks.map((l) => (
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0EB] hover:text-[#8B4513] transition-colors"
+                      className={`block py-2 text-sm hover:bg-[#F5F0EB] hover:text-[#8B4513] transition-colors ${
+                        l.indent ? "pl-8 pr-4 text-gray-500" : "px-4 text-gray-700"
+                      }`}
                     >
-                      {l.label}
+                      {l.indent ? `↳ ${l.label}` : l.label}
                     </Link>
                   ))}
                 </div>
@@ -188,8 +193,8 @@ export default function Header() {
         <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4">
           <div className="py-2 font-semibold text-[#8B4513]">Mantels</div>
           {mantelsLinks.map((l) => (
-            <Link key={l.href} href={l.href} className="block py-1.5 pl-3 text-sm text-gray-700" onClick={() => setMobileOpen(false)}>
-              {l.label}
+            <Link key={l.href} href={l.href} className={`block py-1.5 text-sm text-gray-700 ${l.indent ? "pl-7 text-gray-500" : "pl-3"}`} onClick={() => setMobileOpen(false)}>
+              {l.indent ? `↳ ${l.label}` : l.label}
             </Link>
           ))}
           <div className="py-2 font-semibold text-[#8B4513] mt-2">Fireplaces</div>

@@ -5,6 +5,7 @@ import { getMantelCategory, mantelCategories } from "@/lib/mantels-data";
 import { mantelProducts, typeLabel, styleLabel } from "@/lib/mantel-products-data";
 import PricingCTA from "@/components/PricingCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import MantelSearch from "@/components/MantelSearch";
 
 // Traditional sub-style facets — shown as a cross-link nav on the traditional pages.
 const traditionalFacets = [
@@ -85,6 +86,9 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
           <p className="text-stone-300 max-w-2xl leading-relaxed">{category.description}</p>
         </div>
       </section>
+
+      {/* Search all mantels */}
+      <MantelSearch />
 
       {/* Traditional sub-style facets */}
       {traditionalFacets.some((f) => f.slug === slug) && (

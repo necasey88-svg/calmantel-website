@@ -10,7 +10,12 @@ export const metadata = {
   alternates: { canonical: "/mantels" },
 };
 
-const mantelCategories = [
+const mantelCategories: {
+  title: string;
+  description: string;
+  href: string;
+  subLinks?: { label: string; href: string }[];
+}[] = [
   {
     title: "Contemporary",
     description:
@@ -22,6 +27,11 @@ const mantelCategories = [
     description:
       "Classic carved mantels with intricate detail, columns, and pilasters that bring timeless character to any room.",
     href: "/mantels/traditional",
+    subLinks: [
+      { label: "Classical", href: "/mantels/traditional-classical" },
+      { label: "French & Old-World", href: "/mantels/traditional-french" },
+      { label: "Ornate & Carved", href: "/mantels/traditional-ornate" },
+    ],
   },
   {
     title: "Beams",
@@ -90,22 +100,39 @@ export default function MantelsPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {mantelCategories.map((cat) => (
-            <Link
+            <div
               key={cat.href}
-              href={cat.href}
-              className="group border border-stone-200 rounded-xl p-7 hover:border-amber-700 hover:shadow-md transition-all"
+              className="group border border-stone-200 rounded-xl p-7 hover:border-amber-700 hover:shadow-md transition-all flex flex-col"
             >
-              <h2
-                className="text-xl font-bold text-stone-900 mb-3 group-hover:text-amber-700 transition-colors"
-                style={{ fontFamily: "var(--font-playfair)" }}
+              <Link href={cat.href} className="flex-1">
+                <h2
+                  className="text-xl font-bold text-stone-900 mb-3 group-hover:text-amber-700 transition-colors"
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
+                  {cat.title}
+                </h2>
+                <p className="text-stone-500 text-sm leading-relaxed">{cat.description}</p>
+              </Link>
+              {cat.subLinks && (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {cat.subLinks.map((s) => (
+                    <Link
+                      key={s.href}
+                      href={s.href}
+                      className="text-xs px-3 py-1 rounded-full border border-stone-200 text-stone-600 hover:border-amber-700 hover:text-amber-700 transition-colors"
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+              <Link
+                href={cat.href}
+                className="inline-block mt-4 text-amber-700 text-sm font-semibold group-hover:underline"
               >
-                {cat.title}
-              </h2>
-              <p className="text-stone-500 text-sm leading-relaxed">{cat.description}</p>
-              <span className="inline-block mt-4 text-amber-700 text-sm font-semibold group-hover:underline">
                 Browse {cat.title} →
-              </span>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
       </section>

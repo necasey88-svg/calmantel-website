@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import MantelSearch from "@/components/MantelSearch";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import JsonLd from "@/components/JsonLd";
@@ -176,6 +177,34 @@ export default function HomePage() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Find a mantel — search / help tool */}
+      <section className="bg-stone-50 border-y border-stone-100 py-16">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-amber-700 uppercase tracking-widest text-sm font-semibold mb-3">
+            Searching for a mantel?
+          </p>
+          <h2
+            className="text-3xl md:text-4xl font-bold text-stone-900 mb-3"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Let Us Help
+          </h2>
+          <p className="text-stone-500 leading-relaxed mb-2">
+            Search our full collection by name, style, or material — or tell us your
+            fireplace dimensions and we&apos;ll find the mantels that fit.
+          </p>
+        </div>
+        <MantelSearch />
+        <div className="text-center">
+          <Link
+            href="/mantels"
+            className="inline-block bg-amber-700 text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-amber-800 transition-colors"
+          >
+            Find your fit →
+          </Link>
         </div>
       </section>
 
