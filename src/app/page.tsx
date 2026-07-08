@@ -6,6 +6,9 @@ import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import InstallationsCarousel from "@/components/InstallationsCarousel";
 import BestSellersShowcase from "@/components/BestSellersShowcase";
 import Testimonials from "@/components/Testimonials";
+import WhyCMF from "@/components/WhyCMF";
+import ServingCalifornia from "@/components/ServingCalifornia";
+import ClosingStatement from "@/components/ClosingStatement";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema } from "@/lib/business-data";
 
@@ -71,19 +74,6 @@ const brands = [
   { name: "HPC Fire", logo: "/brands/hpc-fire.png", href: "/fireplaces" },
   { name: "Forno Bravo", logo: "/brands/fornobravo.png", href: "/fireplaces" },
   { name: "Outdoor Great Room", logo: "/brands/outdoor-great-room.webp", href: "/fireplaces" },
-];
-
-const showrooms = [
-  { city: "Anaheim", phone: "(714) 908-7388", tel: "7149087388" },
-  { city: "Dublin", phone: "(925) 436-1731", tel: "9254361731" },
-  { city: "Sacramento", phone: "(916) 665-0627", tel: "9166650627" },
-];
-
-const stats = [
-  { number: "35+", label: "Years in Business" },
-  { number: "3", label: "California Showrooms" },
-  { number: "30+", label: "Fireplace Brands" },
-  { number: "1000s", label: "Projects Completed" },
 ];
 
 // Google Business Profile ratings per showroom (kept in sync with our GBP listings).
@@ -265,6 +255,9 @@ export default function HomePage() {
       {/* Real Google reviews */}
       <Testimonials />
 
+      {/* Why CMF — credibility band */}
+      <WhyCMF />
+
       {/* How to Buy a Fireplace */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -414,8 +407,8 @@ export default function HomePage() {
 
       {/* About strip */}
       <section className="bg-stone-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-1">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div>
             <p className="text-amber-700 uppercase tracking-widest text-sm font-semibold mb-3">
               Our Story
             </p>
@@ -443,56 +436,14 @@ export default function HomePage() {
               Learn More About Us
             </Link>
           </div>
-          <div className="flex-1 grid grid-cols-2 gap-4 text-center">
-            {stats.map((stat) => (
-              <div key={stat.label} className="bg-white rounded-xl py-8 px-4 shadow-sm">
-                <p
-                  className="text-4xl font-bold text-amber-700 mb-1"
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                >
-                  {stat.number}
-                </p>
-                <p className="text-stone-500 text-sm">{stat.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Showrooms CTA */}
-      <section className="bg-amber-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            Visit a Showroom
-          </h2>
-          <p className="text-amber-100 mb-10 max-w-xl mx-auto">
-            See our full range of mantels and fireplaces in person. Our experts
-            are ready to help you find the perfect fit for your home.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-8 mb-10">
-            {showrooms.map((s) => (
-              <div key={s.city} className="text-center">
-                <p className="font-bold text-lg mb-1">{s.city}</p>
-                <a
-                  href={`tel:${s.tel}`}
-                  className="text-amber-100 hover:text-white underline transition-colors"
-                >
-                  {s.phone}
-                </a>
-              </div>
-            ))}
-          </div>
-          <Link
-            href="/estimate"
-            className="inline-block bg-white text-amber-700 hover:bg-amber-50 px-8 py-3.5 rounded font-bold transition-colors"
-          >
-            Request a Free Estimate
-          </Link>
-        </div>
-      </section>
+      {/* Serving California — regions + showrooms */}
+      <ServingCalifornia />
+
+      {/* Closing brand statement */}
+      <ClosingStatement />
     </>
   );
 }
