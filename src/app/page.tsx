@@ -175,6 +175,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Why CMF — credibility band */}
+      <WhyCMF />
+
       {/* Category grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-12">
@@ -225,8 +228,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Real projects — scrolling before/after installations */}
-      <InstallationsCarousel />
+      {/* The Collection — premium best-sellers showcase */}
+      <BestSellersShowcase />
 
       {/* Find a mantel — search / help tool */}
       <section className="bg-stone-50 border-y border-stone-100 py-16">
@@ -248,24 +251,21 @@ export default function HomePage() {
         <MantelSearch />
       </section>
 
-      {/* Best-sellers — premium collection showcase */}
-      <BestSellersShowcase />
+      {/* Real projects — scrolling before/after installations */}
+      <InstallationsCarousel />
 
       {/* Real Google reviews */}
       <Testimonials />
 
-      {/* Why CMF — credibility band */}
-      <WhyCMF />
-
       {/* The Process — editorial timeline */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-16">
             <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
               The Process
             </p>
             <h2
-              className="text-4xl md:text-5xl font-medium text-[color:var(--ink)] tracking-tight"
+              className="text-4xl md:text-5xl font-medium text-[color:var(--ink)] tracking-tight md:whitespace-nowrap"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               From First Visit to Finished Room
@@ -290,6 +290,39 @@ export default function HomePage() {
                 <p className="text-stone-500 text-sm leading-relaxed">{s.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What happens next + primary CTA */}
+      <section className="bg-white pb-24">
+        <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">
+          <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
+            Ready When You Are
+          </p>
+          <h2
+            className="text-4xl md:text-5xl font-medium text-[color:var(--ink)] tracking-tight mb-5"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            What Happens Next
+          </h2>
+          <p className="text-stone-500 leading-relaxed mb-10">
+            Most consultations take about 45 minutes. We&apos;ll answer your questions, show you
+            products in person, and provide pricing — with no obligation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+            <Link
+              href="/booking"
+              className="bg-[color:var(--ink)] text-white hover:bg-black px-9 py-4 rounded-full font-medium tracking-wide transition-colors"
+            >
+              Schedule Your Design Consultation
+            </Link>
+            <Link
+              href="/mantels"
+              className="text-[color:var(--ink)] hover:text-[color:var(--accent)] font-medium tracking-wide transition-colors"
+            >
+              Browse Mantels →
+            </Link>
           </div>
         </div>
       </section>
@@ -347,39 +380,6 @@ export default function HomePage() {
                 <p className="text-stone-500 text-sm leading-relaxed">{item.a}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What happens next + primary CTA */}
-      <section className="bg-white py-24">
-        <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">
-          <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
-            Ready When You Are
-          </p>
-          <h2
-            className="text-4xl md:text-5xl font-medium text-[color:var(--ink)] tracking-tight mb-5"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            What Happens Next
-          </h2>
-          <p className="text-stone-500 leading-relaxed mb-10">
-            Most consultations take about 45 minutes. We&apos;ll answer your questions, show you
-            products in person, and provide pricing — with no obligation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-            <Link
-              href="/booking"
-              className="bg-[color:var(--ink)] text-white hover:bg-black px-9 py-4 rounded-full font-medium tracking-wide transition-colors"
-            >
-              Schedule Your Design Consultation
-            </Link>
-            <Link
-              href="/mantels"
-              className="text-[color:var(--ink)] hover:text-[color:var(--accent)] font-medium tracking-wide transition-colors"
-            >
-              Browse Mantels →
-            </Link>
           </div>
         </div>
       </section>
