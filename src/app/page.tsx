@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import MantelSearch from "@/components/MantelSearch";
-import MantelFitFinder from "@/components/MantelFitFinder";
 import { bestSellerSlugs } from "@/lib/mantel-fit";
+import { getMantelProduct } from "@/lib/mantel-products-data";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import JsonLd from "@/components/JsonLd";
@@ -201,12 +201,42 @@ export default function HomePage() {
         </div>
         <MantelSearch />
 
-        {/* Browsable fit finder — best sellers only on the homepage */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <MantelFitFinder restrictSlugs={bestSellerSlugs} heading="Our Best-Selling Mantels" />
+        {/* Best sellers showcase */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+          <p className="text-center text-stone-900 font-bold text-xl mb-6" style={{ fontFamily: "var(--font-playfair)" }}>
+            Our Best-Selling Mantels
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+            {bestSellerSlugs
+              .map((slug) => getMantelProduct(slug))
+              .filter((p): p is NonNullable<typeof p> => Boolean(p))
+              .map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/mantels/p/${p.slug}`}
+                  className="group border border-stone-200 bg-white rounded-xl overflow-hidden hover:border-amber-700 hover:shadow-md transition-all"
+                >
+                  <div className="relative h-40 bg-stone-100">
+                    {p.image ? (
+                      <Image src={p.image} alt={p.name} fill className="object-contain p-3" sizes="(max-width:640px) 50vw, 25vw" />
+                    ) : (
+                      <div className="flex items-center justify-center h-full text-4xl">🪨</div>
+                    )}
+                  </div>
+                  <div className="p-4">
+                    <p className="font-bold text-stone-900 group-hover:text-amber-700 transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>
+                      {p.name}
+                    </p>
+                    <p className="text-xs text-stone-400 capitalize">
+                      {p.type === "precast" ? "Precast Concrete" : p.type} · {p.style}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+          </div>
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-10">
           <Link
             href="/mantels"
             className="inline-block bg-amber-700 text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-amber-800 transition-colors"

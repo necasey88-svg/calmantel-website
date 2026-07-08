@@ -159,18 +159,21 @@ export function listAllMantels(
 }
 
 /**
- * Best-seller slugs — the curated shortlist shown in the homepage fit finder.
- * EDIT THIS LIST to match actual best sellers. The full /mantels finder is unaffected.
+ * Best-seller slugs — the curated shortlist shown in the homepage showcase grid.
+ * EDIT THIS LIST to change the homepage best sellers.
  */
 export const bestSellerSlugs: string[] = [
+  "bolte",
   "barossa",
-  "covington",
-  "manly",
-  "heritage",
-  "clarendon",
-  "mornington",
-  "kensington",
-  "nullarbor",
+  "tonso",
+  "padthaway",
+  "bondi",
+  "pitcairn",
+  "queensland",
+  "woomera",
+  "sausalito",
+  "turin",
+  "yarra",
 ];
 
 /** How many mantels currently have dimension data (for progress display). */
