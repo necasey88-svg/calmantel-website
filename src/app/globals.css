@@ -6,9 +6,20 @@
   --brand-brown: #8B4513;
   --brand-gold: #C8922A;
   --brand-light: #F5F0EB;
+
+  /* Premium palette — warm beige + charcoal + muted brass accent */
+  --ink: #211d18;          /* near-black warm charcoal for text */
+  --accent: #9a7b53;       /* muted brass/taupe accent */
+  --accent-dark: #806140;  /* hover accent */
+  --sand: #f7f3ec;         /* warm off-white surface */
+  --sand-deep: #ede5d8;    /* deeper beige */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* Hide scrollbars on horizontal scrollers (e.g. installations carousel) */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

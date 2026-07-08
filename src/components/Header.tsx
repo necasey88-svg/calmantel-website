@@ -40,9 +40,9 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top bar */}
-      <div className="bg-[#8B4513] text-white text-sm text-center py-1.5 px-4">
+      <div className="bg-[color:var(--ink)] text-white/85 text-xs tracking-wide text-center py-2 px-4">
         Showrooms in Anaheim · Dublin · Sacramento &nbsp;|&nbsp;
-        <a href="tel:7149087388" className="underline hover:no-underline">
+        <a href="tel:7149087388" className="hover:text-white transition-colors">
           (714) 908-7388
         </a>
       </div>
@@ -70,7 +70,7 @@ export default function Header() {
               onMouseEnter={() => setMantelsOpen(true)}
               onMouseLeave={() => setMantelsOpen(false)}
             >
-              <button className="flex items-center gap-1 text-gray-700 hover:text-[#8B4513] font-medium py-4 transition-colors">
+              <button className="flex items-center gap-1 text-gray-700 hover:text-[color:var(--accent)] font-medium py-4 transition-colors">
                 Mantels
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -82,7 +82,7 @@ export default function Header() {
                     <Link
                       key={l.href}
                       href={l.href}
-                      className={`block py-2 text-sm hover:bg-[#F5F0EB] hover:text-[#8B4513] transition-colors ${
+                      className={`block py-2 text-sm hover:bg-[color:var(--sand)] hover:text-[color:var(--accent)] transition-colors ${
                         l.indent ? "pl-8 pr-4 text-gray-500" : "px-4 text-gray-700"
                       }`}
                     >
@@ -99,7 +99,7 @@ export default function Header() {
               onMouseEnter={() => setFireplaceOpen(true)}
               onMouseLeave={() => setFireplaceOpen(false)}
             >
-              <button className="flex items-center gap-1 text-gray-700 hover:text-[#8B4513] font-medium py-4 transition-colors">
+              <button className="flex items-center gap-1 text-gray-700 hover:text-[color:var(--accent)] font-medium py-4 transition-colors">
                 Fireplaces
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -111,7 +111,7 @@ export default function Header() {
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0EB] hover:text-[#8B4513] transition-colors"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-[color:var(--sand)] hover:text-[color:var(--accent)] transition-colors"
                     >
                       {l.label}
                     </Link>
@@ -120,7 +120,7 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/projects" className="text-gray-700 hover:text-[#8B4513] font-medium transition-colors">
+            <Link href="/projects" className="text-gray-700 hover:text-[color:var(--accent)] font-medium transition-colors">
               Projects
             </Link>
             {/* Masonry dropdown */}
@@ -129,7 +129,7 @@ export default function Header() {
               onMouseEnter={() => setMasonryOpen(true)}
               onMouseLeave={() => setMasonryOpen(false)}
             >
-              <button className="flex items-center gap-1 text-gray-700 hover:text-[#8B4513] font-medium py-4 transition-colors">
+              <button className="flex items-center gap-1 text-gray-700 hover:text-[color:var(--accent)] font-medium py-4 transition-colors">
                 Masonry
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -137,18 +137,18 @@ export default function Header() {
               </button>
               {masonryOpen && (
                 <div className="absolute top-full left-0 bg-white shadow-lg border border-gray-100 rounded-b-md w-52 py-1 z-50">
-                  <Link href="/masonry-new-page" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0EB] hover:text-[#8B4513] transition-colors" onClick={() => setMasonryOpen(false)}>Masonry Services</Link>
-                  <Link href="/masonry-gallery" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#F5F0EB] hover:text-[#8B4513] transition-colors" onClick={() => setMasonryOpen(false)}>Project Gallery</Link>
+                  <Link href="/masonry-new-page" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[color:var(--sand)] hover:text-[color:var(--accent)] transition-colors" onClick={() => setMasonryOpen(false)}>Masonry Services</Link>
+                  <Link href="/masonry-gallery" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[color:var(--sand)] hover:text-[color:var(--accent)] transition-colors" onClick={() => setMasonryOpen(false)}>Project Gallery</Link>
                 </div>
               )}
             </div>
-            <Link href="/showrooms" className="text-gray-700 hover:text-[#8B4513] font-medium transition-colors">
+            <Link href="/showrooms" className="text-gray-700 hover:text-[color:var(--accent)] font-medium transition-colors">
               Showrooms
             </Link>
-            <Link href="/insights" className="text-gray-700 hover:text-[#8B4513] font-medium transition-colors">
+            <Link href="/insights" className="text-gray-700 hover:text-[color:var(--accent)] font-medium transition-colors">
               Insights
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-[#8B4513] font-medium transition-colors">
+            <Link href="/about" className="text-gray-700 hover:text-[color:var(--accent)] font-medium transition-colors">
               About Us
             </Link>
           </nav>
@@ -157,7 +157,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-3">
             <Link
               href="/instant-estimate"
-              className="border border-[#8B4513] text-[#8B4513] px-4 py-2 rounded text-sm font-semibold hover:bg-[#8B4513] hover:text-white transition-colors"
+              className="border border-[color:var(--ink)]/25 text-[color:var(--ink)] px-5 py-2 rounded-full text-xs tracking-widest font-medium hover:border-[color:var(--ink)] transition-colors"
             >
               INSTANT ESTIMATE
             </Link>
@@ -165,7 +165,7 @@ export default function Header() {
               href="https://outlook.office.com/book/CaliforniaMantelFireplace@calmantel.com/?ismsaljsauthenabled"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#8B4513] text-white px-4 py-2 rounded text-sm font-semibold hover:bg-[#7a3c10] transition-colors"
+              className="bg-[color:var(--ink)] text-white px-5 py-2 rounded-full text-xs tracking-widest font-medium hover:bg-black transition-colors"
             >
               BOOK CONSULTATION
             </a>
@@ -191,13 +191,13 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4">
-          <div className="py-2 font-semibold text-[#8B4513]">Mantels</div>
+          <div className="py-2 font-semibold text-[color:var(--accent)]">Mantels</div>
           {mantelsLinks.map((l) => (
             <Link key={l.href} href={l.href} className={`block py-1.5 text-sm text-gray-700 ${l.indent ? "pl-7 text-gray-500" : "pl-3"}`} onClick={() => setMobileOpen(false)}>
               {l.indent ? `↳ ${l.label}` : l.label}
             </Link>
           ))}
-          <div className="py-2 font-semibold text-[#8B4513] mt-2">Fireplaces</div>
+          <div className="py-2 font-semibold text-[color:var(--accent)] mt-2">Fireplaces</div>
           {fireplaceLinks.map((l) => (
             <Link key={l.href} href={l.href} className="block py-1.5 pl-3 text-sm text-gray-700" onClick={() => setMobileOpen(false)}>
               {l.label}
@@ -219,7 +219,7 @@ export default function Header() {
             ))}
             <Link
               href="/instant-estimate"
-              className="mt-2 border border-[#8B4513] text-[#8B4513] text-center py-2.5 rounded font-semibold"
+              className="mt-2 border border-[color:var(--ink)]/25 text-[color:var(--ink)] text-center py-2.5 rounded-full font-medium"
               onClick={() => setMobileOpen(false)}
             >
               INSTANT ESTIMATE
@@ -228,7 +228,7 @@ export default function Header() {
               href="https://outlook.office.com/book/CaliforniaMantelFireplace@calmantel.com/?ismsaljsauthenabled"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#8B4513] text-white text-center py-2.5 rounded font-semibold"
+              className="bg-[color:var(--ink)] text-white text-center py-2.5 rounded-full font-medium"
               onClick={() => setMobileOpen(false)}
             >
               BOOK CONSULTATION

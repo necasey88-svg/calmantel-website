@@ -5,6 +5,7 @@ import { bestSellerSlugs } from "@/lib/mantel-fit";
 import { getMantelProduct } from "@/lib/mantel-products-data";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import InstantEstimateCTA from "@/components/InstantEstimateCTA";
+import InstallationsCarousel from "@/components/InstallationsCarousel";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema } from "@/lib/business-data";
 
@@ -85,49 +86,102 @@ const stats = [
   { number: "1000s", label: "Projects Completed" },
 ];
 
+// Google Business Profile ratings per showroom (kept in sync with our GBP listings).
+const reviews = [
+  { city: "Sacramento", rating: 4.7, count: 152 },
+  { city: "Anaheim", rating: 4.3, count: 55 },
+  { city: "Dublin", rating: 4.7, count: 19 },
+];
+const totalReviews = reviews.reduce((n, r) => n + r.count, 0);
+const avgRating =
+  reviews.reduce((n, r) => n + r.rating * r.count, 0) / totalReviews;
+
+function Stars({ rating }: { rating: number }) {
+  const filled = Math.round(rating);
+  return (
+    <span className="inline-flex" aria-hidden="true">
+      {[0, 1, 2, 3, 4].map((i) => (
+        <svg
+          key={i}
+          className={`w-4 h-4 ${i < filled ? "text-[color:var(--accent)]" : "text-stone-300"}`}
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.446a1 1 0 00-.363 1.118l1.286 3.958c.3.922-.755 1.688-1.539 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.784.57-1.838-.196-1.539-1.118l1.286-3.958a1 1 0 00-.363-1.118L2.05 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z" />
+        </svg>
+      ))}
+    </span>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
       <JsonLd data={organizationSchema()} />
-      {/* Hero */}
-      <section className="relative text-white overflow-hidden min-h-[90vh] flex items-center">
+      {/* Hero — architectural, editorial */}
+      <section className="relative text-white overflow-hidden min-h-[92vh] flex items-end">
         <Image
-          src="/hero-fireplace.png"
-          alt="Padthaway FV46 gas fireplace with white mantel surround"
+          src="/hero-bolte-fv41.png"
+          alt="Bolte FV41 gas fireplace with a custom precast mantel as the focal point of a light-filled living room"
           fill
           className="object-cover object-center"
           priority
         />
-        {/* gradient: transparent right side → dark left side so text is readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/10" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-48 w-full">
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-4">
-            Family-owned since 1987
+        {/* scrim biased to bottom-left where the text sits, keeping the upper-right airy */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-black/75 via-black/30 to-transparent" />
+        <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8 pb-20 md:pb-28">
+          <p className="uppercase tracking-[0.28em] text-white/75 text-xs md:text-sm mb-6">
+            Manufactured in California · Since 1987
           </p>
           <h1
-            className="text-4xl md:text-6xl font-bold max-w-2xl leading-tight mb-6"
+            className="text-4xl md:text-6xl font-medium max-w-4xl leading-[1.08] tracking-tight"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Enhance Your Fireplace Now
+            California&apos;s Premier Mantel &amp; Fireplace Manufacturer
           </h1>
-          <p className="text-stone-200 text-lg max-w-xl mb-10 leading-relaxed">
-            California Mantel &amp; Fireplace manufactures premium mantels and installs
-            gas &amp; electric fireplaces across California and Nevada. Three showrooms — Anaheim,
-            Dublin &amp; Sacramento — serving homeowners from Southern California to Reno &amp; Lake Tahoe.
+          <p className="mt-6 text-white/85 uppercase tracking-[0.18em] text-sm md:text-base">
+            Custom Mantels &nbsp;·&nbsp; Fireplaces &nbsp;·&nbsp; Masonry &nbsp;·&nbsp; Installation
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/estimate"
-              className="bg-amber-700 hover:bg-amber-800 text-white px-8 py-3.5 rounded-full font-semibold transition-colors"
+              href="/mantels"
+              className="bg-white text-[color:var(--ink)] hover:bg-white/90 px-8 py-3.5 rounded-full font-medium tracking-wide transition-colors"
             >
-              Request Estimate
+              Explore the Collection
             </Link>
             <Link
-              href="/projects"
-              className="border border-white text-white hover:bg-white hover:text-stone-900 px-8 py-3.5 rounded-full font-semibold transition-colors"
+              href="/booking"
+              className="border border-white/70 text-white hover:bg-white hover:text-[color:var(--ink)] px-8 py-3.5 rounded-full font-medium tracking-wide transition-colors"
             >
-              View Projects
+              Book a Consultation
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities + trust bar — communicates the full breadth at a glance */}
+      <section className="bg-[color:var(--sand)] border-b border-[color:var(--sand-deep)]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center text-[color:var(--ink)]/75 text-sm">
+            {[
+              "Our Own Manufacturing",
+              "Hundreds of Styles",
+              "Custom Builds",
+              "Professional Installation",
+              "3 California Showrooms",
+            ].map((label, i) => (
+              <span key={label} className="flex items-center gap-x-6">
+                {i > 0 && <span className="text-[color:var(--accent)]/50" aria-hidden="true">·</span>}
+                <span className="tracking-wide">{label}</span>
+              </span>
+            ))}
+            <span className="flex items-center gap-2 pl-2">
+              <Stars rating={avgRating} />
+              <span className="tracking-wide">
+                <span className="font-semibold text-[color:var(--ink)]">{avgRating.toFixed(1)}</span>
+                {" · "}{totalReviews}+ Google reviews
+              </span>
+            </span>
           </div>
         </div>
       </section>
@@ -181,6 +235,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Real projects — scrolling before/after installations */}
+      <InstallationsCarousel />
 
       {/* Find a mantel — search / help tool */}
       <section className="bg-stone-50 border-y border-stone-100 py-16">
