@@ -92,7 +92,7 @@ function Stars({ rating }: { rating: number }) {
       {[0, 1, 2, 3, 4].map((i) => (
         <svg
           key={i}
-          className={`w-4 h-4 ${i < filled ? "text-[color:var(--accent)]" : "text-stone-300"}`}
+          className={`w-5 h-5 ${i < filled ? "text-[color:var(--accent)]" : "text-stone-300"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -150,8 +150,8 @@ export default function HomePage() {
 
       {/* Capabilities + trust bar — communicates the full breadth at a glance */}
       <section className="bg-[color:var(--sand)] border-b border-[color:var(--sand-deep)]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5">
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center text-[color:var(--ink)]/75 text-sm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-2 text-center text-[color:var(--ink)]/80 text-base md:text-lg">
             {[
               "Our Own Manufacturing",
               "Hundreds of Styles",
