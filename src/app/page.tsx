@@ -251,12 +251,6 @@ export default function HomePage() {
         <MantelSearch />
       </section>
 
-      {/* Real projects — scrolling before/after installations */}
-      <InstallationsCarousel />
-
-      {/* Real Google reviews */}
-      <Testimonials />
-
       {/* The Process — editorial timeline */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -383,6 +377,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Real projects — scrolling before/after installations */}
+      <InstallationsCarousel />
+
+      {/* Real Google reviews */}
+      <Testimonials />
 
       {/* Brands */}
       <section className="border-y border-stone-100 bg-stone-50 py-16">
