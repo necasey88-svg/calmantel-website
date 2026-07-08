@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import ZoomableImage from "@/components/ZoomableImage";
+import ProductGallery from "@/components/ProductGallery";
 import {
   getMantelProduct,
   mantelProducts,
@@ -84,7 +85,9 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product image */}
-          {product.image ? (
+          {product.images && product.images.length > 1 ? (
+            <ProductGallery images={product.images} alt={product.name} />
+          ) : product.image ? (
             <ZoomableImage src={product.image} alt={product.name} />
           ) : (
             <div className="relative bg-stone-100 rounded-2xl overflow-hidden h-80 flex items-center justify-center text-7xl">🪨</div>

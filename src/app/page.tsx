@@ -30,8 +30,8 @@ const categories = [
   },
   {
     title: "Gas Fireplaces",
-    description: "Efficient, beautiful gas inserts from the top brands in the industry.",
-    href: "/fireplaces/gas-inserts",
+    description: "Efficient, beautiful gas fireplaces from the top brands in the industry.",
+    href: "/fireplaces",
     image: "/brands/ortal/room-mountain-cabin.jpg",
   },
   {

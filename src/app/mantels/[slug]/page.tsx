@@ -15,6 +15,18 @@ const traditionalFacets = [
   { slug: "traditional-ornate", label: "Ornate" },
 ];
 
+// The eight wood beam mantels that live under the Beams navigation.
+const beamSlugs = [
+  "payneham",
+  "yalumba",
+  "norwood",
+  "noarlunga",
+  "hollywood-park",
+  "hackney",
+  "essendon",
+  "collingwood",
+];
+
 // Which mantel-products-data products belong on each category page
 function getProductsForCategory(slug: string) {
   switch (slug) {
@@ -31,9 +43,11 @@ function getProductsForCategory(slug: string) {
     case "overmantels":
       return mantelProducts.filter((p) => p.type === "overmantel");
     case "wood-surrounds":
-      return mantelProducts.filter((p) => p.type === "wood" || (p.type === "beam" && p.slug !== "noarlunga") || p.slug === "hobart-1" || p.slug === "kendall-1");
+      return mantelProducts.filter((p) => p.type === "wood" || (p.type === "beam" && !beamSlugs.includes(p.slug)) || p.slug === "hobart-1" || p.slug === "kendall-1");
     case "beams":
-      return mantelProducts.filter((p) => p.slug === "noarlunga");
+      return beamSlugs
+        .map((s) => mantelProducts.find((p) => p.slug === s))
+        .filter((p): p is (typeof mantelProducts)[number] => Boolean(p));
     default:
       return [];
   }
