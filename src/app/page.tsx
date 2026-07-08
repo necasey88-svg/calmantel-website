@@ -5,6 +5,7 @@ import ConsultationCTA from "@/components/ConsultationCTA";
 import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import InstallationsCarousel from "@/components/InstallationsCarousel";
 import BestSellersShowcase from "@/components/BestSellersShowcase";
+import Testimonials from "@/components/Testimonials";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema } from "@/lib/business-data";
 
@@ -260,6 +261,9 @@ export default function HomePage() {
 
       {/* Best-sellers — premium collection showcase */}
       <BestSellersShowcase />
+
+      {/* Real Google reviews */}
+      <Testimonials />
 
       {/* How to Buy a Fireplace */}
       <section className="py-24 bg-white">

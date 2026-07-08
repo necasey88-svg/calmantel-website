@@ -48,22 +48,22 @@ export default function Header() {
       </div>
 
       {/* Main nav */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="flex items-center justify-between h-24 gap-6">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
               src="/logo.png"
               alt="California Mantel & Fireplace, Inc."
-              width={220}
-              height={60}
-              className="h-12 w-auto"
+              width={240}
+              height={66}
+              className="h-14 w-auto"
               priority
             />
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-6">
+          {/* Desktop nav — centered */}
+          <nav className="hidden md:flex flex-1 justify-center items-center gap-8">
             {/* Mantels dropdown */}
             <div
               className="relative"
