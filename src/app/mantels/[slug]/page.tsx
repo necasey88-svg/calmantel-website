@@ -25,6 +25,9 @@ const beamSlugs = [
   "hackney",
   "essendon",
   "collingwood",
+  "architectural",
+  "darlinghurst",
+  "santa-anita",
 ];
 
 // Which mantel-products-data products belong on each category page

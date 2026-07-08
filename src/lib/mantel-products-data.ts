@@ -1163,14 +1163,6 @@ export const mantelProducts: MantelProduct[] = [
       "The Architectural Beam Mantel is a clean-lined wood fireplace beam designed for modern and transitional interiors. Its precise profile and refined finish deliver understated sophistication, making it a versatile choice for contemporary homes that want the warmth of wood without rustic ornamentation.",
   },
   {
-    slug: "cosmo-with-darlinghurst",
-    name: "Cosmo with Darlinghurst",
-    type: "beam",
-    style: "transitional",
-    description:
-      "The Cosmo with Darlinghurst is a paired wood fireplace beam and surround combination that blends the warmth of a natural wood beam with the refined detailing of the Darlinghurst surround. Together they create a layered, sophisticated hearth feature suited to transitional and contemporary interiors.",
-  },
-  {
     slug: "darlinghurst",
     name: "Darlinghurst",
     type: "beam",
@@ -1199,12 +1191,12 @@ export const mantelProducts: MantelProduct[] = [
       "The Payneham Beam Mantel is a traditionally styled wood fireplace beam with natural character and warm proportions. Its classic design and quality wood construction make it a timeless choice for traditional, farmhouse, and craftsman-style living spaces.",
   },
   {
-    slug: "santa-ana",
-    name: "Santa Ana",
+    slug: "santa-anita",
+    name: "Santa Anita",
     type: "beam",
     style: "transitional",
     description:
-      "The Santa Ana Beam Mantel is a refined wood fireplace beam with clean lines and a warm natural finish. Its versatile transitional design bridges rustic and contemporary styles, making it a popular choice for California-style interiors and open-concept living spaces.",
+      "The Santa Anita Beam Mantel is a refined wood fireplace beam with clean lines and a warm natural finish. Its versatile transitional design bridges rustic and contemporary styles, making it a popular choice for California-style interiors and open-concept living spaces.",
   },
 ];
 
