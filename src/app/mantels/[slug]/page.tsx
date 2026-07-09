@@ -187,7 +187,19 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
                 key={i}
                 className="border border-stone-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow"
               >
-                <div className="h-52 bg-stone-100 flex items-center justify-center text-6xl">🪨</div>
+                <div className="relative h-52 bg-stone-100 flex items-center justify-center text-6xl">
+                  {product.image ? (
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  ) : (
+                    "🪨"
+                  )}
+                </div>
                 <div className="p-7">
                   <h2
                     className="text-xl font-bold text-stone-900 mb-2"

@@ -444,6 +444,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Camberwell",
     type: "beam",
     style: "beams",
+    image: "/mantels/camberwell.png",
     cadPdf: "/cad/camberwell.pdf",
     description:
       "The Camberwell Mantel is a traditionally styled precast fireplace surround with refined molding details and a well-proportioned silhouette. Its classic design and smooth precast finish create a polished focal point for formal living rooms, master suites, and studies.",
@@ -1208,6 +1209,7 @@ export const mantelProducts: MantelProduct[] = [
     slug: "santa-anita",
     name: "Santa Anita",
     type: "beam",
+    image: "/mantels/santa-anita.png",
     style: "transitional",
     description:
       "The Santa Anita Beam Mantel is a refined wood fireplace beam with clean lines and a warm natural finish. Its versatile transitional design bridges rustic and contemporary styles, making it a popular choice for California-style interiors and open-concept living spaces.",

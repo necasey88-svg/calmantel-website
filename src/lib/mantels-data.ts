@@ -153,6 +153,7 @@ export const mantelCategories: MantelCategory[] = [
       },
       {
         name: "45 Degree Hearth",
+        image: "/mantels/hearth-45-degree.png",
         description:
           "A hearth with 45-degree angled front corners, designed for corner fireplace installations. Provides a clean, tailored fit in angled or corner firebox configurations.",
         finishes: ["Old World", "Smooth", "Stone World", "Travertine"],
