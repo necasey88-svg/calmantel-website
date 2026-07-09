@@ -174,6 +174,7 @@ export const bestSellerSlugs: string[] = [
   "sausalito",
   "turin",
   "yarra",
+  "willamette",
 ];
 
 /** How many mantels currently have dimension data (for progress display). */
