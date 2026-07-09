@@ -79,6 +79,48 @@ the client — do not fill these with stock/AI images without asking:
   logged in more detail in Claude's memory file `launch-todo.md` — ask the user if
   you need that context and don't have access to it)
 
+## Multi-agent sync protocol (Codex ↔ Claude)
+Codex's sandbox (`C:\Users\NatalieCasey\Documents\Codex\<date>\...\calmantel-codex`) cannot
+reach `github.com:443` — it can commit locally but **cannot push**. Claude's checkout
+(`.../OneDrive - California Mantel and Fireplace/Desktop/Calmantel.com Rebuild/calmantel`)
+has working GitHub push access and is treated as the merge/publish point.
+
+Codex's repo has a pre-configured remote for exactly this:
+```
+claude-local  ->  .../OneDrive .../calmantel   (fetch-only; push is disabled)
+```
+
+**Before starting new work, Codex (or whoever is driving it) should sync first** to avoid
+forking from a stale base:
+```
+git fetch claude-local
+git reset --hard claude-local/main    # safe ONLY if Codex's working tree is clean —
+                                       # git status -s first; if dirty, stash or commit before resetting
+```
+This keeps Codex's local `main` identical to whatever was last pushed to production, so its
+next commit's parent is current instead of days-old.
+
+**When Codex finishes work and can't push:** tell Claude "Codex has done some work, N commits
+ahead, ready to pick up." Claude's handoff flow (already exercised successfully):
+1. `git remote add codex-tmp "<path to Codex's folder>"` in the Claude checkout, `git fetch codex-tmp`.
+2. Diff/review the new commit(s) — `git show --stat`, then read the actual diffs, especially
+   any file with real logic (not just className changes) before merging blind.
+3. `git cherry-pick <sha>` for each new Codex commit, oldest first. If Codex's branch has
+   diverged (check `git merge-base HEAD codex-tmp/main` vs `git log codex-tmp/main` — if the
+   merge-base is behind Claude's recent commits, only cherry-pick the commits Claude doesn't
+   already have, not the whole branch) — cherry-pick can auto-merge non-overlapping file
+   changes fine (this has worked cleanly even when both sides touched
+   `src/app/mantels/[slug]/page.tsx` — Claude reordering beam categories, Codex restyling
+   the hero — resolve any real conflicts by hand and re-verify the merged file, don't just
+   accept one side).
+4. `git remote remove codex-tmp` when done.
+5. `npx tsc --noEmit` then a full `npx next build --webpack` — do NOT push on typecheck alone,
+   since Codex's sandbox can only get that far (no working `next build` there either) and a
+   change that typechecks can still fail to build.
+6. `git push origin main`.
+7. **Sync Codex back** (see the fetch/reset block above) so its next round starts from the
+   commit that's actually live, not from before the merge.
+
 ## Git identity
 Commits in this repo have been auto-attributing to `ncasey@calmantel.com` based on
 machine hostname (not deliberately configured). If you're a different agent/user,
