@@ -174,7 +174,7 @@ export default function MasonryPage() {
       <PricingCTA />
 
       {/* Showrooms CTA */}
-      <section className="bg-stone-900 text-white py-20">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             className="text-3xl font-medium mb-3"
@@ -182,7 +182,7 @@ export default function MasonryPage() {
           >
             Visit a Showroom to Get Started
           </h2>
-          <p className="text-stone-300 mb-12 max-w-2xl">
+          <p className="text-[color:var(--ink)]/60 mb-12 max-w-2xl">
             Bring your project plans or photos to any of our three California showrooms. Our team
             will help you select materials, provide a project guidance, and schedule your installation.
           </p>
@@ -190,8 +190,8 @@ export default function MasonryPage() {
             {showrooms.map((s) => (
               <div key={s.city} className="bg-stone-800 p-7">
                 <h3 className="text-[color:var(--accent)] font-medium text-lg mb-2">{s.city}</h3>
-                <p className="text-stone-300 text-sm mb-1">{s.address}</p>
-                <p className="text-stone-400 text-xs mb-4">{s.hours}</p>
+                <p className="text-[color:var(--ink)]/60 text-sm mb-1">{s.address}</p>
+                <p className="text-[color:var(--ink)]/55 text-xs mb-4">{s.hours}</p>
                 <a
                   href={`tel:${s.tel}`}
                   className="text-white font-medium hover:text-[color:var(--accent)] transition-colors"

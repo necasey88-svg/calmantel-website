@@ -12,7 +12,7 @@ export const metadata = {
 const whyElectric = [
   {
     icon: (
-      <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
@@ -21,7 +21,7 @@ const whyElectric = [
   },
   {
     icon: (
-      <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
       </svg>
     ),
@@ -30,7 +30,7 @@ const whyElectric = [
   },
   {
     icon: (
-      <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
@@ -43,23 +43,23 @@ export default function ElectricFireplacesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-stone-900 text-white py-20">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-stone-400 mb-4">
-            <Link href="/fireplaces" className="hover:text-amber-400 transition-colors">Fireplaces</Link>
+          <nav className="text-sm text-[color:var(--ink)]/55 mb-4">
+            <Link href="/fireplaces" className="hover:text-[color:var(--accent)] transition-colors">Fireplaces</Link>
             <span className="mx-2">›</span>
-            <span className="text-stone-200">Electric Fireplaces</span>
+            <span className="text-[color:var(--ink)]/80">Electric Fireplaces</span>
           </nav>
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
+          <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-sm font-medium mb-3">
             No Venting · Flexible · Modern
           </p>
           <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.04] mb-4"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Electric Fireplaces
           </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
+          <p className="text-[color:var(--ink)]/60 max-w-2xl leading-relaxed">
             Modern Flames produces the most realistic electric fireplaces on the market — powered
             by patented Heliovision® flame technology. No gas line, no venting, no combustion.
             Just stunning fire, anywhere you want it.
@@ -73,10 +73,10 @@ export default function ElectricFireplacesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             {whyElectric.map((item) => (
               <div key={item.title} className="flex flex-col items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-sm bg-[#EFE7DA] flex items-center justify-center">
                   {item.icon}
                 </div>
-                <p className="font-semibold text-stone-800 text-sm">{item.title}</p>
+                <p className="font-medium text-stone-800 text-sm">{item.title}</p>
                 <p className="text-stone-500 text-xs leading-relaxed max-w-xs">{item.body}</p>
               </div>
             ))}
@@ -92,9 +92,9 @@ export default function ElectricFireplacesPage() {
       {/* Brand callout */}
       <section className="bg-stone-50 py-14 border-t border-stone-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-amber-700 uppercase tracking-widest text-xs font-semibold mb-3">Authorized Dealer</p>
+          <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-xs font-medium mb-3">Authorized Dealer</p>
           <h2
-            className="text-2xl md:text-3xl font-bold text-stone-900 mb-4"
+            className="text-2xl md:text-3xl font-medium text-stone-900 mb-4"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             We Are an Authorized Modern Flames Dealer
@@ -107,13 +107,13 @@ export default function ElectricFireplacesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/estimate"
-              className="inline-block bg-amber-700 hover:bg-amber-800 text-white px-8 py-3.5 rounded-full font-semibold transition-colors"
+              className="inline-block bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white px-8 py-3.5 rounded-sm font-medium transition-colors"
             >
-              Request a Free Estimate
+              Request a Project Estimate
             </Link>
             <Link
               href="/booking"
-              className="inline-block border border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white px-8 py-3.5 rounded-full font-semibold transition-colors"
+              className="inline-block border border-[color:var(--accent)] text-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-white px-8 py-3.5 rounded-sm font-medium transition-colors"
             >
               Visit a Showroom
             </Link>

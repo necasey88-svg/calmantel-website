@@ -7,7 +7,7 @@ export const metadata = {
 export default function SmsPrivacyPolicyPage() {
   return (
     <>
-      <section className="bg-stone-900 text-white py-16">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1
             className="text-4xl font-bold"

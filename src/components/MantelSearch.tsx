@@ -46,7 +46,7 @@ export default function MantelSearch() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={'Search by name or style — or enter your firebox width, e.g. 36"'}
-          className="w-full pl-12 pr-4 py-3.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 shadow-sm"
+          className="w-full pl-12 pr-4 py-3.5 border border-stone-300 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] shadow-sm"
         />
         {query && (
           <button
@@ -59,16 +59,16 @@ export default function MantelSearch() {
       </div>
 
       {q && (
-        <div className="mt-3 border border-stone-200 rounded-xl overflow-hidden shadow-md bg-white">
+        <div className="mt-3 border border-stone-200 rounded-sm overflow-hidden shadow-sm bg-white">
           {isDimensionSearch ? (
             <>
-              <p className="px-5 pt-4 pb-2 text-xs uppercase tracking-widest text-stone-400">
+              <p className="px-5 pt-4 pb-2 text-xs uppercase tracking-[0.2em] text-stone-400">
                 Mantels that fit a {inches(fireboxWidth!)} firebox opening
               </p>
               {fitResults.length === 0 ? (
                 <div className="px-5 py-4 text-sm text-stone-500">
                   No standard size fits a {inches(fireboxWidth!)} opening. We build custom sizes —{" "}
-                  <Link href="/mantels" className="text-amber-700 font-semibold hover:underline">
+                  <Link href="/mantels" className="text-[color:var(--accent)] font-medium hover:underline">
                     use the full Fit Finder
                   </Link>{" "}
                   or contact a showroom.
@@ -80,20 +80,20 @@ export default function MantelSearch() {
                       <Link
                         href={`/mantels/p/${product.slug}`}
                         onClick={() => setQuery("")}
-                        className="flex items-center justify-between px-5 py-3.5 hover:bg-amber-50 transition-colors border-b border-stone-100 last:border-0"
+                        className="flex items-center justify-between px-5 py-3.5 hover:bg-[#F9F7F3] transition-colors border-b border-stone-100 last:border-0"
                       >
                         <div>
-                          <p className="font-semibold text-stone-900 text-sm">{product.name}</p>
+                          <p className="font-medium text-stone-900 text-sm">{product.name}</p>
                           <p className="text-xs text-stone-400 mt-0.5">
                             {typeLabel[product.type]} · opening {inches(fittingSizes[0].openingWidth)} · overall {inches(fittingSizes[0].overallWidth)}
                           </p>
                         </div>
-                        <span className="text-amber-700 text-xs font-semibold">View →</span>
+                        <span className="text-[color:var(--accent)] text-xs font-medium">View →</span>
                       </Link>
                     </li>
                   ))}
                   <li className="px-5 py-3 bg-stone-50 text-center">
-                    <Link href="/mantels" className="text-amber-700 text-xs font-semibold hover:underline">
+                    <Link href="/mantels" className="text-[color:var(--accent)] text-xs font-medium hover:underline">
                       Refine by height, wall width &amp; material in the full Fit Finder →
                     </Link>
                   </li>
@@ -111,15 +111,15 @@ export default function MantelSearch() {
                   <Link
                     href={`/mantels/p/${p.slug}`}
                     onClick={() => setQuery("")}
-                    className="flex items-center justify-between px-5 py-3.5 hover:bg-amber-50 transition-colors border-b border-stone-100 last:border-0"
+                    className="flex items-center justify-between px-5 py-3.5 hover:bg-[#F9F7F3] transition-colors border-b border-stone-100 last:border-0"
                   >
                     <div>
-                      <p className="font-semibold text-stone-900 text-sm">{p.name}</p>
+                      <p className="font-medium text-stone-900 text-sm">{p.name}</p>
                       <p className="text-xs text-stone-400 mt-0.5">
                         {typeLabel[p.type]} · {styleLabel[p.style]}
                       </p>
                     </div>
-                    <span className="text-amber-700 text-xs font-semibold">View →</span>
+                    <span className="text-[color:var(--accent)] text-xs font-medium">View →</span>
                   </Link>
                 </li>
               ))}

@@ -7,6 +7,7 @@ import PricingCTA from "@/components/PricingCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import MantelSearch from "@/components/MantelSearch";
 
+import EditorialPageHero from "@/components/EditorialPageHero";
 // Traditional sub-style facets — shown as a cross-link nav on the traditional pages.
 const traditionalFacets = [
   { slug: "traditional", label: "All Traditional" },
@@ -84,28 +85,11 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-stone-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-stone-400 mb-4">
-            <Link href="/mantels" className="hover:text-amber-400 transition-colors">
-              Mantels
-            </Link>
-            <span className="mx-2">›</span>
-            <span className="text-stone-200">{category.title}</span>
-          </nav>
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
-            {category.tagline}
-          </p>
-          <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            {category.title}
-          </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">{category.description}</p>
-        </div>
-      </section>
+      <EditorialPageHero
+        eyebrow={category.tagline}
+        title={category.title}
+        description={category.description}
+      />
 
       {/* Search all mantels */}
       <MantelSearch />
@@ -119,10 +103,10 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
                 key={f.slug}
                 href={`/mantels/${f.slug}`}
                 aria-current={f.slug === slug ? "page" : undefined}
-                className={`text-sm px-4 py-1.5 rounded-full border transition-colors ${
+                className={`text-sm px-4 py-1.5 rounded-sm border transition-colors ${
                   f.slug === slug
-                    ? "bg-amber-700 text-white border-amber-700"
-                    : "bg-white text-stone-600 border-stone-200 hover:border-amber-700 hover:text-amber-700"
+                    ? "bg-[color:var(--accent)] text-white border-[color:var(--accent)]"
+                    : "bg-white text-stone-600 border-stone-200 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]"
                 }`}
               >
                 {f.label}
@@ -140,7 +124,7 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
               <Link
                 key={product.slug}
                 href={`/mantels/p/${product.slug}`}
-                className="group border border-stone-200 rounded-xl overflow-hidden hover:border-amber-700 hover:shadow-md transition-all"
+                className="group border border-stone-200 rounded-sm overflow-hidden hover:border-[color:var(--accent)] hover:shadow-sm transition-all"
               >
                 <div className="relative h-72 bg-stone-100 overflow-hidden">
                   {product.image ? (
@@ -160,12 +144,12 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
                     <span className="text-xs bg-stone-100 text-stone-500 px-2 py-0.5 rounded">
                       {typeLabel[product.type]}
                     </span>
-                    <span className="text-xs bg-amber-50 text-amber-700 px-2 py-0.5 rounded">
+                    <span className="text-xs bg-[#F9F7F3] text-[color:var(--accent)] px-2 py-0.5 rounded">
                       {styleLabel[product.style]}
                     </span>
                   </div>
                   <h2
-                    className="text-lg font-bold text-stone-900 mb-2 group-hover:text-amber-700 transition-colors"
+                    className="text-lg font-medium text-stone-900 mb-2 group-hover:text-[color:var(--accent)] transition-colors"
                     style={{ fontFamily: "var(--font-playfair)" }}
                   >
                     {product.name}
@@ -173,7 +157,7 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
                   <p className="text-stone-500 text-sm leading-relaxed line-clamp-3">
                     {product.description}
                   </p>
-                  <p className="text-amber-700 text-sm font-semibold mt-4 group-hover:underline">
+                  <p className="text-[color:var(--accent)] text-sm font-medium mt-4 group-hover:underline">
                     View details →
                   </p>
                 </div>
@@ -185,7 +169,7 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
             {category.products.map((product, i) => (
               <div
                 key={i}
-                className="border border-stone-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow"
+                className="border border-stone-200 rounded-sm overflow-hidden hover:shadow-sm transition-shadow"
               >
                 <div className="relative h-52 bg-stone-100 flex items-center justify-center text-6xl">
                   {product.image ? (
@@ -202,7 +186,7 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
                 </div>
                 <div className="p-7">
                   <h2
-                    className="text-xl font-bold text-stone-900 mb-2"
+                    className="text-xl font-medium text-stone-900 mb-2"
                     style={{ fontFamily: "var(--font-playfair)" }}
                   >
                     {product.name}
@@ -211,14 +195,14 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
 
                   {product.finishes && (
                     <div className="mb-3">
-                      <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">
+                      <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-2">
                         Available Finishes
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {product.finishes.map((f) => (
                           <span
                             key={f}
-                            className="bg-amber-50 text-amber-800 text-xs px-3 py-1 rounded-full border border-amber-200"
+                            className="bg-[#F9F7F3] text-[color:var(--accent)] text-xs px-3 py-1 rounded-sm border border-[#D9CBB8]"
                           >
                             {f}
                           </span>
@@ -229,20 +213,20 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
 
                   {product.sizes && (
                     <p className="text-xs text-stone-400 mb-3">
-                      <span className="font-semibold">Sizes:</span> {product.sizes}
+                      <span className="font-medium">Sizes:</span> {product.sizes}
                     </p>
                   )}
 
                   {product.note && (
-                    <p className="text-xs text-amber-700 italic">{product.note}</p>
+                    <p className="text-xs text-[color:var(--accent)] italic">{product.note}</p>
                   )}
 
                   <div className="mt-5">
                     <Link
                       href="/estimate"
-                      className="inline-block bg-amber-700 hover:bg-amber-800 text-white text-sm px-5 py-2.5 rounded font-semibold transition-colors"
+                      className="inline-block bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white text-sm px-5 py-2.5 rounded font-medium transition-colors"
                     >
-                      Request Estimate
+                      Request Project Estimate
                     </Link>
                   </div>
                 </div>
@@ -256,7 +240,7 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
       <section className="bg-stone-50 py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-xl font-bold text-stone-900 mb-6"
+            className="text-xl font-medium text-stone-900 mb-6"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Browse Other Mantel Styles
@@ -268,7 +252,7 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
                 <Link
                   key={c.slug}
                   href={`/mantels/${c.slug}`}
-                  className="border border-stone-300 rounded-full px-5 py-2 text-sm text-stone-600 hover:border-amber-700 hover:text-amber-700 transition-colors"
+                  className="border border-stone-300 rounded-sm px-5 py-2 text-sm text-stone-600 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] transition-colors"
                 >
                   {c.title}
                 </Link>

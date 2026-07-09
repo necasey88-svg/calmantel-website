@@ -16,25 +16,25 @@ export default function OutdoorFireplacesPage() {
 
   return (
     <>
-      <section className="bg-stone-900 text-white py-20">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-stone-400 mb-4">
-            <Link href="/fireplaces" className="hover:text-amber-400 transition-colors">
+          <nav className="text-sm text-[color:var(--ink)]/55 mb-4">
+            <Link href="/fireplaces" className="hover:text-[color:var(--accent)] transition-colors">
               Fireplaces
             </Link>
             <span className="mx-2">›</span>
-            <span className="text-stone-200">{category.title}</span>
+            <span className="text-[color:var(--ink)]/80">{category.title}</span>
           </nav>
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
+          <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-sm font-medium mb-3">
             {category.tagline}
           </p>
           <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.04] mb-4"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             {category.title}
           </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">{category.description}</p>
+          <p className="text-[color:var(--ink)]/60 max-w-2xl leading-relaxed">{category.description}</p>
         </div>
       </section>
 

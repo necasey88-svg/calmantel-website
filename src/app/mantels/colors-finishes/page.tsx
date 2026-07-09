@@ -69,18 +69,18 @@ const finishDescriptions: Record<string, string> = {
 export default function ColorsFinishesPage() {
   return (
     <>
-      <section className="bg-stone-900 text-white py-20">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
+          <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-sm font-medium mb-3">
             Mantel Collection
           </p>
           <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.04] mb-4"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Colors &amp; Finishes
           </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
+          <p className="text-[color:var(--ink)]/60 max-w-2xl leading-relaxed">
             Every mantel in our precast concrete collection is available in multiple finishes.
             Choose the texture and color that best matches your home&apos;s style — from crisp
             smooth whites to richly textured stone looks.
@@ -95,7 +95,7 @@ export default function ColorsFinishesPage() {
             <section key={type}>
               <div className="mb-8">
                 <h2
-                  className="text-2xl md:text-3xl font-bold text-stone-900 mb-2"
+                  className="text-2xl md:text-3xl font-medium text-stone-900 mb-2"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   {type}
@@ -105,7 +105,7 @@ export default function ColorsFinishesPage() {
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
                 {group.map((finish) => (
                   <div key={`${finish.type}-${finish.name}`} className="group">
-                    <div className="relative aspect-square rounded-xl overflow-hidden border border-stone-200 group-hover:shadow-md transition-shadow">
+                    <div className="relative aspect-square rounded-sm overflow-hidden border border-stone-200 group-hover:shadow-sm transition-shadow">
                       <Image
                         src={`${CDN}${finish.img}`}
                         alt={`${finish.name} — ${finish.type} finish`}
@@ -114,8 +114,8 @@ export default function ColorsFinishesPage() {
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       />
                     </div>
-                    <p className="mt-2 text-sm font-semibold text-stone-800">{finish.name}</p>
-                    <p className="text-xs text-stone-400">{finish.type}</p>
+                    <p className="mt-2 text-sm font-medium text-stone-800">{finish.name}</p>
+                    <p className="text-xs text-[color:var(--ink)]/55">{finish.type}</p>
                   </div>
                 ))}
               </div>
@@ -124,9 +124,9 @@ export default function ColorsFinishesPage() {
         })}
 
         {/* Browse mantels CTA */}
-        <div className="bg-stone-50 rounded-2xl p-10 text-center">
+        <div className="bg-stone-50 rounded-sm p-10 text-center">
           <h2
-            className="text-2xl font-bold text-stone-900 mb-3"
+            className="text-2xl font-medium text-stone-900 mb-3"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Ready to Choose Your Mantel?
@@ -137,13 +137,13 @@ export default function ColorsFinishesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/mantels/contemporary"
-              className="inline-block bg-amber-700 hover:bg-amber-800 text-white px-8 py-3.5 rounded-full font-semibold transition-colors"
+              className="inline-block bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white px-8 py-3.5 rounded-sm font-medium transition-colors"
             >
               Contemporary Mantels
             </Link>
             <Link
               href="/mantels/traditional"
-              className="inline-block border border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white px-8 py-3.5 rounded-full font-semibold transition-colors"
+              className="inline-block border border-[color:var(--accent)] text-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-white px-8 py-3.5 rounded-sm font-medium transition-colors"
             >
               Traditional Mantels
             </Link>

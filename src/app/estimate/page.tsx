@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 
+import EditorialPageHero from "@/components/EditorialPageHero";
 const ACCESS_KEY = "77eca617-9eb9-4352-8b5a-c89bf8870232";
 
 export default function EstimatePage() {
@@ -69,34 +70,22 @@ export default function EstimatePage() {
 
   return (
     <>
-      <section className="bg-stone-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
-            Free Consultation
-          </p>
-          <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            Tell Us About Your Project
-          </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
-            Fill out the form below and one of our fireplace experts will be in touch
-            to discuss your project and provide a free estimate.
-          </p>
-        </div>
-      </section>
+      <EditorialPageHero
+        eyebrow="Project Consultation"
+        title="Tell Us About Your Project"
+        description="Share the room, style, and scope you have in mind. Our team will review the details and follow up with a thoughtful next step for your fireplace or mantel project."
+      />
 
       <section className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {submitted ? (
           <div className="text-center py-16">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
+            <div className="w-16 h-16 bg-green-100 rounded-sm flex items-center justify-center mx-auto mb-5">
               <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
             <h2
-              className="text-2xl font-bold text-stone-900 mb-3"
+              className="text-2xl font-medium text-stone-900 mb-3"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               Request Received!
@@ -119,7 +108,7 @@ export default function EstimatePage() {
                   type="text"
                   name="first_name"
                   required
-                  className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700"
+                  className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
                 />
               </div>
               <div>
@@ -130,7 +119,7 @@ export default function EstimatePage() {
                   type="text"
                   name="last_name"
                   required
-                  className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700"
+                  className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
                 />
               </div>
             </div>
@@ -143,7 +132,7 @@ export default function EstimatePage() {
                 type="email"
                 name="email"
                 required
-                className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700"
+                className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
               />
             </div>
 
@@ -154,7 +143,7 @@ export default function EstimatePage() {
               <input
                 type="tel"
                 name="phone"
-                className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700"
+                className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
               />
             </div>
 
@@ -166,7 +155,7 @@ export default function EstimatePage() {
                 type="text"
                 name="city"
                 required
-                className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700"
+                className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
               />
             </div>
 
@@ -177,7 +166,7 @@ export default function EstimatePage() {
               <select
                 name="project_type"
                 required
-                className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 bg-white"
+                className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] bg-white"
               >
                 <option value="">Select an option</option>
                 <option>Mantel / Surround</option>
@@ -196,7 +185,7 @@ export default function EstimatePage() {
               <textarea
                 name="message"
                 rows={5}
-                className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700 resize-none"
+                className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] resize-none"
                 placeholder="Describe your fireplace, room size, style preferences, timeline…"
               />
             </div>
@@ -207,14 +196,14 @@ export default function EstimatePage() {
                 Photos of Your Space <span className="text-stone-400 font-normal">(optional — list them here and email to info@calmantel.com)</span>
               </label>
               <div
-                className="border-2 border-dashed border-stone-300 rounded-lg p-6 text-center cursor-pointer hover:border-amber-700 transition-colors"
+                className="border-2 border-dashed border-stone-300 rounded-lg p-6 text-center cursor-pointer hover:border-[color:var(--accent)] transition-colors"
                 onClick={() => fileInputRef.current?.click()}
               >
                 <svg className="w-8 h-8 text-stone-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 <p className="text-sm text-stone-500">
-                  <span className="text-amber-700 font-semibold">Click to upload</span> or drag and drop
+                  <span className="text-[color:var(--accent)] font-medium">Click to upload</span> or drag and drop
                 </p>
                 <p className="text-xs text-stone-400 mt-1">JPG, PNG, HEIC, WEBP</p>
                 <input
@@ -233,7 +222,7 @@ export default function EstimatePage() {
                   {files.map((file, i) => (
                     <li key={i} className="flex items-center justify-between bg-stone-50 border border-stone-200 rounded-lg px-4 py-2.5 text-sm">
                       <div className="flex items-center gap-2 min-w-0">
-                        <svg className="w-4 h-4 text-amber-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-[color:var(--accent)] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                         <span className="truncate text-stone-700">{file.name}</span>
@@ -255,7 +244,7 @@ export default function EstimatePage() {
               )}
 
               {files.length >= 5 && (
-                <p className="text-xs text-amber-700 mt-2">Maximum of 5 photos reached.</p>
+                <p className="text-xs text-[color:var(--accent)] mt-2">Maximum of 5 photos reached.</p>
               )}
             </div>
 
@@ -268,7 +257,7 @@ export default function EstimatePage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-amber-700 hover:bg-amber-800 disabled:opacity-60 disabled:cursor-not-allowed text-white py-3.5 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+              className="w-full bg-[color:var(--ink)] hover:bg-[color:var(--accent)] disabled:opacity-60 disabled:cursor-not-allowed text-white py-3.5 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
             >
               {loading ? (
                 <>

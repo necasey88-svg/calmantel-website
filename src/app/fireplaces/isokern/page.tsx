@@ -127,22 +127,22 @@ const whyIsokern = [
 
 function ProductCard({ p }: { p: typeof woodBurning[0] }) {
   return (
-    <div className="border border-stone-200 rounded-2xl overflow-hidden hover:border-amber-700 hover:shadow-md transition-all flex flex-col">
+    <div className="border border-stone-200 rounded-sm overflow-hidden hover:border-[color:var(--accent)] hover:shadow-sm transition-all flex flex-col">
       <div className="h-52 bg-stone-100 flex items-center justify-center">
-        <svg className="w-16 h-16 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-16 h-16 text-[color:var(--ink)]/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
         </svg>
       </div>
       <div className="p-6 flex flex-col flex-1">
-        <p className="text-amber-700 text-xs font-semibold uppercase tracking-widest mb-1">{p.tagline}</p>
-        <h3 className="text-xl font-bold text-stone-900 mb-3" style={{ fontFamily: "var(--font-playfair)" }}>
+        <p className="text-[color:var(--accent)] text-xs uppercase tracking-[0.28em] mb-1">{p.tagline}</p>
+        <h3 className="text-xl font-medium text-stone-900 mb-3" style={{ fontFamily: "var(--font-playfair)" }}>
           {p.name}
         </h3>
         <p className="text-stone-500 text-sm leading-relaxed mb-4">{p.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {p.sizes.map((s) => (
-            <span key={s} className="bg-stone-100 text-stone-600 text-xs px-3 py-1 rounded-full border border-stone-200">
+            <span key={s} className="bg-stone-100 text-stone-600 text-xs px-3 py-1 rounded-sm border border-stone-200">
               {s}
             </span>
           ))}
@@ -151,8 +151,8 @@ function ProductCard({ p }: { p: typeof woodBurning[0] }) {
         <ul className="space-y-1.5 mb-5">
           {p.features.map((f) => (
             <li key={f} className="flex items-start gap-2 text-xs text-stone-500">
-              <span className="w-4 h-4 rounded-full bg-amber-100 flex-shrink-0 flex items-center justify-center mt-0.5">
-                <svg className="w-2.5 h-2.5 text-amber-700" fill="currentColor" viewBox="0 0 20 20">
+              <span className="w-4 h-4 rounded-sm bg-[#EFE7DA] flex-shrink-0 flex items-center justify-center mt-0.5">
+                <svg className="w-2.5 h-2.5 text-[color:var(--accent)]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </span>
@@ -162,10 +162,10 @@ function ProductCard({ p }: { p: typeof woodBurning[0] }) {
         </ul>
 
         <div className="mt-auto flex items-center gap-3">
-          <Link href="/estimate" className="bg-amber-700 hover:bg-amber-800 text-white text-sm px-5 py-2.5 rounded font-semibold transition-colors">
-            Request Estimate
+          <Link href="/estimate" className="bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white text-sm px-5 py-2.5 rounded font-medium transition-colors">
+            Request Project Estimate
           </Link>
-          <a href={p.url} target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:underline text-sm font-semibold">
+          <a href={p.url} target="_blank" rel="noopener noreferrer" className="text-[color:var(--accent)] hover:underline text-sm font-medium">
             View details →
           </a>
         </div>
@@ -178,20 +178,20 @@ export default function IsokernPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-stone-900 text-white py-20">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-stone-400 mb-4">
-            <Link href="/fireplaces" className="hover:text-amber-400 transition-colors">Fireplaces</Link>
+          <nav className="text-sm text-[color:var(--ink)]/55 mb-4">
+            <Link href="/fireplaces" className="hover:text-[color:var(--accent)] transition-colors">Fireplaces</Link>
             <span className="mx-2">›</span>
-            <span className="text-stone-200">Isokern</span>
+            <span className="text-[color:var(--ink)]/80">Isokern</span>
           </nav>
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
+          <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-sm font-medium mb-3">
             Volcanic Pumice · Modular Masonry · All Fuel
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h1 className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.04] mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
             Isokern Fireplaces
           </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
+          <p className="text-[color:var(--ink)]/60 max-w-2xl leading-relaxed">
             Isokern is the world&apos;s leading modular masonry fireplace system — built from Icelandic volcanic pumice for superior strength, insulation, and longevity. Available in wood burning and gas burning configurations. If you want a real masonry fireplace that installs faster and performs better, Isokern is the answer.
           </p>
         </div>
@@ -203,7 +203,7 @@ export default function IsokernPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyIsokern.map((item) => (
               <div key={item.title}>
-                <p className="font-bold text-stone-900 mb-2 text-sm uppercase tracking-wide">{item.title}</p>
+                <p className="font-medium text-stone-900 mb-2 text-sm uppercase tracking-wide">{item.title}</p>
                 <p className="text-stone-500 text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
@@ -213,8 +213,8 @@ export default function IsokernPage() {
 
       {/* Wood Burning */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4">
-        <p className="text-amber-700 uppercase tracking-widest text-xs font-semibold mb-2">Fuel Type</p>
-        <h2 className="text-3xl font-bold text-stone-900" style={{ fontFamily: "var(--font-playfair)" }}>
+        <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-xs font-medium mb-2">Fuel Type</p>
+        <h2 className="text-3xl font-medium text-stone-900" style={{ fontFamily: "var(--font-playfair)" }}>
           Wood Burning Fireplaces
         </h2>
         <p className="text-stone-500 mt-2 max-w-2xl text-sm leading-relaxed">
@@ -234,8 +234,8 @@ export default function IsokernPage() {
 
       {/* Gas Burning */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-4">
-        <p className="text-amber-700 uppercase tracking-widest text-xs font-semibold mb-2">Fuel Type</p>
-        <h2 className="text-3xl font-bold text-stone-900" style={{ fontFamily: "var(--font-playfair)" }}>
+        <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-xs font-medium mb-2">Fuel Type</p>
+        <h2 className="text-3xl font-medium text-stone-900" style={{ fontFamily: "var(--font-playfair)" }}>
           Gas Burning Fireplaces
         </h2>
         <p className="text-stone-500 mt-2 max-w-2xl text-sm leading-relaxed">
@@ -252,17 +252,17 @@ export default function IsokernPage() {
       {/* CTA strip */}
       <section className="bg-stone-50 border-t border-stone-100 py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-stone-900 mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h2 className="text-2xl font-medium text-stone-900 mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
             Building New or Replacing an Old Firebox?
           </h2>
           <p className="text-stone-500 leading-relaxed mb-8 max-w-xl mx-auto">
             Our team can walk you through which Isokern system fits your space, budget, and fuel preference. We handle everything from permits to the finished facing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/estimate" className="inline-block bg-amber-700 hover:bg-amber-800 text-white px-8 py-3.5 rounded font-semibold transition-colors">
-              Request a Free Estimate
+            <Link href="/estimate" className="inline-block bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white px-8 py-3.5 rounded font-medium transition-colors">
+              Request a Project Estimate
             </Link>
-            <Link href="/booking" className="inline-block border border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white px-8 py-3.5 rounded font-semibold transition-colors">
+            <Link href="/booking" className="inline-block border border-[color:var(--accent)] text-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-white px-8 py-3.5 rounded font-medium transition-colors">
               Book a Showroom Visit
             </Link>
           </div>

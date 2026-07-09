@@ -56,8 +56,8 @@ export default function MantelFitFinder({
   );
 
   return (
-    <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6 sm:p-8">
-      <h2 className="text-2xl font-bold text-stone-900 mb-1" style={{ fontFamily: "var(--font-playfair)" }}>
+    <div className="bg-stone-50 border border-stone-200 rounded-sm p-6 sm:p-8">
+      <h2 className="text-2xl font-medium text-stone-900 mb-1" style={{ fontFamily: "var(--font-playfair)" }}>
         {heading}
       </h2>
       <p className="text-stone-500 text-sm mb-6">
@@ -69,7 +69,7 @@ export default function MantelFitFinder({
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-6">
         {/* Firebox width */}
         <div>
-          <label className="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-medium text-stone-500 uppercase tracking-wider mb-1.5">
             Firebox opening width
           </label>
           <div className="flex items-center gap-2">
@@ -79,7 +79,7 @@ export default function MantelFitFinder({
               value={firebox}
               onChange={(e) => setFirebox(e.target.value === "" ? "" : Number(e.target.value))}
               placeholder="any size, e.g. 44"
-              className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
+              className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-[color:var(--accent)] focus:outline-none"
             />
             <span className="text-stone-400 text-sm">in</span>
           </div>
@@ -89,7 +89,7 @@ export default function MantelFitFinder({
               <button
                 key={v}
                 onClick={() => setFirebox(v)}
-                className="text-xs border border-stone-300 rounded-full px-3 py-1 text-stone-600 hover:border-amber-700 hover:text-amber-700 transition-colors"
+                className="text-xs border border-stone-300 rounded-sm px-3 py-1 text-stone-600 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] transition-colors"
               >
                 {v}&quot;
               </button>
@@ -99,7 +99,7 @@ export default function MantelFitFinder({
             Measure the <strong>inside width</strong> of your firebox opening. Any size works — just type it in.
           </p>
 
-          <label className="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1.5 mt-4">
+          <label className="block text-xs font-medium text-stone-500 uppercase tracking-wider mb-1.5 mt-4">
             Firebox opening height <span className="text-stone-400 normal-case font-normal">(optional)</span>
           </label>
           <div className="flex items-center gap-2">
@@ -109,7 +109,7 @@ export default function MantelFitFinder({
               value={fireboxHeight}
               onChange={(e) => setFireboxHeight(e.target.value === "" ? "" : Number(e.target.value))}
               placeholder="e.g. 30"
-              className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
+              className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-[color:var(--accent)] focus:outline-none"
             />
             <span className="text-stone-400 text-sm">in</span>
           </div>
@@ -120,13 +120,13 @@ export default function MantelFitFinder({
 
         {/* Wall space */}
         <div>
-          <label className="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-medium text-stone-500 uppercase tracking-wider mb-1.5">
             Available wall space
           </label>
           <select
             value={wallLimited ? "limited" : "none"}
             onChange={(e) => setWallLimited(e.target.value === "limited")}
-            className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
+            className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-[color:var(--accent)] focus:outline-none"
           >
             <option value="none">No restriction</option>
             <option value="limited">I have a limit…</option>
@@ -139,13 +139,13 @@ export default function MantelFitFinder({
                 value={wallWidth}
                 onChange={(e) => setWallWidth(e.target.value === "" ? "" : Number(e.target.value))}
                 placeholder="max width"
-                className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
+                className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-[color:var(--accent)] focus:outline-none"
               />
               <span className="text-stone-400 text-sm">in</span>
             </div>
           )}
 
-          <label className="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1.5 mt-4">
+          <label className="block text-xs font-medium text-stone-500 uppercase tracking-wider mb-1.5 mt-4">
             Max overall height <span className="text-stone-400 normal-case font-normal">(optional)</span>
           </label>
           <div className="flex items-center gap-2">
@@ -155,7 +155,7 @@ export default function MantelFitFinder({
               value={maxHeight}
               onChange={(e) => setMaxHeight(e.target.value === "" ? "" : Number(e.target.value))}
               placeholder="e.g. 72"
-              className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
+              className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-[color:var(--accent)] focus:outline-none"
             />
             <span className="text-stone-400 text-sm">in</span>
           </div>
@@ -166,26 +166,26 @@ export default function MantelFitFinder({
 
         {/* Material */}
         <div>
-          <label className="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-medium text-stone-500 uppercase tracking-wider mb-1.5">
             Material
           </label>
           <select
             value={material}
             onChange={(e) => setMaterial(e.target.value as "any" | "precast" | "wood")}
-            className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
+            className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-[color:var(--accent)] focus:outline-none"
           >
             <option value="any">Any material</option>
             <option value="precast">Precast concrete</option>
             <option value="wood">Wood</option>
           </select>
 
-          <label className="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1.5 mt-4">
+          <label className="block text-xs font-medium text-stone-500 uppercase tracking-wider mb-1.5 mt-4">
             Style
           </label>
           <select
             value={style}
             onChange={(e) => setStyle(e.target.value as "any" | "contemporary" | "traditional" | "transitional")}
-            className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-amber-700 focus:outline-none"
+            className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-800 focus:border-[color:var(--accent)] focus:outline-none"
           >
             <option value="any">Any style</option>
             <option value="contemporary">Contemporary</option>
@@ -216,7 +216,7 @@ export default function MantelFitFinder({
                 <Link
                   key={product.slug}
                   href={`/mantels/p/${product.slug}`}
-                  className="group border border-stone-200 bg-white rounded-xl overflow-hidden hover:border-amber-700 hover:shadow-md transition-all"
+                  className="group border border-stone-200 bg-white rounded-sm overflow-hidden hover:border-[color:var(--accent)] hover:shadow-sm transition-all"
                 >
                   <div className="relative h-40 bg-stone-100">
                     {product.image ? (
@@ -226,7 +226,7 @@ export default function MantelFitFinder({
                     )}
                   </div>
                   <div className="p-4">
-                    <p className="font-bold text-stone-900 group-hover:text-amber-700 transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>
+                    <p className="font-medium text-stone-900 group-hover:text-[color:var(--accent)] transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>
                       {product.name}
                     </p>
                     <p className="text-xs text-stone-400 mb-2 capitalize">{product.type === "precast" ? "Precast Concrete" : product.type}</p>
@@ -235,14 +235,14 @@ export default function MantelFitFinder({
                         <li key={i}>
                           Opening {fmt(s.openingWidth)} · overall {fmt(s.overallWidth)}
                           {s.revealPerSide > 0.5 && (
-                            <span className="text-amber-700"> · {fmt(s.revealPerSide)} filler/side</span>
+                            <span className="text-[color:var(--accent)]"> · {fmt(s.revealPerSide)} filler/side</span>
                           )}
                         </li>
                       ))}
                     </ul>
                     <p className="text-[11px] text-stone-400 mt-1">Overall height {fmt(overallHeight)}</p>
                     {clearance === "verify" && (
-                      <p className="text-[11px] text-amber-700 mt-2">⚠ Wood clearance verified at consult</p>
+                      <p className="text-[11px] text-[color:var(--accent)] mt-2">⚠ Wood clearance verified at consult</p>
                     )}
                     {hasFirebox && snug.revealPerSide <= 0.5 && (
                       <p className="text-[11px] text-green-700 mt-2">✓ Snug fit — minimal filler</p>

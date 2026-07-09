@@ -60,7 +60,7 @@ const amenities = [
   "Live-burning fireplace displays (gas & electric)",
   "Custom mantel gallery with precast concrete and wood options",
   "Expert consultation from certified hearth professionals",
-  "Free project estimates",
+  "Project estimates",
   "Licensed, factory-trained installation professionals",
   "In-house mantel manufacturing",
 ];

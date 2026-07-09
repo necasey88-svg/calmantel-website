@@ -109,20 +109,20 @@ export default function FlarePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-stone-900 text-white py-20">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-stone-400 mb-4">
-            <Link href="/fireplaces" className="hover:text-amber-400 transition-colors">Fireplaces</Link>
+          <nav className="text-sm text-[color:var(--ink)]/55 mb-4">
+            <Link href="/fireplaces" className="hover:text-[color:var(--accent)] transition-colors">Fireplaces</Link>
             <span className="mx-2">›</span>
-            <span className="text-stone-200">Flare Fireplaces</span>
+            <span className="text-[color:var(--ink)]/80">Flare Fireplaces</span>
           </nav>
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
+          <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-sm font-medium mb-3">
             Frameless · Modern · 60 Models
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h1 className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.04] mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
             Flare Fireplaces
           </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
+          <p className="text-[color:var(--ink)]/60 max-w-2xl leading-relaxed">
             Flare offers 60 modern indoor gas fireplaces in lengths from 25&quot; to 100&quot; and glass heights of 16&quot;, 24&quot;, and 30&quot;. Their frameless design, advanced 3D burner, and wide range of styles — from front-facing to room-defining corner configurations — make them a top choice for architects, designers, and discerning homeowners.
           </p>
         </div>
@@ -130,8 +130,8 @@ export default function FlarePage() {
 
       {/* Style cards heading */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4 text-center">
-        <p className="text-amber-700 uppercase tracking-widest text-xs font-semibold mb-2">Find Your Style</p>
-        <h2 className="text-3xl font-bold text-stone-900" style={{ fontFamily: "var(--font-playfair)" }}>
+        <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-xs font-medium mb-2">Find Your Style</p>
+        <h2 className="text-3xl font-medium text-stone-900" style={{ fontFamily: "var(--font-playfair)" }}>
           Nine Indoor Fireplace Styles
         </h2>
         <p className="text-stone-500 mt-3 max-w-xl mx-auto text-sm leading-relaxed">
@@ -145,7 +145,7 @@ export default function FlarePage() {
           {styles.map((style) => (
             <div
               key={style.name}
-              className="border border-stone-200 rounded-xl overflow-hidden hover:border-amber-700 hover:shadow-md transition-all group flex flex-col"
+              className="border border-stone-200 rounded-sm overflow-hidden hover:border-[color:var(--accent)] hover:shadow-sm transition-all group flex flex-col"
             >
               <div className="relative h-52 bg-stone-100 overflow-hidden">
                 {style.image ? (
@@ -161,9 +161,9 @@ export default function FlarePage() {
                 )}
               </div>
               <div className="p-6 flex flex-col flex-1">
-                <p className="text-amber-700 text-xs font-semibold uppercase tracking-widest mb-1">{style.tagline}</p>
+                <p className="text-[color:var(--accent)] text-xs uppercase tracking-[0.28em] mb-1">{style.tagline}</p>
                 <h3
-                  className="text-xl font-bold text-stone-900 mb-2 group-hover:text-amber-700 transition-colors"
+                  className="text-xl font-medium text-stone-900 mb-2 group-hover:text-[color:var(--accent)] transition-colors"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   {style.name}
@@ -172,7 +172,7 @@ export default function FlarePage() {
                 <ul className="mb-5 space-y-1">
                   {style.specs.map((spec) => (
                     <li key={spec} className="flex items-center gap-2 text-xs text-stone-500">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-700 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-sm bg-[color:var(--accent)] flex-shrink-0" />
                       {spec}
                     </li>
                   ))}
@@ -180,15 +180,15 @@ export default function FlarePage() {
                 <div className="mt-auto flex items-center gap-3">
                   <Link
                     href="/estimate"
-                    className="bg-amber-700 hover:bg-amber-800 text-white text-sm px-4 py-2 rounded font-semibold transition-colors"
+                    className="bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white text-sm px-4 py-2 rounded font-medium transition-colors"
                   >
-                    Request Estimate
+                    Request Project Estimate
                   </Link>
                   <a
                     href={style.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-amber-700 hover:underline text-sm font-semibold"
+                    className="text-[color:var(--accent)] hover:underline text-sm font-medium"
                   >
                     View style →
                   </a>
@@ -202,15 +202,15 @@ export default function FlarePage() {
       {/* Features grid */}
       <section className="bg-stone-50 border-t border-stone-100 py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-bold text-stone-900 mb-8 text-center" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h2 className="text-xl font-medium text-stone-900 mb-8 text-center" style={{ fontFamily: "var(--font-playfair)" }}>
             Every Flare Fireplace Includes
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f) => (
               <div key={f.label} className="flex flex-col gap-1">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-amber-700 flex-shrink-0" />
-                  <p className="font-bold text-stone-800 text-sm">{f.label}</p>
+                  <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)] flex-shrink-0" />
+                  <p className="font-medium text-stone-800 text-sm">{f.label}</p>
                 </div>
                 <p className="text-stone-500 text-xs leading-relaxed pl-4">{f.body}</p>
               </div>

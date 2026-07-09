@@ -53,20 +53,20 @@ export default function MendotaPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-stone-900 text-white py-20">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-stone-400 mb-4">
-            <Link href="/fireplaces" className="hover:text-amber-400 transition-colors">Fireplaces</Link>
+          <nav className="text-sm text-[color:var(--ink)]/55 mb-4">
+            <Link href="/fireplaces" className="hover:text-[color:var(--accent)] transition-colors">Fireplaces</Link>
             <span className="mx-2">›</span>
-            <span className="text-stone-200">Mendota Fireplaces</span>
+            <span className="text-[color:var(--ink)]/80">Mendota Fireplaces</span>
           </nav>
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
+          <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-sm font-medium mb-3">
             American Made · Premium Performance
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h1 className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.04] mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
             Mendota Fireplaces
           </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
+          <p className="text-[color:var(--ink)]/60 max-w-2xl leading-relaxed">
             Mendota is a Wisconsin-based manufacturer producing some of the finest gas fireplaces made in America.
             Their full-view design, exceptional heat output, and patented DXV flame technology set them apart from every other brand.
           </p>
@@ -75,8 +75,8 @@ export default function MendotaPage() {
 
       {/* Find Your Shape heading */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4 text-center">
-        <p className="text-amber-700 uppercase tracking-widest text-xs font-semibold mb-2">Find Your Shape</p>
-        <h2 className="text-3xl font-bold text-stone-900" style={{ fontFamily: "var(--font-playfair)" }}>
+        <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-xs font-medium mb-2">Find Your Shape</p>
+        <h2 className="text-3xl font-medium text-stone-900" style={{ fontFamily: "var(--font-playfair)" }}>
           Four Distinct Firebox Shapes
         </h2>
         <p className="text-stone-500 mt-3 max-w-xl mx-auto text-sm leading-relaxed">
@@ -90,7 +90,7 @@ export default function MendotaPage() {
           {shapes.map((shape) => (
             <div
               key={shape.name}
-              className="border border-stone-200 rounded-2xl overflow-hidden hover:border-amber-700 hover:shadow-md transition-all group flex flex-col"
+              className="border border-stone-200 rounded-sm overflow-hidden hover:border-[color:var(--accent)] hover:shadow-sm transition-all group flex flex-col"
             >
               <div className="relative h-56 bg-stone-100 overflow-hidden">
                 <Image
@@ -103,9 +103,9 @@ export default function MendotaPage() {
               </div>
 
               <div className="p-7 flex flex-col flex-1">
-                <p className="text-amber-700 text-xs font-semibold uppercase tracking-widest mb-1">{shape.tagline}</p>
+                <p className="text-[color:var(--accent)] text-xs uppercase tracking-[0.28em] mb-1">{shape.tagline}</p>
                 <h3
-                  className="text-2xl font-bold text-stone-900 mb-3 group-hover:text-amber-700 transition-colors"
+                  className="text-2xl font-medium text-stone-900 mb-3 group-hover:text-[color:var(--accent)] transition-colors"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   {shape.name}
@@ -117,7 +117,7 @@ export default function MendotaPage() {
                   {shape.models.map((model) => (
                     <span
                       key={model}
-                      className="bg-stone-100 text-stone-600 text-xs font-semibold px-3 py-1.5 rounded-full border border-stone-200"
+                      className="bg-stone-100 text-stone-600 text-xs font-medium px-3 py-1.5 rounded-sm border border-stone-200"
                     >
                       {model}
                     </span>
@@ -127,15 +127,15 @@ export default function MendotaPage() {
                 <div className="mt-auto flex items-center gap-3">
                   <Link
                     href="/estimate"
-                    className="bg-amber-700 hover:bg-amber-800 text-white text-sm px-5 py-2.5 rounded font-semibold transition-colors"
+                    className="bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white text-sm px-5 py-2.5 rounded font-medium transition-colors"
                   >
-                    Request Estimate
+                    Request Project Estimate
                   </Link>
                   <a
                     href={shape.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-amber-700 hover:underline text-sm font-semibold"
+                    className="text-[color:var(--accent)] hover:underline text-sm font-medium"
                   >
                     View models →
                   </a>
@@ -149,7 +149,7 @@ export default function MendotaPage() {
       {/* Why Mendota strip */}
       <section className="bg-stone-50 border-t border-stone-100 py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-bold text-stone-900 mb-8 text-center" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h2 className="text-xl font-medium text-stone-900 mb-8 text-center" style={{ fontFamily: "var(--font-playfair)" }}>
             Why Mendota?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
@@ -159,8 +159,8 @@ export default function MendotaPage() {
               { title: "Exceptional Heat", body: "Up to 55,000 BTU with Mendota's high-efficiency heat exchanger — real warmth, not just ambiance." },
             ].map((item) => (
               <div key={item.title} className="flex flex-col items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-amber-700 mb-1" />
-                <p className="font-bold text-stone-800 text-sm">{item.title}</p>
+                <div className="w-2 h-2 rounded-sm bg-[color:var(--accent)] mb-1" />
+                <p className="font-medium text-stone-800 text-sm">{item.title}</p>
                 <p className="text-stone-500 text-xs leading-relaxed max-w-xs">{item.body}</p>
               </div>
             ))}

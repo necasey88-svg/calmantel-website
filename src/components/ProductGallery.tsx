@@ -13,7 +13,7 @@ export default function ProductGallery({ images, alt }: Props) {
   return (
     <div className="flex flex-col gap-3">
       {/* Main image */}
-      <div className="rounded-2xl overflow-hidden bg-stone-100 aspect-[4/3]">
+      <div className="rounded-sm overflow-hidden bg-stone-100 aspect-[4/3]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={images[active]}
@@ -32,7 +32,7 @@ export default function ProductGallery({ images, alt }: Props) {
               onClick={() => setActive(i)}
               className={`rounded-lg overflow-hidden border-2 transition-all ${
                 i === active
-                  ? "border-amber-700 shadow-md"
+                  ? "border-[color:var(--accent)] shadow-sm"
                   : "border-stone-200 hover:border-amber-400 opacity-70 hover:opacity-100"
               }`}
               style={{ width: 72, height: 54, flexShrink: 0 }}

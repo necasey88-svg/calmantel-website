@@ -2,6 +2,7 @@ import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { getShowroom, showroomSchema } from "@/lib/business-data";
 
+import EditorialPageHero from "@/components/EditorialPageHero";
 export const metadata = {
   title: "Sacramento Fireplace & Mantel Showroom | California Mantel",
   description:
@@ -28,49 +29,17 @@ export default function SacramentoShowroomPage() {
   return (
     <>
       <JsonLd data={showroomSchema(showroom)} />
-      <section className="bg-stone-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-stone-400 mb-4">
-            <Link href="/showrooms" className="hover:text-amber-400 transition-colors">
-              Showrooms
-            </Link>
-            <span className="mx-2">›</span>
-            <span className="text-stone-200">Sacramento</span>
-          </nav>
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
-            Northern California — Corporate Headquarters
-          </p>
-          <h1
-            className="text-4xl md:text-5xl font-bold mb-2"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            Sacramento Showroom
-          </h1>
-          <p className="text-stone-400 italic mb-6">
-            &ldquo;Northern California&apos;s most complete fireplace destination&rdquo;
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="tel:9166650627"
-              className="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded font-semibold transition-colors"
-            >
-              (916) 665-0627
-            </a>
-            <Link
-              href="/estimate"
-              className="border border-white text-white hover:bg-white hover:text-stone-900 px-6 py-3 rounded font-semibold transition-colors"
-            >
-              Request Estimate
-            </Link>
-          </div>
-        </div>
-      </section>
+      <EditorialPageHero
+        eyebrow="Northern California"
+        title="Sacramento Showroom"
+        description="A design-forward showroom serving the Sacramento region with fireplace, mantel, and installation expertise."
+      />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div className="lg:col-span-2 space-y-8">
           <div>
             <h2
-              className="text-2xl font-bold text-stone-900 mb-4"
+              className="text-2xl font-medium text-stone-900 mb-4"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               About This Showroom
@@ -99,7 +68,7 @@ export default function SacramentoShowroomPage() {
 
           <div>
             <h2
-              className="text-2xl font-bold text-stone-900 mb-4"
+              className="text-2xl font-medium text-stone-900 mb-4"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               Services Offered
@@ -107,7 +76,7 @@ export default function SacramentoShowroomPage() {
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {services.map((s) => (
                 <li key={s} className="flex items-start gap-2 text-stone-600 text-sm">
-                  <span className="text-amber-700 mt-0.5 flex-shrink-0 font-bold">✓</span>
+                  <span className="text-[color:var(--accent)] mt-0.5 flex-shrink-0 font-medium">✓</span>
                   {s}
                 </li>
               ))}
@@ -116,14 +85,14 @@ export default function SacramentoShowroomPage() {
 
           <div>
             <h2
-              className="text-2xl font-bold text-stone-900 mb-4"
+              className="text-2xl font-medium text-stone-900 mb-4"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               Cities We Serve
             </h2>
             <div className="flex flex-wrap gap-2">
               {cities.map((c) => (
-                <span key={c} className="bg-stone-100 text-stone-600 text-sm px-3 py-1 rounded-full">
+                <span key={c} className="bg-stone-100 text-stone-600 text-sm px-3 py-1 rounded-sm">
                   {c}
                 </span>
               ))}
@@ -132,56 +101,56 @@ export default function SacramentoShowroomPage() {
         </div>
 
         <div className="space-y-6">
-          <div className="border border-stone-200 rounded-xl p-6">
+          <div className="border border-stone-200 rounded-sm p-6">
             <h3
-              className="text-lg font-bold text-stone-900 mb-4"
+              className="text-lg font-medium text-stone-900 mb-4"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               Location & Hours
             </h3>
             <div className="space-y-4 text-sm">
               <div>
-                <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Address</p>
+                <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Address</p>
                 <p className="text-stone-700">4141 N Freeway Blvd</p>
                 <p className="text-stone-700">Sacramento, CA 95834</p>
               </div>
               <div>
-                <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Hours</p>
+                <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Hours</p>
                 <p className="text-stone-700">Mon–Sat: 8:30 AM – 5:00 PM</p>
               </div>
               <div>
-                <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Phone</p>
-                <a href="tel:9166650627" className="text-amber-700 font-semibold hover:text-amber-800">
+                <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Phone</p>
+                <a href="tel:9166650627" className="text-[color:var(--accent)] font-medium hover:text-[color:var(--ink)]">
                   (916) 665-0627
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="bg-amber-700 text-white rounded-xl p-6">
-            <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
-              Free Estimate
+          <div className="bg-[color:var(--accent)] text-white rounded-sm p-6">
+            <h3 className="text-lg font-medium mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
+              Project Estimate
             </h3>
             <p className="text-amber-100 text-sm mb-4">
-              Start your project with a free consultation from our Sacramento team.
+              Start your project with a private consultation from our Sacramento team.
             </p>
             <Link
               href="/estimate"
-              className="block text-center bg-white text-amber-700 hover:bg-amber-50 px-5 py-2.5 rounded font-semibold text-sm transition-colors"
+              className="block text-center bg-white text-[color:var(--accent)] hover:bg-[#F9F7F3] px-5 py-2.5 rounded font-medium text-sm transition-colors"
             >
-              Request Estimate
+              Request Project Estimate
             </Link>
           </div>
 
-          <div className="border border-stone-200 rounded-xl p-6">
-            <h3 className="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-3">
+          <div className="border border-stone-200 rounded-sm p-6">
+            <h3 className="text-sm font-medium text-stone-400 uppercase tracking-wider mb-3">
               Other Showrooms
             </h3>
             <div className="space-y-2">
-              <Link href="/showrooms/anaheim" className="block text-sm text-stone-700 hover:text-amber-700 transition-colors">
+              <Link href="/showrooms/anaheim" className="block text-sm text-stone-700 hover:text-[color:var(--accent)] transition-colors">
                 → Anaheim (Southern CA)
               </Link>
-              <Link href="/showrooms/dublin" className="block text-sm text-stone-700 hover:text-amber-700 transition-colors">
+              <Link href="/showrooms/dublin" className="block text-sm text-stone-700 hover:text-[color:var(--accent)] transition-colors">
                 → Dublin (Bay Area)
               </Link>
             </div>

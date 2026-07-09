@@ -34,25 +34,25 @@ export default async function FireplaceSubPage({ params }: { params: Promise<{ s
   return (
     <>
       {/* Hero */}
-      <section className="bg-stone-900 text-white py-20">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-stone-400 mb-4">
-            <Link href="/fireplaces" className="hover:text-amber-400 transition-colors">
+          <nav className="text-sm text-[color:var(--ink)]/55 mb-4">
+            <Link href="/fireplaces" className="hover:text-[color:var(--accent)] transition-colors">
               Fireplaces
             </Link>
             <span className="mx-2">›</span>
-            <span className="text-stone-200">{category.title}</span>
+            <span className="text-[color:var(--ink)]/80">{category.title}</span>
           </nav>
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
+          <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-sm font-medium mb-3">
             {category.tagline}
           </p>
           <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.04] mb-4"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             {category.title}
           </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">{category.description}</p>
+          <p className="text-[color:var(--ink)]/60 max-w-2xl leading-relaxed">{category.description}</p>
         </div>
       </section>
 
@@ -62,7 +62,7 @@ export default async function FireplaceSubPage({ params }: { params: Promise<{ s
           {category.products.map((product, i) => (
             <div
               key={i}
-              className="border border-stone-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow"
+              className="border border-stone-200 rounded-sm overflow-hidden hover:shadow-sm transition-shadow"
             >
               {/* Placeholder image */}
               <div className="h-52 bg-stone-100 flex items-center justify-center text-6xl">
@@ -70,7 +70,7 @@ export default async function FireplaceSubPage({ params }: { params: Promise<{ s
               </div>
               <div className="p-7">
                 <h2
-                  className="text-xl font-bold text-stone-900 mb-2"
+                  className="text-xl font-medium text-stone-900 mb-2"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   {product.name}
@@ -83,7 +83,7 @@ export default async function FireplaceSubPage({ params }: { params: Promise<{ s
                   <ul className="mb-4 space-y-1">
                     {product.specs.map((spec) => (
                       <li key={spec} className="flex items-center gap-2 text-xs text-stone-500">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-700 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-sm bg-[color:var(--accent)] flex-shrink-0" />
                         {spec}
                       </li>
                     ))}
@@ -91,14 +91,14 @@ export default async function FireplaceSubPage({ params }: { params: Promise<{ s
                 )}
 
                 {product.note && (
-                  <p className="text-xs text-amber-700 italic mb-4">{product.note}</p>
+                  <p className="text-xs text-[color:var(--accent)] italic mb-4">{product.note}</p>
                 )}
 
                 <Link
                   href="/estimate"
-                  className="inline-block bg-amber-700 hover:bg-amber-800 text-white text-sm px-5 py-2.5 rounded font-semibold transition-colors"
+                  className="inline-block bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white text-sm px-5 py-2.5 rounded font-medium transition-colors"
                 >
-                  Request Estimate
+                  Request Project Estimate
                 </Link>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default async function FireplaceSubPage({ params }: { params: Promise<{ s
         <section className="bg-stone-50 py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2
-              className="text-xl font-bold text-stone-900 mb-6"
+              className="text-xl font-medium text-stone-900 mb-6"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               {isType ? "Browse Other Fireplace Types" : "Browse Other Brands"}
@@ -121,7 +121,7 @@ export default async function FireplaceSubPage({ params }: { params: Promise<{ s
                 <Link
                   key={c.slug}
                   href={`/fireplaces/${c.slug}`}
-                  className="border border-stone-300 rounded-full px-5 py-2 text-sm text-stone-600 hover:border-amber-700 hover:text-amber-700 transition-colors"
+                  className="border border-stone-300 rounded-sm px-5 py-2 text-sm text-stone-600 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] transition-colors"
                 >
                   {c.title}
                 </Link>

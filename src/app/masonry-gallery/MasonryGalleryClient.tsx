@@ -97,9 +97,9 @@ export default function MasonryGalleryClient() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-stone-900 text-white py-20">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
+          <p className="text-amber-400 uppercase tracking-[0.28em] text-sm font-medium mb-3">
             Our Work · Southern California
           </p>
           <h1
@@ -108,16 +108,16 @@ export default function MasonryGalleryClient() {
           >
             Masonry Project Gallery
           </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
+          <p className="text-[color:var(--ink)]/60 max-w-2xl leading-relaxed">
             From custom home fireplaces to large-scale commercial installations, our masonry
             team has delivered high-quality work across Southern California for over 35 years.
           </p>
-          <div className="mt-5 inline-flex items-center gap-2 bg-stone-800 border border-stone-700 rounded-lg px-4 py-2.5 text-sm text-stone-300">
+          <div className="mt-5 inline-flex items-center gap-2 bg-stone-800 border border-stone-700 rounded-lg px-4 py-2.5 text-sm text-[color:var(--ink)]/60">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-amber-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            Masonry installation services available in <span className="text-white font-semibold ml-1">Southern California only</span>
+            Masonry installation services available in <span className="text-white font-medium ml-1">Southern California only</span>
           </div>
         </div>
       </section>
@@ -129,9 +129,9 @@ export default function MasonryGalleryClient() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2.5 text-sm font-semibold capitalize transition-colors border-b-2 -mb-px ${
+              className={`px-6 py-2.5 text-sm font-medium capitalize transition-colors border-b-2 -mb-px ${
                 activeTab === tab
-                  ? "border-amber-700 text-amber-700"
+                  ? "border-[color:var(--accent)] text-[color:var(--accent)]"
                   : "border-transparent text-stone-500 hover:text-stone-800"
               }`}
             >
@@ -161,7 +161,7 @@ export default function MasonryGalleryClient() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <p className="absolute bottom-0 left-0 right-0 px-4 py-3 text-white text-sm font-semibold translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <p className="absolute bottom-0 left-0 right-0 px-4 py-3 text-white text-sm font-medium translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                 {photo.caption}
               </p>
             </div>

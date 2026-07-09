@@ -192,13 +192,13 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4">
-          <div className="py-2 font-semibold text-[color:var(--accent)]">Mantels</div>
+          <div className="py-2 font-medium text-[color:var(--accent)]">Mantels</div>
           {mantelsLinks.map((l) => (
             <Link key={l.href} href={l.href} className={`block py-1.5 text-sm text-gray-700 ${l.indent ? "pl-7 text-gray-500" : "pl-3"}`} onClick={() => setMobileOpen(false)}>
               {l.label}
             </Link>
           ))}
-          <div className="py-2 font-semibold text-[color:var(--accent)] mt-2">Fireplaces</div>
+          <div className="py-2 font-medium text-[color:var(--accent)] mt-2">Fireplaces</div>
           {fireplaceLinks.map((l) => (
             <Link key={l.href} href={l.href} className="block py-1.5 pl-3 text-sm text-gray-700" onClick={() => setMobileOpen(false)}>
               {l.label}
@@ -220,16 +220,16 @@ export default function Header() {
             ))}
             <Link
               href="/instant-estimate"
-              className="mt-2 border border-[color:var(--ink)]/25 text-[color:var(--ink)] text-center py-2.5 rounded-full font-medium"
+              className="mt-2 border border-[color:var(--ink)]/25 text-[color:var(--ink)] text-center py-2.5 rounded-sm font-medium"
               onClick={() => setMobileOpen(false)}
             >
-              INSTANT ESTIMATE
+              PRICING GUIDE
             </Link>
             <a
               href="https://outlook.office.com/book/CaliforniaMantelFireplace@calmantel.com/?ismsaljsauthenabled"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[color:var(--ink)] text-white text-center py-2.5 rounded-full font-medium"
+              className="bg-[color:var(--ink)] text-white text-center py-2.5 rounded-sm font-medium"
               onClick={() => setMobileOpen(false)}
             >
               BOOK CONSULTATION

@@ -127,7 +127,7 @@ export default function InsightsPage() {
           href="/estimate"
           className="inline-block bg-[color:var(--ink)] hover:bg-black text-white px-8 py-3.5 font-medium transition-colors"
         >
-          Request Estimate
+          Request Project Estimate
         </Link>
       </section>
     </>

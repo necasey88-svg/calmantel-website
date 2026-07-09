@@ -2,7 +2,7 @@ import Script from "next/script";
 import EditorialPageHero from "@/components/EditorialPageHero";
 
 export const metadata = {
-  title: "Get an Instant Estimate | California Mantel & Fireplace",
+  title: "Get an Instant Pricing Guide | California Mantel & Fireplace",
   description:
     "Know your fireplace model? Use our online estimator to get a ballpark quote emailed to you instantly — select SKUs, pipe runs, and options.",
 };

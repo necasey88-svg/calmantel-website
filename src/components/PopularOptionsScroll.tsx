@@ -14,7 +14,7 @@ export default function PopularOptionsScroll({ options, brandConfigUrl, fallback
       {options.map((opt) => (
         <div
           key={opt.name}
-          className="flex-shrink-0 w-64 snap-start rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-sm hover:shadow-md transition-shadow"
+          className="flex-shrink-0 w-64 snap-start rounded-sm overflow-hidden border border-stone-200 bg-white shadow-sm hover:shadow-sm transition-shadow"
         >
           <div className="h-44 bg-stone-100 overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -28,7 +28,7 @@ export default function PopularOptionsScroll({ options, brandConfigUrl, fallback
             />
           </div>
           <div className="p-4">
-            <p className="font-semibold text-stone-900 text-sm leading-snug mb-1">{opt.name}</p>
+            <p className="font-medium text-stone-900 text-sm leading-snug mb-1">{opt.name}</p>
             <p className="text-stone-500 text-xs leading-relaxed">{opt.subtitle}</p>
           </div>
         </div>
@@ -39,15 +39,15 @@ export default function PopularOptionsScroll({ options, brandConfigUrl, fallback
           href={brandConfigUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-shrink-0 w-64 snap-start rounded-2xl border-2 border-dashed border-amber-300 bg-amber-50 hover:border-amber-500 hover:bg-amber-100 transition-colors flex flex-col items-center justify-center gap-3 p-6 text-center"
+          className="flex-shrink-0 w-64 snap-start rounded-sm border-2 border-dashed border-amber-300 bg-[#F9F7F3] hover:border-amber-500 hover:bg-[#EFE7DA] transition-colors flex flex-col items-center justify-center gap-3 p-6 text-center"
         >
-          <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
-            <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-12 h-12 rounded-sm bg-[#EFE7DA] flex items-center justify-center">
+            <svg className="w-6 h-6 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
             </svg>
           </div>
-          <p className="font-semibold text-amber-800 text-sm">Design Your Own</p>
-          <p className="text-amber-700 text-xs">Use Mendota&apos;s online configurator to explore all combinations</p>
+          <p className="font-medium text-[color:var(--accent)] text-sm">Design Your Own</p>
+          <p className="text-[color:var(--accent)] text-xs">Use Mendota&apos;s online configurator to explore all combinations</p>
         </a>
       )}
     </div>
