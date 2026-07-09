@@ -99,7 +99,7 @@ export default function Testimonials() {
             href="https://www.google.com/search?q=California+Mantel+%26+Fireplace+reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block border border-[color:var(--ink)] text-[color:var(--ink)] hover:bg-[color:var(--ink)] hover:text-white px-7 py-3 rounded-full font-medium tracking-wide transition-colors"
+            className="inline-block border border-[color:var(--ink)] text-[color:var(--ink)] hover:bg-[color:var(--ink)] hover:text-white px-7 py-3 text-sm uppercase tracking-[0.16em] transition-colors"
           >
             Read More on Google →
           </Link>
@@ -107,19 +107,19 @@ export default function Testimonials() {
 
         {/* Masonry of reviews */}
         <div className="lg:col-span-2 columns-1 md:columns-2 gap-6 [column-fill:_balance]">
-          {reviews.map((r) => (
+          {reviews.slice(0, 6).map((r) => (
             <figure
               key={r.name}
-              className="mb-6 break-inside-avoid rounded-2xl border border-stone-200/80 bg-[#F9F7F3] p-7"
+              className="mb-6 break-inside-avoid border-t border-[color:var(--sand-deep)] bg-transparent pt-6"
             >
               <div className="flex items-center justify-between mb-4">
                 <Stars />
                 <span className="text-[11px] uppercase tracking-widest text-stone-400">Google</span>
               </div>
-              <blockquote className="text-stone-600 leading-relaxed text-[15px]">
+              <blockquote className="text-[color:var(--ink)]/60 leading-relaxed text-[15px] line-clamp-[8]">
                 “{r.quote}”
               </blockquote>
-              <figcaption className="mt-5 border-t border-stone-200/70 pt-4">
+              <figcaption className="mt-5 border-t border-[color:var(--sand-deep)] pt-4">
                 <p className="font-semibold text-[color:var(--ink)]">{r.name}</p>
                 <p className="text-xs text-stone-400">{r.meta}</p>
               </figcaption>

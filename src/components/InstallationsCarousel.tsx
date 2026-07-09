@@ -35,14 +35,14 @@ export default function InstallationsCarousel() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-3">
           <div>
-            <p className="text-amber-700 uppercase tracking-widest text-sm font-semibold mb-3">
+            <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
               Real Projects
             </p>
             <h2
-              className="text-3xl md:text-4xl font-bold text-stone-900"
+              className="text-4xl md:text-5xl font-medium text-[color:var(--ink)] tracking-tight"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Real Transformations.
+              Real transformations, quietly executed.
             </h2>
           </div>
           {/* Arrow controls */}
@@ -50,7 +50,7 @@ export default function InstallationsCarousel() {
             <button
               onClick={() => scrollBy(-1)}
               aria-label="Previous projects"
-              className="w-11 h-11 rounded-full border border-stone-300 text-stone-700 hover:border-amber-700 hover:text-amber-700 flex items-center justify-center transition-colors"
+              className="w-11 h-11 rounded-full border border-[color:var(--ink)]/20 text-[color:var(--ink)]/70 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] flex items-center justify-center transition-colors"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -59,7 +59,7 @@ export default function InstallationsCarousel() {
             <button
               onClick={() => scrollBy(1)}
               aria-label="Next projects"
-              className="w-11 h-11 rounded-full border border-stone-300 text-stone-700 hover:border-amber-700 hover:text-amber-700 flex items-center justify-center transition-colors"
+              className="w-11 h-11 rounded-full border border-[color:var(--ink)]/20 text-[color:var(--ink)]/70 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] flex items-center justify-center transition-colors"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -67,7 +67,7 @@ export default function InstallationsCarousel() {
             </button>
           </div>
         </div>
-        <p className="text-stone-500 max-w-xl leading-relaxed mb-8">
+        <p className="text-[color:var(--ink)]/55 max-w-xl leading-relaxed mb-8">
           From dated brick to finished focal points — installed with precision by our
           own certified teams across California.
         </p>
@@ -84,17 +84,17 @@ export default function InstallationsCarousel() {
             key={p.title}
             className="snap-start shrink-0 w-[300px] sm:w-[440px]"
           >
-            <div className="rounded-2xl overflow-hidden border border-stone-200 grid grid-cols-2">
+            <div className="overflow-hidden border border-[color:var(--sand-deep)] grid grid-cols-2">
               <div className="relative aspect-[4/3]">
                 <Image src={p.before} alt={`${p.title} — Before`} fill className="object-cover" sizes="220px" />
-                <span className="absolute top-2.5 left-2.5 bg-stone-900/80 text-white text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded">Before</span>
+                <span className="absolute top-2.5 left-2.5 bg-[color:var(--ink)]/80 text-white text-[10px] uppercase tracking-widest px-2 py-0.5">Before</span>
               </div>
               <div className="relative aspect-[4/3]">
                 <Image src={p.after} alt={`${p.title} — After`} fill className="object-cover" sizes="220px" />
-                <span className="absolute top-2.5 left-2.5 bg-amber-700/90 text-white text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded">After</span>
+                <span className="absolute top-2.5 left-2.5 bg-[color:var(--accent)]/90 text-white text-[10px] uppercase tracking-widest px-2 py-0.5">After</span>
               </div>
             </div>
-            <p className="mt-3 text-stone-700 font-semibold text-sm px-1" style={{ fontFamily: "var(--font-playfair)" }}>
+            <p className="mt-4 text-[color:var(--ink)] font-medium text-base px-1" style={{ fontFamily: "var(--font-playfair)" }}>
               {p.title}
             </p>
           </div>
@@ -104,7 +104,7 @@ export default function InstallationsCarousel() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         <Link
           href="/projects"
-          className="inline-block bg-amber-700 hover:bg-amber-800 text-white px-7 py-3 rounded-full font-semibold transition-colors"
+          className="inline-block border border-[color:var(--ink)] text-[color:var(--ink)] hover:bg-[color:var(--ink)] hover:text-white px-8 py-3 text-sm uppercase tracking-[0.16em] transition-colors"
         >
           View All Projects →
         </Link>

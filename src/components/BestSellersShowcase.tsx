@@ -76,7 +76,7 @@ export default function BestSellersShowcase() {
             return (
               <Link key={p.slug} href={`/mantels/p/${p.slug}`} className="group block">
                 {/* Image */}
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-stone-900 shadow-sm group-hover:shadow-2xl transition-shadow duration-500">
+                <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--sand-deep)]">
                   {p.image ? (
                     <Image
                       src={p.image}
@@ -88,7 +88,7 @@ export default function BestSellersShowcase() {
                   ) : (
                     <div className="flex items-center justify-center h-full text-5xl">🪨</div>
                   )}
-                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur text-[color:var(--ink)] text-[10px] font-semibold uppercase tracking-[0.18em] px-3 py-1 rounded-full">
+                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur text-[color:var(--ink)] text-[10px] uppercase tracking-[0.18em] px-3 py-1">
                     Best Seller
                   </span>
                 </div>
@@ -123,7 +123,7 @@ export default function BestSellersShowcase() {
         <div className="text-center mt-16">
           <Link
             href="/mantels"
-            className="inline-block border border-[color:var(--ink)] text-[color:var(--ink)] hover:bg-[color:var(--ink)] hover:text-white px-9 py-3.5 rounded-full font-medium tracking-wide transition-colors"
+            className="inline-block border border-[color:var(--ink)] text-[color:var(--ink)] hover:bg-[color:var(--ink)] hover:text-white px-9 py-3.5 text-sm uppercase tracking-[0.16em] transition-colors"
           >
             Browse the Full Collection →
           </Link>

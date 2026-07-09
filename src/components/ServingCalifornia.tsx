@@ -53,7 +53,7 @@ export default function ServingCalifornia() {
             {regions.map((r) => (
               <span
                 key={r}
-                className="text-sm text-[color:var(--ink)]/70 border border-[color:var(--ink)]/15 rounded-full px-4 py-1.5"
+                className="text-sm text-[color:var(--ink)]/70 border border-[color:var(--ink)]/15 px-4 py-1.5"
               >
                 {r}
               </span>
@@ -65,7 +65,7 @@ export default function ServingCalifornia() {
           {showrooms.map((s) => (
             <div
               key={s.city}
-              className="bg-white rounded-2xl border border-stone-200/70 p-8 text-center"
+              className="bg-white border border-[color:var(--sand-deep)] p-8 text-center"
             >
               <h3
                 className="text-2xl font-medium text-[color:var(--ink)] mb-3"
@@ -97,7 +97,7 @@ export default function ServingCalifornia() {
         <div className="text-center mt-12">
           <Link
             href="/booking"
-            className="inline-block bg-[color:var(--ink)] text-white hover:bg-black px-9 py-3.5 rounded-full font-medium tracking-wide transition-colors"
+            className="inline-block bg-[color:var(--ink)] text-white hover:bg-black px-9 py-3.5 text-sm uppercase tracking-[0.16em] transition-colors"
           >
             Book a Consultation
           </Link>

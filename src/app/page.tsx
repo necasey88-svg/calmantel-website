@@ -21,19 +21,19 @@ export const metadata = {
 const categories = [
   {
     title: "Contemporary Mantels",
-    description: "Clean lines and modern profiles to complement today's interiors.",
+    description: "Architectural surrounds with clean proportions and restrained detailing.",
     href: "/mantels/contemporary",
     image: "/mantels/bolte-fv46.png",
   },
   {
     title: "Traditional Mantels",
-    description: "Classic carved designs with timeless elegance and warmth.",
+    description: "Classic profiles, carved details, and old-world scale for formal rooms.",
     href: "/mantels/traditional",
     image: "/hero-fireplace.png",
   },
   {
     title: "Gas Fireplaces",
-    description: "Efficient, beautiful gas fireplaces from the top brands in the industry.",
+    description: "Efficient flame technology selected around the room, surround, and install.",
     href: "/fireplaces",
     image: "/brands/ortal/room-mountain-cabin.jpg",
   },
@@ -45,13 +45,13 @@ const categories = [
   },
   {
     title: "Outdoor Fireplaces",
-    description: "Extend your living space outdoors with a stunning fireplace.",
+    description: "Fire features and outdoor hearths designed for California living spaces.",
     href: "/fireplaces/outdoor",
     image: "/brands/ortal/outdoor.png",
   },
   {
     title: "Wood Surrounds",
-    description: "Handcrafted wood mantel surrounds in a variety of styles.",
+    description: "Handcrafted wood surrounds for warmth, texture, and architectural depth.",
     href: "/mantels/wood-surrounds",
     image: "/brands/mendota/firein-room.png",
   },
@@ -179,52 +179,54 @@ export default function HomePage() {
       <WhyCMF />
 
       {/* Category grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-12">
-          <h2
-            className="text-3xl md:text-4xl font-bold text-stone-900 mb-3"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            What We Offer
-          </h2>
-          <p className="text-stone-500 max-w-xl mx-auto">
-            From handcrafted mantels to the latest in gas and electric fireplace
-            technology — we have everything you need.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {categories.map((cat) => (
-            <Link
-              key={cat.href}
-              href={cat.href}
-              className="group relative rounded-2xl overflow-hidden aspect-[4/3] block"
+      <section className="bg-[#F9F7F3] py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2
+              className="text-4xl md:text-5xl font-medium text-[color:var(--ink)] tracking-tight mb-4"
+              style={{ fontFamily: "var(--font-playfair)" }}
             >
-              <Image
-                src={cat.image}
-                alt={cat.title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-              {/* dark gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-              {/* text */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3
-                  className="text-xl font-bold text-white mb-1 leading-tight"
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                >
-                  {cat.title}
-                </h3>
-                <p className="text-stone-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden">
-                  {cat.description}
-                </p>
-                <span className="inline-block mt-2 text-amber-400 text-sm font-semibold group-hover:underline">
-                  Explore →
-                </span>
-              </div>
-            </Link>
-          ))}
+              A complete fireplace studio, from surround to flame.
+            </h2>
+            <p className="text-[color:var(--ink)]/60 max-w-2xl mx-auto leading-relaxed">
+              Explore the core collections we design, manufacture, source, and install.
+              Each path is planned around proportion, finish, appliance clearances, and the
+              way the room will actually live.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            {categories.map((cat) => (
+              <Link
+                key={cat.href}
+                href={cat.href}
+                className="group block"
+              >
+                <div className="relative aspect-[5/4] overflow-hidden bg-[color:var(--sand-deep)]">
+                  <Image
+                    src={cat.image}
+                    alt={cat.title}
+                    fill
+                    className="object-cover group-hover:scale-[1.025] transition-transform duration-700 ease-out"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="pt-5">
+                  <h3
+                    className="text-2xl font-medium text-[color:var(--ink)] leading-tight"
+                    style={{ fontFamily: "var(--font-playfair)" }}
+                  >
+                    {cat.title}
+                  </h3>
+                  <p className="mt-2 text-[color:var(--ink)]/55 text-sm leading-relaxed">
+                    {cat.description}
+                  </p>
+                  <span className="inline-block mt-4 text-[11px] uppercase tracking-[0.2em] text-[color:var(--accent)] group-hover:text-[color:var(--accent-dark)] transition-colors">
+                    View collection
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -232,18 +234,18 @@ export default function HomePage() {
       <BestSellersShowcase />
 
       {/* Find a mantel — search / help tool */}
-      <section className="bg-stone-50 border-y border-stone-100 py-16">
+      <section className="bg-white border-y border-[color:var(--sand-deep)] py-20">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-amber-700 uppercase tracking-widest text-sm font-semibold mb-3">
-            Searching for a mantel?
+          <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
+            Collection Guidance
           </p>
           <h2
-            className="text-3xl md:text-4xl font-bold text-stone-900 mb-3"
+            className="text-4xl md:text-5xl font-medium text-[color:var(--ink)] tracking-tight mb-4"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Let Us Help
+            Find the right scale for your room.
           </h2>
-          <p className="text-stone-500 leading-relaxed mb-2">
+          <p className="text-[color:var(--ink)]/60 leading-relaxed mb-2">
             Search our full collection by name, style, or material — or tell us your
             fireplace dimensions and we&apos;ll find the mantels that fit.
           </p>
@@ -307,13 +309,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
             <Link
               href="/booking"
-              className="bg-[color:var(--ink)] text-white hover:bg-black px-9 py-4 rounded-full font-medium tracking-wide transition-colors"
+              className="bg-[color:var(--ink)] text-white hover:bg-black px-9 py-4 text-sm uppercase tracking-[0.16em] transition-colors"
             >
               Schedule Your Design Consultation
             </Link>
             <Link
               href="/mantels"
-              className="text-[color:var(--ink)] hover:text-[color:var(--accent)] font-medium tracking-wide transition-colors"
+              className="text-[color:var(--ink)] hover:text-[color:var(--accent)] text-sm uppercase tracking-[0.16em] transition-colors"
             >
               Browse Mantels →
             </Link>
@@ -367,11 +369,11 @@ export default function HomePage() {
               { q: "How do I know what fits my space?", a: "Firebox size, clearances, venting, and your existing opening all factor in. Bring your room dimensions and we'll match you with the right unit and surround." },
               { q: "Do you offer custom sizes?", a: "Yes — we manufacture our precast mantels in California, so we can build to custom widths and finishes to suit your fireplace and room." },
             ].map((item) => (
-              <div key={item.q} className="bg-white rounded-2xl border border-stone-200/70 p-7">
+              <div key={item.q} className="bg-transparent border-t border-[color:var(--sand-deep)] pt-6">
                 <p className="font-medium text-[color:var(--ink)] mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
                   {item.q}
                 </p>
-                <p className="text-stone-500 text-sm leading-relaxed">{item.a}</p>
+                <p className="text-[color:var(--ink)]/55 text-sm leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
@@ -385,20 +387,23 @@ export default function HomePage() {
       <Testimonials />
 
       {/* Brands */}
-      <section className="border-y border-stone-100 bg-stone-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="border-y border-[color:var(--sand-deep)] bg-[#F9F7F3] py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="text-center uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
+            Fireplace Partners
+          </p>
           <h2
-            className="text-center text-2xl font-bold text-stone-900 mb-10"
+            className="text-center text-3xl md:text-4xl font-medium text-[color:var(--ink)] mb-10"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Brands We Carry
+            Trusted names, selected for the project.
           </h2>
           <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-6">
             {brands.map((brand) => (
               <Link
                 key={brand.name}
                 href={brand.href}
-                className="bg-white border border-stone-200 rounded-xl p-4 flex items-center justify-center hover:border-amber-700 hover:shadow-sm transition-all h-20"
+                className="bg-white/60 border border-[color:var(--sand-deep)] p-4 flex items-center justify-center hover:border-[color:var(--accent)] hover:bg-white transition-colors h-20"
               >
                 <Image
                   src={brand.logo}
@@ -416,32 +421,32 @@ export default function HomePage() {
       <InstantEstimateCTA />
 
       {/* About strip */}
-      <section className="bg-stone-50 py-20">
+      <section className="bg-white py-24">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <div>
-            <p className="text-amber-700 uppercase tracking-widest text-sm font-semibold mb-3">
+            <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
               Our Story
             </p>
             <h2
-              className="text-3xl md:text-4xl font-bold text-stone-900 mb-5"
+              className="text-4xl md:text-5xl font-medium text-[color:var(--ink)] tracking-tight mb-6"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               Aussie-American. Family-Owned. Since 1987.
             </h2>
-            <p className="text-stone-600 leading-relaxed mb-5">
+            <p className="text-[color:var(--ink)]/60 leading-relaxed mb-5">
               We started with a passion for craftsmanship and a commitment to
               bringing warmth into every home. Today we manufacture wood and
               precast concrete fireplace mantels, install gas and electric
               fireplaces, and deliver award-winning customer service to homeowners
               and developers across California and Nevada — including the Reno and Lake Tahoe area.
             </p>
-            <p className="text-stone-600 leading-relaxed mb-8">
+            <p className="text-[color:var(--ink)]/60 leading-relaxed mb-9">
               We also believe in giving back — we are monthly supporters of
               Rescue Ranch, providing ongoing donations for the care of rescued dogs.
             </p>
             <Link
               href="/about"
-              className="inline-block bg-amber-700 hover:bg-amber-800 text-white px-7 py-3 rounded font-semibold transition-colors"
+              className="inline-block border border-[color:var(--ink)] text-[color:var(--ink)] hover:bg-[color:var(--ink)] hover:text-white px-8 py-3 text-sm uppercase tracking-[0.16em] transition-colors"
             >
               Learn More About Us
             </Link>
