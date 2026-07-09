@@ -1,6 +1,7 @@
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema } from "@/lib/business-data";
+import EditorialPageHero from "@/components/EditorialPageHero";
 
 export const metadata = {
   title: "Anaheim, Dublin & Sacramento Showrooms | California Mantel",
@@ -68,29 +69,17 @@ export default function ShowroomsPage() {
   return (
     <>
       <JsonLd data={organizationSchema()} />
-      <section className="bg-stone-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
-            California Locations
-          </p>
-          <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            Our Showrooms
-          </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
-            Three designer showrooms across California featuring live-burning displays,
-            custom mantel galleries, certified hearth experts, and licensed installation services.
-          </p>
-        </div>
-      </section>
+      <EditorialPageHero
+        eyebrow="California Showrooms"
+        title="See the scale, finish, and flame in person."
+        description="Visit Anaheim, Dublin, or Sacramento for live-burning displays, mantel galleries, material guidance, and hearth consultants who can help shape the full project."
+      />
 
       {/* What to expect */}
-      <section className="bg-amber-50 border-b border-amber-100 py-10">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-lg font-bold text-stone-900 mb-5"
+            className="text-lg font-medium text-stone-900 mb-5"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             What you&apos;ll find at every showroom
@@ -98,7 +87,7 @@ export default function ShowroomsPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {amenities.map((a) => (
               <div key={a} className="flex items-start gap-2 text-sm text-stone-600">
-                <span className="text-amber-700 mt-0.5 flex-shrink-0">✓</span>
+                <span className="text-[color:var(--accent)] mt-0.5 flex-shrink-0">✓</span>
                 {a}
               </div>
             ))}
@@ -111,16 +100,16 @@ export default function ShowroomsPage() {
         {showrooms.map((s) => (
           <div
             key={s.city}
-            className="border border-stone-200 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
+            className="border border-[color:var(--sand-deep)] overflow-hidden transition-shadow"
           >
             {/* Header */}
             <div className="bg-stone-900 text-white px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
-                <p className="text-amber-400 text-xs uppercase tracking-widest font-semibold mb-1">
+                <p className="text-[color:var(--accent)] text-xs uppercase tracking-widest font-medium mb-1">
                   {s.subtitle}
                 </p>
                 <h2
-                  className="text-2xl font-bold"
+                  className="text-2xl font-medium"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   {s.city}
@@ -130,13 +119,13 @@ export default function ShowroomsPage() {
               <div className="flex gap-3">
                 <a
                   href={`tel:${s.tel}`}
-                  className="bg-amber-700 hover:bg-amber-800 text-white px-5 py-2.5 rounded font-semibold text-sm transition-colors"
+                  className="bg-[color:var(--ink)] hover:bg-black text-white px-5 py-2.5 font-medium text-sm transition-colors"
                 >
                   {s.phone}
                 </a>
                 <Link
                   href={s.href}
-                  className="border border-white text-white hover:bg-white hover:text-stone-900 px-5 py-2.5 rounded font-semibold text-sm transition-colors"
+                  className="border border-white text-white hover:bg-white hover:text-stone-900 px-5 py-2.5 font-medium text-sm transition-colors"
                 >
                   Details
                 </Link>
@@ -146,20 +135,20 @@ export default function ShowroomsPage() {
             {/* Body */}
             <div className="px-8 py-6 grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
-                <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">Address</h3>
+                <h3 className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-2">Address</h3>
                 <p className="text-stone-700 text-sm leading-relaxed">{s.address}</p>
               </div>
               <div>
-                <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">Hours</h3>
+                <h3 className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-2">Hours</h3>
                 {s.hours.map((h) => (
                   <p key={h} className="text-stone-700 text-sm">{h}</p>
                 ))}
                 {s.note && (
-                  <p className="text-amber-700 text-xs mt-2 italic">{s.note}</p>
+                  <p className="text-[color:var(--accent)] text-xs mt-2 italic">{s.note}</p>
                 )}
               </div>
               <div>
-                <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">Service Area</h3>
+                <h3 className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-2">Service Area</h3>
                 <p className="text-stone-500 text-sm leading-relaxed">{s.serviceArea}</p>
               </div>
             </div>
@@ -167,21 +156,21 @@ export default function ShowroomsPage() {
         ))}
       </section>
 
-      <section className="bg-amber-700 text-white py-14 text-center">
+      <section className="bg-[color:var(--ink)] text-white py-14 text-center">
         <h2
-          className="text-2xl font-bold mb-3"
+          className="text-2xl font-medium mb-3"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
           Can&apos;t make it in?
         </h2>
         <p className="text-amber-100 mb-6">
-          Request a free estimate online and one of our experts will be in touch.
+          Request a project guidance online and one of our experts will be in touch.
         </p>
         <Link
           href="/estimate"
-          className="inline-block bg-white text-amber-700 hover:bg-amber-50 px-8 py-3.5 rounded font-bold transition-colors"
+          className="inline-block bg-white text-[color:var(--accent)] hover:bg-[#F9F7F3] px-8 py-3.5 font-medium transition-colors"
         >
-          Request a Free Estimate
+          Request Project Guidance
         </Link>
       </section>
     </>

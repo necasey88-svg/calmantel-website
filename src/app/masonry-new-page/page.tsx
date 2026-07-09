@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import PricingCTA from "@/components/PricingCTA";
+import EditorialPageHero from "@/components/EditorialPageHero";
 
 export const metadata = {
   title: "Masonry Services | California Mantel & Fireplace",
@@ -81,52 +82,16 @@ export default function MasonryPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-stone-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
-            Expert Installation · Code Compliant · Southern California
-          </p>
-          <h1
-            className="text-4xl md:text-5xl font-bold mb-5"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            Masonry Services for Fireplaces,<br className="hidden md:block" /> Mantels &amp; Architectural Projects
-          </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
-            California Mantel &amp; Fireplace delivers high-quality masonry solutions combining
-            durability, style, and precision. We serve homeowners, designers, architects, and
-            contractors with code-compliant installations throughout Southern California.
-            <span className="block mt-3 text-amber-400 text-sm font-medium">
-              ⚠ Masonry installation is available in Southern California only.
-            </span>
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/estimate"
-              className="bg-amber-700 hover:bg-amber-800 text-white px-7 py-3 rounded font-semibold transition-colors"
-            >
-              Request Estimate
-            </Link>
-            <Link
-              href="/masonry-gallery"
-              className="border border-stone-400 text-stone-200 hover:border-white hover:text-white px-7 py-3 rounded font-semibold transition-colors"
-            >
-              View Project Gallery
-            </Link>
-            <Link
-              href="/contact"
-              className="border border-stone-400 text-stone-200 hover:border-white hover:text-white px-7 py-3 rounded font-semibold transition-colors"
-            >
-              Contact a Showroom
-            </Link>
-          </div>
-        </div>
-      </section>
+      <EditorialPageHero
+        eyebrow="Masonry / Stone / Tile"
+        title="Architectural masonry for fireplace rooms."
+        description="Stone, brick, tile, and precast installations for fireplace surrounds, hearths, feature walls, and architectural projects, available through our Southern California team."
+      />
 
       {/* Services */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <h2
-          className="text-3xl font-bold text-stone-900 mb-3"
+          className="text-3xl font-medium text-stone-900 mb-3"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
           Our Masonry Services
@@ -137,12 +102,12 @@ export default function MasonryPage() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s) => (
-            <div key={s.title} className="border border-stone-200 rounded-xl p-7 hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <div className="w-5 h-5 bg-amber-700 rounded" />
+            <div key={s.title} className="border border-[color:var(--sand-deep)] p-7 transition-shadow">
+              <div className="w-10 h-10 bg-[color:var(--sand-deep)] flex items-center justify-center mb-4">
+                <div className="w-5 h-5 bg-[color:var(--ink)]" />
               </div>
               <h3
-                className="text-lg font-bold text-stone-900 mb-3"
+                className="text-lg font-medium text-stone-900 mb-3"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 {s.title}
@@ -154,10 +119,10 @@ export default function MasonryPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-stone-50 py-20">
+      <section className="bg-[#F9F7F3] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-3xl font-bold text-stone-900 mb-12 text-center"
+            className="text-3xl font-medium text-stone-900 mb-12 text-center"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Why Choose California Mantel for Masonry
@@ -165,10 +130,10 @@ export default function MasonryPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {benefits.map((b) => (
               <div key={b.title} className="text-center">
-                <div className="w-12 h-12 bg-amber-700 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <div className="w-5 h-5 bg-white rounded-sm" />
+                <div className="w-12 h-12 bg-[color:var(--ink)] mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-5 h-5 bg-white" />
                 </div>
-                <h3 className="font-bold text-stone-900 mb-2 text-sm">{b.title}</h3>
+                <h3 className="font-medium text-stone-900 mb-2 text-sm">{b.title}</h3>
                 <p className="text-stone-500 text-xs leading-relaxed">{b.description}</p>
               </div>
             ))}
@@ -179,7 +144,7 @@ export default function MasonryPage() {
       {/* Suppliers */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <h2
-          className="text-3xl font-bold text-stone-900 mb-4"
+          className="text-3xl font-medium text-stone-900 mb-4"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
           Our Supplier Partners
@@ -192,7 +157,7 @@ export default function MasonryPage() {
           {suppliers.map((s) => (
             <div
               key={s.name}
-              className="bg-white border border-stone-200 rounded-xl p-4 flex items-center justify-center h-20 hover:border-amber-700 hover:shadow-sm transition-all"
+              className="bg-white border border-[color:var(--sand-deep)] p-4 flex items-center justify-center h-20 hover:border-[color:var(--accent)] transition-all"
             >
               <Image
                 src={s.logo}
@@ -212,24 +177,24 @@ export default function MasonryPage() {
       <section className="bg-stone-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-3xl font-bold mb-3"
+            className="text-3xl font-medium mb-3"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Visit a Showroom to Get Started
           </h2>
           <p className="text-stone-300 mb-12 max-w-2xl">
             Bring your project plans or photos to any of our three California showrooms. Our team
-            will help you select materials, provide a free estimate, and schedule your installation.
+            will help you select materials, provide a project guidance, and schedule your installation.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {showrooms.map((s) => (
-              <div key={s.city} className="bg-stone-800 rounded-xl p-7">
-                <h3 className="text-amber-400 font-bold text-lg mb-2">{s.city}</h3>
+              <div key={s.city} className="bg-stone-800 p-7">
+                <h3 className="text-[color:var(--accent)] font-medium text-lg mb-2">{s.city}</h3>
                 <p className="text-stone-300 text-sm mb-1">{s.address}</p>
                 <p className="text-stone-400 text-xs mb-4">{s.hours}</p>
                 <a
                   href={`tel:${s.tel}`}
-                  className="text-white font-semibold hover:text-amber-400 transition-colors"
+                  className="text-white font-medium hover:text-[color:var(--accent)] transition-colors"
                 >
                   {s.phone}
                 </a>
@@ -239,9 +204,9 @@ export default function MasonryPage() {
           <div className="mt-10">
             <Link
               href="/estimate"
-              className="inline-block bg-amber-700 hover:bg-amber-800 text-white px-8 py-3.5 rounded font-semibold transition-colors"
+              className="inline-block bg-[color:var(--ink)] hover:bg-black text-white px-8 py-3.5 font-medium transition-colors"
             >
-              Request a Free Estimate
+              Request Project Guidance
             </Link>
           </div>
         </div>

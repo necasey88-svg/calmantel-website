@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import PricingCTA from "@/components/PricingCTA";
+import EditorialPageHero from "@/components/EditorialPageHero";
 
 export const metadata = {
   title: "Gas, Electric & Outdoor Fireplaces | California Mantel",
@@ -63,29 +64,16 @@ const brands = [
 export default function FireplacesPage() {
   return (
     <>
-      <section className="bg-stone-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
-            Gas · Electric · Outdoor
-          </p>
-          <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            Fireplaces
-          </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
-            We carry the top fireplace brands and can install gas, electric, and outdoor
-            fireplaces. Whether you&apos;re converting an existing wood-burning fireplace
-            or starting fresh, we have the right solution.
-          </p>
-        </div>
-      </section>
+      <EditorialPageHero
+        eyebrow="Gas / Electric / Outdoor"
+        title="Fireplaces selected around the room."
+        description="Browse gas inserts, electric fireplaces, outdoor fire features, and masonry solutions planned around the surround, clearances, installation path, and the way you want the space to feel."
+      />
 
       {/* Types */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2
-          className="text-2xl font-bold text-stone-900 mb-8"
+          className="text-2xl font-medium text-stone-900 mb-8"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
           By Type
@@ -95,16 +83,16 @@ export default function FireplacesPage() {
             <Link
               key={t.href}
               href={t.href}
-              className="group border border-stone-200 rounded-xl p-7 hover:border-amber-700 hover:shadow-md transition-all"
+              className="group border border-[color:var(--sand-deep)] p-7 hover:border-[color:var(--accent)] transition-all"
             >
               <h3
-                className="text-xl font-bold text-stone-900 mb-3 group-hover:text-amber-700 transition-colors"
+                className="text-xl font-medium text-stone-900 mb-3 group-hover:text-[color:var(--accent)] transition-colors"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 {t.title}
               </h3>
               <p className="text-stone-500 text-sm leading-relaxed">{t.description}</p>
-              <span className="inline-block mt-4 text-amber-700 text-sm font-semibold group-hover:underline">
+              <span className="inline-block mt-4 text-[color:var(--accent)] text-sm font-medium group-hover:underline">
                 Explore {t.title} →
               </span>
             </Link>
@@ -113,7 +101,7 @@ export default function FireplacesPage() {
 
         {/* Brands */}
         <h2
-          className="text-2xl font-bold text-stone-900 mb-8"
+          className="text-2xl font-medium text-stone-900 mb-8"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
           Shop by Brand
@@ -123,7 +111,7 @@ export default function FireplacesPage() {
             <Link
               key={b.name}
               href={b.href}
-              className="bg-white border border-stone-200 rounded-xl p-4 flex items-center justify-center hover:border-amber-700 hover:shadow-sm transition-all h-20"
+              className="bg-white border border-[color:var(--sand-deep)] p-4 flex items-center justify-center hover:border-[color:var(--accent)] transition-all h-20"
             >
               <Image
                 src={b.logo}

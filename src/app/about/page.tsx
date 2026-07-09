@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import EditorialPageHero from "@/components/EditorialPageHero";
 
 export const metadata = {
   title: "About Us | California Mantel & Fireplace",
@@ -35,27 +36,15 @@ const showrooms = [
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-stone-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
-            Since 1987
-          </p>
-          <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            About Us
-          </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
-            California Mantel &amp; Fireplace — an Aussie-American family business
-            built on craftsmanship, warmth, and community.
-          </p>
-        </div>
-      </section>
+      <EditorialPageHero
+        eyebrow="Since 1987"
+        title="A family fireplace studio built on craft."
+        description="California Mantel & Fireplace is an Aussie-American family business manufacturing custom mantels, installing fireplaces, and guiding homeowners from first idea to finished room."
+      />
 
       {/* Company photo */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4">
-        <div className="relative w-full rounded-2xl overflow-hidden aspect-[16/7]">
+        <div className="relative w-full overflow-hidden aspect-[16/7]">
           <Image
             src="/about/company-photo.png"
             alt="California Mantel & Fireplace team"
@@ -69,7 +58,7 @@ export default function AboutPage() {
       {/* Story */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2
-          className="text-3xl font-bold text-stone-900 mb-6"
+          className="text-3xl font-medium text-stone-900 mb-6"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
           Our Story
@@ -102,13 +91,13 @@ export default function AboutPage() {
       </section>
 
       {/* Meet the family */}
-      <section className="bg-amber-50 border-y border-amber-100 py-16">
+      <section className="bg-[#F9F7F3] border-y border-[color:var(--sand-deep)] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-amber-700 uppercase tracking-widest text-xs font-semibold mb-3 text-center">
+          <p className="text-[color:var(--accent)] uppercase tracking-widest text-xs font-medium mb-3 text-center">
             Family Owned &amp; Operated
           </p>
           <h2
-            className="text-3xl font-bold text-stone-900 mb-12 text-center"
+            className="text-3xl font-medium text-stone-900 mb-12 text-center"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Meet the Family
@@ -116,7 +105,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             {/* Founders */}
             <div className="flex flex-col items-center text-center">
-              <div className="relative w-full rounded-2xl overflow-hidden aspect-[3/4] mb-5">
+              <div className="relative w-full overflow-hidden aspect-[3/4] mb-5">
                 <Image
                   src="/about/owners-parents.jpg"
                   alt="Stephen and Carla Casey, founders of California Mantel & Fireplace"
@@ -125,12 +114,12 @@ export default function AboutPage() {
                 />
               </div>
               <h3
-                className="text-xl font-bold text-stone-900 mb-1"
+                className="text-xl font-medium text-stone-900 mb-1"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 Stephen &amp; Carla Casey
               </h3>
-              <p className="text-amber-700 text-sm font-semibold mb-3">Founders</p>
+              <p className="text-[color:var(--accent)] text-sm font-medium mb-3">Founders</p>
               <p className="text-stone-500 text-sm leading-relaxed max-w-sm">
                 Stephen and Carla founded California Mantel &amp; Fireplace in 1987 with a
                 commitment to quality craftsmanship and personal service that still defines
@@ -140,7 +129,7 @@ export default function AboutPage() {
 
             {/* Daughters */}
             <div className="flex flex-col items-center text-center">
-              <div className="relative w-full rounded-2xl overflow-hidden aspect-[4/3] mb-5">
+              <div className="relative w-full overflow-hidden aspect-[4/3] mb-5">
                 <Image
                   src="/about/daughters.jpg"
                   alt="Cory, Melanie, and Natalie Casey"
@@ -149,12 +138,12 @@ export default function AboutPage() {
                 />
               </div>
               <h3
-                className="text-xl font-bold text-stone-900 mb-1"
+                className="text-xl font-medium text-stone-900 mb-1"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 Cory, Melanie &amp; Natalie Casey
               </h3>
-              <p className="text-amber-700 text-sm font-semibold mb-3">Second Generation</p>
+              <p className="text-[color:var(--accent)] text-sm font-medium mb-3">Second Generation</p>
               <p className="text-stone-500 text-sm leading-relaxed max-w-sm">
                 The three Casey daughters grew up in the business and now carry it forward —
                 bringing fresh energy and the same family values their parents built the
@@ -166,19 +155,19 @@ export default function AboutPage() {
       </section>
 
       {/* Showrooms */}
-      <section className="bg-stone-50 py-20">
+      <section className="bg-[#F9F7F3] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-3xl font-bold text-stone-900 mb-10 text-center"
+            className="text-3xl font-medium text-stone-900 mb-10 text-center"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Visit Our Showrooms
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {showrooms.map((s) => (
-              <div key={s.city} className="bg-white rounded-xl p-8 shadow-sm">
+              <div key={s.city} className="bg-white p-8">
                 <h3
-                  className="text-xl font-bold text-stone-900 mb-4"
+                  className="text-xl font-medium text-stone-900 mb-4"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   {s.city}
@@ -187,7 +176,7 @@ export default function AboutPage() {
                 <p className="text-stone-500 text-sm mb-3">{s.hours}</p>
                 <a
                   href={`tel:${s.tel}`}
-                  className="text-amber-700 font-semibold hover:text-amber-800 transition-colors"
+                  className="text-[color:var(--accent)] font-medium hover:text-[color:var(--accent-dark)] transition-colors"
                 >
                   {s.phone}
                 </a>
@@ -200,19 +189,19 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-14 text-center">
         <h2
-          className="text-2xl font-bold text-stone-900 mb-3"
+          className="text-2xl font-medium text-stone-900 mb-3"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
           Ready to get started?
         </h2>
         <p className="text-stone-500 mb-6">
-          Request a free estimate or stop by one of our showrooms.
+          Request a project guidance or stop by one of our showrooms.
         </p>
         <Link
           href="/estimate"
-          className="inline-block bg-amber-700 hover:bg-amber-800 text-white px-8 py-3.5 rounded font-semibold transition-colors"
+          className="inline-block bg-[color:var(--ink)] hover:bg-black text-white px-8 py-3.5 font-medium transition-colors"
         >
-          Request a Free Estimate
+          Request Project Guidance
         </Link>
       </section>
     </>

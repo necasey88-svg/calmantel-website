@@ -1,4 +1,5 @@
 import Script from "next/script";
+import EditorialPageHero from "@/components/EditorialPageHero";
 
 export const metadata = {
   title: "Get an Instant Estimate | California Mantel & Fireplace",
@@ -9,28 +10,11 @@ export const metadata = {
 export default function InstantEstimatePage() {
   return (
     <>
-      <section className="bg-stone-900 text-white py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
-            Online Estimator
-          </p>
-          <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            Get an Instant Fireplace Estimate
-          </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
-            Already know which fireplace model you want? Select your SKU, pipe run, and
-            options below — we&apos;ll send a detailed ballpark quote straight to your inbox.
-            Not sure yet?{" "}
-            <a href="/booking" className="text-amber-400 hover:text-amber-300 underline">
-              Book a free consultation
-            </a>{" "}
-            and our experts will walk you through it.
-          </p>
-        </div>
-      </section>
+      <EditorialPageHero
+        eyebrow="Guided Estimate"
+        title="Begin with a thoughtful project range."
+        description="If you already know the fireplace model or options you prefer, use the estimator below. If not, a showroom consultation will help narrow the right path."
+      />
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 min-h-[600px]">
         <div

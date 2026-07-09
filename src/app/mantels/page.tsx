@@ -2,6 +2,7 @@ import Link from "next/link";
 import MantelSearch from "@/components/MantelSearch";
 import MantelFitFinder from "@/components/MantelFitFinder";
 import PricingCTA from "@/components/PricingCTA";
+import EditorialPageHero from "@/components/EditorialPageHero";
 
 export const metadata = {
   title: "Precast & Wood Fireplace Mantels | California Mantel",
@@ -68,25 +69,11 @@ const mantelCategories: {
 export default function MantelsPage() {
   return (
     <>
-      {/* Page hero */}
-      <section className="bg-stone-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">
-            Handcrafted in California
-          </p>
-          <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            Fireplace Mantels
-          </h1>
-          <p className="text-stone-300 max-w-2xl leading-relaxed">
-            A mantel is the perfect finishing touch for your fireplace, adding both
-            style and a focal point to your living space. We manufacture wood and
-            precast concrete mantels in a wide range of styles to suit any home.
-          </p>
-        </div>
-      </section>
+      <EditorialPageHero
+        eyebrow="Handcrafted in California"
+        title="Fireplace mantels with architectural presence."
+        description="Explore wood and precast concrete surrounds designed around scale, proportion, finish, and the room they will anchor."
+      />
 
       {/* Search */}
       <MantelSearch />
@@ -102,16 +89,16 @@ export default function MantelsPage() {
           {mantelCategories.map((cat) => (
             <div
               key={cat.href}
-              className="group border border-stone-200 rounded-xl p-7 hover:border-amber-700 hover:shadow-md transition-all flex flex-col"
+              className="group border-t border-[color:var(--sand-deep)] pt-7 transition-colors flex flex-col"
             >
               <Link href={cat.href} className="flex-1">
                 <h2
-                  className="text-xl font-bold text-stone-900 mb-3 group-hover:text-amber-700 transition-colors"
+                  className="text-2xl font-medium text-[color:var(--ink)] mb-3 group-hover:text-[color:var(--accent)] transition-colors"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   {cat.title}
                 </h2>
-                <p className="text-stone-500 text-sm leading-relaxed">{cat.description}</p>
+                <p className="text-[color:var(--ink)]/55 text-sm leading-relaxed">{cat.description}</p>
               </Link>
               {cat.subLinks && (
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -119,7 +106,7 @@ export default function MantelsPage() {
                     <Link
                       key={s.href}
                       href={s.href}
-                      className="text-xs px-3 py-1 rounded-full border border-stone-200 text-stone-600 hover:border-amber-700 hover:text-amber-700 transition-colors"
+                      className="text-xs px-3 py-1 border border-[color:var(--sand-deep)] text-[color:var(--ink)]/55 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] transition-colors"
                     >
                       {s.label}
                     </Link>
@@ -128,7 +115,7 @@ export default function MantelsPage() {
               )}
               <Link
                 href={cat.href}
-                className="inline-block mt-4 text-amber-700 text-sm font-semibold group-hover:underline"
+                className="inline-block mt-4 text-[11px] uppercase tracking-[0.2em] text-[color:var(--accent)] group-hover:text-[color:var(--accent-dark)] transition-colors"
               >
                 Browse {cat.title} →
               </Link>
