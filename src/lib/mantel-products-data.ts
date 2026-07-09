@@ -70,6 +70,8 @@ export const mantelProducts: MantelProduct[] = [
     slug: "hobart-1",
     name: "Hobart",
     type: "beam",
+    image: "/mantels/hobart-1.png",
+    images: ["/mantels/hobart-1.png", "/mantels/hobart-1-2.jpg"],
     cadPdf: "/cad/hobart-1.pdf",
     style: "transitional",
     description:
@@ -80,6 +82,8 @@ export const mantelProducts: MantelProduct[] = [
     name: "Adelaide",
     type: "wood",
     style: "transitional",
+    image: "/mantels/adelaide.png",
+    images: ["/mantels/adelaide.png", "/mantels/adelaide-2.jpg"],
     cadPdf: "/cad/adelaide.pdf",
     description:
       "The Adelaide Mantel is a classic wood fireplace surround that blends timeless elegance with durable craftsmanship, making it a stunning focal point for any hearth. Designed with clean, straight lines and a perfectly symmetrical layout, this fireplace mantel features a wide mantel shelf ideal for displaying artwork, mirrors, or decorative accents. Elegant fluted vertical columns provide subtle architectural detail, while the smooth wood finish highlights the natural grain and texture, adding warmth and charm to your living space.",
@@ -89,6 +93,8 @@ export const mantelProducts: MantelProduct[] = [
     name: "Brisbane",
     type: "wood",
     style: "transitional",
+    image: "/mantels/brisbane.png",
+    images: ["/mantels/brisbane.png", "/mantels/brisbane-2.jpg"],
     cadPdf: "/cad/brisbane.pdf",
     description:
       "The Brisbane Mantel is a handcrafted wood fireplace surround that combines timeless design, architectural detail, and lasting durability. Featuring a substantial rectangular frame with a subtly beveled edge, this wood fireplace mantel offers a clean, symmetrical design that creates a refined focal point above your fireplace. Its rich natural wood finish highlights the grain and texture, bringing warmth, character, and sophistication to any living space. A broad mantel shelf provides generous space for displaying artwork, mirrors, or seasonal décor.",
@@ -97,6 +103,8 @@ export const mantelProducts: MantelProduct[] = [
     slug: "kendall-1",
     name: "Kendall",
     type: "beam",
+    image: "/mantels/kendall-1.png",
+    images: ["/mantels/kendall-1.png", "/mantels/kendall-1-2.jpg"],
     style: "transitional",
     description:
       "The Kendall Mantel is a classic wood fireplace surround that blends traditional design, refined detailing, and enduring craftsmanship. Expertly constructed from high-quality solid wood with a smooth finish, it beautifully highlights the natural wood grain, adding warmth and sophistication to any room. This wood fireplace mantel features a broad, flat mantel shelf, perfect for showcasing décor, family heirlooms, or seasonal accents, while its elegantly carved trim and pilasters provide both structural integrity and decorative charm.",
@@ -106,6 +114,8 @@ export const mantelProducts: MantelProduct[] = [
     name: "Fremantle",
     type: "wood",
     style: "transitional",
+    image: "/mantels/fremantle.png",
+    images: ["/mantels/fremantle.png", "/mantels/fremantle-2.jpg"],
     cadPdf: "/cad/fremantle.pdf",
     description:
       "The Fremantle Mantel is a classic wood fireplace surround that blends timeless elegance, refined style, and solid durability. Handcrafted from high-quality solid wood, this fireplace mantel surround features a smooth finish that enhances the natural wood grain and rich texture, bringing warmth, character, and charm to your living space. With its clean lines, balanced proportions, and subtle architectural detailing, the Fremantle creates a sophisticated focal point that complements both traditional fireplaces and modern hearth designs.",
@@ -115,6 +125,8 @@ export const mantelProducts: MantelProduct[] = [
     name: "Canberra",
     type: "wood",
     style: "transitional",
+    image: "/mantels/canberra.png",
+    images: ["/mantels/canberra.png", "/mantels/canberra-2.jpg"],
     cadPdf: "/cad/canberra.pdf",
     description:
       "The Canberra Mantel is a classic wood fireplace surround that blends timeless elegance, durable craftsmanship, and versatile design. Expertly crafted from high-quality wood, this fireplace mantel surround features a sturdy frame with clean lines and subtle detailing, creating a refined and sophisticated centerpiece for your hearth. Its slightly projecting mantel shelf provides both functional display space and architectural balance. The vertical supports with gently recessed paneling add depth, dimension, and texture, enhancing the mantel's traditional charm.",
@@ -874,6 +886,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     style: "traditional",
     subStyle: "french",
+    image: "/mantels/st-tropez.png",
     cadPdf: "/cad/st-tropez.pdf",
     description:
       "The St. Tropez Mantel is a gracefully styled precast fireplace surround with refined European proportions, elegant pilasters, and a smooth decorative frieze. Its timeless character suits formal living rooms and sophisticated traditional interiors.",
@@ -1037,6 +1050,8 @@ export const mantelProducts: MantelProduct[] = [
     name: "Melbourne",
     type: "wood",
     style: "traditional",
+    image: "/mantels/melbourne.png",
+    images: ["/mantels/melbourne.png", "/mantels/melbourne-2.jpg"],
     cadPdf: "/cad/melbourne.pdf",
     description:
       "The Melbourne Mantel is a classic wood fireplace surround with clean lines, a generous shelf, and refined symmetry. Handcrafted from premium solid wood, its smooth finish highlights the natural grain, bringing warmth and sophistication to traditional and transitional living spaces.",
@@ -1046,6 +1061,8 @@ export const mantelProducts: MantelProduct[] = [
     name: "Perth",
     type: "wood",
     style: "traditional",
+    image: "/mantels/perth.png",
+    images: ["/mantels/perth.png", "/mantels/perth-2.jpg"],
     cadPdf: "/cad/perth.pdf",
     description:
       "The Perth Mantel is a beautifully crafted wood fireplace surround with a clean, symmetrical profile and a wide display shelf. Its elegant proportions and rich wood finish make it a timeless focal point for traditional and transitional living rooms.",
@@ -1055,6 +1072,8 @@ export const mantelProducts: MantelProduct[] = [
     name: "Peterborough",
     type: "wood",
     style: "traditional",
+    image: "/mantels/peterborough.png",
+    images: ["/mantels/peterborough.png", "/mantels/peterborough-2.jpg"],
     cadPdf: "/cad/peterborough.pdf",
     description:
       "The Peterborough Mantel is a traditionally styled wood fireplace surround with decorative column legs, a detailed frieze, and a broad mantel shelf. Its classic English-inspired design adds warmth, character, and architectural charm to any hearth.",
@@ -1064,6 +1083,8 @@ export const mantelProducts: MantelProduct[] = [
     name: "Sydney",
     type: "wood",
     style: "transitional",
+    image: "/mantels/sydney.png",
+    images: ["/mantels/sydney.png", "/mantels/sydney-2.jpg"],
     cadPdf: "/cad/sydney.pdf",
     description:
       "The Sydney Mantel is a versatile wood fireplace surround that blends clean contemporary lines with the warmth of solid wood craftsmanship. Its transitional design suits a broad range of interiors, from modern open-plan homes to classic California living rooms.",
@@ -1083,7 +1104,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "wood",
     style: "transitional",
     image: "/mantels/benedict.jpg",
-    images: ["/mantels/benedict.jpg", "/mantels/benedict-unfinished.jpg"],
+    images: ["/mantels/benedict.jpg", "/mantels/benedict-2.png", "/mantels/benedict-unfinished.jpg"],
     description:
       "The Benedict Mantel is a refined wood fireplace surround with a sleek profile and understated detailing. Its clean silhouette and quality wood finish create a sophisticated hearth feature that bridges traditional and modern interior styles.",
   },
@@ -1158,6 +1179,7 @@ export const mantelProducts: MantelProduct[] = [
     slug: "architectural",
     name: "Architectural",
     type: "beam",
+    image: "/mantels/architectural.png",
     style: "transitional",
     description:
       "The Architectural Beam Mantel is a clean-lined wood fireplace beam designed for modern and transitional interiors. Its precise profile and refined finish deliver understated sophistication, making it a versatile choice for contemporary homes that want the warmth of wood without rustic ornamentation.",
@@ -1166,6 +1188,7 @@ export const mantelProducts: MantelProduct[] = [
     slug: "darlinghurst",
     name: "Darlinghurst",
     type: "beam",
+    image: "/mantels/darlinghurst.png",
     style: "transitional",
     description:
       "The Darlinghurst Beam Mantel is a sleek, transitional wood fireplace surround with clean lines and a refined wood finish. Its understated profile works beautifully in modern, transitional, and contemporary interiors where warmth and simplicity are equally valued.",
