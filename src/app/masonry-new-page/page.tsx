@@ -78,15 +78,85 @@ const showrooms = [
   { city: "Dublin", address: "6681 Sierra Ln Ste D, Dublin, CA 94568", phone: "(925) 436-1731", tel: "9254361731", hours: "Mon–Fri: 8:30 AM – 5:00 PM · Sat by appt" },
 ];
 
+const featuredProjects = [
+  {
+    title: "Exterior Precast & Stone",
+    description: "Architectural exterior work for residential and commercial facades.",
+    image: "/masonry-gallery/180d8e52-9754-4a75-ab98-1d21b76879a7.webp",
+  },
+  {
+    title: "Commercial Masonry",
+    description: "Durable brick, stone, and architectural details for high-traffic properties.",
+    image: "/masonry-gallery/0062bbaa-eae6-4f2f-8c22-38fa09bb3022.webp",
+  },
+  {
+    title: "Brick Installation",
+    description: "Field-built brickwork, veneer, and project coordination from an experienced crew.",
+    image: "/masonry-gallery/1d921cf6-0a69-4f6a-9248-4c398b0c20ae.webp",
+  },
+];
+
 export default function MasonryPage() {
   return (
     <>
       {/* Hero */}
       <EditorialPageHero
-        eyebrow="Masonry / Stone / Tile"
-        title="Architectural masonry for fireplace rooms."
-        description="Stone, brick, tile, and precast installations for fireplace surrounds, hearths, feature walls, and architectural projects, available through our Southern California team."
+        eyebrow="Masonry / Precast / Brick"
+        title="Plan your masonry project with confidence"
+        description="Stone, brick, tile, and precast installations for fireplaces, exterior facades, architectural details, commercial properties, and custom residential projects."
       />
+
+      {/* Featured work */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+          <div>
+            <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-3">
+              Recent Masonry Work
+            </p>
+            <h2
+              className="text-3xl md:text-4xl font-medium text-[color:var(--ink)]"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              Built for interiors, exteriors, and commercial scale.
+            </h2>
+          </div>
+          <Link
+            href="/masonry-gallery"
+            className="text-sm uppercase tracking-[0.18em] text-[color:var(--accent)] hover:text-[color:var(--ink)] transition-colors"
+          >
+            View Gallery
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {featuredProjects.map((project) => (
+            <article
+              key={project.title}
+              className="group border border-[color:var(--sand-deep)] bg-white"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="p-6">
+                <h3
+                  className="text-lg font-medium text-[color:var(--ink)] mb-2"
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
+                  {project.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-[color:var(--ink)]/60">
+                  {project.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       {/* Services */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -180,21 +250,21 @@ export default function MasonryPage() {
             className="text-3xl font-medium mb-3"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Visit a Showroom to Get Started
+            Plan your masonry project with confidence
           </h2>
           <p className="text-[color:var(--ink)]/60 mb-12 max-w-2xl">
             Bring your project plans or photos to any of our three California showrooms. Our team
-            will help you select materials, provide a project guidance, and schedule your installation.
+            will help you select materials, discuss scope, provide project guidance, and coordinate next steps.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {showrooms.map((s) => (
-              <div key={s.city} className="bg-stone-800 p-7">
-                <h3 className="text-[color:var(--accent)] font-medium text-lg mb-2">{s.city}</h3>
-                <p className="text-[color:var(--ink)]/60 text-sm mb-1">{s.address}</p>
+              <div key={s.city} className="bg-white border border-[color:var(--sand-deep)] p-7">
+                <h3 className="text-[color:var(--ink)] font-medium text-lg mb-2">{s.city}</h3>
+                <p className="text-[color:var(--ink)]/65 text-sm mb-1">{s.address}</p>
                 <p className="text-[color:var(--ink)]/55 text-xs mb-4">{s.hours}</p>
                 <a
                   href={`tel:${s.tel}`}
-                  className="text-white font-medium hover:text-[color:var(--accent)] transition-colors"
+                  className="text-[color:var(--accent)] font-medium hover:text-[color:var(--ink)] transition-colors"
                 >
                   {s.phone}
                 </a>
