@@ -1141,6 +1141,7 @@ export const mantelProducts: MantelProduct[] = [
     slug: "gippsland",
     name: "Gippsland",
     type: "beam",
+    image: "/mantels/gippsland.png",
     style: "traditional",
     description:
       "The Gippsland Beam Mantel is a robustly crafted wood fireplace beam with a bold, natural profile. Ideal for rustic, farmhouse, and lodge-style interiors, the Gippsland delivers enduring warmth and character above gas or wood-burning fireplaces.",
