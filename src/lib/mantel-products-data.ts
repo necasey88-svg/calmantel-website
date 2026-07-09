@@ -1093,8 +1093,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Benedict",
     type: "wood",
     style: "transitional",
-    image: "/mantels/benedict.jpg",
-    images: ["/mantels/benedict.jpg", "/mantels/benedict-unfinished.jpg"],
+    image: "/mantels/benedict.png",
     description:
       "The Benedict Mantel is a refined wood fireplace surround with a sleek profile and understated detailing. Its clean silhouette and quality wood finish create a sophisticated hearth feature that bridges traditional and modern interior styles.",
   },
@@ -1133,6 +1132,7 @@ export const mantelProducts: MantelProduct[] = [
     slug: "geelong",
     name: "Geelong",
     type: "beam",
+    image: "/mantels/geelong.png",
     style: "traditional",
     description:
       "The Geelong Beam Mantel is a solid wood fireplace beam with a substantial, rustic profile and natural finish. Its generous proportions and warm character make it a natural centerpiece in farmhouse, craftsman, and traditional living rooms.",

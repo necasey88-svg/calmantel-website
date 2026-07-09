@@ -28,7 +28,13 @@ const beamSlugs = [
   "architectural",
   "darlinghurst",
   "santa-anita",
+  "geelong",
+  "gippsland",
 ];
+
+// Products intentionally hidden from the Wood Surrounds listing but not (yet)
+// placed in another category page — still reachable via their own product URL.
+const woodSurroundsExclude = ["camberwell"];
 
 // Which mantel-products-data products belong on each category page
 function getProductsForCategory(slug: string) {
@@ -46,7 +52,11 @@ function getProductsForCategory(slug: string) {
     case "overmantels":
       return mantelProducts.filter((p) => p.type === "overmantel");
     case "wood-surrounds":
-      return mantelProducts.filter((p) => p.type === "wood" || (p.type === "beam" && !beamSlugs.includes(p.slug)) || p.slug === "hobart-1" || p.slug === "kendall-1");
+      return mantelProducts.filter(
+        (p) =>
+          (p.type === "wood" || (p.type === "beam" && !beamSlugs.includes(p.slug)) || p.slug === "hobart-1" || p.slug === "kendall-1") &&
+          !woodSurroundsExclude.includes(p.slug),
+      );
     case "beams":
       return beamSlugs
         .map((s) => mantelProducts.find((p) => p.slug === s))
