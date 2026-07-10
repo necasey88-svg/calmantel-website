@@ -13,9 +13,9 @@ import JsonLd from "@/components/JsonLd";
 import { organizationSchema } from "@/lib/business-data";
 
 export const metadata = {
-  title: "California Mantel & Fireplace | Custom Mantels & Fireplaces",
+  title: "California Mantel & Fireplace | Custom Mantels, Fireplaces & Masonry",
   description:
-    "Aussie-American family-owned since 1987. We manufacture wood & precast concrete fireplace mantels and install gas, electric & outdoor fireplaces. Showrooms in Anaheim, Dublin & Sacramento.",
+    "Aussie-American family-owned since 1987. We manufacture wood and precast fireplace mantels, then help source and install gas, electric, outdoor fireplace, and masonry projects. Showrooms in Anaheim, Dublin, and Sacramento.",
   alternates: { canonical: "/" },
 };
 
@@ -121,16 +121,16 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-tr from-black/75 via-black/30 to-transparent" />
         <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8 pb-20 md:pb-28">
           <p className="uppercase tracking-[0.28em] text-white/75 text-xs md:text-sm mb-6">
-            Manufactured in California · Since 1987
+            Mantels Manufactured in California · Since 1987
           </p>
           <h1
             className="text-4xl md:text-6xl font-medium max-w-4xl leading-[1.08] tracking-tight"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            California&apos;s Premier Mantel &amp; Fireplace Manufacturer
+            California&apos;s Premier Mantel Manufacturer &amp; Fireplace Design Showroom
           </h1>
           <p className="mt-6 text-white/85 uppercase tracking-[0.18em] text-sm md:text-base">
-            Custom Mantels &nbsp;·&nbsp; Fireplaces &nbsp;·&nbsp; Masonry &nbsp;·&nbsp; Installation
+            Custom Mantels &nbsp;·&nbsp; Fireplace Systems &nbsp;·&nbsp; Masonry &nbsp;·&nbsp; Installation
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
