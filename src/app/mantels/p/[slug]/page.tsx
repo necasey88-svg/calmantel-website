@@ -145,7 +145,19 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
                   href={`/mantels/p/${p.slug}`}
                   className="group border border-stone-200 bg-white rounded-sm overflow-hidden hover:border-[color:var(--accent)] hover:shadow-sm transition-all"
                 >
-                  <div className="h-32 bg-stone-100 flex items-center justify-center text-4xl">🪨</div>
+                  <div className="relative h-32 bg-stone-100 flex items-center justify-center text-4xl">
+                    {p.image ? (
+                      <Image
+                        src={p.image}
+                        alt={p.name}
+                        fill
+                        className="object-contain p-3"
+                        sizes="(max-width: 640px) 50vw, 25vw"
+                      />
+                    ) : (
+                      "🪨"
+                    )}
+                  </div>
                   <div className="p-4">
                     <p
                       className="font-medium text-stone-900 group-hover:text-[color:var(--accent)] transition-colors text-sm"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { overstockProducts } from "@/lib/mantel-products-data";
 import EditorialPageHero from "@/components/EditorialPageHero";
 
@@ -25,7 +26,19 @@ export default function OverstockSalePage() {
               href={`/overstock-sale/p/${product.slug}`}
               className="group border border-[color:var(--sand-deep)] overflow-hidden hover:border-[color:var(--accent)] transition-all"
             >
-              <div className="h-48 bg-stone-100 flex items-center justify-center text-6xl">🪨</div>
+              <div className="relative h-48 bg-stone-100 flex items-center justify-center text-6xl">
+                {product.image ? (
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-contain p-4"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                ) : (
+                  "🪨"
+                )}
+              </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">                  <span className="border border-[color:var(--sand-deep)] text-[color:var(--ink)]/60 text-xs font-medium px-2 py-0.5">Limited</span>                  <span className="text-xs text-stone-400">Limited availability</span>
                 </div>

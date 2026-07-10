@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getOverstockProduct, overstockProducts } from "@/lib/mantel-products-data";
 
 import EditorialPageHero from "@/components/EditorialPageHero";
@@ -32,7 +33,19 @@ export default async function OverstockProductPage({ params }: { params: Promise
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-stone-100 rounded-sm flex items-center justify-center h-80 text-7xl">🪨</div>
+          <div className="relative bg-stone-100 rounded-sm flex items-center justify-center h-80 text-7xl">
+            {product.image ? (
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                className="object-contain p-6"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            ) : (
+              "🪨"
+            )}
+          </div>
 
           <div>
             <p className="text-stone-600 leading-relaxed mb-8">{product.description}</p>

@@ -1270,6 +1270,7 @@ export interface OverstockProduct {
   finish: string;
   size: string;
   description: string;
+  image?: string;
   cadPdf?: string;
 }
 
