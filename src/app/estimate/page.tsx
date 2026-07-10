@@ -53,7 +53,7 @@ export default function EstimatePage() {
       if (typeof value === "string") payload[key] = value;
     });
     if (productInterest) payload["Product of Interest"] = productInterest;
-    if (referringPage) payload["Came From Page"] = referringPage;
+    if (referringPage) payload["Traffic Source"] = referringPage;
 
     // List the photo filenames in the message so staff know to follow up
     if (files.length > 0) {
