@@ -34,19 +34,97 @@ const beamSlugs = [
   "camberwell",
 ];
 
+const categoryMerchandisingOrder: Record<string, string[]> = {
+  contemporary: [
+    "ashford",
+    "bolte",
+    "sausalito",
+    "sienna",
+    "turin",
+    "fluted-filler",
+    "brighton",
+    "clarendon",
+    "casden",
+    "yarra",
+    "wayville",
+    "reynella",
+    "onkaparinga",
+    "rockhampton",
+    "mingary",
+    "nullarbor",
+    "broken-hill",
+    "woomera",
+    "urrbrae",
+    "koonunga",
+    "willunga",
+    "boomerang",
+    "whyalla",
+  ],
+  traditional: [
+    "tonso",
+    "versailles",
+    "chateau",
+    "st-tropez",
+    "cannes",
+    "cassis",
+    "venice",
+    "dominique",
+    "castellina",
+    "victorian",
+    "regency",
+    "classique",
+    "cambridge",
+    "bondi",
+    "heritage",
+    "lancelot",
+    "ballarat",
+    "kensington",
+  ],
+};
+
+function sortProductsForCategory<T extends { slug: string; name: string }>(
+  products: T[],
+  orderKey: keyof typeof categoryMerchandisingOrder,
+) {
+  const order = new Map(categoryMerchandisingOrder[orderKey].map((productSlug, index) => [productSlug, index]));
+
+  return [...products].sort((a, b) => {
+    const aRank = order.get(a.slug) ?? Number.MAX_SAFE_INTEGER;
+    const bRank = order.get(b.slug) ?? Number.MAX_SAFE_INTEGER;
+
+    if (aRank !== bRank) return aRank - bRank;
+    return a.name.localeCompare(b.name);
+  });
+}
+
 // Which mantel-products-data products belong on each category page
 function getProductsForCategory(slug: string) {
   switch (slug) {
     case "contemporary":
-      return mantelProducts.filter((p) => p.style === "contemporary" && p.type !== "overmantel");
+      return sortProductsForCategory(
+        mantelProducts.filter((p) => p.style === "contemporary" && p.type !== "overmantel"),
+        "contemporary",
+      );
     case "traditional":
-      return mantelProducts.filter((p) => p.style === "traditional" && p.type !== "overmantel" && p.type !== "wood" && p.type !== "beam");
+      return sortProductsForCategory(
+        mantelProducts.filter((p) => p.style === "traditional" && p.type !== "overmantel" && p.type !== "wood" && p.type !== "beam"),
+        "traditional",
+      );
     case "traditional-classical":
-      return mantelProducts.filter((p) => p.style === "traditional" && p.type === "precast" && p.subStyle === "classical");
+      return sortProductsForCategory(
+        mantelProducts.filter((p) => p.style === "traditional" && p.type === "precast" && p.subStyle === "classical"),
+        "traditional",
+      );
     case "traditional-french":
-      return mantelProducts.filter((p) => p.style === "traditional" && p.type === "precast" && p.subStyle === "french");
+      return sortProductsForCategory(
+        mantelProducts.filter((p) => p.style === "traditional" && p.type === "precast" && p.subStyle === "french"),
+        "traditional",
+      );
     case "traditional-ornate":
-      return mantelProducts.filter((p) => p.style === "traditional" && p.type === "precast" && p.subStyle === "ornate");
+      return sortProductsForCategory(
+        mantelProducts.filter((p) => p.style === "traditional" && p.type === "precast" && p.subStyle === "ornate"),
+        "traditional",
+      );
     case "overmantels":
       return mantelProducts.filter((p) => p.type === "overmantel");
     case "wood-surrounds":
