@@ -15,6 +15,8 @@ export interface MantelProduct {
   name: string;
   type: "precast" | "wood" | "overmantel" | "beam";
   style: "contemporary" | "traditional" | "transitional" | "beams";
+  // Beams only: what the beam is made of (some precast beams look like wood).
+  beamMaterial?: "precast" | "wood";
   // Sub-classification for traditional precast mantels (drives the /mantels/traditional-* facets).
   // Provisional — assigned from descriptions/CAD shape; review against product images.
   subStyle?: "classical" | "french" | "ornate" | "rustic";
@@ -68,6 +70,7 @@ export const mantelProducts: MantelProduct[] = [
   // --- Wood Surrounds ---
   {
     slug: "hobart",
+    beamMaterial: "wood",
     name: "Hobart",
     type: "beam",
     image: "/mantels/hobart-1.png",
@@ -98,6 +101,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "kendall",
+    beamMaterial: "wood",
     name: "Kendall",
     type: "beam",
     image: "/mantels/kendall-1.png",
@@ -442,6 +446,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "camberwell",
+    beamMaterial: "precast",
     name: "Camberwell",
     type: "beam",
     style: "beams",
@@ -747,6 +752,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "noarlunga",
+    beamMaterial: "precast",
     name: "Noarlunga",
     type: "beam",
     image: "/mantels/noarlunga.png",
@@ -1102,6 +1108,7 @@ export const mantelProducts: MantelProduct[] = [
   // --- Beams ---
   {
     slug: "hollywood-park",
+    beamMaterial: "precast",
     name: "Hollywood Park",
     type: "beam",
     image: "/mantels/hollywood-park.png",
@@ -1112,6 +1119,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "collingwood",
+    beamMaterial: "wood",
     name: "Collingwood",
     type: "beam",
     image: "/mantels/collingwood.png",
@@ -1122,6 +1130,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "essendon",
+    beamMaterial: "wood",
     name: "Essendon",
     type: "beam",
     image: "/mantels/essendon.png",
@@ -1132,6 +1141,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "geelong",
+    beamMaterial: "wood",
     name: "Geelong",
     type: "beam",
     image: "/mantels/geelong.png",
@@ -1141,6 +1151,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "gippsland",
+    beamMaterial: "wood",
     name: "Gippsland",
     type: "beam",
     image: "/mantels/gippsland.png",
@@ -1150,6 +1161,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "norwood",
+    beamMaterial: "wood",
     name: "Norwood",
     type: "beam",
     image: "/mantels/norwood.png",
@@ -1160,6 +1172,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "yalumba",
+    beamMaterial: "precast",
     name: "Yalumba",
     type: "beam",
     image: "/mantels/yalumba.png",
@@ -1170,6 +1183,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "architectural",
+    beamMaterial: "wood",
     name: "Architectural",
     type: "beam",
     image: "/mantels/architectural.png",
@@ -1179,6 +1193,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "darlinghurst",
+    beamMaterial: "precast",
     name: "Darlinghurst",
     type: "beam",
     image: "/mantels/darlinghurst.png",
@@ -1188,6 +1203,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "hackney",
+    beamMaterial: "precast",
     name: "Hackney",
     type: "beam",
     image: "/mantels/hackney.png",
@@ -1198,6 +1214,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "payneham",
+    beamMaterial: "precast",
     name: "Payneham",
     type: "beam",
     image: "/mantels/payneham.png",
@@ -1208,6 +1225,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   {
     slug: "santa-anita",
+    beamMaterial: "precast",
     name: "Santa Anita",
     type: "beam",
     image: "/mantels/santa-anita.png",

@@ -18,20 +18,22 @@ const traditionalFacets = [
 
 // The eight wood beam mantels that live under the Beams navigation.
 const beamSlugs = [
+  // Precast beams (listed first on the page)
   "payneham",
   "yalumba",
-  "norwood",
   "noarlunga",
   "hollywood-park",
   "hackney",
+  "darlinghurst",
+  "santa-anita",
+  "camberwell",
+  // Wood beams
+  "norwood",
   "essendon",
   "collingwood",
   "architectural",
-  "darlinghurst",
-  "santa-anita",
   "geelong",
   "gippsland",
-  "camberwell",
 ];
 
 const categoryMerchandisingOrder: Record<string, string[]> = {
@@ -138,6 +140,60 @@ function getProductsForCategory(slug: string) {
   }
 }
 
+// Chip text for the product-type badge. Beams get their material spelled out —
+// several precast beams look like wood, so "Fireplace Beam" alone is ambiguous.
+function productTypeChip(product: (typeof mantelProducts)[number]) {
+  if (product.type === "beam" && product.beamMaterial) {
+    return product.beamMaterial === "precast" ? "Precast Beam" : "Wood Beam";
+  }
+  return typeLabel[product.type];
+}
+
+function ProductCard({ product }: { product: (typeof mantelProducts)[number] }) {
+  return (
+    <Link
+      href={`/mantels/p/${product.slug}`}
+      className="group border border-stone-200 rounded-sm overflow-hidden hover:border-[color:var(--accent)] hover:shadow-sm transition-all"
+    >
+      <div className="relative h-72 bg-stone-100 overflow-hidden">
+        {product.image ? (
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="flex items-center justify-center h-full text-6xl">🪨</div>
+        )}
+      </div>
+      <div className="p-6">
+        <div className="flex gap-2 mb-3">
+          <span className="text-xs bg-stone-100 text-stone-500 px-2 py-0.5 rounded">
+            {productTypeChip(product)}
+          </span>
+          <span className="text-xs bg-[#F9F7F3] text-[color:var(--accent)] px-2 py-0.5 rounded">
+            {styleLabel[product.style]}
+          </span>
+        </div>
+        <h2
+          className="text-lg font-medium text-stone-900 mb-2 group-hover:text-[color:var(--accent)] transition-colors"
+          style={{ fontFamily: "var(--font-playfair)" }}
+        >
+          {product.name}
+        </h2>
+        <p className="text-stone-500 text-sm leading-relaxed line-clamp-3">
+          {product.description}
+        </p>
+        <p className="text-[color:var(--accent)] text-sm font-medium mt-4 group-hover:underline">
+          View details →
+        </p>
+      </div>
+    </Link>
+  );
+}
+
 export function generateStaticParams() {
   return mantelCategories.map((c) => ({ slug: c.slug }));
 }
@@ -198,51 +254,50 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
       {/* Products */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {useLinkedProducts ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {linkedProducts.map((product) => (
-              <Link
-                key={product.slug}
-                href={`/mantels/p/${product.slug}`}
-                className="group border border-stone-200 rounded-sm overflow-hidden hover:border-[color:var(--accent)] hover:shadow-sm transition-all"
-              >
-                <div className="relative h-72 bg-stone-100 overflow-hidden">
-                  {product.image ? (
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  ) : (
-                    <div className="flex items-center justify-center h-full text-6xl">🪨</div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <div className="flex gap-2 mb-3">
-                    <span className="text-xs bg-stone-100 text-stone-500 px-2 py-0.5 rounded">
-                      {typeLabel[product.type]}
-                    </span>
-                    <span className="text-xs bg-[#F9F7F3] text-[color:var(--accent)] px-2 py-0.5 rounded">
-                      {styleLabel[product.style]}
-                    </span>
+          slug === "beams" ? (
+            /* Beams are grouped by material — several precast beams look like
+               wood, so the split + chips keep the distinction unmistakable. */
+            <div className="space-y-16">
+              {[
+                {
+                  label: "Precast Beams",
+                  blurb:
+                    "Cast from concrete with wood-grain and smooth textures — the warmth of timber with zero combustibility and every finish in our color range.",
+                  items: linkedProducts.filter((p) => p.beamMaterial === "precast"),
+                },
+                {
+                  label: "Wood Beams",
+                  blurb: "Solid wood beams with natural grain, character, and warmth.",
+                  items: linkedProducts.filter((p) => p.beamMaterial === "wood"),
+                },
+              ]
+                .filter((group) => group.items.length > 0)
+                .map((group) => (
+                  <div key={group.label}>
+                    <h2
+                      className="text-3xl font-medium text-stone-900 mb-2"
+                      style={{ fontFamily: "var(--font-playfair)" }}
+                    >
+                      {group.label}
+                    </h2>
+                    <p className="text-stone-500 text-sm leading-relaxed mb-8 max-w-2xl">
+                      {group.blurb}
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {group.items.map((product) => (
+                        <ProductCard key={product.slug} product={product} />
+                      ))}
+                    </div>
                   </div>
-                  <h2
-                    className="text-lg font-medium text-stone-900 mb-2 group-hover:text-[color:var(--accent)] transition-colors"
-                    style={{ fontFamily: "var(--font-playfair)" }}
-                  >
-                    {product.name}
-                  </h2>
-                  <p className="text-stone-500 text-sm leading-relaxed line-clamp-3">
-                    {product.description}
-                  </p>
-                  <p className="text-[color:var(--accent)] text-sm font-medium mt-4 group-hover:underline">
-                    View details →
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
+                ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {linkedProducts.map((product) => (
+                <ProductCard key={product.slug} product={product} />
+              ))}
+            </div>
+          )
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {category.products.map((product, i) => (

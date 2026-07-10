@@ -15,6 +15,14 @@ import ConsultationCTA from "@/components/ConsultationCTA";
 import JsonLd from "@/components/JsonLd";
 import { business, SITE_URL } from "@/lib/business-data";
 
+// Beams get their material spelled out — several precast beams look like wood.
+function productMaterialLabel(product: NonNullable<ReturnType<typeof getMantelProduct>>) {
+  if (product.type === 'beam' && product.beamMaterial) {
+    return product.beamMaterial === 'precast' ? 'Precast Beam' : 'Wood Beam';
+  }
+  return typeLabel[product.type];
+}
+
 export function generateStaticParams() {
   return mantelProducts.map((p) => ({ slug: p.slug }));
 }
@@ -45,7 +53,7 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
     name: `${product.name} Mantel`,
     description: product.description,
     ...(product.image ? { image: `${SITE_URL}${product.image}` } : {}),
-    category: `${styleLabel[product.style]} ${typeLabel[product.type]}`,
+    category: `${styleLabel[product.style]} ${productMaterialLabel(product)}`,
     brand: { "@type": "Brand", name: business.name },
     manufacturer: { "@type": "Organization", name: business.name },
     url: `${SITE_URL}/mantels/p/${product.slug}`,
@@ -56,7 +64,7 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
       <JsonLd data={productSchema} />
       {/* Breadcrumb + hero */}
       <EditorialPageHero
-        eyebrow={`${styleLabel[product.style]} / ${typeLabel[product.type]}`}
+        eyebrow={`${styleLabel[product.style]} / ${productMaterialLabel(product)}`}
         title={product.name}
         description={product.description}
       />
@@ -86,7 +94,7 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div className="bg-stone-50 rounded-lg p-4">
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Material</p>
-                <p className="text-stone-700 font-medium text-sm">{typeLabel[product.type]}</p>
+                <p className="text-stone-700 font-medium text-sm">{productMaterialLabel(product)}</p>
               </div>
               <div className="bg-stone-50 rounded-lg p-4">
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Style</p>
