@@ -75,7 +75,7 @@ export default async function OverstockProductPage({ params }: { params: Promise
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/estimate"
+                href={`/estimate?product=${encodeURIComponent(product.name + " (Overstock)")}`}
                 className="bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white px-7 py-3 rounded font-medium text-center transition-colors"
               >
                 Request Project Estimate

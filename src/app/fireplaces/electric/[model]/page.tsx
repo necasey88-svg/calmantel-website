@@ -95,7 +95,7 @@ export default async function ElectricFireplaceModelPage({ params }: { params: P
             </ul>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/estimate"
+                href={`/estimate?product=${encodeURIComponent(ef.name)}`}
                 className="inline-block bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white text-sm tracking-[0.16em] uppercase px-8 py-3.5 rounded-sm transition-colors text-center"
               >
                 Request a Project Estimate
@@ -145,7 +145,7 @@ export default async function ElectricFireplaceModelPage({ params }: { params: P
                   )}
                 </dl>
                 <Link
-                  href="/estimate"
+                  href={`/estimate?product=${encodeURIComponent(ef.name + " — " + v.name)}`}
                   className="mt-4 block text-center border border-[color:var(--accent)] text-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-white text-sm font-medium py-2.5 rounded-lg transition-colors"
                 >
                   Request Project Estimate
@@ -155,7 +155,7 @@ export default async function ElectricFireplaceModelPage({ params }: { params: P
           </div>
           <p className="mt-6 text-sm text-[color:var(--ink)]/55 text-center">
             Starting at <strong className="text-stone-600">{ef.startingPrice}</strong>.{" "}
-            <Link href="/estimate" className="text-[color:var(--accent)] hover:underline">Request a full project estimate →</Link>
+            <Link href={`/estimate?product=${encodeURIComponent(ef.name)}`} className="text-[color:var(--accent)] hover:underline">Request a full project estimate →</Link>
           </p>
         </div>
       </section>
