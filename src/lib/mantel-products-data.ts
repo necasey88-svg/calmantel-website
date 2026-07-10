@@ -214,12 +214,13 @@ export const mantelProducts: MantelProduct[] = [
       "The Bolte Mantel is a contemporary precast fireplace surround that showcases sleek modern design with clean lines, a smooth finish, and minimalist elegance. Crafted from premium, durable materials, this fireplace mantel offers both style and strength. With its refined geometric profile, the Bolte is the perfect focal point for gas fireplaces, electric fireplaces, or traditional firebox openings. Designed for versatility, it complements modern interiors while adding warmth, architectural depth, and sophisticated character to any space.",
   },
   {
-    slug: "flutted-filler",
-    name: "Flutted Filler",
+    slug: "fluted-filler",
+    name: "Fluted Filler",
+    image: "/mantels/fluted-filler.png",
     type: "precast",
     style: "contemporary",
     description:
-      "The Flutted Filler Mantel is a contemporary fireplace surround designed to enhance modern living spaces with elegance, warmth, and style. Featuring a sleek, streamlined profile and clean panels, this fireplace mantel beautifully frames the flame display, creating a striking focal point that blends ambiance with comfort. Expertly crafted from durable, high-quality materials, the Flutted Filler delivers long-lasting performance while adding sophisticated architectural detail to any room.",
+      "The Fluted Filler Mantel is a contemporary fireplace surround designed to enhance modern living spaces with elegance, warmth, and style. Featuring a sleek, streamlined profile and clean panels, this fireplace mantel beautifully frames the flame display, creating a striking focal point that blends ambiance with comfort. Expertly crafted from durable, high-quality materials, the Fluted Filler delivers long-lasting performance while adding sophisticated architectural detail to any room.",
   },
   {
     slug: "sausalito",
