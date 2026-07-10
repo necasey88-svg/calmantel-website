@@ -176,6 +176,15 @@ export const mantelProducts: MantelProduct[] = [
       "The Woomera Mantel is a contemporary precast fireplace surround that blends clean architectural lines with minimalist elegance, making it an ideal addition to today's modern homes. Expertly crafted from durable, high-quality materials, this fireplace mantel delivers lasting strength, refined style, and reliable performance. Designed as a versatile centerpiece, the Woomera creates a sleek frame for gas fireplaces, electric fireplaces, or traditional hearth designs, enhancing warmth, ambiance, and sophistication in any living space.",
   },
   {
+    slug: "fluted-filler",
+    name: "Fluted Filler",
+    image: "/mantels/fluted-filler.png",
+    type: "precast",
+    style: "contemporary",
+    description:
+      "The Fluted Filler Mantel is a bold contemporary precast surround featuring a richly textured fluted panel framing the firebox opening. Its deep, evenly ribbed detailing adds architectural depth and tactile warmth against clean, angular lines, creating a striking modern centerpiece for gas or electric fireplaces.",
+  },
+  {
     slug: "urrbrae",
     name: "Urrbrae",
     image: "/mantels/urrbrae.png",
