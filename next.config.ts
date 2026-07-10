@@ -19,12 +19,12 @@ const nextConfig: NextConfig = {
       // ── Dealeron legacy (.html pages & old URL structure) ──────────────────
       { source: "/home", destination: "/", permanent: true },
       { source: "/catalog.aspx", destination: "/mantels", permanent: true },
-      { source: "/shop-electric.html", destination: "/electric-fireplaces", permanent: true },
+      { source: "/shop-electric.html", destination: "/fireplaces/electric", permanent: true },
       { source: "/mantels.html", destination: "/mantels", permanent: true },
       { source: "/service.html", destination: "/contact", permanent: true },
       { source: "/hours.html", destination: "/showrooms", permanent: true },
-      { source: "/gas-fireplaces-contemporary", destination: "/gas-inserts", permanent: true },
-      { source: "/gas-fireplaces-traditional", destination: "/gas-inserts", permanent: true },
+      { source: "/gas-fireplaces-contemporary", destination: "/fireplaces/gas-inserts", permanent: true },
+      { source: "/gas-fireplaces-traditional", destination: "/fireplaces/gas-inserts", permanent: true },
       { source: "/outdoor-fireplaces", destination: "/fireplaces", permanent: true },
       { source: "/fireplaces/gas-inserts/detail/our-locations", destination: "/showrooms", permanent: true },
       // Dealeron colors-finishes product pages (wildcard catches all variants)
@@ -69,7 +69,7 @@ const nextConfig: NextConfig = {
       { source: "/mendota", destination: "/fireplaces/mendota", permanent: true },
       { source: "/ortal", destination: "/fireplaces/ortal", permanent: true },
       { source: "/flare", destination: "/fireplaces/flare", permanent: true },
-      { source: "/heat-n-glo", destination: "/fireplaces/heat-n-glo", permanent: true },
+      { source: "/heat-n-glo", destination: "/fireplaces/heat-and-glo", permanent: true },
       { source: "/heatilator", destination: "/fireplaces/heatilator", permanent: true },
       { source: "/modern-flames", destination: "/fireplaces/modern-flames", permanent: true },
       { source: "/napoleon", destination: "/fireplaces/napoleon", permanent: true },
@@ -106,8 +106,7 @@ const nextConfig: NextConfig = {
       { source: "/mantels/p/sausalito-1", destination: "/mantels/p/sausalito", permanent: true },
       { source: "/mantels/p/koonunga-1", destination: "/mantels/p/koonunga", permanent: true },
 
-      // Booking → Microsoft Bookings
-      { source: "/booking", destination: "https://bookings.cloud.microsoft/book/CaliforniaMantelFireplace@calmantel.com/?ismsaljsauthenabled", permanent: true },
+      // /booking stays on-site so the scheduling handoff can be branded and tracked.
 
       { source: "/mantels/p/kendall-1", destination: "/mantels/p/kendall", permanent: true },
       { source: "/mantels/p/hobart-1", destination: "/mantels/p/hobart", permanent: true },

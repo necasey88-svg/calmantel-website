@@ -2,6 +2,7 @@
 import { useState, useRef } from "react";
 
 import EditorialPageHero from "@/components/EditorialPageHero";
+import { trackEvent } from "@/lib/analytics";
 const ACCESS_KEY = "77eca617-9eb9-4352-8b5a-c89bf8870232";
 
 export default function EstimatePage() {
@@ -57,6 +58,11 @@ export default function EstimatePage() {
       });
       const json = await res.json();
       if (json.success) {
+        trackEvent("estimate_form_submit", {
+          project_type: String(formData.get("project_type") || ""),
+          city: String(formData.get("city") || ""),
+          photo_count: files.length,
+        });
         setSubmitted(true);
       } else {
         setError("Something went wrong. Please try again or call us directly.");

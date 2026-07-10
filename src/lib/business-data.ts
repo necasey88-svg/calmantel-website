@@ -136,6 +136,10 @@ export function organizationSchema() {
     logo: business.logo,
     foundingDate: business.founded,
     description: business.description,
+    areaServed: [
+      { "@type": "State", name: "California" },
+      { "@type": "State", name: "Nevada" },
+    ],
     sameAs: [...business.sameAs],
     department: showrooms.map((s) => ({
       "@type": "HomeAndConstructionBusiness",
