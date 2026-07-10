@@ -285,7 +285,7 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-[#F9F7F3] border-t border-[color:var(--sand-deep)] px-6 pb-6">
+        <div className="md:hidden bg-[#F9F7F3] border-t border-[color:var(--sand-deep)] px-6 pb-6 max-h-[calc(100dvh-7.5rem)] overflow-y-auto overscroll-contain">
           {mobileGroups.map((group) => (
             <div key={group.heading} className="border-b border-[color:var(--sand-deep)] py-4">
               <p className="text-[10px] uppercase tracking-[0.24em] text-[color:var(--accent)] mb-3">
