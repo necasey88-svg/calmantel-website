@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/contact", priority: 0.6, changeFrequency: "monthly" },
     { path: "/estimate", priority: 0.7, changeFrequency: "monthly" },
     { path: "/instant-estimate", priority: 0.7, changeFrequency: "monthly" },
-    // /booking intentionally omitted — it 301-redirects to external Microsoft Bookings.
+    { path: "/booking", priority: 0.7, changeFrequency: "monthly" },
     { path: "/sms-privacy-policy", priority: 0.2, changeFrequency: "yearly" },
   ];
 

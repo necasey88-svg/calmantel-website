@@ -67,7 +67,7 @@ export const mantelProducts: MantelProduct[] = [
   },
   // --- Wood Surrounds ---
   {
-    slug: "hobart-1",
+    slug: "hobart",
     name: "Hobart",
     type: "beam",
     image: "/mantels/hobart-1.png",
@@ -97,7 +97,7 @@ export const mantelProducts: MantelProduct[] = [
       "The Brisbane Mantel is a handcrafted wood fireplace surround that combines timeless design, architectural detail, and lasting durability. Featuring a substantial rectangular frame with a subtly beveled edge, this wood fireplace mantel offers a clean, symmetrical design that creates a refined focal point above your fireplace. Its rich natural wood finish highlights the grain and texture, bringing warmth, character, and sophistication to any living space. A broad mantel shelf provides generous space for displaying artwork, mirrors, or seasonal décor.",
   },
   {
-    slug: "kendall-1",
+    slug: "kendall",
     name: "Kendall",
     type: "beam",
     image: "/mantels/kendall-1.png",
