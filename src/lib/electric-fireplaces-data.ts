@@ -31,6 +31,11 @@ export const electricFireplaces: ElectricFireplace[] = [
       "The Orion Traditional redefines what an electric fireplace can look like. Powered by Modern Flames' patented Heliovision® technology, it produces the most life-like fire available in an electric unit — with three flame styles, six colors, and 18 unique display combinations. WiFi-enabled and Alexa/Google Home compatible.",
     startingPrice: "Call for pricing",
     image: "/brands/modern-flames/orion-traditional.png",
+    gallery: [
+      "/brands/modern-flames/orion-traditional.png",
+      "/brands/modern-flames/orion-traditional-2.png",
+      "/brands/modern-flames/orion-traditional-3.png",
+    ],
     features: [
       "Heliovision® technology — the most realistic electric flame available",
       "3 flame styles (Hybrid, Wood, Gas) × 6 colors = 18 display combinations",
@@ -61,6 +66,11 @@ export const electricFireplaces: ElectricFireplace[] = [
       "The Orion Slim brings Modern Flames' Heliovision® flame technology into a sleek linear format. Available in Slim and Multi configurations from 52\" to 100\", it delivers three flame styles and six color options with a 15\" high viewing area — perfect for modern feature walls and built-ins.",
     startingPrice: "Starting at $4,279",
     image: "/brands/modern-flames/orion-slim.png",
+    gallery: [
+      "/brands/modern-flames/orion-slim.png",
+      "/brands/modern-flames/orion-slim-2.png",
+      "/brands/modern-flames/orion-slim-3.png",
+    ],
     features: [
       "Heliovision® flame technology in a slim linear format",
       "3 flame styles × 6 colors — fully customizable ambiance",
@@ -94,6 +104,12 @@ export const electricFireplaces: ElectricFireplace[] = [
       "The Redstone is Modern Flames' answer to a traditional-style electric fireplace with a realistic log fire presentation. Designed for built-in or insert applications, it pairs a warm, classic aesthetic with all the convenience of Modern Flames' flame technology — no gas, no venting, no hassle.",
     startingPrice: "Call for pricing",
     image: "/brands/modern-flames/redstone-new.png",
+    gallery: [
+      "/brands/modern-flames/redstone-new.png",
+      "/brands/modern-flames/redstone-2.png",
+      "/brands/modern-flames/redstone-3.png",
+      "/brands/modern-flames/redstone-4.png",
+    ],
     features: [
       "Traditional log fire aesthetic with Modern Flames flame technology",
       "Designed for built-in and insert applications",
@@ -120,6 +136,10 @@ export const electricFireplaces: ElectricFireplace[] = [
       "The Landscape Pro is Modern Flames' most versatile linear fireplace — available up to 120\" wide and rated for both indoor and outdoor use. The Multi configuration features two independent heating zones (5,000 + 10,000 BTU), while the Slim version keeps a lower profile. Hand-painted Canyon Driftwood logs and RGB ember lighting make every installation a showpiece.",
     startingPrice: "Starting at $2,299",
     image: "/brands/modern-flames/landscape-pro.png",
+    gallery: [
+      "/brands/modern-flames/landscape-pro.png",
+      "/brands/modern-flames/landscape-pro-2.png",
+    ],
     features: [
       "Available up to 120\" wide — largest in the Modern Flames lineup",
       "Indoor/outdoor rated",
@@ -154,6 +174,11 @@ export const electricFireplaces: ElectricFireplace[] = [
       "The Spectrum Slimline is Modern Flames' commercial-grade linear fireplace — designed for hotels, condos, and high-end residential installations where depth is limited. With 10 independently controlled color zones across flames, ember bed, and downlighting, and a sleek profile that installs flush into any wall, it's equally at home behind reception desks or in living rooms.",
     startingPrice: "Call for pricing",
     image: "/brands/modern-flames/spectrum-slimline.png",
+    gallery: [
+      "/brands/modern-flames/spectrum-slimline.png",
+      "/brands/modern-flames/spectrum-slimline-2.png",
+      "/brands/modern-flames/spectrum-slimline-3.png",
+    ],
     features: [
       "10 independently controlled color zones — flames, embers, and downlight",
       "Ultra-slim profile — ideal for tight wall depths",
