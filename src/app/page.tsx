@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import WhyCMF from "@/components/WhyCMF";
 import ServingCalifornia from "@/components/ServingCalifornia";
 import ClosingStatement from "@/components/ClosingStatement";
+import InspirationScenes from "@/components/InspirationScenes";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema } from "@/lib/business-data";
 
@@ -232,6 +233,8 @@ export default function HomePage() {
 
       {/* The Collection — premium best-sellers showcase */}
       <BestSellersShowcase />
+
+      <InspirationScenes />
 
       {/* Find a mantel — search / help tool */}
       <section className="bg-white border-y border-[color:var(--sand-deep)] py-20">
