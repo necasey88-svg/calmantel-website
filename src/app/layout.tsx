@@ -67,6 +67,15 @@ export default function RootLayout({
               ad_personalization: 'granted',
               analytics_storage: 'granted'
             });
+            // The remote tag config still applied its own denied default over a
+            // queued 'default' command; 'update' always takes precedence (it's
+            // the same mechanism cookie banners use to override defaults).
+            gtag('consent', 'update', {
+              ad_storage: 'granted',
+              ad_user_data: 'granted',
+              ad_personalization: 'granted',
+              analytics_storage: 'granted'
+            });
             gtag('js', new Date());
             gtag('config', 'G-ZVJ97TZNZN');
           `}

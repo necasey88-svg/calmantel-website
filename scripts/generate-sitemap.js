@@ -1,4 +1,5 @@
 // Run after `next build` to generate public/sitemap-generated.xml from static pages
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require("fs");
 const path = require("path");
 

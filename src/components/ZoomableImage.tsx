@@ -6,14 +6,22 @@ export default function ZoomableImage({ src, alt }: { src: string; alt: string }
   const [open, setOpen] = useState(false);
   const [scale, setScale] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
   const dragging = useRef(false);
   const lastPos = useRef({ x: 0, y: 0 });
   const imgRef = useRef<HTMLDivElement>(null);
 
-  const reset = () => { setScale(1); setOffset({ x: 0, y: 0 }); };
-  const close = () => { setOpen(false); reset(); };
+  const reset = useCallback(() => {
+    setScale(1);
+    setOffset({ x: 0, y: 0 });
+  }, []);
 
-  const zoom = useCallback((delta: number, cx = 0, cy = 0) => {
+  const close = useCallback(() => {
+    setOpen(false);
+    reset();
+  }, [reset]);
+
+  const zoom = useCallback((delta: number) => {
     setScale((prev) => {
       const next = Math.min(8, Math.max(1, prev + delta));
       if (next === 1) setOffset({ x: 0, y: 0 });
@@ -31,6 +39,7 @@ export default function ZoomableImage({ src, alt }: { src: string; alt: string }
   const onMouseDown = (e: React.MouseEvent) => {
     if (scale === 1) return;
     dragging.current = true;
+    setIsDragging(true);
     lastPos.current = { x: e.clientX, y: e.clientY };
   };
   const onMouseMove = (e: React.MouseEvent) => {
@@ -40,7 +49,10 @@ export default function ZoomableImage({ src, alt }: { src: string; alt: string }
     lastPos.current = { x: e.clientX, y: e.clientY };
     setOffset((prev) => ({ x: prev.x + dx, y: prev.y + dy }));
   };
-  const onMouseUp = () => { dragging.current = false; };
+  const onMouseUp = () => {
+    dragging.current = false;
+    setIsDragging(false);
+  };
 
   // Touch pinch-to-zoom
   const lastDist = useRef<number | null>(null);
@@ -63,7 +75,7 @@ export default function ZoomableImage({ src, alt }: { src: string; alt: string }
     const handler = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [open]);
+  }, [open, close]);
 
   // Prevent body scroll when open
   useEffect(() => {
@@ -166,12 +178,12 @@ export default function ZoomableImage({ src, alt }: { src: string; alt: string }
             onMouseLeave={onMouseUp}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
-            style={{ cursor: scale > 1 ? (dragging.current ? "grabbing" : "grab") : "zoom-in" }}
+            style={{ cursor: scale > 1 ? (isDragging ? "grabbing" : "grab") : "zoom-in" }}
           >
             <div
               style={{
                 transform: `scale(${scale}) translate(${offset.x / scale}px, ${offset.y / scale}px)`,
-                transition: dragging.current ? "none" : "transform 0.15s ease",
+                transition: isDragging ? "none" : "transform 0.15s ease",
                 width: "90vw",
                 height: "85vh",
                 position: "relative",

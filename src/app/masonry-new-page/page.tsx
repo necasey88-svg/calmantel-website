@@ -221,7 +221,7 @@ export default function MasonryPage() {
           Our Supplier Partners
         </h2>
         <p className="text-stone-500 mb-10 max-w-2xl">
-          We work with the industry's leading material suppliers to give you access to the widest
+          We work with the industry&apos;s leading material suppliers to give you access to the widest
           selection of stone, brick, and tile for your project.
         </p>
         <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-6">

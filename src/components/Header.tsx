@@ -184,12 +184,10 @@ export default function Header() {
 
   return (
     <header className="bg-[#F9F7F3]/95 backdrop-blur sticky top-0 z-50 border-b border-[color:var(--sand-deep)]">
-      <div className="bg-[color:var(--ink)] text-white/70 text-[10px] sm:text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-center py-2 px-4 flex flex-col sm:block gap-1">
-        <span>Anaheim / Dublin / Sacramento showrooms</span>
-        <span className="hidden sm:inline mx-3 text-white/25">|</span>
-        <a href="tel:7149087388" className="hover:text-white transition-colors tracking-[0.16em]">
-          (714) 908-7388
-        </a>
+      <div className="bg-[color:var(--ink)] text-white/70 text-[10px] sm:text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-center py-2 px-4">
+        <Link href="/showrooms" className="hover:text-white transition-colors">
+          Anaheim / Dublin / Sacramento Showrooms
+        </Link>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -285,7 +283,7 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-[#F9F7F3] border-t border-[color:var(--sand-deep)] px-6 pb-6 max-h-[calc(100dvh-7.5rem)] overflow-y-auto overscroll-contain">
+        <div className="md:hidden bg-[#F9F7F3] border-t border-[color:var(--sand-deep)] px-6 pb-6">
           {mobileGroups.map((group) => (
             <div key={group.heading} className="border-b border-[color:var(--sand-deep)] py-4">
               <p className="text-[10px] uppercase tracking-[0.24em] text-[color:var(--accent)] mb-3">

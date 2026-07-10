@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { gasInserts, getGasInsert } from "@/lib/gas-inserts-data";
-import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import ProductGallery from "@/components/ProductGallery";
 import PopularOptionsScroll from "@/components/PopularOptionsScroll";

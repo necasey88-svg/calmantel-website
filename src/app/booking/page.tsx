@@ -1,5 +1,8 @@
 import EditorialPageHero from "@/components/EditorialPageHero";
 
+const bookingUrl =
+  "https://outlook.office.com/book/CaliforniaMantelFireplace@calmantel.com/?ismsaljsauthenabled";
+
 export const metadata = {
   title: "Book a Showroom Consultation | California Mantel & Fireplace",
   description:
@@ -16,19 +19,34 @@ export default function BookingPage() {
         description="Meet one-on-one with a hearth specialist, experience the mantel and fireplace collection in person, and shape a clear direction for your project."
       />
 
-      <section className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <p className="text-stone-500 mb-8 leading-relaxed">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <p className="text-stone-500 mb-10 leading-relaxed max-w-2xl mx-auto">
           Choose your preferred showroom, select a time, and we&apos;ll confirm
           your appointment by email.
         </p>
-        <a
-          href="https://outlook.office.com/book/CaliforniaMantelFireplace@calmantel.com/?ismsaljsauthenabled"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white text-sm tracking-[0.2em] uppercase px-14 py-5 transition-colors"
-        >
-          Schedule Online
-        </a>
+
+        <div className="overflow-hidden border border-[color:var(--sand-deep)] bg-white shadow-sm">
+          <iframe
+            src={bookingUrl}
+            title="Schedule a showroom consultation with California Mantel & Fireplace"
+            className="block w-full h-[760px] md:h-[820px]"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+
+        <p className="mt-5 text-xs text-stone-400">
+          If the scheduler does not load,{" "}
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[color:var(--accent)] hover:underline"
+          >
+            open scheduling in a new tab
+          </a>
+          .
+        </p>
 
         <div className="mt-12 border-t border-stone-100 pt-10 text-sm text-stone-500">
           Prefer to call?{" "}
