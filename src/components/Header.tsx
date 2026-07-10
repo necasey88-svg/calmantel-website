@@ -184,9 +184,9 @@ export default function Header() {
 
   return (
     <header className="bg-[#F9F7F3]/95 backdrop-blur sticky top-0 z-50 border-b border-[color:var(--sand-deep)]">
-      <div className="bg-[color:var(--ink)] text-white/70 text-[11px] uppercase tracking-[0.22em] text-center py-2 px-4">
-        Anaheim / Dublin / Sacramento showrooms
-        <span className="mx-3 text-white/25">|</span>
+      <div className="bg-[color:var(--ink)] text-white/70 text-[10px] sm:text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-center py-2 px-4 flex flex-col sm:block gap-1">
+        <span>Anaheim / Dublin / Sacramento showrooms</span>
+        <span className="hidden sm:inline mx-3 text-white/25">|</span>
         <a href="tel:7149087388" className="hover:text-white transition-colors tracking-[0.16em]">
           (714) 908-7388
         </a>

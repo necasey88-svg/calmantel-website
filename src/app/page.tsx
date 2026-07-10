@@ -312,7 +312,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
             <Link
               href="/booking"
-              className="bg-[color:var(--ink)] text-white hover:bg-black px-9 py-4 text-sm uppercase tracking-[0.16em] transition-colors"
+              className="w-full sm:w-auto bg-[color:var(--ink)] text-white hover:bg-black px-6 sm:px-9 py-4 text-xs sm:text-sm uppercase tracking-[0.12em] sm:tracking-[0.16em] text-center leading-relaxed transition-colors"
             >
               Schedule Your Design Consultation
             </Link>

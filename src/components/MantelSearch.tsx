@@ -80,15 +80,15 @@ export default function MantelSearch() {
                       <Link
                         href={`/mantels/p/${product.slug}`}
                         onClick={() => setQuery("")}
-                        className="flex items-center justify-between px-5 py-3.5 hover:bg-[#F9F7F3] transition-colors border-b border-stone-100 last:border-0"
+                        className="flex items-center justify-between gap-3 px-5 py-3.5 hover:bg-[#F9F7F3] transition-colors border-b border-stone-100 last:border-0"
                       >
-                        <div>
-                          <p className="font-medium text-stone-900 text-sm">{product.name}</p>
-                          <p className="text-xs text-stone-400 mt-0.5">
+                        <div className="min-w-0">
+                          <p className="font-medium text-stone-900 text-sm truncate">{product.name}</p>
+                          <p className="text-xs text-stone-400 mt-0.5 leading-relaxed break-words">
                             {typeLabel[product.type]} · opening {inches(fittingSizes[0].openingWidth)} · overall {inches(fittingSizes[0].overallWidth)}
                           </p>
                         </div>
-                        <span className="text-[color:var(--accent)] text-xs font-medium">View →</span>
+                        <span className="text-[color:var(--accent)] text-xs font-medium flex-shrink-0">View →</span>
                       </Link>
                     </li>
                   ))}
@@ -111,15 +111,15 @@ export default function MantelSearch() {
                   <Link
                     href={`/mantels/p/${p.slug}`}
                     onClick={() => setQuery("")}
-                    className="flex items-center justify-between px-5 py-3.5 hover:bg-[#F9F7F3] transition-colors border-b border-stone-100 last:border-0"
+                    className="flex items-center justify-between gap-3 px-5 py-3.5 hover:bg-[#F9F7F3] transition-colors border-b border-stone-100 last:border-0"
                   >
-                    <div>
-                      <p className="font-medium text-stone-900 text-sm">{p.name}</p>
-                      <p className="text-xs text-stone-400 mt-0.5">
+                    <div className="min-w-0">
+                      <p className="font-medium text-stone-900 text-sm truncate">{p.name}</p>
+                      <p className="text-xs text-stone-400 mt-0.5 leading-relaxed break-words">
                         {typeLabel[p.type]} · {styleLabel[p.style]}
                       </p>
                     </div>
-                    <span className="text-[color:var(--accent)] text-xs font-medium">View →</span>
+                    <span className="text-[color:var(--accent)] text-xs font-medium flex-shrink-0">View →</span>
                   </Link>
                 </li>
               ))}

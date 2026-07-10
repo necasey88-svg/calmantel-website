@@ -63,6 +63,19 @@ export default function RootLayout({
           src="//cdn.callrail.com/companies/736627927/dec286ffc96a36928e01/12/swap.js"
           strategy="afterInteractive"
         />
+        {/* Pinterest tag (ID carried over from the legacy GTM container) */}
+        <Script id="pinterest-tag" strategy="afterInteractive">
+          {`
+            !function(e){if(!window.pintrk){window.pintrk = function () {
+            window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+            n=window.pintrk;n.queue=[],n.version="3.0";var
+            t=document.createElement("script");t.async=!0,t.src=e;var
+            r=document.getElementsByTagName("script")[0];
+            r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+            pintrk('load', '2614424139883');
+            pintrk('page');
+          `}
+        </Script>
       </head>
       <body className="min-h-screen flex flex-col font-[var(--font-inter)]">
         <AnalyticsEvents />
