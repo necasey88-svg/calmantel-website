@@ -7,6 +7,7 @@ export const metadata = {
   title: "Electric Fireplaces | California Mantel & Fireplace",
   description:
     "Modern Flames electric fireplaces — Orion Traditional, Orion Slim, Redstone, Landscape Pro, and Spectrum Slimline. No gas, no venting, stunning flame technology. We sell and install across California and Nevada.",
+  alternates: { canonical: "/fireplaces/electric" },
 };
 
 const whyElectric = [

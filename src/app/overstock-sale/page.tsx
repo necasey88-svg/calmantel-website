@@ -7,6 +7,7 @@ export const metadata = {
   title: "Overstock Mantel Sale | California Mantel & Fireplace",
   description:
     "Deep discounts on precast concrete mantels from our overstock inventory. Limited stock — contact your nearest showroom for current availability and pricing.",
+  alternates: { canonical: "/overstock-sale" },
 };
 
 export default function OverstockSalePage() {

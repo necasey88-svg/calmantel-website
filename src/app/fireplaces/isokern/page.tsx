@@ -6,6 +6,7 @@ export const metadata = {
   title: "Isokern Fireplaces | California Mantel & Fireplace",
   description:
     "Isokern modular volcanic pumice fireplace systems — wood burning and gas burning. The strongest, most efficient masonry fireplaces available. We sell and install Isokern across California and Nevada.",
+  alternates: { canonical: "/fireplaces/isokern" },
 };
 
 const woodBurning = [

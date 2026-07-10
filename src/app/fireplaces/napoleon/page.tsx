@@ -7,6 +7,7 @@ import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 export const metadata = {
   title: "Napoleon Fireplaces | California Mantel & Fireplace",
   description: "Napoleon produces high-quality gas and electric fireplaces with realistic flame effects and robust features.",
+  alternates: { canonical: "/fireplaces/napoleon" },
 };
 
 export default function NapoleonPage() {

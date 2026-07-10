@@ -7,6 +7,7 @@ export const metadata = {
   title: "Gas Fireplace Inserts | California Mantel & Fireplace",
   description:
     "Convert your wood-burning fireplace to efficient gas with a Heat & Glo, Mendota, or Napoleon gas insert. We sell and install across California and Nevada.",
+  alternates: { canonical: "/fireplaces/gas-inserts" },
 };
 
 export default function GasInsertsPage() {

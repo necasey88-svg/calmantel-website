@@ -2,6 +2,7 @@ export const metadata = {
   title: "SMS Privacy Policy | California Mantel & Fireplace",
   description:
     "Learn about California Mantel & Fireplace's SMS privacy practices, opt-in and opt-out options, and data privacy policies for customer communications.",
+  alternates: { canonical: "/sms-privacy-policy" },
 };
 
 export default function SmsPrivacyPolicyPage() {

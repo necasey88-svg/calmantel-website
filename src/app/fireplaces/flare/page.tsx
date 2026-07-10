@@ -8,6 +8,7 @@ export const metadata = {
   title: "Flare Fireplaces | California Mantel & Fireplace",
   description:
     "Flare gas fireplaces — 60 modern indoor models from 25\" to 100\" wide. Front facing, see-through, corner, and room definer styles. Authorized Flare dealer and installer.",
+  alternates: { canonical: "/fireplaces/flare" },
 };
 
 const styles = [

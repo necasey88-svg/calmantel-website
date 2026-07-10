@@ -8,6 +8,7 @@ export const metadata = {
   title: "Heat & Glo Fireplaces | California Mantel & Fireplace",
   description:
     "Heat & Glo is known for realistic flame technology and reliable performance. We are an authorized Heat & Glo dealer and installer.",
+  alternates: { canonical: "/fireplaces/heat-and-glo" },
 };
 
 export default function HeatAndGloPage() {

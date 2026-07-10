@@ -6,6 +6,7 @@ export const metadata = {
   title: "Insights | California Mantel & Fireplace",
   description:
     "Expert advice on fireplaces, mantels, installation, and design from the California Mantel & Fireplace team.",
+  alternates: { canonical: "/insights" },
 };
 
 const posts = [

@@ -149,6 +149,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${category.title} | California Mantel`,
     description: category.description,
+    alternates: { canonical: `/mantels/${category.slug}` },
   };
 }
 

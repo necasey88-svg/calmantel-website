@@ -8,6 +8,7 @@ export const metadata = {
   title: "Ortal Fireplaces | California Mantel & Fireplace",
   description:
     "Ortal gas fireplaces — Israeli-designed, European-engineered front-facing and traditional gas fireplaces with Cool Wall Technology. Authorized Ortal dealer and installer.",
+  alternates: { canonical: "/fireplaces/ortal" },
 };
 
 const traditional = [

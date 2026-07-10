@@ -5,6 +5,7 @@ export const metadata = {
   title: "Get an Instant Pricing Guide | California Mantel & Fireplace",
   description:
     "Know your fireplace model? Use our online estimator to get a ballpark quote emailed to you instantly — select SKUs, pipe runs, and options.",
+  alternates: { canonical: "/instant-estimate" },
 };
 
 export default function InstantEstimatePage() {

@@ -8,6 +8,7 @@ export const metadata = {
   title: "Mendota Fireplaces | California Mantel & Fireplace",
   description:
     "Mendota gas fireplaces — American-made full-view fireplaces in Landscape, Classic, Linear, and Classic Arch shapes. Authorized Mendota dealer and installer.",
+  alternates: { canonical: "/fireplaces/mendota" },
 };
 
 const shapes = [

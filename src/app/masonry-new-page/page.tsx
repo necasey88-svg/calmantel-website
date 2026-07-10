@@ -7,6 +7,7 @@ export const metadata = {
   title: "Masonry Services | California Mantel & Fireplace",
   description:
     "Expert masonry services for fireplaces, mantels, and architectural projects. Natural stone veneer, tile, brick, and precast installations across California.",
+  alternates: { canonical: "/masonry-new-page" },
 };
 
 const services = [

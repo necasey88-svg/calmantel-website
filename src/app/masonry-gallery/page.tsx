@@ -4,6 +4,7 @@ export const metadata = {
   title: "Masonry Gallery | California Mantel & Fireplace",
   description:
     "Browse our masonry project gallery — residential and commercial installations across California including stone veneer, brick, tile, and architectural precast.",
+  alternates: { canonical: "/masonry-gallery" },
 };
 
 export default function MasonryGalleryPage() {

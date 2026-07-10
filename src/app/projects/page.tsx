@@ -7,6 +7,7 @@ export const metadata = {
   title: "Projects | California Mantel & Fireplace",
   description:
     "Browse before-and-after fireplace transformation projects — gas inserts, mantel surrounds, and log sets installed across California and Nevada.",
+  alternates: { canonical: "/projects" },
 };
 
 export default function ProjectsPage() {

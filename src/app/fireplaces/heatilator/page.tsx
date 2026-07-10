@@ -6,6 +6,7 @@ import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 export const metadata = {
   title: "Heatilator Fireplaces | California Mantel & Fireplace",
   description: "Heatilator has a long history of quality fireplaces for both gas and wood-burning installations.",
+  alternates: { canonical: "/fireplaces/heatilator" },
 };
 
 export default function HeatilatorPage() {

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { electricFireplaces, getElectricFireplace } from "@/lib/electric-fireplaces-data";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import ProductGallery from "@/components/ProductGallery";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL } from "@/lib/business-data";
 
 export function generateStaticParams() {
   return electricFireplaces.map((e) => ({ model: e.slug }));
@@ -15,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ model: st
   return {
     title: `${ef.name} | California Mantel`,
     description: ef.description,
+    alternates: { canonical: `/fireplaces/electric/${ef.slug}` },
   };
 }
 
@@ -25,8 +28,20 @@ export default async function ElectricFireplaceModelPage({ params }: { params: P
 
   const otherModels = electricFireplaces.filter((e) => e.slug !== ef.slug);
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: ef.name,
+    description: ef.description,
+    image: ef.image.startsWith("http") ? ef.image : `${SITE_URL}${ef.image}`,
+    category: "Electric Fireplace",
+    brand: { "@type": "Brand", name: ef.brand },
+    url: `${SITE_URL}/fireplaces/electric/${ef.slug}`,
+  };
+
   return (
     <>
+      <JsonLd data={productSchema} />
       {/* Hero */}
       <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

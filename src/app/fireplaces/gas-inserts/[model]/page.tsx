@@ -5,6 +5,8 @@ import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import ProductGallery from "@/components/ProductGallery";
 import PopularOptionsScroll from "@/components/PopularOptionsScroll";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL } from "@/lib/business-data";
 
 import EditorialPageHero from "@/components/EditorialPageHero";
 export function generateStaticParams() {
@@ -18,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ model: st
   return {
     title: `${insert.name} | California Mantel`,
     description: insert.description,
+    alternates: { canonical: `/fireplaces/gas-inserts/${insert.slug}` },
   };
 }
 
@@ -28,8 +31,20 @@ export default async function GasInsertModelPage({ params }: { params: Promise<{
 
   const otherModels = gasInserts.filter((g) => g.slug !== insert.slug);
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: insert.name,
+    description: insert.description,
+    image: insert.image.startsWith("http") ? insert.image : `${SITE_URL}${insert.image}`,
+    category: "Gas Fireplace Insert",
+    brand: { "@type": "Brand", name: insert.brand },
+    url: `${SITE_URL}/fireplaces/gas-inserts/${insert.slug}`,
+  };
+
   return (
     <>
+      <JsonLd data={productSchema} />
       <EditorialPageHero
         eyebrow={insert.brand}
         title={insert.name}

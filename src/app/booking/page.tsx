@@ -4,6 +4,7 @@ export const metadata = {
   title: "Book a Showroom Consultation | California Mantel & Fireplace",
   description:
     "Schedule a private showroom consultation with a certified hearth expert at any of our three California showrooms: Anaheim, Dublin, or Sacramento.",
+  alternates: { canonical: "/booking" },
 };
 
 export default function BookingPage() {

@@ -6,6 +6,7 @@ export const metadata = {
   title: "Mantel Colors & Finishes | California Mantel & Fireplace",
   description:
     "Explore our full range of precast mantel colors and finishes — Smooth, Old World, Stone World, and Travertine — available across our entire mantel collection.",
+  alternates: { canonical: "/mantels/colors-finishes" },
 };
 
 const CDN = "/finishes/";

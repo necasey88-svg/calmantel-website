@@ -8,6 +8,7 @@ export const metadata = {
   title: "Outdoor Fireplaces | California Mantel & Fireplace",
   description:
     "Outdoor gas fireplaces from Heat & Glo, Flare, Napoleon, and more. Extend your outdoor living space with a stunning fireplace built for California's climate.",
+  alternates: { canonical: "/fireplaces/outdoor" },
 };
 
 export default function OutdoorFireplacesPage() {
