@@ -110,6 +110,73 @@ const nextConfig: NextConfig = {
 
       { source: "/mantels/p/kendall-1", destination: "/mantels/p/kendall", permanent: true },
       { source: "/mantels/p/hobart-1", destination: "/mantels/p/hobart", permanent: true },
+
+      // ── Gap-fill from live-site sitemap audit (2026-07-09) ──────────────────
+      // Additional finish-variant product pages → Colors & Finishes
+      // (same pattern as the existing block above; these combinations were
+      // missing from the original manually-curated list)
+      { source: "/mantels/p/aspen-old-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/aspen-smooth", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/aspen-stone-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/atlantic-stone-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/grecian-old-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/grecian-smooth", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/grecian-travertine", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/indian-summer-travertine", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/kingsbury-old-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/kingsbury-smooth", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/kingsbury-stone-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/le-marais-old-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/le-marais-stone-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/limestone-stone-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/limestone-travertine", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/london-fog-old-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/london-fog-stone-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/milano-old-world", destination: "/mantels/colors-finishes", permanent: true },
+      { source: "/mantels/p/milano-smooth", destination: "/mantels/colors-finishes", permanent: true },
+
+      // Standalone hearth product pages → Hearths category (hearths aren't
+      // individually routed on the new site, just listed on this page)
+      { source: "/mantels/p/45-degree-hearth", destination: "/mantels/hearths", permanent: true },
+      { source: "/mantels/p/radius-hearth", destination: "/mantels/hearths", permanent: true },
+      { source: "/mantels/p/semi-radius-hearth", destination: "/mantels/hearths", permanent: true },
+      { source: "/mantels/p/standard-hearth", destination: "/mantels/hearths", permanent: true },
+      { source: "/mantels/p/standard-raised-hearth", destination: "/mantels/hearths", permanent: true },
+
+      // Renamed / spelling-corrected mantel products
+      { source: "/mantels/p/flutted-filler", destination: "/mantels/p/fluted-filler", permanent: true },
+      { source: "/mantels/p/santa-ana", destination: "/mantels/p/santa-anita", permanent: true },
+      { source: "/mantels/p/randino", destination: "/mantels/p/benedict", permanent: true },
+
+      // Discontinued mantel products — no direct replacement, send to the
+      // closest live category so link equity lands on a relevant page
+      { source: "/mantels/p/cosmo-with-darlinghurst", destination: "/mantels/beams", permanent: true },
+      { source: "/mantels/p/rosella", destination: "/mantels/contemporary", permanent: true },
+      { source: "/mantels/p/landmark", destination: "/mantels/traditional", permanent: true },
+
+      // Legacy top-level pages
+      { source: "/electric-fireplaces", destination: "/fireplaces/electric", permanent: true },
+      { source: "/gas-inserts", destination: "/fireplaces/gas-inserts", permanent: true },
+      { source: "/faq", destination: "/", permanent: true },
+
+      // Blog → Insights (two posts have a direct match; the rest are
+      // Squarespace placeholder posts with no equivalent content)
+      { source: "/blog/how-to-prep-your-fireplace-for-winter-a-california-homeowners-guide", destination: "/insights/how-to-prep-your-fireplace-for-winter", permanent: true },
+      { source: "/blog-1/modern-fireplace-design-trends-2026-edition", destination: "/insights/modern-fireplace-design-trends-2026", permanent: true },
+      { source: "/blog", destination: "/insights", permanent: true },
+      { source: "/blog-1", destination: "/insights", permanent: true },
+      { source: "/blog/:slug*", destination: "/insights", permanent: true },
+      { source: "/blog-1/:slug*", destination: "/insights", permanent: true },
+
+      // Overstock — old "-1" section prefix. Items still in current
+      // inventory map directly; discontinued items fall back to the listing.
+      { source: "/overstock-sale-1", destination: "/overstock-sale", permanent: true },
+      { source: "/overstock-sale-1/p/heritage", destination: "/overstock-sale/p/heritage", permanent: true },
+      { source: "/overstock-sale-1/p/nullarbor", destination: "/overstock-sale/p/nullarbor", permanent: true },
+      { source: "/overstock-sale-1/p/nullarbor-1", destination: "/overstock-sale/p/nullarbor", permanent: true },
+      { source: "/overstock-sale-1/p/manly", destination: "/overstock-sale/p/manly", permanent: true },
+      { source: "/overstock-sale-1/p/sausalito", destination: "/overstock-sale/p/sausalito", permanent: true },
+      { source: "/overstock-sale-1/p/:slug*", destination: "/overstock-sale", permanent: true },
     ];
   },
 };
