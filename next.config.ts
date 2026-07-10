@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
       { source: "/outdoor-fireplaces", destination: "/fireplaces", permanent: true },
       { source: "/fireplaces/gas-inserts/detail/our-locations", destination: "/showrooms", permanent: true },
       // Dealeron colors-finishes product pages (wildcard catches all variants)
-      { source: "/colors-finishes/:slug*", destination: "/mantels", permanent: true },
+      { source: "/colors-finishes/:slug*", destination: "/mantels/colors-finishes", permanent: true },
 
       // ── Old Squarespace promo / misc pages ─────────────────────────────────
       { source: "/projects-1", destination: "/projects", permanent: true },
@@ -73,16 +73,6 @@ const nextConfig: NextConfig = {
       { source: "/heatilator", destination: "/fireplaces/heatilator", permanent: true },
       { source: "/modern-flames", destination: "/fireplaces/modern-flames", permanent: true },
       { source: "/napoleon", destination: "/fireplaces/napoleon", permanent: true },
-
-      // Blog → Insights
-      { source: "/blog", destination: "/insights", permanent: true },
-      { source: "/blog-1", destination: "/insights", permanent: true },
-      { source: "/blog/:slug*", destination: "/insights/:slug*", permanent: true },
-      { source: "/blog-1/:slug*", destination: "/insights/:slug*", permanent: true },
-
-      // Overstock
-      { source: "/overstock-sale-1", destination: "/overstock-sale", permanent: true },
-      { source: "/overstock-sale-1/p/:slug*", destination: "/overstock-sale", permanent: true },
 
       // Stone finish variants (Indian Summer, Grecian, Macambo, Le Marais, London Fog, Kingsbury, Atlantic)
       // → Colors & Finishes page

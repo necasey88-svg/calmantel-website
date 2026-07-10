@@ -63,6 +63,11 @@ export default function EstimatePage() {
           city: String(formData.get("city") || ""),
           photo_count: files.length,
         });
+        trackEvent("qualify_lead", {
+          lead_type: "estimate_form",
+          project_type: String(formData.get("project_type") || ""),
+          city: String(formData.get("city") || ""),
+        });
         setSubmitted(true);
       } else {
         setError("Something went wrong. Please try again or call us directly.");

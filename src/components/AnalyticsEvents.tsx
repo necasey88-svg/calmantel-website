@@ -10,6 +10,7 @@ function getLinkEvent(anchor: HTMLAnchorElement) {
   if (href.startsWith("tel:")) {
     return {
       name: "phone_click",
+      leadType: "phone",
       params: {
         phone_number: href.replace("tel:", ""),
         link_text: label,
@@ -20,6 +21,7 @@ function getLinkEvent(anchor: HTMLAnchorElement) {
   if (href.includes("bookings.cloud.microsoft") || href.includes("outlook.office.com/book")) {
     return {
       name: "booking_click",
+      leadType: "booking",
       params: {
         destination: href,
         link_text: label,
@@ -30,6 +32,7 @@ function getLinkEvent(anchor: HTMLAnchorElement) {
   if (href === "/booking") {
     return {
       name: "booking_page_click",
+      leadType: "booking_page",
       params: {
         destination: href,
         link_text: label,
@@ -40,6 +43,7 @@ function getLinkEvent(anchor: HTMLAnchorElement) {
   if (href === "/estimate") {
     return {
       name: "estimate_link_click",
+      leadType: "estimate",
       params: {
         destination: href,
         link_text: label,
@@ -50,6 +54,7 @@ function getLinkEvent(anchor: HTMLAnchorElement) {
   if (href === "/instant-estimate") {
     return {
       name: "instant_pricing_click",
+      leadType: "instant_pricing",
       params: {
         destination: href,
         link_text: label,
@@ -73,6 +78,11 @@ export default function AnalyticsEvents() {
       if (!linkEvent) return;
 
       trackEvent(linkEvent.name, {
+        ...linkEvent.params,
+        page_path: window.location.pathname,
+      });
+      trackEvent("qualify_lead", {
+        lead_type: linkEvent.leadType,
         ...linkEvent.params,
         page_path: window.location.pathname,
       });
