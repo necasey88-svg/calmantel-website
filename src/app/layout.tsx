@@ -55,6 +55,18 @@ export default function RootLayout({
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            // The Google tag has a server-side consent default of "denied",
+            // which silently downgrades every hit to a modeled ping (gcs=G100)
+            // that never appears in reports. Grant consent explicitly on-page
+            // (page-level wins over the remote default) — this matches the
+            // effective behavior of the current live site, where Squarespace's
+            // cookie banner grants consent. US/CA is an opt-out regime.
+            gtag('consent', 'default', {
+              ad_storage: 'granted',
+              ad_user_data: 'granted',
+              ad_personalization: 'granted',
+              analytics_storage: 'granted'
+            });
             gtag('js', new Date());
             gtag('config', 'G-ZVJ97TZNZN');
           `}
