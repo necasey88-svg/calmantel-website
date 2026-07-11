@@ -130,6 +130,32 @@ export default function GasFireplaceQualifier() {
                 {outcome.heading}
               </h3>
               <p className="text-sm text-[color:var(--ink)]/60 leading-relaxed mb-6">{outcome.body}</p>
+              {outcomeKey === "none" && (
+                <div className="mb-6">
+                  <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--ink)]/40 mb-3">
+                    Explore the systems we build with
+                  </p>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    {[
+                      { name: "Heat & Glo", href: "/fireplaces/heat-and-glo", blurb: "Premium gas fireplaces" },
+                      { name: "Mendota", href: "/fireplaces/mendota", blurb: "High-performance fire views" },
+                      { name: "Napoleon", href: "/fireplaces/napoleon", blurb: "Gas & luxury linear units" },
+                      { name: "Ortal", href: "/fireplaces/ortal", blurb: "Frameless architectural" },
+                    ].map((b) => (
+                      <Link
+                        key={b.name}
+                        href={b.href}
+                        className="border border-[color:var(--sand-deep)] hover:border-[color:var(--accent)] p-4 transition-colors group"
+                      >
+                        <p className="text-sm font-medium text-[color:var(--ink)] group-hover:text-[color:var(--accent)] transition-colors">
+                          {b.name}
+                        </p>
+                        <p className="text-[11px] text-[color:var(--ink)]/50 mt-1">{b.blurb}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <Link
                   href={outcome.ctaHref}

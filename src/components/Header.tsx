@@ -51,10 +51,10 @@ const fireplaceMenu: MegaMenuProps["columns"] = [
   {
     heading: "Shop By Project",
     links: [
+      { label: "New Construction Systems", href: "/fireplaces", description: "Fireplaces planned with framing and venting" },
       { label: "Gas Inserts", href: "/fireplaces/gas-inserts", description: "Convert an existing fireplace" },
       { label: "Electric Fireplaces", href: "/fireplaces/electric", description: "Flexible installs without venting" },
       { label: "Outdoor Fireplaces", href: "/fireplaces/outdoor", description: "Fire features for outdoor living" },
-      { label: "New Construction Systems", href: "/fireplaces", description: "Fireplaces planned with framing and venting" },
       { label: "Decorative Chimney Shrouds", href: "/fireplaces/accessories", description: "Architectural metal crowns that finish the chimney top" },
     ],
   },
