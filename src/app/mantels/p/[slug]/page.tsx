@@ -23,6 +23,24 @@ function productMaterialLabel(product: NonNullable<ReturnType<typeof getMantelPr
   return typeLabel[product.type];
 }
 
+const wallFinishIdeas = [
+  {
+    title: "Stone Veneer",
+    description: "Add texture and depth around the mantel with natural or manufactured stone.",
+    image: "/masonry-gallery/180d8e52-9754-4a75-ab98-1d21b76879a7.webp",
+  },
+  {
+    title: "Brick Detail",
+    description: "Use full brick or thin brick veneer for a warmer, more traditional fireplace wall.",
+    image: "/masonry-gallery/1d921cf6-0a69-4f6a-9248-4c398b0c20ae.webp",
+  },
+  {
+    title: "Tile Accent Wall",
+    description: "Pair the mantel with tile for a refined surround, hearth, or full-height feature.",
+    image: "/masonry-gallery/2eb435ce-15b2-41b1-8fa0-bc96450253a7.webp",
+  },
+];
+
 export function generateStaticParams() {
   return mantelProducts.map((p) => ({ slug: p.slug }));
 }
@@ -133,6 +151,73 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
             <p className="text-xs text-stone-400 mt-4">
               Installation fee not included in estimate. Contact your nearest showroom for full pricing.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-[color:var(--sand-deep)] bg-[#F9F7F3]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-14 items-start">
+            <div>
+              <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
+                Complete the Fireplace Wall
+              </p>
+              <h2
+                className="text-3xl md:text-4xl font-medium text-[color:var(--ink)] tracking-tight mb-5"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Consider the finish around the mantel, too.
+              </h2>
+              <p className="text-[color:var(--ink)]/60 leading-relaxed mb-7">
+                Stone, brick, or tile can turn a mantel into a complete architectural feature wall.
+                Masonry services are available exclusively in Southern California through our Anaheim showroom.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/masonry-new-page"
+                  className="inline-block bg-[color:var(--ink)] text-white hover:bg-black px-7 py-3.5 text-xs uppercase tracking-[0.16em] text-center transition-colors"
+                >
+                  Explore Masonry Options
+                </Link>
+                <Link
+                  href="/showrooms/anaheim"
+                  className="inline-block border border-[color:var(--ink)]/20 text-[color:var(--ink)] hover:border-[color:var(--ink)] px-7 py-3.5 text-xs uppercase tracking-[0.16em] text-center transition-colors"
+                >
+                  Plan Through Anaheim
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {wallFinishIdeas.map((idea) => (
+                <Link
+                  key={idea.title}
+                  href="/masonry-new-page"
+                  className="group bg-white border border-[color:var(--sand-deep)] hover:border-[color:var(--accent)] transition-colors"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+                    <Image
+                      src={idea.image}
+                      alt={idea.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      sizes="(max-width: 640px) 100vw, 22vw"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3
+                      className="text-lg font-medium text-[color:var(--ink)] mb-2 group-hover:text-[color:var(--accent)] transition-colors"
+                      style={{ fontFamily: "var(--font-playfair)" }}
+                    >
+                      {idea.title}
+                    </h3>
+                    <p className="text-xs leading-relaxed text-[color:var(--ink)]/55">
+                      {idea.description}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

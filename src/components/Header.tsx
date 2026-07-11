@@ -55,6 +55,7 @@ const fireplaceMenu: MegaMenuProps["columns"] = [
       { label: "Electric Fireplaces", href: "/fireplaces/electric", description: "Flexible installs without venting" },
       { label: "Outdoor Fireplaces", href: "/fireplaces/outdoor", description: "Fire features for outdoor living" },
       { label: "New Construction Systems", href: "/fireplaces", description: "Fireplaces planned with framing and venting" },
+      { label: "Fireplace Accessories", href: "/fireplaces/accessories", description: "Decorative shrouds and finishing details" },
     ],
   },
   {
@@ -72,10 +73,9 @@ const masonryMenu: MegaMenuProps["columns"] = [
   {
     heading: "Masonry",
     links: [
-      { label: "Masonry Services", href: "/masonry-new-page", description: "Stone, brick, tile, and precast work" },
-      { label: "Masonry Gallery", href: "/masonry-gallery", description: "Commercial, exterior, and fireplace projects" },
-      { label: "Projects", href: "/projects", description: "Before/after and new construction work" },
-      { label: "Showrooms", href: "/showrooms", description: "Bring plans and photos to our team" },
+      { label: "Masonry Services", href: "/masonry-new-page", description: "Stone, brick, tile, and precast work in Southern California" },
+      { label: "Masonry Gallery", href: "/masonry-gallery", description: "Commercial, exterior, and fireplace masonry work" },
+      { label: "Anaheim Masonry Consultation", href: "/showrooms/anaheim", description: "Plan masonry projects through our Anaheim showroom" },
     ],
   },
 ];

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 import EditorialPageHero from "@/components/EditorialPageHero";
 import { trackEvent } from "@/lib/analytics";
@@ -12,14 +12,14 @@ export default function EstimatePage() {
   const [files, setFiles] = useState<File[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
   // Which product page sent the visitor here (?product= set by product-page CTAs; referrer as fallback)
-  const [productInterest, setProductInterest] = useState("");
-  const [referringPage, setReferringPage] = useState("");
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setProductInterest(params.get("product") || "");
-    setReferringPage(document.referrer || "");
-  }, []);
+  const [productInterest] = useState(() => {
+    if (typeof window === "undefined") return "";
+    return new URLSearchParams(window.location.search).get("product") || "";
+  });
+  const [referringPage] = useState(() => {
+    if (typeof document === "undefined") return "";
+    return document.referrer || "";
+  });
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const selected = Array.from(e.target.files || []);

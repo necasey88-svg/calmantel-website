@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/", priority: 1.0, changeFrequency: "weekly" },
     { path: "/mantels", priority: 0.9, changeFrequency: "weekly" },
     { path: "/fireplaces", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/fireplaces/accessories", priority: 0.7, changeFrequency: "monthly" },
     { path: "/mantels/colors-finishes", priority: 0.7, changeFrequency: "monthly" },
     { path: "/projects", priority: 0.8, changeFrequency: "weekly" },
     { path: "/showrooms", priority: 0.8, changeFrequency: "monthly" },

@@ -6,7 +6,7 @@ import EditorialPageHero from "@/components/EditorialPageHero";
 export const metadata = {
   title: "Masonry Services | California Mantel & Fireplace",
   description:
-    "Expert masonry services for fireplaces, mantels, and architectural projects. Natural stone veneer, tile, brick, and precast installations across California.",
+    "Expert masonry services exclusively in Southern California. Natural stone veneer, tile, brick, and precast installations coordinated through our Anaheim showroom.",
   alternates: { canonical: "/masonry-new-page" },
 };
 
@@ -73,12 +73,6 @@ const suppliers = [
   { name: "H.C. Muddox", logo: "/brands/hc-muddox.webp" },
 ];
 
-const showrooms = [
-  { city: "Sacramento", address: "4141 N Freeway Blvd, Sacramento, CA 95834", phone: "(916) 665-0627", tel: "9166650627", hours: "Mon–Sat: 8:30 AM – 5:00 PM" },
-  { city: "Anaheim", address: "1430 S Anaheim Blvd, Anaheim, CA 92805", phone: "(714) 908-7388", tel: "7149087388", hours: "Mon–Sat: 9:00 AM – 5:00 PM" },
-  { city: "Dublin", address: "6681 Sierra Ln Ste D, Dublin, CA 94568", phone: "(925) 436-1731", tel: "9254361731", hours: "Mon–Fri: 8:30 AM – 5:00 PM · Sat by appt" },
-];
-
 const featuredProjects = [
   {
     title: "Exterior Precast & Stone",
@@ -104,8 +98,16 @@ export default function MasonryPage() {
       <EditorialPageHero
         eyebrow="Masonry / Precast / Brick"
         title="Plan your masonry project with confidence"
-        description="Stone, brick, tile, and precast installations for fireplaces, exterior facades, architectural details, commercial properties, and custom residential projects."
+        description="Stone, brick, tile, and precast installations exclusively in Southern California, coordinated through our Anaheim showroom for fireplaces, exterior facades, architectural details, commercial properties, and custom residential projects."
       />
+
+      <section className="border-b border-[color:var(--sand-deep)] bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <p className="text-center text-sm uppercase tracking-[0.18em] text-[color:var(--ink)]/60">
+            Masonry services are available exclusively in Southern California through our Anaheim showroom.
+          </p>
+        </div>
+      </section>
 
       {/* Featured work */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-6">
@@ -168,8 +170,8 @@ export default function MasonryPage() {
           Our Masonry Services
         </h2>
         <p className="text-stone-500 mb-12 max-w-2xl">
-          From stone veneer to full brick installations, we handle the complete range of masonry work
-          for fireplace surrounds, hearths, feature walls, and architectural elements.
+          From stone veneer to full brick installations, our Southern California masonry team handles
+          fireplace surrounds, hearths, feature walls, exterior facades, and architectural elements.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s) => (
@@ -244,40 +246,43 @@ export default function MasonryPage() {
 
       <PricingCTA />
 
-      {/* Showrooms CTA */}
+      {/* Anaheim CTA */}
       <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             className="text-3xl font-medium mb-3"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Plan your masonry project with confidence
+            Plan masonry through our Anaheim showroom
           </h2>
           <p className="text-[color:var(--ink)]/60 mb-12 max-w-2xl">
-            Bring your project plans or photos to any of our three California showrooms. Our team
-            will help you select materials, discuss scope, provide project guidance, and coordinate next steps.
+            Masonry services are offered exclusively in Southern California and are coordinated through
+            our Anaheim showroom. Bring your project plans or photos and our team will help you select
+            materials, discuss scope, provide project guidance, and coordinate next steps.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {showrooms.map((s) => (
-              <div key={s.city} className="bg-white border border-[color:var(--sand-deep)] p-7">
-                <h3 className="text-[color:var(--ink)] font-medium text-lg mb-2">{s.city}</h3>
-                <p className="text-[color:var(--ink)]/65 text-sm mb-1">{s.address}</p>
-                <p className="text-[color:var(--ink)]/55 text-xs mb-4">{s.hours}</p>
-                <a
-                  href={`tel:${s.tel}`}
-                  className="text-[color:var(--accent)] font-medium hover:text-[color:var(--ink)] transition-colors"
-                >
-                  {s.phone}
-                </a>
-              </div>
-            ))}
+          <div className="bg-white border border-[color:var(--sand-deep)] p-7 max-w-xl">
+            <h3 className="text-[color:var(--ink)] font-medium text-lg mb-2">Anaheim</h3>
+            <p className="text-[color:var(--ink)]/65 text-sm mb-1">1430 S Anaheim Blvd, Anaheim, CA 92805</p>
+            <p className="text-[color:var(--ink)]/55 text-xs mb-4">Mon-Sat: 9:00 AM - 5:00 PM</p>
+            <a
+              href="tel:7149087388"
+              className="text-[color:var(--accent)] font-medium hover:text-[color:var(--ink)] transition-colors"
+            >
+              (714) 908-7388
+            </a>
           </div>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link
               href="/estimate"
               className="inline-block bg-[color:var(--ink)] hover:bg-black text-white px-8 py-3.5 font-medium transition-colors"
             >
               Request Project Guidance
+            </Link>
+            <Link
+              href="/showrooms/anaheim"
+              className="inline-block border border-[color:var(--ink)]/20 text-[color:var(--ink)] hover:border-[color:var(--ink)] px-8 py-3.5 font-medium transition-colors"
+            >
+              View Anaheim Showroom
             </Link>
           </div>
         </div>
