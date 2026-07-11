@@ -23,9 +23,9 @@ export default function EstimatePage() {
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const selected = Array.from(e.target.files || []);
-    const valid = selected.filter((f) => f.size <= 10 * 1024 * 1024); // 10MB limit per file
+    const valid = selected.filter((f) => f.size <= 5 * 1024 * 1024); // Web3Forms limit: 5MB per file
     if (valid.length < selected.length) {
-      setError("Some files were skipped — max 10 MB per photo.");
+      setError("Some files were skipped — max 5 MB per photo.");
     } else {
       setError("");
     }
@@ -44,28 +44,19 @@ export default function EstimatePage() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // Build a plain JSON payload (Web3Forms doesn't support file uploads)
-    const payload: Record<string, string> = {
-      access_key: ACCESS_KEY,
-      subject: "New Estimate Request — calmantel.com",
-    };
-    formData.forEach((value, key) => {
-      if (typeof value === "string") payload[key] = value;
-    });
-    if (productInterest) payload["Product of Interest"] = productInterest;
-    if (referringPage) payload["Traffic Source"] = referringPage;
-
-    // List the photo filenames in the message so staff know to follow up
-    if (files.length > 0) {
-      const fileNames = files.map((f) => `• ${f.name} (${(f.size / 1024 / 1024).toFixed(1)} MB)`).join("\n");
-      payload.message = (payload.message || "") + `\n\n--- Photos attached by customer ---\n${fileNames}\n(Customer will email photos separately or staff should request them.)`;
-    }
+    // Multipart submission — Web3Forms Pro supports direct file attachments.
+    formData.set("access_key", ACCESS_KEY);
+    formData.set("subject", "New Estimate Request — calmantel.com");
+    if (productInterest) formData.set("Product of Interest", productInterest);
+    if (referringPage) formData.set("Traffic Source", referringPage);
+    files.forEach((f, i) => formData.append(`Photo ${i + 1}`, f, f.name));
 
     try {
+      // NOTE: no Content-Type header — the browser sets the multipart boundary itself.
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
+        headers: { Accept: "application/json" },
+        body: formData,
       });
       const json = await res.json();
       if (json.success) {
@@ -227,7 +218,7 @@ export default function EstimatePage() {
             {/* Photo upload */}
             <div>
               <label className="block text-sm font-medium text-stone-700 mb-1">
-                Photos of Your Space <span className="text-stone-400 font-normal">(optional — list them here and email to info@calmantel.com)</span>
+                Photos of Your Space <span className="text-stone-400 font-normal">(optional — attach up to 5 photos and they&apos;ll come straight to us)</span>
               </label>
               <div
                 className="border-2 border-dashed border-stone-300 rounded-lg p-6 text-center cursor-pointer hover:border-[color:var(--accent)] transition-colors"
@@ -239,7 +230,7 @@ export default function EstimatePage() {
                 <p className="text-sm text-stone-500">
                   <span className="text-[color:var(--accent)] font-medium">Click to upload</span> or drag and drop
                 </p>
-                <p className="text-xs text-stone-400 mt-1">JPG, PNG, HEIC, WEBP</p>
+                <p className="text-xs text-stone-400 mt-1">JPG, PNG, HEIC, WEBP — max 5 MB each</p>
                 <input
                   ref={fileInputRef}
                   type="file"
