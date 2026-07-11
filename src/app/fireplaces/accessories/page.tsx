@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import EditorialPageHero from "@/components/EditorialPageHero";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import { shroudAccessories } from "@/lib/shroud-accessories-data";
 
 const shroudsPdf = "/accessories/cal-mantel-fireplace-shrouds.pdf";
 
@@ -85,58 +87,79 @@ export default function FireplaceAccessoriesPage() {
               </div>
             </div>
 
-            <div className="border border-[color:var(--sand-deep)] bg-[#F9F7F3]">
-              <div className="px-5 py-4 border-b border-[color:var(--sand-deep)] flex items-center justify-between gap-4">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-[color:var(--ink)]/55">
-                  Shroud Reference Guide
-                </p>
-                <a
-                  href={shroudsPdf}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] uppercase tracking-[0.16em] text-[color:var(--accent)] hover:text-[color:var(--accent-dark)] transition-colors"
-                >
-                  Open PDF
-                </a>
-              </div>
-              <object
-                data={`${shroudsPdf}#toolbar=0&navpanes=0`}
-                type="application/pdf"
-                className="block w-full h-[620px] bg-white"
-              >
-                <div className="p-8 text-center">
-                  <p className="text-sm text-[color:var(--ink)]/60 mb-5">
-                    Your browser cannot preview this PDF inline.
-                  </p>
-                  <a
-                    href={shroudsPdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-[color:var(--ink)] text-white px-6 py-3 text-xs uppercase tracking-[0.16em]"
-                  >
-                    Open Shroud Guide
-                  </a>
+            <div className="grid grid-cols-2 gap-4">
+              {shroudAccessories.slice(0, 4).map((shroud) => (
+                <div key={shroud.slug} className="border border-[color:var(--sand-deep)] bg-[#F9F7F3] p-4">
+                  <div className="relative aspect-square bg-white">
+                    <Image
+                      src={shroud.image}
+                      alt={shroud.name}
+                      fill
+                      className="object-contain p-3"
+                      sizes="(max-width: 1024px) 50vw, 20vw"
+                    />
+                  </div>
                 </div>
-              </object>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       <section className="bg-[#F9F7F3] border-y border-[color:var(--sand-deep)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              "Confirm fireplace model and termination requirements.",
-              "Review roofline, exterior material, and desired finish direction.",
-              "Coordinate final shroud selection with the full fireplace package.",
-            ].map((step, index) => (
-              <div key={step} className="border-t border-[color:var(--sand-deep)] pt-5">
-                <p className="text-4xl text-[color:var(--accent)]/35 mb-3" style={{ fontFamily: "var(--font-playfair)" }}>
-                  0{index + 1}
-                </p>
-                <p className="text-sm leading-relaxed text-[color:var(--ink)]/60">{step}</p>
-              </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+            <div>
+              <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
+                Shroud Collection
+              </p>
+              <h2
+                className="text-3xl md:text-4xl font-medium text-[color:var(--ink)] tracking-tight"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Browse decorative shroud options.
+              </h2>
+            </div>
+            <a
+              href={shroudsPdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--accent)] hover:text-[color:var(--ink)] transition-colors"
+            >
+              Download Full Guide
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {shroudAccessories.map((shroud) => (
+              <article
+                key={shroud.slug}
+                className="group border border-[color:var(--sand-deep)] bg-white hover:border-[color:var(--accent)] hover:shadow-sm transition-all"
+              >
+                <div className="relative aspect-[5/4] bg-stone-100 overflow-hidden">
+                  <Image
+                    src={shroud.image}
+                    alt={shroud.name}
+                    fill
+                    className="object-contain p-5 transition-transform duration-500 group-hover:scale-[1.03]"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+                <div className="p-5">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-[color:var(--accent)] mb-2">
+                    Decorative Shroud
+                  </p>
+                  <h3
+                    className="text-lg font-medium text-[color:var(--ink)]"
+                    style={{ fontFamily: "var(--font-playfair)" }}
+                  >
+                    {shroud.name}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-[color:var(--ink)]/55">
+                    Review sizing and compatibility with the showroom team before final selection.
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
         </div>

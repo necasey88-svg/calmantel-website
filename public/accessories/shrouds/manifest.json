@@ -1,0 +1,560 @@
+[
+  {
+    "file": "shroud-01-obj16.jpg",
+    "obj": "16",
+    "width": 420,
+    "height": 440
+  },
+  {
+    "file": "shroud-02-obj17.jpg",
+    "obj": "17",
+    "width": 454,
+    "height": 321
+  },
+  {
+    "file": "shroud-03-obj18.jpg",
+    "obj": "18",
+    "width": 449,
+    "height": 325
+  },
+  {
+    "file": "shroud-04-obj19.jpg",
+    "obj": "19",
+    "width": 390,
+    "height": 339
+  },
+  {
+    "file": "shroud-05-obj20.jpg",
+    "obj": "20",
+    "width": 391,
+    "height": 294
+  },
+  {
+    "file": "shroud-06-obj21.jpg",
+    "obj": "21",
+    "width": 399,
+    "height": 341
+  },
+  {
+    "file": "shroud-07-obj22.jpg",
+    "obj": "22",
+    "width": 374,
+    "height": 341
+  },
+  {
+    "file": "shroud-08-obj23.jpg",
+    "obj": "23",
+    "width": 374,
+    "height": 480
+  },
+  {
+    "file": "shroud-09-obj24.jpg",
+    "obj": "24",
+    "width": 359,
+    "height": 480
+  },
+  {
+    "file": "shroud-10-obj25.jpg",
+    "obj": "25",
+    "width": 384,
+    "height": 480
+  },
+  {
+    "file": "shroud-11-obj26.jpg",
+    "obj": "26",
+    "width": 640,
+    "height": 480
+  },
+  {
+    "file": "shroud-12-obj32.jpg",
+    "obj": "32",
+    "width": 348,
+    "height": 446
+  },
+  {
+    "file": "shroud-13-obj33.jpg",
+    "obj": "33",
+    "width": 403,
+    "height": 480
+  },
+  {
+    "file": "shroud-14-obj34.jpg",
+    "obj": "34",
+    "width": 426,
+    "height": 446
+  },
+  {
+    "file": "shroud-15-obj35.jpg",
+    "obj": "35",
+    "width": 419,
+    "height": 480
+  },
+  {
+    "file": "shroud-16-obj36.jpg",
+    "obj": "36",
+    "width": 407,
+    "height": 362
+  },
+  {
+    "file": "shroud-17-obj37.jpg",
+    "obj": "37",
+    "width": 482,
+    "height": 433
+  },
+  {
+    "file": "shroud-18-obj38.jpg",
+    "obj": "38",
+    "width": 421,
+    "height": 339
+  },
+  {
+    "file": "shroud-19-obj39.jpg",
+    "obj": "39",
+    "width": 371,
+    "height": 441
+  },
+  {
+    "file": "shroud-20-obj40.jpg",
+    "obj": "40",
+    "width": 407,
+    "height": 322
+  },
+  {
+    "file": "shroud-21-obj41.jpg",
+    "obj": "41",
+    "width": 369,
+    "height": 436
+  },
+  {
+    "file": "shroud-22-obj42.jpg",
+    "obj": "42",
+    "width": 557,
+    "height": 406
+  },
+  {
+    "file": "shroud-23-obj43.jpg",
+    "obj": "43",
+    "width": 504,
+    "height": 418
+  },
+  {
+    "file": "shroud-24-obj44.jpg",
+    "obj": "44",
+    "width": 380,
+    "height": 401
+  },
+  {
+    "file": "shroud-25-obj45.jpg",
+    "obj": "45",
+    "width": 488,
+    "height": 302
+  },
+  {
+    "file": "shroud-26-obj46.jpg",
+    "obj": "46",
+    "width": 442,
+    "height": 302
+  },
+  {
+    "file": "shroud-27-obj47.jpg",
+    "obj": "47",
+    "width": 367,
+    "height": 299
+  },
+  {
+    "file": "shroud-28-obj50.jpg",
+    "obj": "50",
+    "width": 371,
+    "height": 330
+  },
+  {
+    "file": "shroud-29-obj51.jpg",
+    "obj": "51",
+    "width": 502,
+    "height": 330
+  },
+  {
+    "file": "shroud-30-obj52.jpg",
+    "obj": "52",
+    "width": 421,
+    "height": 326
+  },
+  {
+    "file": "shroud-31-obj53.jpg",
+    "obj": "53",
+    "width": 398,
+    "height": 326
+  },
+  {
+    "file": "shroud-32-obj54.jpg",
+    "obj": "54",
+    "width": 371,
+    "height": 335
+  },
+  {
+    "file": "shroud-33-obj55.jpg",
+    "obj": "55",
+    "width": 421,
+    "height": 325
+  },
+  {
+    "file": "shroud-34-obj56.jpg",
+    "obj": "56",
+    "width": 346,
+    "height": 324
+  },
+  {
+    "file": "shroud-35-obj57.jpg",
+    "obj": "57",
+    "width": 423,
+    "height": 322
+  },
+  {
+    "file": "shroud-36-obj58.jpg",
+    "obj": "58",
+    "width": 371,
+    "height": 310
+  },
+  {
+    "file": "shroud-37-obj59.jpg",
+    "obj": "59",
+    "width": 415,
+    "height": 310
+  },
+  {
+    "file": "shroud-38-obj60.jpg",
+    "obj": "60",
+    "width": 396,
+    "height": 310
+  },
+  {
+    "file": "shroud-39-obj61.jpg",
+    "obj": "61",
+    "width": 380,
+    "height": 310
+  },
+  {
+    "file": "shroud-40-obj64.jpg",
+    "obj": "64",
+    "width": 423,
+    "height": 348
+  },
+  {
+    "file": "shroud-41-obj65.jpg",
+    "obj": "65",
+    "width": 390,
+    "height": 480
+  },
+  {
+    "file": "shroud-42-obj66.jpg",
+    "obj": "66",
+    "width": 369,
+    "height": 344
+  },
+  {
+    "file": "shroud-43-obj67.jpg",
+    "obj": "67",
+    "width": 376,
+    "height": 345
+  },
+  {
+    "file": "shroud-44-obj68.jpg",
+    "obj": "68",
+    "width": 385,
+    "height": 321
+  },
+  {
+    "file": "shroud-45-obj69.jpg",
+    "obj": "69",
+    "width": 371,
+    "height": 322
+  },
+  {
+    "file": "shroud-46-obj70.jpg",
+    "obj": "70",
+    "width": 421,
+    "height": 325
+  },
+  {
+    "file": "shroud-47-obj71.jpg",
+    "obj": "71",
+    "width": 466,
+    "height": 326
+  },
+  {
+    "file": "shroud-48-obj72.jpg",
+    "obj": "72",
+    "width": 512,
+    "height": 406
+  },
+  {
+    "file": "shroud-49-obj73.jpg",
+    "obj": "73",
+    "width": 474,
+    "height": 440
+  },
+  {
+    "file": "shroud-50-obj74.jpg",
+    "obj": "74",
+    "width": 388,
+    "height": 403
+  },
+  {
+    "file": "shroud-51-obj75.jpg",
+    "obj": "75",
+    "width": 424,
+    "height": 438
+  },
+  {
+    "file": "shroud-52-obj78.jpg",
+    "obj": "78",
+    "width": 565,
+    "height": 405
+  },
+  {
+    "file": "shroud-53-obj79.jpg",
+    "obj": "79",
+    "width": 363,
+    "height": 434
+  },
+  {
+    "file": "shroud-54-obj80.jpg",
+    "obj": "80",
+    "width": 444,
+    "height": 403
+  },
+  {
+    "file": "shroud-55-obj81.jpg",
+    "obj": "81",
+    "width": 373,
+    "height": 322
+  },
+  {
+    "file": "shroud-56-obj82.jpg",
+    "obj": "82",
+    "width": 525,
+    "height": 430
+  },
+  {
+    "file": "shroud-57-obj83.jpg",
+    "obj": "83",
+    "width": 609,
+    "height": 429
+  },
+  {
+    "file": "shroud-58-obj84.jpg",
+    "obj": "84",
+    "width": 466,
+    "height": 324
+  },
+  {
+    "file": "shroud-59-obj85.jpg",
+    "obj": "85",
+    "width": 426,
+    "height": 324
+  },
+  {
+    "file": "shroud-60-obj86.jpg",
+    "obj": "86",
+    "width": 517,
+    "height": 326
+  },
+  {
+    "file": "shroud-61-obj87.jpg",
+    "obj": "87",
+    "width": 359,
+    "height": 326
+  },
+  {
+    "file": "shroud-62-obj88.jpg",
+    "obj": "88",
+    "width": 504,
+    "height": 325
+  },
+  {
+    "file": "shroud-63-obj89.jpg",
+    "obj": "89",
+    "width": 565,
+    "height": 440
+  },
+  {
+    "file": "shroud-64-obj92.jpg",
+    "obj": "92",
+    "width": 376,
+    "height": 479
+  },
+  {
+    "file": "shroud-65-obj93.jpg",
+    "obj": "93",
+    "width": 439,
+    "height": 349
+  },
+  {
+    "file": "shroud-66-obj94.jpg",
+    "obj": "94",
+    "width": 511,
+    "height": 429
+  },
+  {
+    "file": "shroud-67-obj95.jpg",
+    "obj": "95",
+    "width": 421,
+    "height": 429
+  },
+  {
+    "file": "shroud-68-obj96.jpg",
+    "obj": "96",
+    "width": 421,
+    "height": 335
+  },
+  {
+    "file": "shroud-69-obj97.jpg",
+    "obj": "97",
+    "width": 459,
+    "height": 339
+  },
+  {
+    "file": "shroud-70-obj98.jpg",
+    "obj": "98",
+    "width": 510,
+    "height": 335
+  },
+  {
+    "file": "shroud-71-obj99.jpg",
+    "obj": "99",
+    "width": 527,
+    "height": 333
+  },
+  {
+    "file": "shroud-72-obj100.jpg",
+    "obj": "100",
+    "width": 447,
+    "height": 314
+  },
+  {
+    "file": "shroud-73-obj101.jpg",
+    "obj": "101",
+    "width": 541,
+    "height": 318
+  },
+  {
+    "file": "shroud-74-obj102.jpg",
+    "obj": "102",
+    "width": 441,
+    "height": 317
+  },
+  {
+    "file": "shroud-75-obj103.jpg",
+    "obj": "103",
+    "width": 421,
+    "height": 317
+  },
+  {
+    "file": "shroud-76-obj104.jpg",
+    "obj": "104",
+    "width": 286,
+    "height": 331
+  },
+  {
+    "file": "shroud-77-obj105.jpg",
+    "obj": "105",
+    "width": 403,
+    "height": 330
+  },
+  {
+    "file": "shroud-78-obj106.jpg",
+    "obj": "106",
+    "width": 398,
+    "height": 330
+  },
+  {
+    "file": "shroud-79-obj107.jpg",
+    "obj": "107",
+    "width": 640,
+    "height": 330
+  },
+  {
+    "file": "shroud-80-obj110.jpg",
+    "obj": "110",
+    "width": 376,
+    "height": 330
+  },
+  {
+    "file": "shroud-81-obj111.jpg",
+    "obj": "111",
+    "width": 393,
+    "height": 440
+  },
+  {
+    "file": "shroud-82-obj112.jpg",
+    "obj": "112",
+    "width": 368,
+    "height": 326
+  },
+  {
+    "file": "shroud-83-obj113.jpg",
+    "obj": "113",
+    "width": 421,
+    "height": 321
+  },
+  {
+    "file": "shroud-84-obj114.jpg",
+    "obj": "114",
+    "width": 373,
+    "height": 317
+  },
+  {
+    "file": "shroud-85-obj115.jpg",
+    "obj": "115",
+    "width": 469,
+    "height": 316
+  },
+  {
+    "file": "shroud-86-obj116.jpg",
+    "obj": "116",
+    "width": 371,
+    "height": 317
+  },
+  {
+    "file": "shroud-87-obj117.jpg",
+    "obj": "117",
+    "width": 446,
+    "height": 411
+  },
+  {
+    "file": "shroud-88-obj118.jpg",
+    "obj": "118",
+    "width": 373,
+    "height": 325
+  },
+  {
+    "file": "shroud-89-obj119.jpg",
+    "obj": "119",
+    "width": 398,
+    "height": 325
+  },
+  {
+    "file": "shroud-90-obj120.jpg",
+    "obj": "120",
+    "width": 502,
+    "height": 440
+  },
+  {
+    "file": "shroud-91-obj121.jpg",
+    "obj": "121",
+    "width": 560,
+    "height": 326
+  },
+  {
+    "file": "shroud-92-obj124.jpg",
+    "obj": "124",
+    "width": 428,
+    "height": 339
+  },
+  {
+    "file": "shroud-93-obj125.jpg",
+    "obj": "125",
+    "width": 373,
+    "height": 343
+  }
+]
