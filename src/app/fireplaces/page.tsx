@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import PricingCTA from "@/components/PricingCTA";
 import EditorialPageHero from "@/components/EditorialPageHero";
+import GasFireplaceQualifier from "@/components/GasFireplaceQualifier";
 
 export const metadata = {
   title: "Gas, Electric & Outdoor Fireplaces | California Mantel",
@@ -28,12 +29,6 @@ const types = [
     description:
       "Bring the warmth outdoors. We offer gas and wood-burning outdoor fireplace options.",
     href: "/fireplaces/outdoor",
-  },
-  {
-    title: "Masonry",
-    description:
-      "Traditional masonry fireplaces built to last a lifetime with superior heat retention.",
-    href: "/fireplaces/masonry",
   },
   {
     title: "Overstock Sale",
@@ -67,8 +62,10 @@ export default function FireplacesPage() {
       <EditorialPageHero
         eyebrow="Gas / Electric / Outdoor"
         title="Fireplaces selected around the room."
-        description="Browse gas inserts, electric fireplaces, outdoor fire features, and masonry solutions planned around the surround, clearances, installation path, and the way you want the space to feel."
+        description="Browse gas inserts, electric fireplaces, outdoor fire features, and new-construction gas fireplace systems planned around the surround, clearances, installation path, and the way you want the space to feel."
       />
+
+      <GasFireplaceQualifier />
 
       {/* Types */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

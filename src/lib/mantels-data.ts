@@ -21,7 +21,7 @@ export const mantelCategories: MantelCategory[] = [
     title: "Contemporary Mantels",
     tagline: "Modern · Minimal · Refined",
     description:
-      "Our contemporary mantel collection features clean horizontal lines, understated profiles, and smooth finishes designed to complement modern and transitional interiors. Available in precast concrete and wood, with a wide range of colors and textures.",
+      "Our contemporary mantel collection features clean horizontal lines, understated profiles, and smooth finishes designed to complement modern and transitional interiors. Cast in precast concrete with a wide range of colors and textures.",
     products: [
       {
         name: "Bolte Smooth",
