@@ -76,6 +76,44 @@ export default function NapoleonPage() {
         </div>
       </section>
 
+      {/* Napoleon Fireplace Design Studio */}
+      <section className="border-y border-[color:var(--sand-deep)] bg-[#F9F7F3]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-3xl">
+            <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
+              Interactive Design Tool
+            </p>
+            <h2
+              className="text-3xl md:text-4xl font-medium text-[color:var(--ink)] tracking-tight mb-5"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              Design your Napoleon fireplace before you visit.
+            </h2>
+            <p className="text-[color:var(--ink)]/60 leading-relaxed mb-8">
+              Napoleon&apos;s Fireplace Design Studio lets you choose a model, then style the flames,
+              media, interior panels, and finishing trim in real time. Build the exact look you want,
+              save it, and bring it to our showroom — we&apos;ll handle the specification and installation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://fireplacedesignstudio.napoleon.com/en/ca/start"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[color:var(--ink)] text-white hover:bg-[color:var(--accent)] px-8 py-3.5 text-xs uppercase tracking-[0.16em] text-center transition-colors"
+              >
+                Launch the Design Studio
+              </a>
+              <Link
+                href="/booking"
+                className="inline-block border border-[color:var(--ink)]/20 text-[color:var(--ink)] hover:border-[color:var(--ink)] px-8 py-3.5 text-xs uppercase tracking-[0.16em] text-center transition-colors"
+              >
+                Bring Your Design to a Showroom
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <InstantEstimateCTA />
       <PricingCTA />
     </>
