@@ -42,7 +42,7 @@ const mantelsMenu: MegaMenuProps["columns"] = [
       { label: "Beams", href: "/mantels/beams", description: "Rustic and transitional wood mantels" },
       { label: "Hearths", href: "/mantels/hearths", description: "Stone and precast hearth pieces" },
       { label: "Colors & Finishes", href: "/mantels/colors-finishes", description: "Precast colors and surface textures" },
-      { label: "All Mantels", href: "/mantels", description: "Browse the full mantel collection" },
+      { label: "Find Your Mantel", href: "/mantels", description: "Browse the collection or search by fireplace size" },
     ],
   },
 ];
