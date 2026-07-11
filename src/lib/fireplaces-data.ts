@@ -227,7 +227,7 @@ export const fireplaceCategories: FireplaceCategory[] = [
       "Heat & Glo is one of the most recognized names in gas fireplaces, known for their realistic flame technology, wide product range, and reliable performance. We are an authorized Heat & Glo dealer and installer.",
     products: [
       {
-        name: "Primo II 60 Linear Fireplace",
+        name: "Primo II Linear Fireplace",
         description:
           "A large-format linear gas fireplace in 48\", 60\", and 72\" sizes. Features TV-safe heat management and customizable interior panels and logs.",
         specs: ["3 sizes: 48\" – 72\"", "TV-safe heat management", "Available as see-through"],
