@@ -50,24 +50,6 @@ const systemBrands = [
   { name: "Ortal", href: "/fireplaces/ortal", blurb: "Frameless architectural" },
 ];
 
-const newConstructionScenes = [
-  {
-    image: "/projects/new-construction/luxuria-62-see-through.jpg",
-    title: "Linear fire with masonry texture",
-    body: "For feature walls, great rooms, and open-plan spaces where the fireplace becomes part of the architecture.",
-  },
-  {
-    image: "/projects/new-construction/orion-60-slim.jpg",
-    title: "Clean electric statement wall",
-    body: "Useful where venting or gas routing is not the right path, with a low-profile modern look.",
-  },
-  {
-    image: "/projects/new-construction/true-42s-nullarbor.jpg",
-    title: "Traditional opening, new build",
-    body: "A classic firebox proportion with mantel, stone, or precast finishes planned from the framing stage.",
-  },
-];
-
 export default function GasFireplaceQualifier() {
   const [hasFireplace, setHasFireplace] = useState<null | boolean>(null);
   const [outcomeKey, setOutcomeKey] = useState<string | null>(null);
@@ -192,51 +174,23 @@ export default function GasFireplaceQualifier() {
             )}
           </div>
 
-          <div>
-            <div className="relative aspect-[16/11] overflow-hidden bg-stone-100 mb-5">
+          {/* Ballarat / Mendota FV48 — muted art image bleeding off the top-right edge */}
+          <div className="relative hidden lg:block self-start -mt-16 -mr-4 sm:-mr-6 lg:-mr-8">
+            <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/projects/new-construction/luxuria-62-see-through.jpg"
-                alt="New construction linear fireplace with stone surround"
+                src="/fireplaces/ballarat-fv48.webp"
+                alt="Ballarat mantel in Smooth Kingsbury with Mendota FV48 fireplace"
                 fill
-                sizes="(min-width: 1024px) 620px, 100vw"
-                className="object-cover"
+                sizes="(min-width: 1024px) 620px, 0px"
+                className="object-cover object-[65%_40%] scale-125 opacity-70"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[color:var(--ink)]/80 to-transparent p-6">
-                <p className="text-xs uppercase tracking-[0.22em] text-white/70 mb-2">
-                  New Construction Systems
-                </p>
-                <p
-                  className="max-w-md text-2xl font-medium text-white"
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                >
-                  Framing, venting, mantel, stone, and fire view planned together.
-                </p>
-              </div>
+              {/* fade into the ivory section background toward the page edges */}
+              <div className="absolute inset-0 bg-gradient-to-l from-[#F9F7F3] via-transparent to-[#F9F7F3]/60 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#F9F7F3]/70 via-transparent to-[#F9F7F3] pointer-events-none" />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {newConstructionScenes.map((scene) => (
-                <div key={scene.title} className="border border-[color:var(--sand-deep)] bg-white">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
-                    <Image
-                      src={scene.image}
-                      alt={scene.title}
-                      fill
-                      sizes="(min-width: 1024px) 190px, (min-width: 640px) 33vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3
-                      className="text-base font-medium text-[color:var(--ink)] mb-2"
-                      style={{ fontFamily: "var(--font-playfair)" }}
-                    >
-                      {scene.title}
-                    </h3>
-                    <p className="text-xs leading-relaxed text-[color:var(--ink)]/55">{scene.body}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="absolute bottom-6 left-2 text-[11px] uppercase tracking-[0.22em] text-[color:var(--ink)]/45">
+              Ballarat Mantel in Smooth Kingsbury · Mendota FV48 Fireplace
+            </p>
           </div>
         </div>
       </div>

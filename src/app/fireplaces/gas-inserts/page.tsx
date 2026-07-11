@@ -11,21 +11,6 @@ export const metadata = {
   alternates: { canonical: "/fireplaces/gas-inserts" },
 };
 
-const insertTransformations = [
-  {
-    title: "Existing masonry fireplace, renewed",
-    before: "/projects/before-after/supreme-30-brick-before.jpg",
-    after: "/projects/before-after/supreme-30-brick-after.jpg",
-    note: "A dated wood-burning opening becomes a sealed gas insert with a finished traditional surround.",
-  },
-  {
-    title: "Clean insert with a tailored surround",
-    before: "/projects/before-after/supreme-35-woomera-before.jpg",
-    after: "/projects/before-after/supreme-35-woomera-after.jpg",
-    note: "The insert, face, hearth, and mantel proportions are planned together so the room reads as one composition.",
-  },
-];
-
 const planningDetails = [
   "Firebox dimensions and chimney path",
   "Insert face, surround, and finish color",
@@ -45,10 +30,10 @@ export default function GasInsertsPage() {
             <span className="mx-2">/</span>
             <span className="text-[color:var(--ink)]/80">Gas Inserts</span>
           </nav>
-          <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 lg:gap-16 items-center">
+          <div>
             <div>
               <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-sm font-medium mb-3">
-                Efficient / Clean / Beautiful
+                Efficient · Clean · Beautiful
               </p>
               <h1
                 className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.04] mb-5"
@@ -72,34 +57,6 @@ export default function GasInsertsPage() {
                     <p className="text-sm text-[color:var(--ink)]/60 leading-relaxed">{body}</p>
                   </div>
                 ))}
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="relative aspect-[4/5] overflow-hidden bg-stone-100">
-                <Image
-                  src="/projects/before-after/supreme-30-brick-before.jpg"
-                  alt="Before gas insert conversion"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 320px, 50vw"
-                  className="object-cover"
-                />
-                <span className="absolute left-4 top-4 bg-[color:var(--ink)]/85 px-3 py-1.5 text-[11px] uppercase tracking-[0.2em] text-white">
-                  Before
-                </span>
-              </div>
-              <div className="relative aspect-[4/5] overflow-hidden bg-stone-100 mt-8">
-                <Image
-                  src="/projects/before-after/supreme-30-brick-after.jpg"
-                  alt="After gas insert conversion"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 320px, 50vw"
-                  className="object-cover"
-                />
-                <span className="absolute left-4 top-4 bg-[color:var(--accent)] px-3 py-1.5 text-[11px] uppercase tracking-[0.2em] text-white">
-                  After
-                </span>
               </div>
             </div>
           </div>
@@ -134,66 +91,6 @@ export default function GasInsertsPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-16">
-            <div>
-              <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-xs font-medium mb-3">
-                Real Transformations
-              </p>
-              <h2
-                className="text-3xl md:text-4xl font-medium tracking-tight text-[color:var(--ink)] mb-4"
-                style={{ fontFamily: "var(--font-playfair)" }}
-              >
-                The insert is only one part of the finished room.
-              </h2>
-              <p className="text-[color:var(--ink)]/60 leading-relaxed">
-                A gas insert changes the daily use of the fireplace. The surround, hearth,
-                mantel, and finish choices change how the entire wall feels.
-              </p>
-            </div>
-            <div className="space-y-8">
-              {insertTransformations.map((item) => (
-                <div key={item.title} className="border border-[color:var(--sand-deep)]">
-                  <div className="grid grid-cols-2">
-                    {[
-                      ["Before", item.before],
-                      ["After", item.after],
-                    ].map(([label, src]) => (
-                      <div key={label} className="relative aspect-[4/3] overflow-hidden bg-stone-100">
-                        <Image
-                          src={src}
-                          alt={`${label} - ${item.title}`}
-                          fill
-                          sizes="(min-width: 1024px) 420px, 50vw"
-                          className="object-cover"
-                        />
-                        <span
-                          className={`absolute left-4 top-4 px-3 py-1.5 text-[11px] uppercase tracking-[0.2em] text-white ${
-                            label === "After" ? "bg-[color:var(--accent)]" : "bg-[color:var(--ink)]/85"
-                          }`}
-                        >
-                          {label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="p-6">
-                    <h3
-                      className="text-xl font-medium text-[color:var(--ink)] mb-2"
-                      style={{ fontFamily: "var(--font-playfair)" }}
-                    >
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-[color:var(--ink)]/60 leading-relaxed">{item.note}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2
           className="text-xl font-medium text-stone-900 mb-2 text-center"
@@ -208,7 +105,7 @@ export default function GasInsertsPage() {
           <video
             controls
             preload="metadata"
-            poster="/projects/before-after/supreme-35-woomera-after.jpg"
+            poster=""
             className="w-full"
           >
             <source src="/videos/hng-inserts-education.mp4" type="video/mp4" />
@@ -218,16 +115,7 @@ export default function GasInsertsPage() {
 
       <section className="bg-[#F9F7F3] border-y border-[color:var(--sand-deep)] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.15fr] gap-10 items-center">
-            <div className="relative aspect-[5/4] overflow-hidden bg-stone-100">
-              <Image
-                src="/projects/before-after/supreme-30-bolte-bianco-after.jpg"
-                alt="Gas insert with a tailored mantel surround"
-                fill
-                sizes="(min-width: 768px) 520px, 100vw"
-                className="object-cover"
-              />
-            </div>
+          <div>
             <div>
               <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-xs font-medium mb-3">
                 Planned Details
