@@ -227,11 +227,21 @@ export const fireplaceCategories: FireplaceCategory[] = [
       "Heat & Glo is one of the most recognized names in gas fireplaces, known for their realistic flame technology, wide product range, and reliable performance. We are an authorized Heat & Glo dealer and installer.",
     products: [
       {
+        name: "Primo II 60 Linear Fireplace",
+        description:
+          "A large-format linear gas fireplace in 48\", 60\", and 72\" sizes. Features TV-safe heat management and customizable interior panels and logs.",
+        specs: ["3 sizes: 48\" – 72\"", "TV-safe heat management", "Available as see-through"],
+        image: "https://hearthnhome.getbynder.com/transform/08763d99-34be-436f-b2dd-2c391d4edc87/HNG-Primo-II_72_736X555?io=transform:fill,width:768,height:576",
+        note: "Linear Collection — Best",
+        url: "https://www.heatnglo.com/fireplaces/gas/indoor/primo-ii",
+      },
+      {
         name: "Mezzo Linear Gas Fireplace",
         description:
           "Heat & Glo's stunning linear gas fireplace featuring end-to-end ribbon flames. Available in 36\", 48\", 60\", and 72\" sizes with customizable fire bed materials and log options.",
         specs: ["4 sizes: 36\" – 72\"", "Ribbon flame design", "Customizable fire bed"],
         image: "https://hearthnhome.getbynder.com/transform/d46ab388-275f-4983-b659-7c4cd454dcf5/img-pdp-mezzo-room-shot-05-jpg?io=transform:fill,width:768,height:576",
+        note: "Linear Collection — Better",
         url: "https://www.heatnglo.com/fireplaces/gas/indoor/mezzo-gas-fireplace",
       },
       {
@@ -240,7 +250,17 @@ export const fireplaceCategories: FireplaceCategory[] = [
           "Sophisticated fire at a smaller footprint. The Cosmo fits beautifully beneath a TV with its smart heat management system, available in 32\", 36\", and 42\" widths.",
         specs: ["3 sizes: 32\" – 42\"", "TV-safe heat management", "Direct vent"],
         image: "https://hearthnhome.getbynder.com/transform/c0885ec5-e68c-48f7-9a85-f66e09730cd3/img-pdp-cosmo-room-shot-01-jpg?io=transform:fill,width:768,height:576",
+        note: "Linear Collection — Good",
         url: "https://www.heatnglo.com/fireplaces/gas/indoor/cosmo-gas-fireplace",
+      },
+      {
+        name: "True Gas Fireplace",
+        description:
+          "Traditional masonry styling with the largest view in its class and substantial heat output — all in a zero-clearance factory-built unit.",
+        specs: ["Largest view in class", "Traditional masonry look", "High heat output"],
+        image: "https://hearthnhome.getbynder.com/transform/96f4f3b6-bb4e-4004-a797-85aa7179b3bb/HNG-True_ForgedArchFront_2019Artisan_190613_Lecy_0160-1-tif?io=transform:fill,width:768,height:576",
+        note: "Traditional Collection — Best",
+        url: "https://www.heatnglo.com/fireplaces/gas/indoor/true-gas-fireplace",
       },
       {
         name: "6K & 8K Series",
@@ -248,6 +268,7 @@ export const fireplaceCategories: FireplaceCategory[] = [
           "Heat & Glo's versatile gas fireplace series with three design packages, voice control capability, and smart heat management. Available in both traditional and contemporary styling.",
         specs: ["3 design packages", "Voice control ready", "Heat management system"],
         image: "https://hearthnhome.getbynder.com/transform/c9ebe317-8a39-4149-9400-33ec3dfe6a92/HNG-M-R_6KX_763X555?io=transform:fill,width:768,height:576",
+        note: "Traditional Collection — Better",
         url: "https://www.heatnglo.com/fireplaces/gas/indoor/6k-and-8k-series",
       },
       {
@@ -256,15 +277,8 @@ export const fireplaceCategories: FireplaceCategory[] = [
           "A compact 16\"-deep gas fireplace designed for spaces where depth is limited. The SlimLine Fusion adds 10 customizable design elements for a fully personalized look.",
         specs: ["Only 16\" deep", "10 design elements (Fusion)", "Starting from $2,149"],
         image: "https://hearthnhome.getbynder.com/transform/65345ded-e184-42dd-9fb8-c33e764599a8/img-pdp-slimline-fusion-room-shot-01-jpg?io=transform:fill,width:768,height:576",
+        note: "Traditional Collection — Good",
         url: "https://www.heatnglo.com/fireplaces/gas/indoor/slimline-fusion-gas-fireplace",
-      },
-      {
-        name: "True Gas Fireplace",
-        description:
-          "Traditional masonry styling with the largest view in its class and substantial heat output — all in a zero-clearance factory-built unit.",
-        specs: ["Largest view in class", "Traditional masonry look", "High heat output"],
-        image: "https://hearthnhome.getbynder.com/transform/96f4f3b6-bb4e-4004-a797-85aa7179b3bb/HNG-True_ForgedArchFront_2019Artisan_190613_Lecy_0160-1-tif?io=transform:fill,width:768,height:576",
-        url: "https://www.heatnglo.com/fireplaces/gas/indoor/true-gas-fireplace",
       },
       {
         name: "Cerona Gas Fireplace",
@@ -297,14 +311,6 @@ export const fireplaceCategories: FireplaceCategory[] = [
         specs: ["Stainless steel construction", "Indoor-outdoor design", "Starting from $11,148"],
         image: "https://hearthnhome.getbynder.com/transform/14345d4e-0098-42e5-9160-945f00fabde1/img-pdp-fortress-see-through-room-shot-01-jpg?io=transform:fill,width:768,height:576",
         url: "https://www.heatnglo.com/fireplaces/gas/see-through/fortress-gas-fireplace",
-      },
-      {
-        name: "Primo II Linear Fireplace",
-        description:
-          "A large-format linear gas fireplace in 48\", 60\", and 72\" sizes. Features TV-safe heat management and customizable interior panels and logs.",
-        specs: ["3 sizes: 48\" – 72\"", "TV-safe heat management", "Available as see-through"],
-        image: "https://hearthnhome.getbynder.com/transform/08763d99-34be-436f-b2dd-2c391d4edc87/HNG-Primo-II_72_736X555?io=transform:fill,width:768,height:576",
-        url: "https://www.heatnglo.com/fireplaces/gas/indoor/primo-ii",
       },
       {
         name: "Phoenix TrueView Gas Fireplace",
