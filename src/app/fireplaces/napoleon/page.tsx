@@ -18,14 +18,52 @@ export default function NapoleonPage() {
     <>
       <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-[color:var(--ink)]/55 mb-4">
-            <Link href="/fireplaces" className="hover:text-[color:var(--accent)] transition-colors">Fireplaces</Link>
-            <span className="mx-2">›</span>
-            <span className="text-[color:var(--ink)]/80">{category.title}</span>
-          </nav>
-          <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-sm font-medium mb-3">{category.tagline}</p>
-          <h1 className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.04] mb-4" style={{ fontFamily: "var(--font-playfair)" }}>{category.title}</h1>
-          <p className="text-[color:var(--ink)]/60 max-w-2xl leading-relaxed">{category.description}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-16 items-start">
+            <div>
+              <nav className="text-sm text-[color:var(--ink)]/55 mb-4">
+                <Link href="/fireplaces" className="hover:text-[color:var(--accent)] transition-colors">Fireplaces</Link>
+                <span className="mx-2">›</span>
+                <span className="text-[color:var(--ink)]/80">{category.title}</span>
+              </nav>
+              <p className="text-[color:var(--accent)] uppercase tracking-[0.28em] text-sm font-medium mb-3">{category.tagline}</p>
+              <h1 className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.04] mb-4" style={{ fontFamily: "var(--font-playfair)" }}>{category.title}</h1>
+              <p className="text-[color:var(--ink)]/60 max-w-2xl leading-relaxed">{category.description}</p>
+            </div>
+
+            {/* Napoleon Fireplace Design Studio */}
+            <div className="bg-white border border-[color:var(--sand-deep)] p-8 lg:mt-8">
+              <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-3">
+                Interactive Design Tool
+              </p>
+              <h2
+                className="text-2xl font-medium text-[color:var(--ink)] tracking-tight mb-3"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Design your Napoleon fireplace before you visit.
+              </h2>
+              <p className="text-sm text-[color:var(--ink)]/60 leading-relaxed mb-6">
+                Choose a model, then style the flames, media, interior panels, and trim in
+                real time. Save your design and bring it to our showroom — we&apos;ll handle
+                the specification and installation.
+              </p>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="https://fireplacedesignstudio.napoleon.com/en/ca/start"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[color:var(--ink)] text-white hover:bg-[color:var(--accent)] px-6 py-3 text-xs uppercase tracking-[0.16em] text-center transition-colors"
+                >
+                  Launch the Design Studio
+                </a>
+                <Link
+                  href="/booking"
+                  className="inline-block border border-[color:var(--ink)]/20 text-[color:var(--ink)] hover:border-[color:var(--ink)] px-6 py-3 text-xs uppercase tracking-[0.16em] text-center transition-colors"
+                >
+                  Bring Your Design to a Showroom
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -73,44 +111,6 @@ export default function NapoleonPage() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Napoleon Fireplace Design Studio */}
-      <section className="border-y border-[color:var(--sand-deep)] bg-[#F9F7F3]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-3xl">
-            <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
-              Interactive Design Tool
-            </p>
-            <h2
-              className="text-3xl md:text-4xl font-medium text-[color:var(--ink)] tracking-tight mb-5"
-              style={{ fontFamily: "var(--font-playfair)" }}
-            >
-              Design your Napoleon fireplace before you visit.
-            </h2>
-            <p className="text-[color:var(--ink)]/60 leading-relaxed mb-8">
-              Napoleon&apos;s Fireplace Design Studio lets you choose a model, then style the flames,
-              media, interior panels, and finishing trim in real time. Build the exact look you want,
-              save it, and bring it to our showroom — we&apos;ll handle the specification and installation.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://fireplacedesignstudio.napoleon.com/en/ca/start"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[color:var(--ink)] text-white hover:bg-[color:var(--accent)] px-8 py-3.5 text-xs uppercase tracking-[0.16em] text-center transition-colors"
-              >
-                Launch the Design Studio
-              </a>
-              <Link
-                href="/booking"
-                className="inline-block border border-[color:var(--ink)]/20 text-[color:var(--ink)] hover:border-[color:var(--ink)] px-8 py-3.5 text-xs uppercase tracking-[0.16em] text-center transition-colors"
-              >
-                Bring Your Design to a Showroom
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import ZoomableImage from "@/components/ZoomableImage";
 import EditorialPageHero from "@/components/EditorialPageHero";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import { shroudAccessories } from "@/lib/shroud-accessories-data";
@@ -7,9 +7,9 @@ import { shroudAccessories } from "@/lib/shroud-accessories-data";
 const shroudsPdf = "/accessories/cal-mantel-fireplace-shrouds.pdf";
 
 export const metadata = {
-  title: "Fireplace Shrouds & Accessories | California Mantel",
+  title: "Decorative Chimney Shrouds | California Mantel",
   description:
-    "Decorative fireplace shrouds and accessory details for custom fireplace projects. Review available shroud concepts and plan sizing with a California Mantel showroom.",
+    "Decorative chimney shrouds — architectural metal crowns that finish the chimney top. Review available shroud designs and plan sizing with a California Mantel showroom.",
   alternates: { canonical: "/fireplaces/accessories" },
 };
 
@@ -32,9 +32,9 @@ export default function FireplaceAccessoriesPage() {
   return (
     <>
       <EditorialPageHero
-        eyebrow="Fireplace Accessories"
-        title="Decorative shrouds for a finished exterior detail."
-        description="Complete the fireplace system with accessory details selected around the architecture, roofline, and finish expectations of the project."
+        eyebrow="Decorative Chimney Shrouds"
+        title="Architectural crowns for a finished chimney top."
+        description="A decorative chimney shroud conceals the fireplace termination in an architectural metal surround — completing the roofline the way a mantel completes the room."
       />
 
       <section className="bg-white">
@@ -88,17 +88,16 @@ export default function FireplaceAccessoriesPage() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              {shroudAccessories.slice(0, 4).map((shroud) => (
+              {shroudAccessories.slice(0, 4).map((shroud, i) => (
                 <div key={shroud.slug} className="border border-[color:var(--sand-deep)] bg-[#F9F7F3] p-4">
-                  <div className="relative aspect-square bg-white">
-                    <Image
-                      src={shroud.image}
-                      alt={shroud.name}
-                      fill
-                      className="object-contain p-3"
-                      sizes="(max-width: 1024px) 50vw, 20vw"
-                    />
-                  </div>
+                  <ZoomableImage
+                    src={shroud.image}
+                    alt={shroud.name}
+                    thumbClassName="relative aspect-square bg-white w-full group cursor-zoom-in"
+                    thumbImgClassName="object-contain p-3 group-hover:scale-105 transition-transform duration-300"
+                    thumbSizes="(max-width: 1024px) 50vw, 20vw"
+                    priority={i < 2}
+                  />
                 </div>
               ))}
             </div>
@@ -136,15 +135,14 @@ export default function FireplaceAccessoriesPage() {
                 key={shroud.slug}
                 className="group border border-[color:var(--sand-deep)] bg-white hover:border-[color:var(--accent)] hover:shadow-sm transition-all"
               >
-                <div className="relative aspect-[5/4] bg-stone-100 overflow-hidden">
-                  <Image
-                    src={shroud.image}
-                    alt={shroud.name}
-                    fill
-                    className="object-contain p-5 transition-transform duration-500 group-hover:scale-[1.03]"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                </div>
+                <ZoomableImage
+                  src={shroud.image}
+                  alt={shroud.name}
+                  thumbClassName="relative aspect-[5/4] bg-stone-100 overflow-hidden w-full block cursor-zoom-in"
+                  thumbImgClassName="object-contain p-5 transition-transform duration-500 group-hover:scale-[1.03]"
+                  thumbSizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  priority={false}
+                />
                 <div className="p-5">
                   <p className="text-[10px] uppercase tracking-[0.2em] text-[color:var(--accent)] mb-2">
                     Decorative Shroud

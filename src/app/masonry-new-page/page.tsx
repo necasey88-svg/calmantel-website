@@ -248,7 +248,10 @@ export default function MasonryPage() {
         </div>
       </section>
 
-      <PricingCTA />
+      <PricingCTA
+        title="Plan your masonry project with confidence."
+        description="Share the project details you have now and our team will help shape the right stone, brick, or tile selection, installation path, and starting range."
+      />
 
       {/* Anaheim CTA */}
       <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">

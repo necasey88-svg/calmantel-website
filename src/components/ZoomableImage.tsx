@@ -2,7 +2,21 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 
-export default function ZoomableImage({ src, alt }: { src: string; alt: string }) {
+export default function ZoomableImage({
+  src,
+  alt,
+  thumbClassName = "relative bg-stone-100 rounded-2xl overflow-hidden h-80 w-full group cursor-zoom-in",
+  thumbImgClassName = "object-contain p-4 group-hover:scale-105 transition-transform duration-300",
+  thumbSizes = "(max-width: 1024px) 100vw, 50vw",
+  priority = true,
+}: {
+  src: string;
+  alt: string;
+  thumbClassName?: string;
+  thumbImgClassName?: string;
+  thumbSizes?: string;
+  priority?: boolean;
+}) {
   const [open, setOpen] = useState(false);
   const [scale, setScale] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -88,16 +102,16 @@ export default function ZoomableImage({ src, alt }: { src: string; alt: string }
       {/* Thumbnail */}
       <button
         onClick={() => setOpen(true)}
-        className="relative bg-stone-100 rounded-2xl overflow-hidden h-80 w-full group cursor-zoom-in"
+        className={thumbClassName}
         aria-label="Click to zoom"
       >
         <Image
           src={src}
           alt={alt}
           fill
-          className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          priority
+          className={thumbImgClassName}
+          sizes={thumbSizes}
+          priority={priority}
         />
         <span className="absolute bottom-3 right-3 bg-white/80 text-stone-600 text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
