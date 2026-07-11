@@ -40,20 +40,28 @@ export default function GasInsertsPage() {
       </section>
 
       {/* How it works strip */}
-      <section className="bg-amber-50 border-b border-amber-100 py-8">
+      <section className="bg-[#F9F7F3] border-y border-[color:var(--sand-deep)] py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
             {[
-              { step: "1", title: "Fits Your Existing Firebox", body: "No major construction — inserts slide into your current masonry or zero-clearance firebox." },
-              { step: "2", title: "Vents Through Your Chimney", body: "A stainless liner runs up your existing flue. Direct vent keeps combustion air sealed." },
-              { step: "3", title: "One Button. Instant Fire.", body: "IntelliFire® ignition means reliable starts every time — from a remote, wall switch, or app." },
+              { step: "01", title: "Fits Your Existing Firebox", body: "No major construction — inserts slide into your current masonry or zero-clearance firebox." },
+              { step: "02", title: "Vents Through Your Chimney", body: "A stainless liner runs up your existing flue. Direct vent keeps combustion air sealed." },
+              { step: "03", title: "One Button. Instant Fire.", body: "IntelliFire® ignition means reliable starts every time — from a remote, wall switch, or app." },
             ].map((item) => (
-              <div key={item.step} className="flex flex-col items-center gap-2">
-                <div className="w-9 h-9 rounded-sm bg-[color:var(--accent)] text-white text-sm font-medium flex items-center justify-center">
+              <div key={item.step} className="flex flex-col items-center">
+                <p
+                  className="text-4xl font-medium text-[color:var(--accent)] mb-3"
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
                   {item.step}
-                </div>
-                <p className="font-medium text-stone-800 text-sm">{item.title}</p>
-                <p className="text-stone-500 text-xs leading-relaxed max-w-xs">{item.body}</p>
+                </p>
+                <h3
+                  className="text-lg font-medium text-[color:var(--ink)] mb-2"
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[color:var(--ink)]/55 leading-relaxed max-w-xs">{item.body}</p>
               </div>
             ))}
           </div>
