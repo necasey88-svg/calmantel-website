@@ -90,7 +90,7 @@ export default function ContactPage() {
             Prefer to start online?
           </h2>
           <p className="text-stone-500 mb-6 max-w-md mx-auto">
-            Fill out our estimate request form and a member of our team will follow up within 1–2 business days.
+            Fill out our estimate request form and a member of our team will follow up within one business day.
           </p>
           <Link
             href="/estimate"

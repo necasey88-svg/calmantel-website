@@ -270,6 +270,7 @@ export default function MasonryPage() {
           <div className="bg-white border border-[color:var(--sand-deep)] p-7 max-w-xl">
             <h3 className="text-[color:var(--ink)] font-medium text-lg mb-2">Anaheim</h3>
             <p className="text-[color:var(--ink)]/65 text-sm mb-1">1430 S Anaheim Blvd, Anaheim, CA 92805</p>
+            <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("1430 S Anaheim Blvd, Anaheim, CA 92805")}`} target="_blank" rel="noopener noreferrer" className="inline-block text-sm text-[color:var(--accent)] hover:underline mb-1">Get Directions →</a>
             <p className="text-[color:var(--ink)]/55 text-xs mb-4">Mon-Sat: 9:00 AM - 5:00 PM</p>
             <a
               href="tel:7149087388"

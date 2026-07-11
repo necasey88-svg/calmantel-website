@@ -105,7 +105,7 @@ export default function EstimatePage() {
               Request Received!
             </h2>
             <p className="text-stone-500 max-w-sm mx-auto">
-              Thank you! We&apos;ve received your estimate request and will be in touch within 1–2 business days.
+              Thank you! We&apos;ve received your estimate request and will be in touch within one business day.
             </p>
           </div>
         ) : (

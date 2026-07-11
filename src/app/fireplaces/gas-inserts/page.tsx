@@ -205,7 +205,7 @@ export default function GasInsertsPage() {
                 </div>
                 <div>
                   <p className="font-medium text-stone-900 group-hover:text-[color:var(--accent)] transition-colors">Request a Project Estimate</p>
-                  <p className="text-sm text-stone-500">Tell us about your fireplace and we&apos;ll get back to you within 1–2 business days</p>
+                  <p className="text-sm text-stone-500">Tell us about your fireplace and we&apos;ll get back to you within one business day</p>
                 </div>
               </Link>
             </div>
