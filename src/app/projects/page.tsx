@@ -1,5 +1,5 @@
 import ProjectsGallery from "./ProjectsGallery";
-import PricingCTA from "@/components/PricingCTA";
+import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import EditorialPageHero from "@/components/EditorialPageHero";
 
@@ -22,7 +22,7 @@ export default function ProjectsPage() {
       <ProjectsGallery />
 
       <ConsultationCTA />
-      <PricingCTA />
+      <InstantEstimateCTA />
     </>
   );
 }

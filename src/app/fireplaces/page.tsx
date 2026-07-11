@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import PricingCTA from "@/components/PricingCTA";
+import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import EditorialPageHero from "@/components/EditorialPageHero";
 import GasFireplaceQualifier from "@/components/GasFireplaceQualifier";
 
@@ -122,7 +122,7 @@ export default function FireplacesPage() {
         </div>
       </section>
 
-      <PricingCTA />
+      <InstantEstimateCTA />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import MantelSearch from "@/components/MantelSearch";
 import MantelFitFinder from "@/components/MantelFitFinder";
-import PricingCTA from "@/components/PricingCTA";
+import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import EditorialPageHero from "@/components/EditorialPageHero";
 
 export const metadata = {
@@ -125,7 +125,7 @@ export default function MantelsPage() {
       </section>
 
       {/* CTA */}
-      <PricingCTA />
+      <InstantEstimateCTA />
     </>
   );
 }

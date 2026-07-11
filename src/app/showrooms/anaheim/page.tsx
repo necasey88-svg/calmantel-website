@@ -117,6 +117,7 @@ export default function AnaheimShowroomPage() {
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Address</p>
                 <p className="text-stone-700">1430 S Anaheim Blvd</p>
                 <p className="text-stone-700">Anaheim, CA 92805</p>
+                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("1430 S Anaheim Blvd, Anaheim, CA 92805")}`} target="_blank" rel="noopener noreferrer" className="inline-block mt-1.5 text-[color:var(--accent)] hover:underline">Get Directions →</a>
               </div>
               <div>
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Hours</p>

@@ -137,6 +137,14 @@ export default function ShowroomsPage() {
               <div>
                 <h3 className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-2">Address</h3>
                 <p className="text-stone-700 text-sm leading-relaxed">{s.address}</p>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 text-sm text-[color:var(--accent)] hover:underline"
+                >
+                  Get Directions →
+                </a>
               </div>
               <div>
                 <h3 className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-2">Hours</h3>

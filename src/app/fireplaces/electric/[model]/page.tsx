@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { electricFireplaces, getElectricFireplace } from "@/lib/electric-fireplaces-data";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import ProductGallery from "@/components/ProductGallery";
 import JsonLd from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/business-data";
@@ -231,6 +232,7 @@ export default async function ElectricFireplaceModelPage({ params }: { params: P
         </div>
       </section>
 
+      <InstantEstimateCTA />
       <ConsultationCTA />
     </>
   );

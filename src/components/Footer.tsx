@@ -77,6 +77,7 @@ export default function Footer() {
               <div key={s.city}>
                 <p className="text-white font-medium mb-1">{s.city}</p>
                 <p className="text-gray-400 leading-relaxed">{s.address}</p>
+                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.address)}`} target="_blank" rel="noopener noreferrer" className="text-[#C8922A] hover:text-white transition-colors mt-1 block">Get Directions →</a>
                 <p className="text-gray-400 mt-1">{s.hours}</p>
                 <a href={`tel:${s.tel}`} className="text-[#C8922A] hover:text-white transition-colors mt-1 block">
                   {s.phone}

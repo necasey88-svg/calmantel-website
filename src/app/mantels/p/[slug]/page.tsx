@@ -10,7 +10,7 @@ import {
   typeLabel,
   styleLabel,
 } from "@/lib/mantel-products-data";
-import PricingCTA from "@/components/PricingCTA";
+import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import JsonLd from "@/components/JsonLd";
 import { business, SITE_URL } from "@/lib/business-data";
@@ -281,7 +281,7 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
       )}
 
       <ConsultationCTA />
-      <PricingCTA />
+      <InstantEstimateCTA />
     </>
   );
 }

@@ -113,6 +113,7 @@ export default function DublinShowroomPage() {
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Address</p>
                 <p className="text-stone-700">6681 Sierra Ln Ste D</p>
                 <p className="text-stone-700">Dublin, CA 94568</p>
+                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("6681 Sierra Ln Ste D, Dublin, CA 94568")}`} target="_blank" rel="noopener noreferrer" className="inline-block mt-1.5 text-[color:var(--accent)] hover:underline">Get Directions →</a>
               </div>
               <div>
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Hours</p>

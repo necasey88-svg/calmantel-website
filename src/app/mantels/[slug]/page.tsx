@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getMantelCategory, mantelCategories } from "@/lib/mantels-data";
 import { mantelProducts, typeLabel, styleLabel } from "@/lib/mantel-products-data";
-import PricingCTA from "@/components/PricingCTA";
+import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import MantelSearch from "@/components/MantelSearch";
 
@@ -396,7 +396,7 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
       </section>
 
       <ConsultationCTA />
-      <PricingCTA />
+      <InstantEstimateCTA />
     </>
   );
 }

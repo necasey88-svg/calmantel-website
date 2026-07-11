@@ -2,6 +2,7 @@ import Link from "next/link";
 import { electricFireplaces } from "@/lib/electric-fireplaces-data";
 import ElectricBrandFilterGrid from "@/components/ElectricBrandFilterGrid";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 
 export const metadata = {
   title: "Electric Fireplaces | California Mantel & Fireplace",
@@ -122,6 +123,7 @@ export default function ElectricFireplacesPage() {
         </div>
       </section>
 
+      <InstantEstimateCTA />
       <ConsultationCTA />
     </>
   );

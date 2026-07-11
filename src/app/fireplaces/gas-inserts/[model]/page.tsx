@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { gasInserts, getGasInsert } from "@/lib/gas-inserts-data";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import ProductGallery from "@/components/ProductGallery";
 import PopularOptionsScroll from "@/components/PopularOptionsScroll";
 import JsonLd from "@/components/JsonLd";
@@ -298,6 +299,7 @@ export default async function GasInsertModelPage({ params }: { params: Promise<{
         </div>
       </section>
 
+      <InstantEstimateCTA />
       <ConsultationCTA />
     </>
   );
