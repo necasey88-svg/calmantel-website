@@ -23,21 +23,28 @@ function productMaterialLabel(product: NonNullable<ReturnType<typeof getMantelPr
   return typeLabel[product.type];
 }
 
+// Each card links out to a vendor collection we install from (opens in new tab).
 const wallFinishIdeas = [
   {
     title: "Stone Veneer",
     description: "Add texture and depth around the mantel with natural or manufactured stone.",
     image: "/masonry-gallery/180d8e52-9754-4a75-ab98-1d21b76879a7.webp",
+    vendorUrl: "https://www.msisurfaces.com/products/natural-stone-collections/",
+    vendorLabel: "Browse MSI Natural Stone",
   },
   {
     title: "Brick Detail",
     description: "Use full brick or thin brick veneer for a warmer, more traditional fireplace wall.",
     image: "/masonry-gallery/1d921cf6-0a69-4f6a-9248-4c398b0c20ae.webp",
+    vendorUrl: "https://www.glengery.com/brick-products",
+    vendorLabel: "Browse Glen-Gery Brick",
   },
   {
     title: "Tile Accent Wall",
     description: "Pair the mantel with tile for a refined surround, hearth, or full-height feature.",
     image: "/masonry-gallery/2eb435ce-15b2-41b1-8fa0-bc96450253a7.webp",
+    vendorUrl: "https://www.msisurfaces.com/porcelain-ceramic-category/",
+    vendorLabel: "Browse MSI Tile",
   },
 ];
 
@@ -190,9 +197,11 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {wallFinishIdeas.map((idea) => (
-                <Link
+                <a
                   key={idea.title}
-                  href="/masonry-new-page"
+                  href={idea.vendorUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group bg-white border border-[color:var(--sand-deep)] hover:border-[color:var(--accent)] transition-colors"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
@@ -211,11 +220,14 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
                     >
                       {idea.title}
                     </h3>
-                    <p className="text-xs leading-relaxed text-[color:var(--ink)]/55">
+                    <p className="text-xs leading-relaxed text-[color:var(--ink)]/55 mb-3">
                       {idea.description}
                     </p>
+                    <span className="text-xs text-[color:var(--accent)] group-hover:underline">
+                      {idea.vendorLabel} →
+                    </span>
                   </div>
-                </Link>
+                </a>
               ))}
             </div>
           </div>

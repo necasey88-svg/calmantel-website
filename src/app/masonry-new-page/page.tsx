@@ -62,15 +62,15 @@ const benefits = [
 ];
 
 const suppliers = [
-  { name: "Coronado Stone Products", logo: "/brands/coronado-stone.png" },
-  { name: "Cultured Stone", logo: "/brands/cultured-stone.webp" },
-  { name: "Creative Mines", logo: "/brands/creative-mines.png" },
-  { name: "MSI", logo: "/brands/msi.jpg" },
-  { name: "Eldorado Stone", logo: "/brands/eldorado-stone.jpg" },
-  { name: "Robinson Brick", logo: "/brands/robinson-brick.png" },
-  { name: "Arizona Tile", logo: "/brands/arizona-tile.png" },
-  { name: "Glen-Gery", logo: "/brands/glen-gery.jpg" },
-  { name: "H.C. Muddox", logo: "/brands/hc-muddox.webp" },
+  { name: "Coronado Stone Products", logo: "/brands/coronado-stone.png", url: "https://www.coronado.com/" },
+  { name: "Cultured Stone", logo: "/brands/cultured-stone.webp", url: "https://www.culturedstone.com/" },
+  { name: "Creative Mines", logo: "/brands/creative-mines.png", url: "https://creativemines.us/" },
+  { name: "MSI", logo: "/brands/msi.jpg", url: "https://www.msisurfaces.com/" },
+  { name: "Eldorado Stone", logo: "/brands/eldorado-stone.jpg", url: "https://www.eldoradostone.com/" },
+  { name: "Robinson Brick", logo: "/brands/robinson-brick.png", url: "https://www.robinsonbrick.com/" },
+  { name: "Arizona Tile", logo: "/brands/arizona-tile.png", url: "https://www.arizonatile.com/" },
+  { name: "Glen-Gery", logo: "/brands/glen-gery.jpg", url: "https://www.glengery.com/" },
+  { name: "H.C. Muddox", logo: "/brands/hc-muddox.webp", url: "https://www.hcmuddox.com/" },
 ];
 
 const featuredProjects = [
@@ -228,8 +228,12 @@ export default function MasonryPage() {
         </p>
         <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-6">
           {suppliers.map((s) => (
-            <div
+            <a
               key={s.name}
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`Visit ${s.name}`}
               className="bg-white border border-[color:var(--sand-deep)] p-4 flex items-center justify-center h-20 hover:border-[color:var(--accent)] transition-all"
             >
               <Image
@@ -239,7 +243,7 @@ export default function MasonryPage() {
                 height={60}
                 className="object-contain max-h-12 w-auto"
               />
-            </div>
+            </a>
           ))}
         </div>
       </section>
