@@ -209,7 +209,7 @@ export default async function GasInsertModelPage({ params }: { params: Promise<{
 
       {/* Popular options showcase */}
       {(insert.optionsShowcase || (insert.popularOptions && insert.popularOptions.length > 0)) && (
-        <section className="bg-amber-50 border-y border-amber-100 py-14">
+        <section className="bg-[#F9F7F3] border-y border-[color:var(--sand-deep)] py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between mb-6">
               <div>

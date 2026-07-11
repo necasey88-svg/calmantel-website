@@ -199,7 +199,7 @@ export default function IsokernPage() {
       </section>
 
       {/* Why Isokern */}
-      <section className="bg-amber-50 border-b border-amber-100 py-12">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyIsokern.map((item) => (

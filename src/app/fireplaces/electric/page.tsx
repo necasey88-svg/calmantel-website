@@ -70,7 +70,7 @@ export default function ElectricFireplacesPage() {
       </section>
 
       {/* Why electric strip */}
-      <section className="bg-amber-50 border-b border-amber-100 py-10">
+      <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             {whyElectric.map((item) => (
