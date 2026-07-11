@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 type Outcome = {
   heading: string;
@@ -67,7 +66,7 @@ export default function GasFireplaceQualifier() {
   return (
     <section className="bg-[#F9F7F3] border-y border-[color:var(--sand-deep)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-start">
+        <div className="max-w-3xl">
           <div>
             <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
               Gas Insert or New Construction?
@@ -174,24 +173,6 @@ export default function GasFireplaceQualifier() {
             )}
           </div>
 
-          {/* Ballarat / Mendota FV48 — muted art image bleeding off the top-right edge */}
-          <div className="relative hidden lg:block self-start -mt-16 -mr-4 sm:-mr-6 lg:-mr-8">
-            <div className="relative aspect-[4/5] overflow-hidden">
-              <Image
-                src="/fireplaces/ballarat-fv48.webp"
-                alt="Ballarat mantel in Smooth Kingsbury with Mendota FV48 fireplace"
-                fill
-                sizes="(min-width: 1024px) 620px, 0px"
-                className="object-cover object-[65%_40%] scale-125 opacity-70"
-              />
-              {/* fade into the ivory section background toward the page edges */}
-              <div className="absolute inset-0 bg-gradient-to-l from-[#F9F7F3] via-transparent to-[#F9F7F3]/60 pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#F9F7F3]/70 via-transparent to-[#F9F7F3] pointer-events-none" />
-            </div>
-            <p className="absolute bottom-6 left-2 text-[11px] uppercase tracking-[0.22em] text-[color:var(--ink)]/45">
-              Ballarat Mantel in Smooth Kingsbury · Mendota FV48 Fireplace
-            </p>
-          </div>
         </div>
       </div>
     </section>

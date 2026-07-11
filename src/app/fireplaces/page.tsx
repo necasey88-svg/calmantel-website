@@ -65,6 +65,22 @@ export default function FireplacesPage() {
         description="Browse gas inserts, electric fireplaces, outdoor fire features, and new-construction gas fireplace systems planned around the surround, clearances, installation path, and the way you want the space to feel."
       />
 
+      {/* Ballarat / Mendota FV48 editorial break */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="relative aspect-[16/9] sm:aspect-[21/9] overflow-hidden">
+          <Image
+            src="/fireplaces/ballarat-fv48.webp"
+            alt="Ballarat mantel in Smooth Kingsbury with Mendota FV48 fireplace"
+            fill
+            sizes="(min-width: 1280px) 1216px, 100vw"
+            className="object-cover object-[50%_58%]"
+          />
+        </div>
+        <p className="mt-3 text-right text-[11px] uppercase tracking-[0.22em] text-[color:var(--ink)]/45">
+          Ballarat Mantel in Smooth Kingsbury · Mendota FV48 Fireplace
+        </p>
+      </section>
+
       <GasFireplaceQualifier />
 
       {/* Types */}
