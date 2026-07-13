@@ -1115,7 +1115,7 @@ export const mantelProducts: MantelProduct[] = [
     cadPdf: "/cad/hollywood-park.pdf",
     style: "traditional",
     description:
-      "The Hollywood Park Beam Mantel is a handcrafted wood fireplace beam with a refined, substantial profile and warm natural grain. Its timeless proportions suit traditional, transitional, and craftsman interiors, creating an inviting focal point above gas or wood-burning fireplaces.",
+      "The Hollywood Park Beam Mantel is a handcrafted precast concrete fireplace beam with a refined, substantial profile and warm, hand-molded grain texture. Its timeless proportions suit traditional, transitional, and craftsman interiors, creating an inviting focal point above any fireplace.",
   },
   {
     slug: "collingwood",
@@ -1179,7 +1179,7 @@ export const mantelProducts: MantelProduct[] = [
     cadPdf: "/cad/yalumba.pdf",
     style: "traditional",
     description:
-      "The Yalumba Beam Mantel is a beautifully finished wood fireplace beam with natural grain character and warm tones. Its classic proportions and quality craftsmanship make it a timeless addition to farmhouse, traditional, and transitional living spaces.",
+      "The Yalumba Beam Mantel is a beautifully finished precast concrete fireplace beam with natural grain character and warm tones. Its classic proportions and quality craftsmanship make it a timeless addition to farmhouse, traditional, and transitional living spaces.",
   },
   {
     slug: "architectural",
@@ -1199,7 +1199,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/darlinghurst.png",
     style: "transitional",
     description:
-      "The Darlinghurst Beam Mantel is a sleek, transitional wood fireplace surround with clean lines and a refined wood finish. Its understated profile works beautifully in modern, transitional, and contemporary interiors where warmth and simplicity are equally valued.",
+      "The Darlinghurst Beam Mantel is a sleek, transitional precast concrete fireplace beam with clean lines and a refined finish. Its understated profile works beautifully in modern, transitional, and contemporary interiors where warmth and simplicity are equally valued.",
   },
   {
     slug: "hackney",
@@ -1210,7 +1210,7 @@ export const mantelProducts: MantelProduct[] = [
     cadPdf: "/cad/hackney.pdf",
     style: "transitional",
     description:
-      "The Hackney Beam Mantel is a contemporary wood fireplace beam with a clean, architectural profile and smooth finish. Its modern sensibility and warm wood character make it ideal for transitional homes seeking a refined yet natural hearth feature.",
+      "The Hackney Beam Mantel is a contemporary precast concrete fireplace beam with a clean, architectural profile and smooth finish. Its modern sensibility and warm character make it ideal for transitional homes seeking a refined, non-combustible hearth feature.",
   },
   {
     slug: "payneham",
@@ -1221,7 +1221,7 @@ export const mantelProducts: MantelProduct[] = [
     cadPdf: "/cad/payneham.pdf",
     style: "traditional",
     description:
-      "The Payneham Beam Mantel is a traditionally styled wood fireplace beam with natural character and warm proportions. Its classic design and quality wood construction make it a timeless choice for traditional, farmhouse, and craftsman-style living spaces.",
+      "The Payneham Beam Mantel is a traditionally styled precast concrete fireplace beam with natural character and warm proportions. Its classic design and hand-molded grain make it a timeless choice for traditional, farmhouse, and craftsman-style living spaces.",
   },
   {
     slug: "santa-anita",
@@ -1231,7 +1231,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/santa-anita.png",
     style: "transitional",
     description:
-      "The Santa Anita Beam Mantel is a refined wood fireplace beam with clean lines and a warm natural finish. Its versatile transitional design bridges rustic and contemporary styles, making it a popular choice for California-style interiors and open-concept living spaces.",
+      "The Santa Anita Beam Mantel is a refined precast concrete fireplace beam with clean lines and a warm natural finish. Its versatile transitional design bridges rustic and contemporary styles, making it a popular choice for California-style interiors and open-concept living spaces.",
   },
 ];
 

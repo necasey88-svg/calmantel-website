@@ -16,7 +16,7 @@ const traditionalFacets = [
   { slug: "traditional-ornate", label: "Ornate" },
 ];
 
-// The eight wood beam mantels that live under the Beams navigation.
+// The beam mantels that live under the Beams navigation (precast first, then wood).
 const beamSlugs = [
   // Precast beams (listed first on the page)
   "payneham",
@@ -262,7 +262,7 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
                 {
                   label: "Precast Beams",
                   blurb:
-                    "Cast from concrete with wood-grain and smooth textures — the warmth of timber with zero combustibility and every finish in our color range.",
+                    "Precast concrete beams with hand-molded grain and smooth textures — rustic warmth with zero combustibility and every finish in our color range.",
                   items: linkedProducts.filter((p) => p.beamMaterial === "precast"),
                 },
                 {
