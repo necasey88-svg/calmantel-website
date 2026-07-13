@@ -65,6 +65,8 @@ const fireplaceMenu: MegaMenuProps["columns"] = [
       { label: "Mendota", href: "/fireplaces/mendota", description: "High-performance gas fire views" },
       { label: "Napoleon", href: "/fireplaces/napoleon", description: "Gas, electric, and luxury linear units" },
       { label: "Ortal", href: "/fireplaces/ortal", description: "Frameless architectural fireplaces" },
+      { label: "Flare Fireplaces", href: "/fireplaces/flare", description: "Modern frameless linear fireplaces" },
+      { label: "Stellar Custom Fireplaces", href: "/fireplaces/stellar", description: "Custom architectural fire features" },
     ],
   },
 ];
