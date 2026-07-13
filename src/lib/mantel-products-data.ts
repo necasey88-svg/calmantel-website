@@ -36,6 +36,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Macquarie",
     type: "overmantel",
     style: "traditional",
+    image: "/mantels/macquarie.png",
     cadPdf: "/cad/macquarie.pdf",
     description:
       "The Macquarie Overmantel is a beautifully designed fireplace surround that blends timeless elegance with architectural precision. Expertly crafted from high-quality precast materials, this fireplace overmantel features a broad central panel framed by detailed pilasters, creating a symmetrical and balanced focal point above your hearth. With its refined molding profiles and clean lines, the Macquarie enhances the visual height and grandeur of your fireplace, adding depth and dimension without overwhelming the room. Its classic architectural detailing makes it versatile enough to complement both traditional fireplace designs and modern interior styles. Suited for gas fireplaces, electric fireplaces, or custom hearth installations, this precast overmantel combines durability, strength, and lasting beauty.",
@@ -45,6 +46,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Coonawarra",
     type: "overmantel",
     style: "traditional",
+    image: "/mantels/coonawarra.png",
     cadPdf: "/cad/coonawarra.pdf",
     description:
       "The Coonawarra Overmantel is a beautifully crafted fireplace surround that blends timeless elegance with classic architectural detail. Designed with a wide rectangular frame, recessed central panel, and bold crown molding, this fireplace mantel extension adds height, depth, and sophistication to any hearth. Its smooth finish and clean lines make it a versatile choice, seamlessly enhancing both traditional fireplaces and contemporary fireplace designs. Perfect for gas fireplaces, electric fireplaces, or custom hearths, the Coonawarra serves as an elegant focal point while providing a refined backdrop for mirrors, artwork, or decorative accents.",
@@ -54,6 +56,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Cobar",
     type: "overmantel",
     style: "traditional",
+    image: "/mantels/cobar.png",
     cadPdf: "/cad/cobar.pdf",
     description:
       "The Cobar Overmantel is a luxuriously crafted fireplace surround that combines timeless elegance with traditional architectural design. Featuring a central raised panel framed by symmetrical pilasters and topped with a prominent cornice shelf, this fireplace mantel instantly adds height, grandeur, and balance to any hearth. Its clean lines, subtle molding, and refined proportions showcase the artistry of classic fireplace architecture. Constructed from durable, high-quality materials, the Cobar provides a long-lasting centerpiece that enhances both traditional and transitional interiors.",
@@ -63,9 +66,19 @@ export const mantelProducts: MantelProduct[] = [
     name: "Monash",
     type: "overmantel",
     style: "traditional",
+    image: "/mantels/monash.png",
     cadPdf: "/cad/monash.pdf",
     description:
       "The Monash Mantel is a luxuriously crafted wood fireplace overmantel that brings timeless sophistication and architectural charm to any living space. Built from high-quality wood, this fireplace surround features a symmetrical layout with a prominent central panel framed by two narrower side panels, offering balance, proportion, and refined elegance. Accented with subtle molding details and a beautifully sculpted crown molding, the Monash adds depth, height, and visual grandeur to your hearth. Its versatile design makes it the perfect complement for both gas fireplaces and electric fireplaces.",
+  },
+  {
+    slug: "chesterfield",
+    name: "Chesterfield",
+    type: "overmantel",
+    style: "traditional",
+    image: "/mantels/chesterfield.png",
+    description:
+      "The Chesterfield Overmantel pairs a graceful arched frame with a distinctive diamond-quilted inset panel, creating the tailored look of classic tufted upholstery in architectural form. Layered moldings, a substantial cornice, and balanced proportions give the design a refined traditional presence suited to custom fireplace installations.",
   },
   // --- Wood Surrounds ---
   {
