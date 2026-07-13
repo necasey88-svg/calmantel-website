@@ -18,7 +18,7 @@ const styles = [
     description:
       "Flare's signature linear front-facing fireplace. Designed to hang effortlessly in your wall with a frameless appearance. The 3D stainless steel burner creates a deeper, taller flame that runs almost end-to-end. Available in 16\", 24\", and 30\" glass heights across a full range of widths.",
     specs: ["25\" to 100\" wide", "16\", 24\", or 30\" glass height", "Advanced 3D Burner", "TV mountable 12\" from glass"],
-    image: null,
+    image: "/brands/flare-styles/front-facing.png",
     url: "https://flarefireplaces.com/contact-flare/modern-indoor-fireplaces/",
   },
   {
@@ -27,7 +27,7 @@ const styles = [
     description:
       "Viewed from two sides, the See Through is perfect for open floor plans or indoor-outdoor connections. The same advanced 3D burner and frameless glass design — enjoyed from any direction.",
     specs: ["Viewed from two sides", "Indoor-outdoor capable", "3D Burner", "Multiple widths available"],
-    image: null,
+    image: "/brands/flare-styles/see-through.png",
     url: "https://flarefireplaces.com/contact-flare/modern-indoor-fireplaces/",
   },
   {
@@ -36,7 +36,7 @@ const styles = [
     description:
       "Glass wraps around two sides of a corner, filling the room with flame from a dramatic L-shaped opening. Ideal for rooms where you want the fireplace to command the space from two directions.",
     specs: ["Two glass sides", "Corner installation", "3D Burner", "RGB LED lighting available"],
-    image: null,
+    image: "/brands/flare-styles/double-corner.png",
     url: "https://flarefireplaces.com/contact-flare/modern-indoor-fireplaces/",
   },
   {
@@ -45,7 +45,7 @@ const styles = [
     description:
       "Glass spans the front and wraps around the left side. A versatile corner fireplace that works beautifully in living rooms and great rooms where two walls meet at a seating area.",
     specs: ["Front and left glass", "Corner installation", "3D Burner", "Multiple widths"],
-    image: null,
+    image: "/brands/flare-styles/left-corner.png",
     url: "https://flarefireplaces.com/contact-flare/modern-indoor-fireplaces/",
   },
   {
@@ -54,7 +54,7 @@ const styles = [
     description:
       "Glass spans the front and wraps around the right side — the mirror of the Left Corner. Choose based on your room layout and where you want the flame to be seen from.",
     specs: ["Front and right glass", "Corner installation", "3D Burner", "Multiple widths"],
-    image: null,
+    image: "/brands/flare-styles/right-corner.png",
     url: "https://flarefireplaces.com/contact-flare/modern-indoor-fireplaces/",
   },
   {
@@ -63,7 +63,7 @@ const styles = [
     description:
       "The Room Definer is a freestanding island fireplace with glass on three sides — a dramatic architectural element that divides open spaces while allowing flames to be enjoyed from all around.",
     specs: ["Three-sided glass", "Freestanding / island install", "3D Burner", "Statement piece"],
-    image: null,
+    image: "/brands/flare-styles/room-definer.png",
     url: "https://flarefireplaces.com/contact-flare/modern-indoor-fireplaces/",
   },
   {
@@ -72,7 +72,7 @@ const styles = [
     description:
       "The Passage is a tall, vertical see-through fireplace designed for hallways, entryways, and transitional spaces. Flames rise through a narrow vertical opening, creating an unforgettable first impression.",
     specs: ["Vertical format", "See-through design", "Unique silhouette", "Custom sizing"],
-    image: null,
+    image: "/brands/flare-styles/passage.png",
     url: "https://flarefireplaces.com/contact-flare/modern-indoor-fireplaces/",
   },
   {
@@ -81,7 +81,7 @@ const styles = [
     description:
       "Flare's Traditional style pairs the brand's modern engineering with a taller firebox proportion and optional driftwood log burner. Classic shape, frameless glass, and a flame that fills the opening.",
     specs: ["Taller viewing window", "Summit Burner with driftwood logs", "Ceramic black reflective back", "Frameless design"],
-    image: null,
+    image: "/brands/flare-styles/traditional.png",
     url: "https://flarefireplaces.com/contact-flare/modern-indoor-fireplaces/",
   },
   {
@@ -90,7 +90,7 @@ const styles = [
     description:
       "When the project demands it, Flare scales up. Large Fireplaces reach up to 100\" wide with the same 3D burner, double glass, and frameless engineering — built to anchor hotel lobbies, restaurants, and grand residences.",
     specs: ["Up to 100\" wide", "3D Burner end-to-end", "Double glass available", "RGB LED lighting"],
-    image: null,
+    image: "/brands/flare-styles/large-fireplaces.png",
     url: "https://flarefireplaces.com/contact-flare/modern-indoor-fireplaces/",
   },
 ];
