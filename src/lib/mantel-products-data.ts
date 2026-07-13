@@ -453,7 +453,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/camberwell.png",
     cadPdf: "/cad/camberwell.pdf",
     description:
-      "The Camberwell Mantel is a traditionally styled precast fireplace surround with refined molding details and a well-proportioned silhouette. Its classic design and smooth precast finish create a polished focal point for formal living rooms, master suites, and studies.",
+      "The Camberwell Beam Mantel is a traditionally styled precast concrete fireplace beam with refined molding details and a well-proportioned silhouette. Its classic design and smooth precast finish create a polished focal point for formal living rooms, master suites, and studies.",
   },
   {
     slug: "cambridge",
@@ -759,7 +759,7 @@ export const mantelProducts: MantelProduct[] = [
     cadPdf: "/cad/noarlunga.pdf",
     style: "beams",
     description:
-      "The Noarlunga Mantel is a traditionally styled precast fireplace surround with clean pilasters, layered molding details, and a substantial mantel shelf. Its classic design and durable precast construction deliver lasting elegance for any traditional interior.",
+      "The Noarlunga Beam Mantel is a traditionally styled precast concrete fireplace beam with layered molding detail and a substantial profile. Its classic design and durable precast construction deliver lasting elegance above any fireplace.",
   },
   {
     slug: "paddington",
