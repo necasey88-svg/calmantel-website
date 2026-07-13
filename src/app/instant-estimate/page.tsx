@@ -20,7 +20,7 @@ export default function InstantEstimatePage() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 min-h-[600px]">
         <div
           id="whyfire-app"
-          data-settings='{"style":"pill","token":"81bab4d9-0a3a-4981-91a0-62c234e9e348","primaryColor":"#ec0807","secondaryColor":"#ffffff","accentColor":"#1c1c1c","hideFilters":false,"inheritFonts":true,"estimateFlow":"default","router":"hash"}'
+          data-settings='{"style":"pill","token":"81bab4d9-0a3a-4981-91a0-62c234e9e348","primaryColor":"#9a7b53","secondaryColor":"#ffffff","accentColor":"#211d18","hideFilters":false,"inheritFonts":true,"estimateFlow":"default","router":"hash"}'
         />
         <Script
           src="https://whyfire.com/wp-content/script/whyfire-app.js"
