@@ -43,7 +43,7 @@ const nextConfig: NextConfig = {
       { source: "/about-us", destination: "/about", permanent: true },
       { source: "/estimate-new", destination: "/estimate", permanent: true },
       { source: "/mantels-landing-page", destination: "/mantels", permanent: true },
-      { source: "/stellar", destination: "/", permanent: true },
+      { source: "/stellar", destination: "/fireplaces/stellar", permanent: true },
       { source: "/home-new", destination: "/", permanent: true },
       { source: "/test-1", destination: "/", permanent: true },
       { source: "/new-dropdown", destination: "/", permanent: true },
