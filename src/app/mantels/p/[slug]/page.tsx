@@ -28,23 +28,26 @@ const wallFinishIdeas = [
   {
     title: "Stone Veneer",
     description: "Add texture and depth around the mantel with natural or manufactured stone.",
-    image: "/masonry-materials/stone-veneer.webp",
-    vendorUrl: "https://www.msisurfaces.com/products/natural-stone-collections/",
-    vendorLabel: "Browse MSI Natural Stone",
+    image: "/masonry-materials/coronado-sawtooth-ledge-northland.jpg",
+    imageAlt: "Coronado Sawtooth Ledge manufactured stone veneer in Northland",
+    vendorUrl: "https://coronado.com/sawtoothledge/",
+    vendorLabel: "View Coronado Sawtooth Ledge",
   },
   {
     title: "Brick Detail",
     description: "Use full brick or thin brick veneer for a warmer, more traditional fireplace wall.",
-    image: "/masonry-materials/brick-detail.webp",
-    vendorUrl: "https://www.glengery.com/brick-products",
-    vendorLabel: "Browse Glen-Gery Brick",
+    image: "/masonry-materials/roman-thin-brick-mezzano.jpg",
+    imageAlt: "Roman Thin Brick manufactured veneer in Mezzano",
+    vendorUrl: "https://coronado.com/allprojects-romanbrick/",
+    vendorLabel: "View Coronado Roman Brick",
   },
   {
     title: "Tile Accent Wall",
     description: "Pair the mantel with tile for a refined surround, hearth, or full-height feature.",
-    image: "/masonry-materials/tile-accent.webp",
-    vendorUrl: "https://www.msisurfaces.com/porcelain-ceramic-category/",
-    vendorLabel: "Browse MSI Tile",
+    image: "/masonry-materials/arizona-tile-chymia-mix-1-black.jpg",
+    imageAlt: "Arizona Tile Chymia Mix 1 Black porcelain tile",
+    vendorUrl: "https://www.arizonatile.com/products/looks-like/hand-painted/chymia/",
+    vendorLabel: "View Arizona Tile Chymia",
   },
 ];
 
@@ -207,7 +210,7 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
                   <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
                     <Image
                       src={idea.image}
-                      alt={idea.title}
+                      alt={idea.imageAlt}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                       sizes="(max-width: 640px) 100vw, 22vw"
