@@ -1,5 +1,6 @@
 import Link from "next/link";
 import EditorialPageHero from "@/components/EditorialPageHero";
+import OverstockInventory from "./OverstockInventory";
 
 export const metadata = {
   title: "Overstock Fireplaces | California Mantel & Fireplace",
@@ -8,12 +9,12 @@ export const metadata = {
   alternates: { canonical: "/fireplaces/overstock" },
 };
 
-type OverstockFireplace = {
+export type OverstockFireplace = {
   manufacturer: string;
   name: string;
   sku: string;
   quantity: number;
-  category: "Electric" | "Gas" | "Gas Log Set" | "Outdoor" | "Wood-Burning";
+  category: "Electric" | "Gas" | "Gas Log Set" | "Luxury Linear" | "Outdoor" | "Wood-Burning";
   configuration: string;
   fuel: string;
   details: string;
@@ -82,7 +83,7 @@ const overstockFireplaces: OverstockFireplace[] = [
     name: 'FF-50 Front-Facing Fireplace',
     sku: "FLARE-FF-50",
     quantity: 1,
-    category: "Gas",
+    category: "Luxury Linear",
     configuration: "Front-facing linear",
     fuel: "Gas configuration to confirm",
     details:
@@ -93,7 +94,7 @@ const overstockFireplaces: OverstockFireplace[] = [
     name: 'FF-50 Extra-High Commercial Fireplace',
     sku: "FLARE-FF-50-EH-C",
     quantity: 1,
-    category: "Gas",
+    category: "Luxury Linear",
     configuration: "Front-facing commercial",
     fuel: "Gas configuration to confirm",
     details:
@@ -104,7 +105,7 @@ const overstockFireplaces: OverstockFireplace[] = [
     name: 'FF-50 High Fireplace Package',
     sku: "FLARE-FF-50-H / RBS-FF-H / RB-FF-50-H",
     quantity: 1,
-    category: "Gas",
+    category: "Luxury Linear",
     configuration: "Front-facing high",
     fuel: "Gas configuration to confirm",
     details:
@@ -115,7 +116,7 @@ const overstockFireplaces: OverstockFireplace[] = [
     name: 'LC-60 Left-Corner Fireplace',
     sku: "FLARE-LC-60",
     quantity: 1,
-    category: "Gas",
+    category: "Luxury Linear",
     configuration: "Left-corner linear",
     fuel: "Gas configuration to confirm",
     details:
@@ -126,7 +127,7 @@ const overstockFireplaces: OverstockFireplace[] = [
     name: 'ST-45 High Commercial See-Through Fireplace',
     sku: "FLARE-ST-45-H-C",
     quantity: 1,
-    category: "Gas",
+    category: "Luxury Linear",
     configuration: "See-through commercial",
     fuel: "Gas configuration to confirm",
     details:
@@ -783,79 +784,21 @@ export default function OverstockFireplacesPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-10 flex flex-col justify-between gap-4 border-b border-[color:var(--sand-deep)] pb-6 sm:flex-row sm:items-end">
+        <div className="mb-8 flex flex-col justify-between gap-4 border-b border-[color:var(--sand-deep)] pb-6 sm:flex-row sm:items-end">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.26em] text-[color:var(--accent)]">Current Inventory</p>
             <h2
               className="mt-2 text-3xl font-medium text-[color:var(--ink)]"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Available fireplace units
+              Sacramento Warehouse inventory
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-[color:var(--ink)]/55">
-            Inventory may change without notice. Quantity reflects the supplied overstock list and will be confirmed before purchase.
+            All listed units are located at our Sacramento Warehouse. Inventory and condition will be confirmed before purchase.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {overstockFireplaces.map((fireplace) => (
-            <article
-              key={fireplace.sku}
-              className="flex min-h-[390px] flex-col border border-[color:var(--sand-deep)] bg-white p-7 transition-colors hover:border-[color:var(--accent)]"
-            >
-              <div className="mb-6 flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-[color:var(--accent)]">
-                    {fireplace.manufacturer}
-                  </p>
-                  <p className="mt-2 font-mono text-xs text-[color:var(--ink)]/45">SKU {fireplace.sku}</p>
-                </div>
-                <div className="min-w-16 border border-[color:var(--sand-deep)] px-3 py-2 text-center">
-                  <p className="text-xl font-medium leading-none text-[color:var(--ink)]">{fireplace.quantity}</p>
-                  <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-[color:var(--ink)]/45">
-                    {fireplace.quantity === 1 ? "Unit" : "Units"}
-                  </p>
-                </div>
-              </div>
-
-              <span className="mb-3 w-fit bg-[color:var(--sand)] px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[color:var(--ink)]/65">
-                {fireplace.category}
-              </span>
-              <h3
-                className="text-2xl font-medium leading-tight text-[color:var(--ink)]"
-                style={{ fontFamily: "var(--font-playfair)" }}
-              >
-                {fireplace.name}
-              </h3>
-              <p className="mt-4 text-sm leading-relaxed text-[color:var(--ink)]/58">{fireplace.details}</p>
-
-              <dl className="mt-6 space-y-2 border-t border-[color:var(--sand-deep)] pt-5 text-xs">
-                <div className="flex justify-between gap-4">
-                  <dt className="text-[color:var(--ink)]/40">Configuration</dt>
-                  <dd className="text-right font-medium text-[color:var(--ink)]/70">{fireplace.configuration}</dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt className="text-[color:var(--ink)]/40">Fuel</dt>
-                  <dd className="text-right font-medium text-[color:var(--ink)]/70">{fireplace.fuel}</dd>
-                </div>
-              </dl>
-
-              {fireplace.note && (
-                <p className="mt-4 border-l-2 border-[color:var(--accent)] pl-3 text-[11px] leading-relaxed text-[color:var(--ink)]/50">
-                  {fireplace.note}
-                </p>
-              )}
-
-              <Link
-                href={`/fireplaces/overstock/inquiry?product=${encodeURIComponent(fireplace.sku)}`}
-                className="mt-auto pt-6 text-sm font-medium text-[color:var(--accent)] hover:underline"
-              >
-                Ask About This Unit →
-              </Link>
-            </article>
-          ))}
-        </div>
+        <OverstockInventory fireplaces={overstockFireplaces} location="Sacramento Warehouse" />
       </section>
 
       <section className="border-y border-[color:var(--sand-deep)] bg-[#F9F7F3] py-16">

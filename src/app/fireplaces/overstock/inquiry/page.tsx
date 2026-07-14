@@ -10,16 +10,22 @@ export const metadata = {
 type InquiryPageProps = {
   searchParams: Promise<{
     product?: string | string[];
+    location?: string | string[];
   }>;
 };
 
 export default async function OverstockInquiryPage({
   searchParams,
 }: InquiryPageProps) {
-  const productParam = (await searchParams).product;
+  const params = await searchParams;
+  const productParam = params.product;
+  const locationParam = params.location;
   const product =
     (Array.isArray(productParam) ? productParam[0] : productParam)?.trim() ||
     "General Overstock Inquiry";
+  const location =
+    (Array.isArray(locationParam) ? locationParam[0] : locationParam)?.trim() ||
+    "Sacramento Warehouse";
 
   return (
     <main className="bg-[#F9F7F3] py-16 sm:py-24">
@@ -51,12 +57,22 @@ export default async function OverstockInquiryPage({
           </p>
 
           <div className="mt-8 border border-[color:var(--sand-deep)] bg-[#F9F7F3] px-5 py-4">
-            <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[color:var(--ink)]/45">
-              Selected Overstock SKU
-            </p>
-            <p className="mt-2 break-words font-mono text-sm font-medium text-[color:var(--ink)]">
-              {product}
-            </p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[color:var(--ink)]/45">
+                  Selected Overstock SKU
+                </p>
+                <p className="mt-2 break-words font-mono text-sm font-medium text-[color:var(--ink)]">
+                  {product}
+                </p>
+              </div>
+              <div>
+                <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[color:var(--ink)]/45">
+                  Location
+                </p>
+                <p className="mt-2 text-sm font-medium text-[color:var(--ink)]">{location}</p>
+              </div>
+            </div>
           </div>
 
           <form
@@ -80,6 +96,7 @@ export default async function OverstockInquiryPage({
               value="California Mantel & Fireplace Website"
             />
             <input type="hidden" name="Overstock SKU" value={product} />
+            <input type="hidden" name="Location" value={location} />
             <input
               type="hidden"
               name="redirect"
@@ -140,7 +157,7 @@ export default async function OverstockInquiryPage({
                 name="message"
                 rows={6}
                 required
-                defaultValue={`I'm interested in overstock unit ${product}. Please send availability and pricing information.`}
+                defaultValue={`I'm interested in overstock unit ${product} at the ${location}. Please send availability and pricing information.`}
                 className="w-full resize-y border border-[color:var(--sand-deep)] bg-white px-4 py-3 text-[color:var(--ink)] outline-none transition-colors focus:border-[color:var(--accent)]"
               />
             </div>
