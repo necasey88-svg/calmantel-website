@@ -254,10 +254,10 @@ export default function OverstockFireplacesPage() {
               )}
 
               <Link
-                href={`/contact?product=${encodeURIComponent(fireplace.sku)}`}
+                href={`/fireplaces/overstock/inquiry?product=${encodeURIComponent(fireplace.sku)}`}
                 className="mt-auto pt-6 text-sm font-medium text-[color:var(--accent)] hover:underline"
               >
-                Ask about this unit →
+                Ask About This Unit →
               </Link>
             </article>
           ))}
