@@ -717,15 +717,37 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="border border-stone-200 rounded-sm overflow-hidden hover:shadow-sm transition-shadow">
       {project.comparisonImage ? (
-        <div className="relative aspect-[1200/620] bg-stone-50">
-          <Image
-            src={project.after}
-            alt={`${project.title} — Before and after`}
-            fill
-            className="object-contain"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            priority
-          />
+        <div className="grid grid-cols-2">
+          <div className="relative aspect-[4/3] overflow-hidden bg-stone-50">
+            <Image
+              src={project.after}
+              alt={`${project.title} — Before`}
+              width={1200}
+              height={620}
+              className="absolute -top-[10%] left-0 h-auto max-w-none"
+              style={{ width: "200%" }}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+            <span className="absolute left-3 top-3 rounded bg-stone-900/80 px-2.5 py-1 text-xs font-medium uppercase tracking-[0.2em] text-white">
+              Before
+            </span>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden bg-stone-50">
+            <Image
+              src={project.after}
+              alt={`${project.title} — After`}
+              width={1200}
+              height={620}
+              className="absolute -top-[10%] h-auto max-w-none"
+              style={{ left: "-100%", width: "200%" }}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+            <span className="absolute left-3 top-3 rounded bg-[color:var(--accent)]/90 px-2.5 py-1 text-xs font-medium uppercase tracking-[0.2em] text-white">
+              After
+            </span>
+          </div>
         </div>
       ) : isBeforeAfter ? (
         <div className="grid grid-cols-2">
