@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/masonry-gallery", priority: 0.6, changeFrequency: "monthly" },
     { path: "/insights", priority: 0.6, changeFrequency: "weekly" },
     { path: "/about", priority: 0.6, changeFrequency: "monthly" },
+    { path: "/careers", priority: 0.6, changeFrequency: "weekly" },
     { path: "/contact", priority: 0.6, changeFrequency: "monthly" },
     { path: "/estimate", priority: 0.7, changeFrequency: "monthly" },
     { path: "/instant-estimate", priority: 0.7, changeFrequency: "monthly" },

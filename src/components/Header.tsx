@@ -91,6 +91,7 @@ const mobileGroups = [
     heading: "Company",
     links: [
       { label: "About Us", href: "/about" },
+      { label: "Careers", href: "/careers" },
       { label: "Insights", href: "/insights" },
       { label: "Contact", href: "/contact" },
     ],

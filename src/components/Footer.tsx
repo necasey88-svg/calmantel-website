@@ -58,6 +58,7 @@ export default function Footer() {
               { label: "Showrooms", href: "/showrooms" },
               { label: "Insights", href: "/insights" },
               { label: "About Us", href: "/about" },
+              { label: "Careers", href: "/careers" },
               { label: "Contact", href: "/contact" },
               { label: "Request Project Estimate", href: "/estimate" },
             ].map((l) => (
