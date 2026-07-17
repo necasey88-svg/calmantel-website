@@ -3,9 +3,9 @@ import EditorialPageHero from "@/components/EditorialPageHero";
 import OverstockInventory from "./OverstockInventory";
 
 export const metadata = {
-  title: "Overstock Fireplaces | California Mantel & Fireplace",
+  title: "Warehouse Clearance Fireplaces | California Mantel & Fireplace",
   description:
-    "Shop limited-quantity overstock electric, gas, linear, corner, see-through, and outdoor fireplaces from Dimplex, Faber, Empire, Flare, Outdoor Lifestyles, and Superior.",
+    "Shop limited-quantity warehouse clearance gas, electric, luxury linear, outdoor, wood-burning, and gas log set units available from our Sacramento warehouse.",
   alternates: { canonical: "/fireplaces/overstock" },
 };
 
@@ -761,9 +761,9 @@ export default function OverstockFireplacesPage() {
   return (
     <>
       <EditorialPageHero
-        eyebrow="In Stock / Limited Quantities"
-        title="Overstock fireplaces, ready for the right project."
-        description="A limited collection of electric, gas, linear, corner, see-through, and outdoor fireplaces available through our California showrooms. Contact our team for condition, included components, pricing, and installation compatibility."
+        eyebrow="Sacramento Warehouse / Limited Quantities"
+        title="Warehouse clearance fireplaces, ready now."
+        description="Shop in-stock gas, electric, luxury linear, outdoor, wood-burning, and gas log set units in limited quantities. Contact our team for clearance pricing, condition, included components, and installation compatibility."
       />
 
       <section className="border-b border-[color:var(--sand-deep)] bg-[#F9F7F3]">
