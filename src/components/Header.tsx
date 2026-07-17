@@ -191,7 +191,7 @@ export default function Header() {
       <div className="bg-[color:var(--ink)] text-[10px] uppercase tracking-[0.12em] sm:text-[11px] sm:tracking-[0.2em]">
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 px-4 py-2 text-center sm:gap-5">
           <Link href="/fireplaces/overstock" className="font-semibold text-[#F0C676] transition-colors hover:text-white">
-            Warehouse Clearance: 71 In-Stock Models →
+            Warehouse Clearance: 119 In-Stock Models →
           </Link>
           <span className="hidden text-white/25 sm:inline" aria-hidden="true">|</span>
           <Link href="/showrooms" className="hidden text-white/65 transition-colors hover:text-white sm:inline">

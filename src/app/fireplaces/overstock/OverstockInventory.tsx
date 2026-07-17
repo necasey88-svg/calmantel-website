@@ -10,21 +10,22 @@ const filters: { key: FilterKey; label: string }[] = [
   { key: "All", label: "All Types" },
   { key: "Luxury Linear", label: "Luxury Linear" },
   { key: "Gas", label: "Gas Fireplaces" },
+  { key: "Gas Insert", label: "Gas Inserts" },
   { key: "Electric", label: "Electric Fireplaces" },
   { key: "Gas Log Set", label: "Gas Log Sets" },
+  { key: "Heater", label: "Heaters" },
   { key: "Outdoor", label: "Outdoor Fireplaces" },
   { key: "Wood-Burning", label: "Wood-Burning" },
 ];
 
 export default function OverstockInventory({
   fireplaces,
-  location,
 }: {
   fireplaces: OverstockFireplace[];
-  location: string;
 }) {
   const [activeFilter, setActiveFilter] = useState<FilterKey>("All");
   const [manufacturer, setManufacturer] = useState("All Brands");
+  const [location, setLocation] = useState("All Warehouses");
   const [search, setSearch] = useState("");
 
   const manufacturers = useMemo(
@@ -38,15 +39,16 @@ export default function OverstockInventory({
     return fireplaces.filter((fireplace) => {
       const matchesType = activeFilter === "All" || fireplace.category === activeFilter;
       const matchesManufacturer = manufacturer === "All Brands" || fireplace.manufacturer === manufacturer;
+      const matchesLocation = location === "All Warehouses" || fireplace.location === location;
       const matchesSearch =
         !query ||
         [fireplace.name, fireplace.sku, fireplace.manufacturer, fireplace.configuration].some((value) =>
           value.toLowerCase().includes(query),
         );
 
-      return matchesType && matchesManufacturer && matchesSearch;
+      return matchesType && matchesManufacturer && matchesLocation && matchesSearch;
     });
-  }, [activeFilter, fireplaces, manufacturer, search]);
+  }, [activeFilter, fireplaces, location, manufacturer, search]);
 
   const visibleUnits = filteredFireplaces.reduce((total, fireplace) => total + fireplace.quantity, 0);
 
@@ -72,7 +74,21 @@ export default function OverstockInventory({
             ))}
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-3">
+            <label className="block">
+              <span className="mb-2 block text-[10px] font-medium uppercase tracking-[0.2em] text-[color:var(--ink)]/50">
+                Warehouse
+              </span>
+              <select
+                value={location}
+                onChange={(event) => setLocation(event.target.value)}
+                className="w-full border border-[color:var(--sand-deep)] bg-white px-4 py-3 text-sm text-[color:var(--ink)] outline-none transition-colors focus:border-[color:var(--accent)]"
+              >
+                <option>All Warehouses</option>
+                <option>Anaheim Warehouse</option>
+                <option>Sacramento Warehouse</option>
+              </select>
+            </label>
             <label className="block">
               <span className="mb-2 block text-[10px] font-medium uppercase tracking-[0.2em] text-[color:var(--ink)]/50">
                 Search model or SKU
@@ -116,7 +132,7 @@ export default function OverstockInventory({
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {filteredFireplaces.map((fireplace) => (
             <article
-              key={fireplace.sku}
+              key={`${fireplace.location}-${fireplace.category}-${fireplace.sku}`}
               className="flex min-h-[410px] flex-col border border-[color:var(--sand-deep)] bg-white p-7 transition-colors hover:border-[color:var(--accent)]"
             >
               <div className="mb-6 flex items-start justify-between gap-4">
@@ -148,7 +164,7 @@ export default function OverstockInventory({
               <dl className="mt-6 space-y-2 border-t border-[color:var(--sand-deep)] pt-5 text-xs">
                 <div className="flex justify-between gap-4">
                   <dt className="text-[color:var(--ink)]/40">Location</dt>
-                  <dd className="text-right font-medium text-[color:var(--ink)]/70">{location}</dd>
+                  <dd className="text-right font-medium text-[color:var(--ink)]/70">{fireplace.location}</dd>
                 </div>
                 <div className="flex justify-between gap-4">
                   <dt className="text-[color:var(--ink)]/40">Configuration</dt>
@@ -167,7 +183,7 @@ export default function OverstockInventory({
               )}
 
               <Link
-                href={`/fireplaces/overstock/inquiry?product=${encodeURIComponent(fireplace.sku)}&location=${encodeURIComponent(location)}`}
+                href={`/fireplaces/overstock/inquiry?product=${encodeURIComponent(fireplace.sku)}&location=${encodeURIComponent(fireplace.location)}`}
                 className="mt-auto pt-6 text-sm font-medium text-[color:var(--accent)] hover:underline"
               >
                 Ask About This Unit →
@@ -183,6 +199,7 @@ export default function OverstockInventory({
             onClick={() => {
               setActiveFilter("All");
               setManufacturer("All Brands");
+              setLocation("All Warehouses");
               setSearch("");
             }}
             className="mt-4 text-sm font-medium text-[color:var(--accent)] hover:underline"

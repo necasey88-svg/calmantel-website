@@ -5,7 +5,7 @@ import OverstockInventory from "./OverstockInventory";
 export const metadata = {
   title: "Warehouse Clearance Fireplaces | California Mantel & Fireplace",
   description:
-    "Shop limited-quantity warehouse clearance gas, electric, luxury linear, outdoor, wood-burning, and gas log set units available from our Sacramento warehouse.",
+    "Shop limited-quantity warehouse clearance gas, electric, luxury linear, outdoor, wood-burning, and gas log set units available from our Anaheim and Sacramento warehouses.",
   alternates: { canonical: "/fireplaces/overstock" },
 };
 
@@ -14,14 +14,15 @@ export type OverstockFireplace = {
   name: string;
   sku: string;
   quantity: number;
-  category: "Electric" | "Gas" | "Gas Log Set" | "Luxury Linear" | "Outdoor" | "Wood-Burning";
+  category: "Electric" | "Gas" | "Gas Insert" | "Gas Log Set" | "Heater" | "Luxury Linear" | "Outdoor" | "Wood-Burning";
+  location: "Anaheim Warehouse" | "Sacramento Warehouse";
   configuration: string;
   fuel: string;
   details: string;
   note?: string;
 };
 
-const overstockFireplaces: OverstockFireplace[] = [
+const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
   {
     manufacturer: "Dimplex",
     name: 'IgniteXL 50" Linear Electric Fireplace',
@@ -748,6 +749,462 @@ const overstockFireplaces: OverstockFireplace[] = [
   },
 ];
 
+type AnaheimInventoryItem = Omit<OverstockFireplace, "details" | "location"> & {
+  details?: string;
+};
+
+const anaheimFireplaces: AnaheimInventoryItem[] = [
+  {
+    manufacturer: "Flare Fireplaces",
+    name: 'FF-60 Front-Facing Fireplace with Outdoor Kit',
+    sku: "FLARE-FF-60 / OD-FF-60",
+    quantity: 1,
+    category: "Luxury Linear",
+    configuration: "Front-facing linear / outdoor kit",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "Flare Fireplaces",
+    name: 'ST-45 Commercial See-Through Fireplace',
+    sku: "FLARE-ST-45-C",
+    quantity: 1,
+    category: "Luxury Linear",
+    configuration: "See-through linear",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "Flare Fireplaces",
+    name: 'ST-45 Commercial See-Through Fireplace with Outdoor Kit',
+    sku: "FLARE-ST-45-C / OD-ST-45",
+    quantity: 1,
+    category: "Luxury Linear",
+    configuration: "See-through linear / outdoor kit",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "HHT",
+    name: "6000C-IFT Gas Fireplace — Showroom Model",
+    sku: "6000C-IFT",
+    quantity: 1,
+    category: "Gas",
+    configuration: "Front-facing",
+    fuel: "Gas configuration to confirm",
+    note: "Showroom model. Contact our team to confirm condition and included components.",
+  },
+  {
+    manufacturer: "HHT",
+    name: "6000C-IPI Gas Fireplace — Showroom Model",
+    sku: "6000C-IPI",
+    quantity: 1,
+    category: "Gas",
+    configuration: "Front-facing",
+    fuel: "Gas configuration to confirm",
+    note: "Showroom model. Contact our team to confirm condition and included components.",
+  },
+  {
+    manufacturer: "HHT",
+    name: "8000CL-IFT-S Gas Fireplace",
+    sku: "8000CL-IFT-S",
+    quantity: 1,
+    category: "Gas",
+    configuration: "Front-facing",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "HHT",
+    name: 'Primo 48" Gas Fireplace',
+    sku: "PRIMO48",
+    quantity: 3,
+    category: "Gas",
+    configuration: "Front-facing linear",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "Napoleon",
+    name: 'D42NTRE 42" Gas Fireplace',
+    sku: "D42NTRE",
+    quantity: 1,
+    category: "Gas",
+    configuration: "Front-facing",
+    fuel: "Natural gas",
+  },
+  {
+    manufacturer: "Napoleon",
+    name: 'LV38N2 Gas Fireplace',
+    sku: "LV38N2",
+    quantity: 1,
+    category: "Gas",
+    configuration: "Multi-sided configuration to confirm",
+    fuel: "Natural gas",
+  },
+  {
+    manufacturer: "NetZero Fire",
+    name: "NZ48B Flame Burner",
+    sku: "AA-11-04746 / NZ48B FLA BURNER",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Built-in flame burner",
+    fuel: "Electric / water vapor",
+  },
+  {
+    manufacturer: "NetZero Fire",
+    name: "NZW72F Fireplace",
+    sku: "AA-11-05375 / NZW72F",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Front-facing linear",
+    fuel: "Electric / water vapor",
+  },
+  {
+    manufacturer: "Stellar",
+    name: "6-ST-20-GL Custom See-Through Fireplace",
+    sku: "6-ST-20-GL",
+    quantity: 1,
+    category: "Luxury Linear",
+    configuration: "See-through custom fireplace",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "Superior",
+    name: 'DRT3540 Traditional Gas Fireplace Package',
+    sku: "DRT3540 / F5007 / F5026 / F3599",
+    quantity: 1,
+    category: "Gas",
+    configuration: "Front-facing traditional",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "Superior",
+    name: "DRT6345 Gas Fireplace",
+    sku: "DRT6345",
+    quantity: 1,
+    category: "Gas",
+    configuration: "Front-facing",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "Dimplex",
+    name: 'Revillusion 36" Built-In Electric Firebox',
+    sku: "RBF36P",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Built-in firebox",
+    fuel: "Electric",
+  },
+  {
+    manufacturer: "Dimplex",
+    name: 'Revillusion 42" Electric Firebox',
+    sku: "REV42-HB / 500005737",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Built-in firebox",
+    fuel: "Electric",
+  },
+  {
+    manufacturer: "Dimplex",
+    name: 'Revillusion 25" Electric Log Set',
+    sku: "RLG25",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Electric log set",
+    fuel: "Electric",
+  },
+  {
+    manufacturer: "HHT",
+    name: 'SF-FM50-WH 50" Electric Fireplace',
+    sku: "SF-FM50-WH",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Wall-mount / built-in",
+    fuel: "Electric",
+  },
+  {
+    manufacturer: "HHT",
+    name: 'SF-FM60-WH 60" Electric Fireplace',
+    sku: "SF-FM60-WH",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Wall-mount / built-in",
+    fuel: "Electric",
+  },
+  {
+    manufacturer: "HHT",
+    name: 'SimpliFire Format 36" Electric Fireplace',
+    sku: "SF-FORMAT36",
+    quantity: 2,
+    category: "Electric",
+    configuration: "Front-facing built-in",
+    fuel: "Electric",
+  },
+  {
+    manufacturer: "Modern Flames",
+    name: 'Orion Slim 52" Electric Fireplace',
+    sku: "OR52-SLIM",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Front-facing linear",
+    fuel: "Electric",
+  },
+  {
+    manufacturer: "Napoleon",
+    name: 'NEFB50H-3SV 50" Three-Sided Electric Fireplace',
+    sku: "NEFB50H-3SV",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Three-sided",
+    fuel: "Electric",
+  },
+  {
+    manufacturer: "Napoleon",
+    name: 'NEFL18H 18" Electric Fireplace',
+    sku: "NEFL18H",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Front-facing",
+    fuel: "Electric",
+  },
+  {
+    manufacturer: "Napoleon",
+    name: 'NEFL50CFH 50" Electric Fireplace',
+    sku: "NEFL50CFH",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Front-facing linear",
+    fuel: "Electric",
+  },
+  {
+    manufacturer: "Napoleon",
+    name: 'NEFP32-5019W Electric Fireplace',
+    sku: "NEFP32-5019W",
+    quantity: 1,
+    category: "Electric",
+    configuration: "Front-facing",
+    fuel: "Electric",
+  },
+  {
+    manufacturer: "Dimplex",
+    name: "DLW2400W24 Electric Heater",
+    sku: "DLW2400W24",
+    quantity: 4,
+    category: "Heater",
+    configuration: "Wall-mounted heater",
+    fuel: "2400W electric",
+  },
+  {
+    manufacturer: "HHT",
+    name: 'INFIT-35-BK Insert',
+    sku: "INFIT-35-BK",
+    quantity: 1,
+    category: "Gas Insert",
+    configuration: "Fireplace insert",
+    fuel: "Configuration to confirm",
+  },
+  {
+    manufacturer: "HHT",
+    name: 'MI25-3523-BK Insert',
+    sku: "MI25-3523-BK",
+    quantity: 1,
+    category: "Gas Insert",
+    configuration: "Fireplace insert",
+    fuel: "Configuration to confirm",
+  },
+  {
+    manufacturer: "HPC",
+    name: 'DBOF28EI Electronic-Ignition Burner',
+    sku: "DBOF28EI-HI/LO-NG/120",
+    quantity: 1,
+    category: "Gas Log Set",
+    configuration: "Burner system",
+    fuel: "Natural gas / 120V",
+  },
+  {
+    manufacturer: "HPC",
+    name: 'TOR-PENTA18EI Electronic-Ignition Burner',
+    sku: "TOR-PENTA18EI-NG/120VAC",
+    quantity: 1,
+    category: "Gas Log Set",
+    configuration: "Penta burner system",
+    fuel: "Natural gas / 120V",
+  },
+  {
+    manufacturer: "American Fireglass",
+    name: 'SS-H-24 H Burner',
+    sku: "SS-H-24 H BURNER",
+    quantity: 3,
+    category: "Gas Log Set",
+    configuration: '24-inch H burner',
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "American Fireglass",
+    name: 'SS-H-30 H Burner',
+    sku: "SS-H-30 H BURNER",
+    quantity: 3,
+    category: "Gas Log Set",
+    configuration: '30-inch H burner',
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "American Fireglass",
+    name: 'SS-H-36 H Burner',
+    sku: "SS-H-36 H BURNER",
+    quantity: 3,
+    category: "Gas Log Set",
+    configuration: '36-inch H burner',
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "HHT",
+    name: "GO30 Gas Log Set",
+    sku: "GO30",
+    quantity: 1,
+    category: "Gas Log Set",
+    configuration: "Gas log set",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "IHP",
+    name: "TF2430PE Gas Log Set",
+    sku: "TF2430PE",
+    quantity: 1,
+    category: "Gas Log Set",
+    configuration: "Gas log set",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "Modern Flames",
+    name: '2BRN-24 Two-Burner System',
+    sku: "2BRN-24-NG-MVK-GCRK",
+    quantity: 1,
+    category: "Gas Log Set",
+    configuration: '24-inch two-burner system',
+    fuel: "Natural gas",
+  },
+  {
+    manufacturer: "Modern Flames",
+    name: '3BRN-24 Three-Burner System',
+    sku: "3BRN-24-NG-MVKEI-GCRK",
+    quantity: 1,
+    category: "Gas Log Set",
+    configuration: '24-inch three-burner system',
+    fuel: "Natural gas",
+  },
+  {
+    manufacturer: "Modern Flames",
+    name: 'AWO24 Log Set',
+    sku: "AWO24LOGS",
+    quantity: 1,
+    category: "Gas Log Set",
+    configuration: '24-inch log set',
+    fuel: "For compatible gas burner",
+  },
+  {
+    manufacturer: "Modern Flames",
+    name: 'GLASSBRN-18 Glass Burner',
+    sku: "GLASSBRN-18",
+    quantity: 2,
+    category: "Gas Log Set",
+    configuration: '18-inch glass burner',
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "Modern Flames",
+    name: 'GLASSBRN-24 Glass Burner',
+    sku: "GLASSBRN-24",
+    quantity: 1,
+    category: "Gas Log Set",
+    configuration: '24-inch glass burner',
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "Modern Flames",
+    name: 'GLASSBRN-48/14-H-SS Glass Burner',
+    sku: "GLASSBRN-48/14-H-SS",
+    quantity: 1,
+    category: "Gas Log Set",
+    configuration: "Linear glass burner",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "Modern Flames",
+    name: 'HP-B-R-10 Burner',
+    sku: "HP-B-R-10",
+    quantity: 1,
+    category: "Gas Log Set",
+    configuration: "Burner component",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "RH Peterson",
+    name: 'CHFR-30 Gas Log Set',
+    sku: "CHFR-30",
+    quantity: 2,
+    category: "Gas Log Set",
+    configuration: '30-inch log set',
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "RH Peterson",
+    name: 'G10-24/30-01V Gas Log Set',
+    sku: "G10-24/30-01V",
+    quantity: 1,
+    category: "Gas Log Set",
+    configuration: "Gas log set",
+    fuel: "Gas configuration to confirm",
+  },
+  {
+    manufacturer: "HHT",
+    name: 'Lanai 51" Outdoor Gas Fireplace',
+    sku: "ODLANAIG-51",
+    quantity: 1,
+    category: "Outdoor",
+    configuration: "Outdoor front-facing linear",
+    fuel: "Natural gas",
+  },
+  {
+    manufacturer: "HPC",
+    name: '54x16 Outdoor Fire Feature',
+    sku: "54X16SSEI-H-HI/LO-NG/120V",
+    quantity: 1,
+    category: "Outdoor",
+    configuration: "Outdoor linear fire feature",
+    fuel: "Natural gas / 120V",
+  },
+  {
+    manufacturer: "HPC",
+    name: 'TOR-PENTA18 Outdoor Burner',
+    sku: "TOR-PENTA18-NG/120VAC",
+    quantity: 1,
+    category: "Outdoor",
+    configuration: "Outdoor penta burner",
+    fuel: "Natural gas / 120V",
+  },
+  {
+    manufacturer: "Napoleon",
+    name: 'Galaxy GSS48E Outdoor Gas Fireplace',
+    sku: "GSS48E",
+    quantity: 1,
+    category: "Outdoor",
+    configuration: "Outdoor front-facing linear",
+    fuel: "Gas configuration to confirm",
+  },
+];
+
+const defaultAnaheimDetails =
+  "Limited-quantity Anaheim Warehouse inventory. Contact our team to confirm condition, included components, fuel type, and installation compatibility.";
+
+const overstockFireplaces: OverstockFireplace[] = [
+  ...sacramentoFireplaces.map((fireplace) => ({
+    ...fireplace,
+    location: "Sacramento Warehouse" as const,
+  })),
+  ...anaheimFireplaces.map((fireplace) => ({
+    ...fireplace,
+    details: fireplace.details ?? defaultAnaheimDetails,
+    location: "Anaheim Warehouse" as const,
+  })),
+];
+
 const totalUnits = overstockFireplaces.reduce(
   (total, fireplace) => total + fireplace.quantity,
   0,
@@ -761,7 +1218,7 @@ export default function OverstockFireplacesPage() {
   return (
     <>
       <EditorialPageHero
-        eyebrow="Sacramento Warehouse / Limited Quantities"
+        eyebrow="Anaheim & Sacramento Warehouses / Limited Quantities"
         title="Warehouse clearance fireplaces, ready now."
         description="Shop in-stock gas, electric, luxury linear, outdoor, wood-burning, and gas log set units in limited quantities. Contact our team for clearance pricing, condition, included components, and installation compatibility."
       />
@@ -791,14 +1248,14 @@ export default function OverstockFireplacesPage() {
               className="mt-2 text-3xl font-medium text-[color:var(--ink)]"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Sacramento Warehouse inventory
+              Anaheim & Sacramento Warehouse inventory
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-[color:var(--ink)]/55">
-            All listed units are located at our Sacramento Warehouse. Inventory and condition will be confirmed before purchase.
+            Browse clearance units by warehouse, type, brand, or SKU. Inventory and condition will be confirmed before purchase.
           </p>
         </div>
-        <OverstockInventory fireplaces={overstockFireplaces} location="Sacramento Warehouse" />
+        <OverstockInventory fireplaces={overstockFireplaces} />
       </section>
 
       <section className="border-y border-[color:var(--sand-deep)] bg-[#F9F7F3] py-16">
