@@ -53,6 +53,7 @@ export default function Footer() {
             {[
               { label: "Mantels", href: "/mantels" },
               { label: "Fireplaces", href: "/fireplaces" },
+              { label: "Warehouse Clearance", href: "/fireplaces/overstock" },
               { label: "Projects", href: "/projects" },
               { label: "Showrooms", href: "/showrooms" },
               { label: "Insights", href: "/insights" },

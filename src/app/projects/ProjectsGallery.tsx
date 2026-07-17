@@ -13,9 +13,20 @@ type Project = {
   before?: string;
   after: string;
   categories: Category[];
+  comparisonImage?: boolean;
 };
 
 const projects: Project[] = [
+  {
+    title: "Ballarat Mantel & Heat & Glo Supreme 30 Gas Insert",
+    fireplace: { label: "Heat & Glo Gas Inserts", href: "/fireplaces/heat-and-glo" },
+    mantel: { label: "Traditional Mantels", href: "/mantels/traditional" },
+    description:
+      "Before-and-after transformation featuring a Ballarat mantel and Heat & Glo Supreme 30 gas insert.",
+    after: "/projects/ballarat-mantel-heat-and-glo-supreme-30.png",
+    categories: ["gas", "mantel"],
+    comparisonImage: true,
+  },
   {
     title: "29073 Heat & Glo Supreme 25 Gas Insert",
     fireplace: { label: "Heat & Glo Gas Inserts", href: "/fireplaces/heat-and-glo" },
@@ -705,7 +716,18 @@ function ProjectCard({ project }: { project: Project }) {
 
   return (
     <div className="border border-stone-200 rounded-sm overflow-hidden hover:shadow-sm transition-shadow">
-      {isBeforeAfter ? (
+      {project.comparisonImage ? (
+        <div className="relative aspect-[1200/620] bg-stone-50">
+          <Image
+            src={project.after}
+            alt={`${project.title} — Before and after`}
+            fill
+            className="object-contain"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority
+          />
+        </div>
+      ) : isBeforeAfter ? (
         <div className="grid grid-cols-2">
           <div className="relative aspect-[4/3]">
             <Image src={project.before!} alt={`${project.title} — Before`} fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />

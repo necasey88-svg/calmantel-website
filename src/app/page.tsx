@@ -149,6 +149,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Sacramento warehouse clearance promotion */}
+      <section className="border-b border-[#6F2C20] bg-[#873B2C] text-white">
+        <div className="mx-auto flex max-w-7xl flex-col gap-7 px-6 py-10 md:flex-row md:items-center md:justify-between lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#F0C676]">
+              Sacramento Warehouse Clearance
+            </p>
+            <h2
+              className="mt-3 text-3xl font-medium leading-tight md:text-4xl"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              71 fireplace models. Limited quantities. Ready for the right project.
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/75 md:text-base">
+              Shop 108 in-stock gas, electric, luxury linear, outdoor, wood-burning, and gas log set units from leading fireplace brands.
+            </p>
+          </div>
+          <Link
+            href="/fireplaces/overstock"
+            className="inline-flex shrink-0 items-center justify-center bg-white px-7 py-3.5 text-sm font-semibold text-[#873B2C] transition-colors hover:bg-[#F0C676]"
+          >
+            Shop Warehouse Clearance →
+          </Link>
+        </div>
+      </section>
+
       {/* Capabilities + trust bar — communicates the full breadth at a glance */}
       <section className="bg-[color:var(--sand)] border-b border-[color:var(--sand-deep)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
