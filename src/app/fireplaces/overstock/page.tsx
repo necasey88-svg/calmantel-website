@@ -82,7 +82,7 @@ const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
   },
   {
     manufacturer: "Flare Fireplaces",
-    name: 'FF-50 Front-Facing Fireplace',
+    name: 'Flare Front Facing 50" Fireplace',
     sku: "FLARE-FF-50",
     quantity: 1,
     category: "Luxury Linear",
@@ -93,7 +93,7 @@ const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
   },
   {
     manufacturer: "Flare Fireplaces",
-    name: 'FF-50 Extra-High Commercial Fireplace',
+    name: 'Flare Front Facing 50" Extra-High Commercial Fireplace',
     sku: "FLARE-FF-50-EH-C",
     quantity: 1,
     category: "Luxury Linear",
@@ -104,7 +104,7 @@ const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
   },
   {
     manufacturer: "Flare Fireplaces",
-    name: 'FF-50 High Fireplace Package',
+    name: 'Flare Front Facing 50" High Fireplace Package',
     sku: "FLARE-FF-50-H / RBS-FF-H / RB-FF-50-H",
     quantity: 1,
     category: "Luxury Linear",
@@ -115,7 +115,7 @@ const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
   },
   {
     manufacturer: "Flare Fireplaces",
-    name: 'LC-60 Left-Corner Fireplace',
+    name: 'Flare Left Corner 60" Fireplace',
     sku: "FLARE-LC-60",
     quantity: 1,
     category: "Luxury Linear",
@@ -126,7 +126,7 @@ const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
   },
   {
     manufacturer: "Flare Fireplaces",
-    name: 'ST-45 High Commercial See-Through Fireplace',
+    name: 'Flare See-Through 45" High Commercial Fireplace',
     sku: "FLARE-ST-45-H-C",
     quantity: 1,
     category: "Luxury Linear",
@@ -757,7 +757,7 @@ type AnaheimInventoryItem = Omit<OverstockFireplace, "details" | "location"> & {
 const anaheimFireplaces: AnaheimInventoryItem[] = [
   {
     manufacturer: "Flare Fireplaces",
-    name: 'FF-60 Front-Facing Fireplace with Outdoor Kit',
+    name: 'Flare Front Facing 60" Fireplace with Outdoor Kit',
     sku: "FLARE-FF-60 / OD-FF-60",
     quantity: 1,
     category: "Luxury Linear",
@@ -766,7 +766,7 @@ const anaheimFireplaces: AnaheimInventoryItem[] = [
   },
   {
     manufacturer: "Flare Fireplaces",
-    name: 'ST-45 Commercial See-Through Fireplace',
+    name: 'Flare See-Through 45" Commercial Fireplace',
     sku: "FLARE-ST-45-C",
     quantity: 1,
     category: "Luxury Linear",
@@ -775,7 +775,7 @@ const anaheimFireplaces: AnaheimInventoryItem[] = [
   },
   {
     manufacturer: "Flare Fireplaces",
-    name: 'ST-45 Commercial See-Through Fireplace with Outdoor Kit',
+    name: 'Flare See-Through 45" Commercial Fireplace with Outdoor Kit',
     sku: "FLARE-ST-45-C / OD-ST-45",
     quantity: 1,
     category: "Luxury Linear",
