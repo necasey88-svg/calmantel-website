@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { OverstockFireplace } from "./page";
@@ -135,6 +136,17 @@ export default function OverstockInventory({
               key={`${fireplace.location}-${fireplace.category}-${fireplace.sku}`}
               className="flex min-h-[410px] flex-col border border-[color:var(--sand-deep)] bg-white p-7 transition-colors hover:border-[color:var(--accent)]"
             >
+              {fireplace.image && (
+                <div className="relative -mx-7 -mt-7 mb-6 aspect-[4/3] overflow-hidden border-b border-[color:var(--sand-deep)] bg-[#F5F2EC]">
+                  <Image
+                    src={fireplace.image}
+                    alt={`${fireplace.manufacturer} ${fireplace.name}`}
+                    fill
+                    sizes="(min-width: 1280px) 31vw, (min-width: 768px) 47vw, 100vw"
+                    className="object-contain"
+                  />
+                </div>
+              )}
               <div className="mb-6 flex items-start justify-between gap-4">
                 <div>
                   <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-[color:var(--accent)]">
