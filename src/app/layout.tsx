@@ -47,12 +47,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
-        <Script
+        <script
           src="https://www.googletagmanager.com/gtag/js?id=G-ZVJ97TZNZN"
-          strategy="afterInteractive"
+          async
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+        <script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             // The Google tag has a server-side consent default of "denied",
@@ -78,8 +80,9 @@ export default function RootLayout({
             });
             gtag('js', new Date());
             gtag('config', 'G-ZVJ97TZNZN');
-          `}
-        </Script>
+          `,
+          }}
+        />
         <Script
           src="//cdn.callrail.com/companies/736627927/dec286ffc96a36928e01/12/swap.js"
           strategy="afterInteractive"
