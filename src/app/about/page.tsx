@@ -27,7 +27,7 @@ const showrooms = [
   {
     city: "Dublin",
     address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
-    hours: "Mon–Fri: 8:30 AM – 5:00 PM · Sat by appointment",
+    hours: "Mon, Wed & Fri: 10:00 AM – 5:00 PM · Tue, Thu & Sat: Closed",
     phone: "(925) 436-1731",
     tel: "9254361731",
   },

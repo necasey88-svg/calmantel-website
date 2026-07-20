@@ -33,12 +33,12 @@ const showrooms = [
     phone: "(925) 436-1731",
     tel: "9254361731",
     hours: [
-      "Mon–Fri: 8:30 AM – 5:00 PM",
-      "Sat: By appointment only",
+      "Mon, Wed & Fri: 10:00 AM – 5:00 PM",
+      "Tue, Thu & Sat: Closed",
     ],
     serviceArea: "Dublin, Pleasanton, San Ramon, Livermore, Danville, Walnut Creek, Fremont, Castro Valley, Hayward, and surrounding Tri-Valley and East Bay communities",
     href: "/showrooms/dublin",
-    note: "Saturday visits require advance scheduling",
+    note: "Open Monday, Wednesday, and Friday",
   },
   {
     city: "Sacramento",

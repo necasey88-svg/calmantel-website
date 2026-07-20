@@ -66,8 +66,8 @@ export const showrooms: Showroom[] = [
     tel: "9254361731",
     hours: [
       {
-        days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "08:30",
+        days: ["Monday", "Wednesday", "Friday"],
+        opens: "10:00",
         closes: "17:00",
       },
     ],
