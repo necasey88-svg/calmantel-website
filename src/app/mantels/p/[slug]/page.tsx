@@ -13,7 +13,7 @@ import {
 import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import JsonLd from "@/components/JsonLd";
-import { business, SITE_URL } from "@/lib/business-data";
+import { SITE_URL } from "@/lib/business-data";
 
 // Beams get their material spelled out — several precast beams look like wood.
 function productMaterialLabel(product: NonNullable<ReturnType<typeof getMantelProduct>>) {
@@ -75,21 +75,34 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
     .filter((p) => p.slug !== slug && p.style === product.style)
     .slice(0, 4);
 
-  const productSchema = {
+  const pageUrl = `${SITE_URL}/mantels/p/${product.slug}`;
+  const pageSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: `${product.name} Mantel`,
-    description: product.description,
-    ...(product.image ? { image: `${SITE_URL}${product.image}` } : {}),
-    category: `${styleLabel[product.style]} ${productMaterialLabel(product)}`,
-    brand: { "@type": "Brand", name: business.name },
-    manufacturer: { "@type": "Organization", name: business.name },
-    url: `${SITE_URL}/mantels/p/${product.slug}`,
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: `${product.name} Mantel`,
+        description: product.description,
+        ...(product.image ? { primaryImageOfPage: `${SITE_URL}${product.image}` } : {}),
+        breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Mantels", item: `${SITE_URL}/mantels` },
+          { "@type": "ListItem", position: 3, name: product.name, item: pageUrl },
+        ],
+      },
+    ],
   };
 
   return (
     <>
-      <JsonLd data={productSchema} />
+      <JsonLd data={pageSchema} />
       {/* Breadcrumb + hero */}
       <EditorialPageHero
         eyebrow={`${styleLabel[product.style]} / ${productMaterialLabel(product)}`}

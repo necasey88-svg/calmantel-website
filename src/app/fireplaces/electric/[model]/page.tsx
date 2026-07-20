@@ -29,20 +29,35 @@ export default async function ElectricFireplaceModelPage({ params }: { params: P
 
   const otherModels = electricFireplaces.filter((e) => e.slug !== ef.slug);
 
-  const productSchema = {
+  const pageUrl = `${SITE_URL}/fireplaces/electric/${ef.slug}`;
+  const pageSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: ef.name,
-    description: ef.description,
-    image: ef.image.startsWith("http") ? ef.image : `${SITE_URL}${ef.image}`,
-    category: "Electric Fireplace",
-    brand: { "@type": "Brand", name: ef.brand },
-    url: `${SITE_URL}/fireplaces/electric/${ef.slug}`,
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: ef.name,
+        description: ef.description,
+        primaryImageOfPage: ef.image.startsWith("http") ? ef.image : `${SITE_URL}${ef.image}`,
+        breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Fireplaces", item: `${SITE_URL}/fireplaces` },
+          { "@type": "ListItem", position: 3, name: "Electric Fireplaces", item: `${SITE_URL}/fireplaces/electric` },
+          { "@type": "ListItem", position: 4, name: ef.name, item: pageUrl },
+        ],
+      },
+    ],
   };
 
   return (
     <>
-      <JsonLd data={productSchema} />
+      <JsonLd data={pageSchema} />
       {/* Hero */}
       <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

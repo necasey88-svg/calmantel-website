@@ -31,20 +31,35 @@ export default async function GasInsertModelPage({ params }: { params: Promise<{
 
   const otherModels = gasInserts.filter((g) => g.slug !== insert.slug);
 
-  const productSchema = {
+  const pageUrl = `${SITE_URL}/fireplaces/gas-inserts/${insert.slug}`;
+  const pageSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: insert.name,
-    description: insert.description,
-    image: insert.image.startsWith("http") ? insert.image : `${SITE_URL}${insert.image}`,
-    category: "Gas Fireplace Insert",
-    brand: { "@type": "Brand", name: insert.brand },
-    url: `${SITE_URL}/fireplaces/gas-inserts/${insert.slug}`,
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: insert.name,
+        description: insert.description,
+        primaryImageOfPage: insert.image.startsWith("http") ? insert.image : `${SITE_URL}${insert.image}`,
+        breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Fireplaces", item: `${SITE_URL}/fireplaces` },
+          { "@type": "ListItem", position: 3, name: "Gas Inserts", item: `${SITE_URL}/fireplaces/gas-inserts` },
+          { "@type": "ListItem", position: 4, name: insert.name, item: pageUrl },
+        ],
+      },
+    ],
   };
 
   return (
     <>
-      <JsonLd data={productSchema} />
+      <JsonLd data={pageSchema} />
       <EditorialPageHero
         eyebrow={insert.brand}
         title={insert.name}
