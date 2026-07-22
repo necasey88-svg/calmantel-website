@@ -16,16 +16,18 @@ const traditionalFacets = [
   { slug: "traditional-ornate", label: "Ornate" },
 ];
 
+const thoroughbredBeamSlugs = ["longacres", "santa-anita", "del-mar", "hollywood-park"];
+
 // The beam mantels that live under the Beams navigation (precast first, then wood).
 const beamSlugs = [
+  // The Thoroughbred Collection
+  ...thoroughbredBeamSlugs,
   // Precast beams (listed first on the page)
   "payneham",
   "yalumba",
   "noarlunga",
-  "hollywood-park",
   "hackney",
   "darlinghurst",
-  "santa-anita",
   "camberwell",
   // Wood beams
   "norwood",
@@ -215,6 +217,16 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
   if (!category) notFound();
 
   const linkedProducts = getProductsForCategory(slug);
+  const thoroughbredProducts =
+    slug === "beams"
+      ? thoroughbredBeamSlugs
+          .map((productSlug) => linkedProducts.find((p) => p.slug === productSlug))
+          .filter((p): p is (typeof mantelProducts)[number] => Boolean(p))
+      : [];
+  const remainingBeamProducts =
+    slug === "beams"
+      ? linkedProducts.filter((p) => !thoroughbredBeamSlugs.includes(p.slug))
+      : linkedProducts;
   // For categories without individual product pages, fall back to the category-level product list
   const useLinkedProducts = linkedProducts.length > 0;
 
@@ -258,17 +270,64 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
             /* Beams are grouped by material — several precast beams look like
                wood, so the split + chips keep the distinction unmistakable. */
             <div className="space-y-16">
+              {thoroughbredProducts.length > 0 && (
+                <div>
+                  <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] overflow-hidden border border-[#3A3028] bg-[#17130F] text-white">
+                    <div className="relative min-h-[340px] lg:min-h-[430px] bg-black">
+                      <Image
+                        src="/mantels/thoroughbred-legacy-horse.png"
+                        alt="Thoroughbred horse in a historic barn"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 42vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/10" />
+                    </div>
+                    <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12">
+                      <p className="uppercase tracking-[0.28em] text-[#C6A879] text-xs mb-4">
+                        Featured Precast Beams
+                      </p>
+                      <h2
+                        className="text-3xl md:text-4xl font-medium leading-tight mb-4"
+                        style={{ fontFamily: "var(--font-playfair)" }}
+                      >
+                        The Thoroughbred Collection
+                      </h2>
+                      <p
+                        className="text-xl md:text-2xl mb-5"
+                        style={{ fontFamily: "var(--font-playfair)" }}
+                      >
+                        Every champion leaves a legacy.
+                      </p>
+                      <p className="text-white/72 leading-relaxed max-w-2xl">
+                        Cast from reclaimed beams salvaged from Longacres, Santa Anita,
+                        Del Mar, and Hollywood Park, this collection captures the texture
+                        of century-old racing barns in non-combustible precast concrete.
+                        It is more than a mantel - it is American racing history,
+                        reimagined for today&apos;s home.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                    {thoroughbredProducts.map((product) => (
+                      <ProductCard key={product.slug} product={product} />
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {[
                 {
-                  label: "Precast Beams",
+                  label: "Additional Precast Beams",
                   blurb:
                     "Precast concrete beams with hand-molded grain and smooth textures — rustic warmth with zero combustibility and every finish in our color range.",
-                  items: linkedProducts.filter((p) => p.beamMaterial === "precast"),
+                  items: remainingBeamProducts.filter((p) => p.beamMaterial === "precast"),
                 },
                 {
                   label: "Wood Beams",
                   blurb: "Solid wood beams with natural grain, character, and warmth.",
-                  items: linkedProducts.filter((p) => p.beamMaterial === "wood"),
+                  items: remainingBeamProducts.filter((p) => p.beamMaterial === "wood"),
                 },
               ]
                 .filter((group) => group.items.length > 0)

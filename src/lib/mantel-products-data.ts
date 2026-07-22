@@ -1120,15 +1120,53 @@ export const mantelProducts: MantelProduct[] = [
   },
   // --- Beams ---
   {
+    slug: "longacres",
+    beamMaterial: "precast",
+    name: "Longacres",
+    type: "beam",
+    image: "/mantels/longacres.png",
+    images: ["/mantels/longacres.png", "/mantels/thoroughbred-collection.png"],
+    style: "beams",
+    specs: "Up to 84 inches",
+    description:
+      "The Longacres Beam Mantel is part of the Thoroughbred Collection, cast from reclaimed racing barn timber to preserve a deeply textured, century-old wood grain in non-combustible precast concrete. Its rugged profile brings historic character, warmth, and California-made durability to fireplace rooms.",
+  },
+  {
+    slug: "santa-anita",
+    beamMaterial: "precast",
+    name: "Santa Anita",
+    type: "beam",
+    image: "/mantels/santa-anita-thoroughbred.png",
+    images: ["/mantels/santa-anita-thoroughbred.png", "/mantels/thoroughbred-collection.png"],
+    style: "beams",
+    specs: "Up to 84 inches",
+    description:
+      "The Santa Anita Beam Mantel is part of the Thoroughbred Collection, inspired by reclaimed barn beams from one of California racing's most storied venues. Cast in precast concrete, it captures authentic aged timber texture with a lighter reclaimed finish suited to traditional, rustic, and transitional hearths.",
+  },
+  {
+    slug: "del-mar",
+    beamMaterial: "precast",
+    name: "Del Mar",
+    type: "beam",
+    image: "/mantels/del-mar.png",
+    images: ["/mantels/del-mar.png", "/mantels/thoroughbred-collection.png"],
+    style: "beams",
+    specs: "Up to 84 inches",
+    description:
+      "The Del Mar Beam Mantel is part of the Thoroughbred Collection, with a hand-hewn surface inspired by salvaged racing barn timbers. Its strong horizontal texture gives fireplace walls depth and movement while keeping the safety and finish flexibility of precast concrete.",
+  },
+  {
     slug: "hollywood-park",
     beamMaterial: "precast",
     name: "Hollywood Park",
     type: "beam",
-    image: "/mantels/hollywood-park.png",
+    image: "/mantels/hollywood-park-thoroughbred.png",
+    images: ["/mantels/hollywood-park-thoroughbred.png", "/mantels/thoroughbred-collection.png"],
     cadPdf: "/cad/hollywood-park.pdf",
-    style: "traditional",
+    style: "beams",
+    specs: "Up to 84 inches",
     description:
-      "The Hollywood Park Beam Mantel is a handcrafted precast concrete fireplace beam with a refined, substantial profile and warm, hand-molded grain texture. Its timeless proportions suit traditional, transitional, and craftsman interiors, creating an inviting focal point above any fireplace.",
+      "The Hollywood Park Beam Mantel is part of the Thoroughbred Collection, honoring the legacy of historic racing barns with a warm reclaimed-beam profile cast in precast concrete. Its refined grain, substantial scale, and non-combustible construction make it a handsome focal point for gas, electric, and masonry fireplace settings.",
   },
   {
     slug: "collingwood",
@@ -1235,16 +1273,6 @@ export const mantelProducts: MantelProduct[] = [
     style: "traditional",
     description:
       "The Payneham Beam Mantel is a traditionally styled precast concrete fireplace beam with natural character and warm proportions. Its classic design and hand-molded grain make it a timeless choice for traditional, farmhouse, and craftsman-style living spaces.",
-  },
-  {
-    slug: "santa-anita",
-    beamMaterial: "precast",
-    name: "Santa Anita",
-    type: "beam",
-    image: "/mantels/santa-anita.png",
-    style: "transitional",
-    description:
-      "The Santa Anita Beam Mantel is a refined precast concrete fireplace beam with clean lines and a warm natural finish. Its versatile transitional design bridges rustic and contemporary styles, making it a popular choice for California-style interiors and open-concept living spaces.",
   },
 ];
 

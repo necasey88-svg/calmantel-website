@@ -127,7 +127,7 @@ export const mantelCategories: MantelCategory[] = [
     title: "Fireplace Beams",
     tagline: "Rustic · Warm · Handcrafted",
     description:
-      "Fireplace beams add immediate warmth and character to any room. Our solid wood beam mantels suit farmhouse, craftsman, mountain, and rustic-modern interiors.",
+      "Fireplace beams add immediate warmth and character to any room. Explore solid wood beams and non-combustible precast beams, including the Thoroughbred Collection inspired by reclaimed racing barn timbers.",
     products: [],
   },
   {

@@ -257,6 +257,64 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Thoroughbred Collection */}
+      <section className="bg-[#17130F] text-white border-y border-[#3A3028]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-stretch">
+            <div className="relative min-h-[420px] lg:min-h-[620px] overflow-hidden bg-black">
+              <Image
+                src="/mantels/thoroughbred-legacy-horse.png"
+                alt="Thoroughbred horse in a warm historic stable"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10" />
+            </div>
+
+            <div className="flex flex-col justify-center">
+              <p className="uppercase tracking-[0.28em] text-[#C6A879] text-xs mb-4">
+                Featured Precast Beams
+              </p>
+              <h2
+                className="text-4xl md:text-5xl font-medium tracking-tight leading-tight mb-5"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                The Thoroughbred Collection
+              </h2>
+              <p
+                className="text-2xl md:text-3xl text-white mb-6 leading-snug"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Every champion leaves a legacy.
+              </p>
+              <p className="text-white/72 leading-relaxed max-w-2xl">
+                Inspired by the barns that housed some of racing&apos;s greatest horses,
+                these precast beam mantels are cast directly from reclaimed beams salvaged
+                from Longacres, Santa Anita, Del Mar, and Hollywood Park. Each piece captures
+                the authentic texture of century-old timber while carrying the strength,
+                elegance, and enduring spirit of the Thoroughbred.
+              </p>
+              <div className="relative aspect-[14/7] sm:aspect-[14/6] overflow-hidden bg-[#211B16] border border-white/10 mt-9">
+                <Image
+                  src="/mantels/thoroughbred-collection.png"
+                  alt="Longacres, Santa Anita, Del Mar, and Hollywood Park beam mantels from the Thoroughbred Collection"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 58vw"
+                />
+              </div>
+              <Link
+                href="/mantels/beams"
+                className="mt-8 inline-flex w-fit items-center justify-center bg-white text-[#17130F] hover:bg-[#E8DDCE] px-8 py-3.5 text-xs uppercase tracking-[0.22em] transition-colors"
+              >
+                Explore Precast Beams
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* The Collection — premium best-sellers showcase */}
       <BestSellersShowcase />
 
