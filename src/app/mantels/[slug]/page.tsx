@@ -275,7 +275,7 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
                   <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] overflow-hidden border border-[#3A3028] bg-[#17130F] text-white">
                     <div className="relative min-h-[340px] lg:min-h-[430px] bg-black">
                       <Image
-                        src="/mantels/thoroughbred-legacy-horse.png"
+                        src="/mantels/thoroughbred-legacy-horse.webp"
                         alt="Thoroughbred horse in a historic barn"
                         fill
                         className="object-cover"

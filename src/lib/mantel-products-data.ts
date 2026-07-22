@@ -1125,7 +1125,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Longacres",
     type: "beam",
     image: "/mantels/longacres.png",
-    images: ["/mantels/longacres.png", "/mantels/thoroughbred-collection.png"],
+    images: ["/mantels/longacres.png", "/mantels/thoroughbred-collection.webp"],
     style: "beams",
     specs: "Up to 84 inches",
     description:
@@ -1137,7 +1137,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Santa Anita",
     type: "beam",
     image: "/mantels/santa-anita-thoroughbred.png",
-    images: ["/mantels/santa-anita-thoroughbred.png", "/mantels/thoroughbred-collection.png"],
+    images: ["/mantels/santa-anita-thoroughbred.png", "/mantels/thoroughbred-collection.webp"],
     style: "beams",
     specs: "Up to 84 inches",
     description:
@@ -1149,7 +1149,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Del Mar",
     type: "beam",
     image: "/mantels/del-mar.png",
-    images: ["/mantels/del-mar.png", "/mantels/thoroughbred-collection.png"],
+    images: ["/mantels/del-mar.png", "/mantels/thoroughbred-collection.webp"],
     style: "beams",
     specs: "Up to 84 inches",
     description:
@@ -1161,7 +1161,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Hollywood Park",
     type: "beam",
     image: "/mantels/hollywood-park-thoroughbred.png",
-    images: ["/mantels/hollywood-park-thoroughbred.png", "/mantels/thoroughbred-collection.png"],
+    images: ["/mantels/hollywood-park-thoroughbred.png", "/mantels/thoroughbred-collection.webp"],
     cadPdf: "/cad/hollywood-park.pdf",
     style: "beams",
     specs: "Up to 84 inches",

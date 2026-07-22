@@ -263,7 +263,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-stretch">
             <div className="relative min-h-[420px] lg:min-h-[620px] overflow-hidden bg-black">
               <Image
-                src="/mantels/thoroughbred-legacy-horse.png"
+                src="/mantels/thoroughbred-legacy-horse.webp"
                 alt="Thoroughbred horse in a warm historic stable"
                 fill
                 className="object-cover"
@@ -297,7 +297,7 @@ export default function HomePage() {
               </p>
               <div className="relative aspect-[14/7] sm:aspect-[14/6] overflow-hidden bg-[#211B16] border border-white/10 mt-9">
                 <Image
-                  src="/mantels/thoroughbred-collection.png"
+                  src="/mantels/thoroughbred-collection.webp"
                   alt="Longacres, Santa Anita, Del Mar, and Hollywood Park beam mantels from the Thoroughbred Collection"
                   fill
                   className="object-cover"
