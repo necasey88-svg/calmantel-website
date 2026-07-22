@@ -40,7 +40,7 @@ const mantelsMenu: MegaMenuProps["columns"] = [
     heading: "Details",
     links: [
       { label: "Beams", href: "/mantels/beams", description: "Precast & wood beams — featuring the Thoroughbred Collection" },
-      { label: "Hearths", href: "/mantels/hearths", description: "Stone and precast hearth pieces" },
+      { label: "Hearths", href: "/mantels/hearths", description: "Precast concrete hearths in five profiles" },
       { label: "Colors & Finishes", href: "/mantels/colors-finishes", description: "Precast colors and surface textures" },
       { label: "Find Your Mantel", href: "/mantels", description: "Browse the collection or search by fireplace size" },
     ],

@@ -55,7 +55,7 @@ const categories = [
     title: "Wood Surrounds",
     description: "Handcrafted wood surrounds for warmth, texture, and architectural depth.",
     href: "/mantels/wood-surrounds",
-    image: "/brands/mendota/firein-room.png",
+    image: "/mantels/wood-surrounds-room-scene.webp",
   },
 ];
 
