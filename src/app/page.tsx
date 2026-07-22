@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ZoomableImage from "@/components/ZoomableImage";
 import MantelSearch from "@/components/MantelSearch";
 import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import InstallationsCarousel from "@/components/InstallationsCarousel";
@@ -295,13 +296,14 @@ export default function HomePage() {
                 the authentic texture of century-old timber while carrying the strength,
                 elegance, and enduring spirit of the Thoroughbred.
               </p>
-              <div className="relative aspect-[14/7] sm:aspect-[14/6] overflow-hidden bg-[#211B16] border border-white/10 mt-9">
-                <Image
+              <div className="mt-9">
+                <ZoomableImage
                   src="/mantels/thoroughbred-collection.webp"
                   alt="Longacres, Santa Anita, Del Mar, and Hollywood Park beam mantels from the Thoroughbred Collection"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 58vw"
+                  thumbClassName="relative aspect-[14/7] sm:aspect-[14/6] overflow-hidden bg-[#211B16] border border-white/10 w-full group cursor-zoom-in"
+                  thumbImgClassName="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  thumbSizes="(max-width: 1024px) 100vw, 58vw"
+                  priority={false}
                 />
               </div>
               <Link
