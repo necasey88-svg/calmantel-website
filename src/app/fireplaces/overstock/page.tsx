@@ -25,6 +25,42 @@ export type OverstockFireplace = {
 
 const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
   {
+    manufacturer: "Heat & Glo",
+    name: 'Mezzo 60" Linear Gas Fireplace',
+    sku: "MEZZO60",
+    quantity: 1,
+    category: "Gas",
+    configuration: "Front-facing linear",
+    fuel: "Gas configuration to confirm",
+    details:
+      "Sacramento Warehouse will-call stock. Pickup only; confirm included components, fuel type, and current condition before purchase.",
+    note: "Pickup only. No shipping.",
+  },
+  {
+    manufacturer: "SimpliFire",
+    name: 'Scion 55" Electric Fireplace',
+    sku: "SF-SCN55",
+    quantity: 4,
+    category: "Electric",
+    configuration: "Linear electric",
+    fuel: "Electric",
+    details:
+      "Sacramento Warehouse will-call stock. Pickup only; confirm included components and current condition before purchase.",
+    note: "Pickup only. No shipping.",
+  },
+  {
+    manufacturer: "Modern Flames",
+    name: 'RedStone 42" Electric Fireplace',
+    sku: "RS-4229",
+    quantity: 4,
+    category: "Electric",
+    configuration: "Electric insert",
+    fuel: "Electric",
+    details:
+      "Sacramento Warehouse will-call stock. Pickup only; confirm included components and current condition before purchase.",
+    note: "Pickup only. No shipping.",
+  },
+  {
     manufacturer: "Dimplex",
     name: 'IgniteXL 50" Linear Electric Fireplace',
     sku: "XLF50",
@@ -785,6 +821,54 @@ type AnaheimInventoryItem = Omit<OverstockFireplace, "details" | "location"> & {
 };
 
 const anaheimFireplaces: AnaheimInventoryItem[] = [
+  {
+    manufacturer: "Heat & Glo",
+    name: 'Primo II 60" Linear Gas Fireplace',
+    sku: "PRIMO-II-60",
+    quantity: 2,
+    category: "Luxury Linear",
+    configuration: "Front-facing linear",
+    fuel: "Gas configuration to confirm",
+    details:
+      "Anaheim Warehouse will-call stock. Pickup only; confirm included components, fuel type, and current condition before purchase.",
+    note: "Pickup only. No shipping.",
+  },
+  {
+    manufacturer: "SimpliFire",
+    name: 'Scion 55" Electric Fireplace',
+    sku: "SF-SCN55",
+    quantity: 2,
+    category: "Electric",
+    configuration: "Linear electric",
+    fuel: "Electric",
+    details:
+      "Anaheim Warehouse will-call stock. Pickup only; confirm included components and current condition before purchase.",
+    note: "Pickup only. No shipping.",
+  },
+  {
+    manufacturer: "SimpliFire",
+    name: 'Allusion Platinum 60" Electric Fireplace',
+    sku: "SF-ALLP60-BK",
+    quantity: 4,
+    category: "Electric",
+    configuration: "Linear electric",
+    fuel: "Electric",
+    details:
+      "Anaheim Warehouse will-call stock. Pickup only; confirm included components and current condition before purchase.",
+    note: "Pickup only. No shipping.",
+  },
+  {
+    manufacturer: "SimpliFire",
+    name: '78" Electric Fireplace',
+    sku: "SF-TR78",
+    quantity: 2,
+    category: "Electric",
+    configuration: "Linear electric",
+    fuel: "Electric",
+    details:
+      "Anaheim Warehouse will-call stock. Pickup only; confirm included components and current condition before purchase.",
+    note: "Pickup only. No shipping.",
+  },
   {
     manufacturer: "Flare Fireplaces",
     name: 'Flare Front Facing 60" Fireplace with Outdoor Kit',

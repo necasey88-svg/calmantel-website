@@ -51,7 +51,7 @@ const fireplaceMenu: MegaMenuProps["columns"] = [
   {
     heading: "Shop By Project",
     links: [
-      { label: "Warehouse Clearance", href: "/fireplaces/overstock", description: "Limited-quantity units ready at our Sacramento warehouse" },
+      { label: "Warehouse Clearance", href: "/fireplaces/overstock", description: "Pickup-only units in Anaheim and Sacramento" },
       { label: "New Construction Systems", href: "/fireplaces", description: "Fireplaces planned with framing and venting" },
       { label: "Gas Inserts", href: "/fireplaces/gas-inserts", description: "Convert an existing fireplace" },
       { label: "Electric Fireplaces", href: "/fireplaces/electric", description: "Flexible installs without venting" },
