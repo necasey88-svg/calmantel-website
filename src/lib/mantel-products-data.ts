@@ -1136,8 +1136,12 @@ export const mantelProducts: MantelProduct[] = [
     beamMaterial: "precast",
     name: "Santa Anita",
     type: "beam",
-    image: "/mantels/santa-anita-thoroughbred.png",
-    images: ["/mantels/santa-anita-thoroughbred.png", "/mantels/thoroughbred-collection.webp"],
+    image: "/mantels/santa-anita.png",
+    images: [
+      "/mantels/santa-anita.png",
+      "/mantels/santa-anita-thoroughbred.png",
+      "/mantels/thoroughbred-collection.webp",
+    ],
     style: "beams",
     specs: "Up to 84 inches",
     description:
