@@ -1128,7 +1128,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Longacres",
     type: "beam",
     image: "/mantels/longacres-hd.png",
-    cardImage: "/mantels/longacres-room.png",
+    cardImage: "/mantels/longacres-card.png",
     images: [
       "/mantels/longacres-hd.png",
       "/mantels/longacres-room.png",
@@ -1145,7 +1145,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Santa Anita",
     type: "beam",
     image: "/mantels/santa-anita-hd.png",
-    cardImage: "/mantels/santa-anita.png",
+    cardImage: "/mantels/santa-anita-card.png",
     images: [
       "/mantels/santa-anita-hd.png",
       "/mantels/santa-anita.png",
@@ -1162,7 +1162,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Del Mar",
     type: "beam",
     image: "/mantels/del-mar-hd.png",
-    cardImage: "/mantels/del-mar-room.png",
+    cardImage: "/mantels/del-mar-card.png",
     images: [
       "/mantels/del-mar-hd.png",
       "/mantels/del-mar-room.png",
@@ -1179,7 +1179,7 @@ export const mantelProducts: MantelProduct[] = [
     name: "Hollywood Park",
     type: "beam",
     image: "/mantels/hollywood-park-hd.png",
-    cardImage: "/mantels/hollywood-park.png",
+    cardImage: "/mantels/hollywood-park-card.png",
     images: [
       "/mantels/hollywood-park-hd.png",
       "/mantels/hollywood-park.png",
