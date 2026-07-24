@@ -5,9 +5,10 @@ import { useState } from "react";
 type Props = {
   images: string[];
   alt: string;
+  fit?: "cover" | "contain";
 };
 
-export default function ProductGallery({ images, alt }: Props) {
+export default function ProductGallery({ images, alt, fit = "cover" }: Props) {
   const [active, setActive] = useState(0);
 
   return (
@@ -18,7 +19,9 @@ export default function ProductGallery({ images, alt }: Props) {
         <img
           src={images[active]}
           alt={`${alt} — photo ${active + 1}`}
-          className="w-full h-full object-cover transition-opacity duration-300"
+          className={`w-full h-full transition-opacity duration-300 ${
+            fit === "contain" ? "object-contain p-4" : "object-cover"
+          }`}
           key={active}
         />
       </div>

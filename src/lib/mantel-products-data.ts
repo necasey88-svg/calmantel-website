@@ -24,6 +24,9 @@ export interface MantelProduct {
   specs?: string;
   cadPdf?: string; // path relative to /public, e.g. "/cad/nullarbor.pdf"
   image?: string;
+  // Optional installed-room image used on category cards while `image` remains
+  // the primary product-detail image.
+  cardImage?: string;
   // Additional product photos shown as a gallery on the product page (first item is the main image).
   images?: string[];
   // Physical dimensions live in mantel-dimensions.ts (keyed by slug), extracted from the CADs.
@@ -1125,9 +1128,10 @@ export const mantelProducts: MantelProduct[] = [
     name: "Longacres",
     type: "beam",
     image: "/mantels/longacres-hd.png",
+    cardImage: "/mantels/longacres-room.png",
     images: [
       "/mantels/longacres-hd.png",
-      "/mantels/longacres.png",
+      "/mantels/longacres-room.png",
       "/mantels/thoroughbred-collection.webp",
     ],
     style: "beams",
@@ -1140,10 +1144,11 @@ export const mantelProducts: MantelProduct[] = [
     beamMaterial: "precast",
     name: "Santa Anita",
     type: "beam",
-    image: "/mantels/santa-anita.png",
+    image: "/mantels/santa-anita-hd.png",
+    cardImage: "/mantels/santa-anita.png",
     images: [
+      "/mantels/santa-anita-hd.png",
       "/mantels/santa-anita.png",
-      "/mantels/santa-anita-thoroughbred.png",
       "/mantels/thoroughbred-collection.webp",
     ],
     style: "beams",
@@ -1157,9 +1162,10 @@ export const mantelProducts: MantelProduct[] = [
     name: "Del Mar",
     type: "beam",
     image: "/mantels/del-mar-hd.png",
+    cardImage: "/mantels/del-mar-room.png",
     images: [
       "/mantels/del-mar-hd.png",
-      "/mantels/del-mar.png",
+      "/mantels/del-mar-room.png",
       "/mantels/thoroughbred-collection.webp",
     ],
     style: "beams",
@@ -1172,10 +1178,11 @@ export const mantelProducts: MantelProduct[] = [
     beamMaterial: "precast",
     name: "Hollywood Park",
     type: "beam",
-    image: "/mantels/hollywood-park.png",
+    image: "/mantels/hollywood-park-hd.png",
+    cardImage: "/mantels/hollywood-park.png",
     images: [
+      "/mantels/hollywood-park-hd.png",
       "/mantels/hollywood-park.png",
-      "/mantels/hollywood-park-thoroughbred.png",
       "/mantels/thoroughbred-collection.webp",
     ],
     cadPdf: "/cad/hollywood-park.pdf",

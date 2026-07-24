@@ -22,7 +22,7 @@ const scenes = [
     products: [{ label: "Tonso Mantel", href: "/mantels/p/tonso" }],
   },
   {
-    title: "Contemporary Mantel Room",
+    title: "Nullarbor with Raised Hearth",
     description:
       "A smooth precast mantel concept for a warm, architectural living room.",
     image: "/inspiration/mantel-room-contemporary.png",
@@ -30,7 +30,7 @@ const scenes = [
     products: [{ label: "Contemporary Mantels", href: "/mantels/contemporary" }],
   },
   {
-    title: "Linear Fireplace Great Room",
+    title: "Montgo DelRay Gas Fireplace with Custom Marble Surround",
     description:
       "A new-construction fireplace wall concept with integrated stone and shelving.",
     image: "/inspiration/fireplace-great-room-linear.png",

@@ -115,7 +115,11 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product image */}
           {product.images && product.images.length > 1 ? (
-            <ProductGallery images={product.images} alt={product.name} />
+            <ProductGallery
+              images={product.images}
+              alt={product.name}
+              fit={product.type === "beam" ? "contain" : "cover"}
+            />
           ) : product.image ? (
             <ZoomableImage src={product.image} alt={product.name} />
           ) : (

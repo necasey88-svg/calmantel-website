@@ -158,12 +158,12 @@ function ProductCard({ product }: { product: (typeof mantelProducts)[number] }) 
       className="group border border-stone-200 rounded-sm overflow-hidden hover:border-[color:var(--accent)] hover:shadow-sm transition-all"
     >
       <div className="relative h-72 bg-stone-100 overflow-hidden">
-        {product.image ? (
+        {product.cardImage || product.image ? (
           <Image
-            src={product.image}
+            src={product.cardImage ?? product.image!}
             alt={product.name}
             fill
-            className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         ) : (

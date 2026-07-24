@@ -361,7 +361,7 @@ export default function HomePage() {
             {[
               { step: "01", title: "Visit Our Showroom", description: "See hundreds of mantels and fireplaces in person while our design team helps you plan the perfect combination." },
               { step: "02", title: "Design Your Fireplace", description: "Choose your appliance and mantel together — every dimension and clearance planned to work as one system." },
-              { step: "03", title: "Built in California", description: "Your custom mantel is handcrafted at our Sacramento facility, then installed by our own certified team." },
+    { step: "03", title: "Built in California", description: "Your custom mantel is handcrafted at our Anaheim and Sacramento facilities, then installed by our own certified team." },
               { step: "04", title: "Enjoy for Decades", description: "We make sure everything is perfect before we leave — a centerpiece built to last." },
             ].map((s) => (
               <div key={s.step}>
