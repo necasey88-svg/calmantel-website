@@ -104,7 +104,17 @@ export default function MasonryPage() {
       <section className="border-b border-[color:var(--sand-deep)] bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <p className="text-center text-sm uppercase tracking-[0.18em] text-[color:var(--ink)]/60">
-            Masonry services are available exclusively in Southern California through our Anaheim showroom.
+            Masonry services are available exclusively in Southern California through our Anaheim showroom.{" "}
+            Visit{" "}
+            <a
+              href="https://cmfmasonry.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[color:var(--accent)] hover:text-[color:var(--ink)] underline underline-offset-2 transition-colors"
+            >
+              CMF Masonry
+            </a>{" "}
+            for our full masonry portfolio and service area.
           </p>
         </div>
       </section>
@@ -172,6 +182,16 @@ export default function MasonryPage() {
         <p className="text-stone-500 mb-12 max-w-2xl">
           From stone veneer to full brick installations, our Southern California masonry team handles
           fireplace surrounds, hearths, feature walls, exterior facades, and architectural elements.
+          For our complete residential and commercial masonry portfolio, visit{" "}
+          <a
+            href="https://cmfmasonry.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[color:var(--accent)] hover:text-[color:var(--ink)] underline underline-offset-2 transition-colors"
+          >
+            CMF Masonry
+          </a>
+          .
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s) => (
