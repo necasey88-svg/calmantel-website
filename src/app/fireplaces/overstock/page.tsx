@@ -698,17 +698,6 @@ const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
   },
   {
     manufacturer: "Superior",
-    name: '60" Outdoor Linear Vent-Free Fireplace',
-    sku: "ODLVF60ZEN / F4495 / F4835",
-    image: "/overstock/odlvf60zen.png",
-    quantity: 9,
-    category: "Outdoor",
-    configuration: "Front-facing linear",
-    fuel: "Natural gas",
-    details: "A 60-inch outdoor linear vent-free fireplace with electronic ignition and a wide contemporary flame presentation.",
-  },
-  {
-    manufacturer: "Superior",
     name: 'VRE4336 36" Outdoor Vent-Free Firebox',
     sku: "VRE4336ZEN / F0512",
     image: "/overstock/vre4336zen.jpg",
