@@ -325,8 +325,13 @@ export default function OverstockInventory({
                     alt={`${fireplace.manufacturer} ${fireplace.name}`}
                     fill
                     sizes="(min-width: 1280px) 31vw, (min-width: 768px) 47vw, 100vw"
-                    className="object-contain"
+                    className={`object-contain ${fireplace.quantity === 0 ? "opacity-50 grayscale" : ""}`}
                   />
+                  {fireplace.quantity === 0 && (
+                    <div className="absolute left-3 top-3 -rotate-3 bg-[color:var(--ink)] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-md">
+                      Sold
+                    </div>
+                  )}
                 </div>
               )}
               <div className="mb-6 flex items-start justify-between gap-4">
@@ -337,9 +342,11 @@ export default function OverstockInventory({
                   <p className="mt-2 font-mono text-xs text-[color:var(--ink)]/45">SKU {fireplace.sku}</p>
                 </div>
                 <div className="min-w-16 border border-[color:var(--sand-deep)] px-3 py-2 text-center">
-                  <p className="text-xl font-medium leading-none text-[color:var(--ink)]">{fireplace.quantity}</p>
+                  <p className="text-xl font-medium leading-none text-[color:var(--ink)]">
+                    {fireplace.quantity === 0 ? "—" : fireplace.quantity}
+                  </p>
                   <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-[color:var(--ink)]/45">
-                    {fireplace.quantity === 1 ? "Unit" : "Units"}
+                    {fireplace.quantity === 0 ? "Sold Out" : fireplace.quantity === 1 ? "Unit" : "Units"}
                   </p>
                 </div>
               </div>
@@ -379,9 +386,10 @@ export default function OverstockInventory({
               <button
                 type="button"
                 onClick={() => addPickupItem(fireplace)}
-                className="mt-auto bg-[color:var(--ink)] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[color:var(--accent)]"
+                disabled={fireplace.quantity === 0}
+                className="mt-auto bg-[color:var(--ink)] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[color:var(--accent)] disabled:cursor-not-allowed disabled:bg-[color:var(--sand-deep)] disabled:text-[color:var(--ink)]/40 disabled:hover:bg-[color:var(--sand-deep)]"
               >
-                Add to Pickup List
+                {fireplace.quantity === 0 ? "Sold Out" : "Add to Pickup List"}
               </button>
 
               <Link

@@ -941,7 +941,7 @@ const anaheimFireplaces: AnaheimInventoryItem[] = [
     name: 'LV38N2 Gas Fireplace',
     sku: "LV38N2",
     image: "/overstock/lv38n2.jpg",
-    quantity: 1,
+    quantity: 0,
     category: "Gas",
     configuration: "Multi-sided configuration to confirm",
     fuel: "Natural gas",
