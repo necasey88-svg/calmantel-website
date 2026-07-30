@@ -135,6 +135,12 @@ export default function HomePage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
+              href="/instant-estimate"
+              className="bg-[color:var(--accent)] text-white hover:bg-[color:var(--accent-dark)] px-8 py-3.5 rounded-full font-medium tracking-wide transition-colors"
+            >
+              Get a Guided Estimate
+            </Link>
+            <Link
               href="/mantels"
               className="bg-white text-[color:var(--ink)] hover:bg-white/90 px-8 py-3.5 rounded-full font-medium tracking-wide transition-colors"
             >

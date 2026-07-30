@@ -51,6 +51,8 @@ export default function Footer() {
           <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Explore</h3>
           <ul className="space-y-2 text-sm">
             {[
+              { label: "Guided Project Estimate", href: "/instant-estimate" },
+              { label: "Detailed Project Request", href: "/estimate" },
               { label: "Mantels", href: "/mantels" },
               { label: "Fireplaces", href: "/fireplaces" },
               { label: "Warehouse Clearance", href: "/fireplaces/overstock" },
@@ -60,7 +62,6 @@ export default function Footer() {
               { label: "About Us", href: "/about" },
               { label: "Careers", href: "/careers" },
               { label: "Contact", href: "/contact" },
-              { label: "Request Project Estimate", href: "/estimate" },
             ].map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className="hover:text-[#C8922A] transition-colors">

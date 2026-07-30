@@ -90,6 +90,8 @@ const mobileGroups = [
   {
     heading: "Company",
     links: [
+      { label: "Guided Project Estimate", href: "/instant-estimate" },
+      { label: "Detailed Project Request", href: "/estimate" },
       { label: "About Us", href: "/about" },
       { label: "Careers", href: "/careers" },
       { label: "Insights", href: "/insights" },
@@ -194,7 +196,11 @@ export default function Header() {
             Warehouse Clearance: 119 In-Stock Models →
           </Link>
           <span className="hidden text-white/25 sm:inline" aria-hidden="true">|</span>
-          <Link href="/showrooms" className="hidden text-white/65 transition-colors hover:text-white sm:inline">
+          <Link href="/instant-estimate" className="hidden font-semibold text-white/80 transition-colors hover:text-white sm:inline">
+            Guided Project Estimate →
+          </Link>
+          <span className="hidden text-white/25 lg:inline" aria-hidden="true">|</span>
+          <Link href="/showrooms" className="hidden text-white/65 transition-colors hover:text-white lg:inline">
             Anaheim / Dublin / Sacramento Showrooms
           </Link>
         </div>
@@ -263,10 +269,10 @@ export default function Header() {
 
           <div className="hidden md:flex items-center gap-3">
             <Link
-              href="/estimate"
+              href="/instant-estimate"
               className="bg-[color:var(--ink)] text-white px-5 py-2 text-[11px] uppercase tracking-[0.2em] hover:bg-[color:var(--accent)] transition-colors"
             >
-              Start a Project
+              Guided Estimate
             </Link>
             <Link
               href="/booking"
@@ -297,6 +303,18 @@ export default function Header() {
           phones. (Re-applied 2026-07-10 after a merge clobbered it once.) */}
       {mobileOpen && (
         <div className="md:hidden bg-[#F9F7F3] border-t border-[color:var(--sand-deep)] px-6 pb-6 max-h-[calc(100dvh-7.5rem)] overflow-y-auto overscroll-contain">
+          <Link
+            href="/instant-estimate"
+            className="mt-5 block bg-[color:var(--ink)] px-5 py-4 text-center text-white"
+            onClick={() => setMobileOpen(false)}
+          >
+            <span className="block text-[10px] uppercase tracking-[0.24em] text-[color:var(--accent)]">
+              Begin With Clarity
+            </span>
+            <span className="mt-1 block text-sm font-medium">
+              Get a Guided Project Estimate →
+            </span>
+          </Link>
           {mobileGroups.map((group) => (
             <div key={group.heading} className="border-b border-[color:var(--sand-deep)] py-4">
               <p className="text-[10px] uppercase tracking-[0.24em] text-[color:var(--accent)] mb-3">
@@ -319,10 +337,10 @@ export default function Header() {
           <div className="mt-5 flex flex-col gap-2">
             <Link
               href="/estimate"
-              className="bg-[color:var(--ink)] text-white text-center py-3 text-xs uppercase tracking-[0.2em]"
+              className="border border-[color:var(--ink)]/25 text-[color:var(--ink)] text-center py-3 text-xs uppercase tracking-[0.2em]"
               onClick={() => setMobileOpen(false)}
             >
-              Start a Project
+              Detailed Project Request
             </Link>
             <Link
               href="/booking"
