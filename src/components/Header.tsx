@@ -57,6 +57,7 @@ const fireplaceMenu: MegaMenuProps["columns"] = [
       { label: "Electric Fireplaces", href: "/fireplaces/electric", description: "Flexible installs without venting" },
       { label: "Outdoor Fireplaces", href: "/fireplaces/outdoor", description: "Fire features for outdoor living" },
       { label: "Decorative Chimney Shrouds", href: "/fireplaces/accessories", description: "Architectural metal crowns that finish the chimney top" },
+      { label: "Service & Repair", href: "/fireplaces/service-repair", description: "Fireplace diagnosis, maintenance, and repair" },
     ],
   },
   {
