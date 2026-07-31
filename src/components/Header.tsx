@@ -197,8 +197,8 @@ export default function Header() {
             Warehouse Clearance: 119 In-Stock Models →
           </Link>
           <span className="hidden text-white/25 sm:inline" aria-hidden="true">|</span>
-          <Link href="/instant-estimate" className="hidden font-semibold text-white/80 transition-colors hover:text-white sm:inline">
-            Guided Project Estimate →
+          <Link href="/fireplaces/service-repair#service-request" className="hidden font-semibold text-white/80 transition-colors hover:text-white sm:inline">
+            Service Request Form →
           </Link>
           <span className="hidden text-white/25 lg:inline" aria-hidden="true">|</span>
           <Link href="/showrooms" className="hidden text-white/65 transition-colors hover:text-white lg:inline">
