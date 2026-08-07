@@ -79,7 +79,9 @@ export default function RootLayout({
               analytics_storage: 'granted'
             });
             gtag('js', new Date());
-            gtag('config', 'G-ZVJ97TZNZN');
+            // Route views are sent by AnalyticsEvents so client-side Next.js
+            // navigation is measured without double-counting the first load.
+            gtag('config', 'G-ZVJ97TZNZN', { send_page_view: false });
           `,
           }}
         />

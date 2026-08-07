@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LeadConversionTracker from "@/components/LeadConversionTracker";
 
 export const metadata = {
   title: "Inquiry Received | California Mantel & Fireplace",
@@ -8,6 +9,7 @@ export const metadata = {
 export default function OverstockInquiryThankYouPage() {
   return (
     <main className="flex min-h-[65vh] items-center bg-[#F9F7F3] py-20">
+      <LeadConversionTracker leadType="overstock_inquiry" />
       <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">
         <p className="text-xs font-medium uppercase tracking-[0.26em] text-[color:var(--accent)]">
           Inquiry Received

@@ -66,6 +66,12 @@ export default function EstimatePage() {
           photo_count: files.length,
           product_interest: productInterest,
         });
+        trackEvent("generate_lead", {
+          lead_type: "estimate_form",
+          project_type: String(formData.get("project_type") || ""),
+          city: String(formData.get("city") || ""),
+          product_interest: productInterest,
+        });
         trackEvent("qualify_lead", {
           lead_type: "estimate_form",
           project_type: String(formData.get("project_type") || ""),
