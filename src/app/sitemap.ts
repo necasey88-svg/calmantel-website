@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/mantels/colors-finishes", priority: 0.7, changeFrequency: "monthly" },
     { path: "/projects", priority: 0.8, changeFrequency: "weekly" },
     { path: "/showrooms", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/orange-county", priority: 0.8, changeFrequency: "monthly" },
     { path: "/overstock-sale", priority: 0.7, changeFrequency: "daily" },
     { path: "/masonry-new-page", priority: 0.6, changeFrequency: "monthly" },
     { path: "/masonry-gallery", priority: 0.6, changeFrequency: "monthly" },

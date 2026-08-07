@@ -124,6 +124,30 @@ export default function MantelsPage() {
         </div>
       </section>
 
+      {/* Local intent + internal links */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <div className="border-t border-[color:var(--sand-deep)] pt-8">
+          <p className="text-[color:var(--ink)]/60 text-sm leading-relaxed max-w-2xl">
+            See our mantels and surrounds in person at a California showroom, or explore
+            mantels by region:
+          </p>
+          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <Link href="/orange-county" className="text-[color:var(--accent)] hover:text-[color:var(--accent-dark)] transition-colors">
+              Mantels in Orange County →
+            </Link>
+            <Link href="/showrooms/anaheim" className="text-[color:var(--accent)] hover:text-[color:var(--accent-dark)] transition-colors">
+              Anaheim showroom →
+            </Link>
+            <Link href="/showrooms/dublin" className="text-[color:var(--accent)] hover:text-[color:var(--accent-dark)] transition-colors">
+              Dublin showroom →
+            </Link>
+            <Link href="/showrooms/sacramento" className="text-[color:var(--accent)] hover:text-[color:var(--accent-dark)] transition-colors">
+              Sacramento showroom →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <InstantEstimateCTA />
     </>
