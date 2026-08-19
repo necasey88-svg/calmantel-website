@@ -2,11 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // Serve images as-is: Vercel Hobby's image-optimization quota (1000 new
-    // source images/month) was exhausted post-launch, returning 402s for all
-    // newly added images. We pre-compress assets ourselves (webp), so direct
-    // serving is fine. Remove this if the project moves to Vercel Pro.
-    unoptimized: true,
+    // Project moved to Vercel Pro (2026-08-19), which lifts the Hobby-plan
+    // image-optimization quota that caused 402s on new images. Real
+    // optimization (resize/AVIF/WebP transforms) is back on.
     remotePatterns: [
       { protocol: "https", hostname: "images.squarespace-cdn.com" },
       { protocol: "https", hostname: "images.unsplash.com" },
