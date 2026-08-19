@@ -1,5 +1,6 @@
 import Link from "next/link";
 import EditorialPageHero from "@/components/EditorialPageHero";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Contact Us | California Mantel & Fireplace",
@@ -81,22 +82,30 @@ export default function ContactPage() {
           ))}
         </div>
 
-        {/* Online estimate CTA */}
-        <div className="bg-[#F9F7F3] p-10 text-center">
+        {/* Quick contact form */}
+        <div className="bg-[#F9F7F3] p-8 sm:p-10 max-w-2xl mx-auto">
           <h2
-            className="text-2xl font-medium text-stone-900 mb-3"
+            className="text-2xl font-medium text-stone-900 mb-2"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Prefer to start online?
+            Send us a message
           </h2>
-          <p className="text-stone-500 mb-6 max-w-md mx-auto">
-            Fill out our estimate request form and a member of our team will follow up within one business day.
+          <p className="text-stone-500 mb-6">
+            A member of our team will follow up within one business day.
+          </p>
+          <ContactForm />
+        </div>
+
+        {/* Online estimate CTA */}
+        <div className="text-center mt-10">
+          <p className="text-stone-500 mb-3">
+            Have room photos or a specific project in mind?
           </p>
           <Link
             href="/estimate"
-            className="inline-block bg-[color:var(--ink)] hover:bg-black text-white px-8 py-3.5 font-medium transition-colors"
+            className="inline-block border border-[color:var(--ink)] hover:bg-[color:var(--ink)] hover:text-white text-[color:var(--ink)] px-8 py-3.5 font-medium transition-colors"
           >
-            Request Project Guidance
+            Request a Detailed Project Estimate
           </Link>
         </div>
       </section>
