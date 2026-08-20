@@ -89,6 +89,11 @@ export default function RootLayout({
           src="//cdn.callrail.com/companies/736627927/dec286ffc96a36928e01/12/swap.js"
           strategy="afterInteractive"
         />
+        {/* LocaliQ / ReachLocal capture script for paid-search attribution. */}
+        <Script
+          src="//cdn.rlets.com/capture_static/mms/mms.js"
+          strategy="afterInteractive"
+        />
         {/* Pinterest tag (ID carried over from the legacy GTM container) */}
         <Script id="pinterest-tag" strategy="afterInteractive">
           {`

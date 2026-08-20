@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 
 import EditorialPageHero from "@/components/EditorialPageHero";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackLeadConversion } from "@/lib/analytics";
 const ACCESS_KEY = "77eca617-9eb9-4352-8b5a-c89bf8870232";
 
 export default function EstimatePage() {
@@ -66,16 +66,11 @@ export default function EstimatePage() {
           photo_count: files.length,
           product_interest: productInterest,
         });
-        trackEvent("generate_lead", {
+        trackLeadConversion({
           lead_type: "estimate_form",
           project_type: String(formData.get("project_type") || ""),
           city: String(formData.get("city") || ""),
           product_interest: productInterest,
-        });
-        trackEvent("qualify_lead", {
-          lead_type: "estimate_form",
-          project_type: String(formData.get("project_type") || ""),
-          city: String(formData.get("city") || ""),
         });
         setSubmitted(true);
       } else {
