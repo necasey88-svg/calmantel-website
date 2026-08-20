@@ -87,8 +87,17 @@ export default function ChatWidget() {
 
       const data: { reply: string; lead: LeadInput | null; handoff: HandoffInput | null } = await res.json();
 
-      if (data.reply) {
-        setMessages((prev) => [...prev, { role: "assistant", content: data.reply }]);
+      // Claude sometimes calls a tool without any accompanying text block,
+      // which would otherwise leave the widget silent right after the
+      // visitor shares their info — always show something.
+      const fallbackReply = data.handoff?.reason
+        ? ""
+        : data.lead?.name
+          ? "Thanks — I've got your info and someone from our team will follow up shortly."
+          : "Sorry, could you rephrase that?";
+      const replyText = data.reply || fallbackReply;
+      if (replyText) {
+        setMessages((prev) => [...prev, { role: "assistant", content: replyText }]);
       }
 
       if (data.lead?.name) {
