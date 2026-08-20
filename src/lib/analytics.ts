@@ -13,3 +13,9 @@ export function trackEvent(eventName: string, params: GtagParams = {}) {
 
   window.gtag("event", eventName, params);
 }
+
+export function trackLeadConversion(params: GtagParams = {}) {
+  trackEvent("generate_lead", params);
+  trackEvent("qualify_lead", params);
+  trackEvent("converted_lead", params);
+}

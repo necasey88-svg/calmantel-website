@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackLeadConversion } from "@/lib/analytics";
 
 // Reuses the same Web3Forms destination as the /estimate form so leads land
 // in one inbox; subject line distinguishes quick contact messages from
@@ -34,8 +34,7 @@ export default function ContactForm() {
         trackEvent("contact_form_submit", {
           preferred_time: String(formData.get("Preferred Callback Time") || ""),
         });
-        trackEvent("generate_lead", { lead_type: "contact_form" });
-        trackEvent("qualify_lead", { lead_type: "contact_form" });
+        trackLeadConversion({ lead_type: "contact_form" });
         setSubmitted(true);
       } else {
         setError("Something went wrong. Please try again or call us directly.");

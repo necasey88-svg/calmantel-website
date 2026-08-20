@@ -241,6 +241,34 @@ export default async function MantelSubPage({ params }: { params: Promise<{ slug
       {/* Search all mantels */}
       <MantelSearch />
 
+      <section className="border-y border-[color:var(--sand-deep)] bg-[#F9F7F3]">
+        <div className="mx-auto grid max-w-7xl gap-5 px-4 py-6 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.24em] text-[color:var(--accent)]">
+              Need help choosing?
+            </p>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--ink)]/62">
+              Send dimensions or a room photo and we&apos;ll help narrow the right scale,
+              material, finish, and fireplace-clearance path before you commit.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/estimate"
+              className="bg-[color:var(--ink)] px-5 py-3 text-center text-xs font-medium uppercase tracking-[0.16em] text-white transition-colors hover:bg-[color:var(--accent)]"
+            >
+              Request Estimate
+            </Link>
+            <Link
+              href="/contact"
+              className="border border-[color:var(--ink)]/20 px-5 py-3 text-center text-xs font-medium uppercase tracking-[0.16em] text-[color:var(--ink)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]"
+            >
+              Contact Showroom
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Traditional sub-style facets */}
       {traditionalFacets.some((f) => f.slug === slug) && (
         <section className="border-b border-stone-200 bg-stone-50">

@@ -2,11 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // Serve images as-is: Vercel Hobby's image-optimization quota (1000 new
-    // source images/month) was exhausted post-launch, returning 402s for all
-    // newly added images. We pre-compress assets ourselves (webp), so direct
-    // serving is fine. Remove this if the project moves to Vercel Pro.
-    unoptimized: true,
+    // Project moved to Vercel Pro (2026-08-19), which lifts the Hobby-plan
+    // image-optimization quota that caused 402s on new images. Real
+    // optimization (resize/AVIF/WebP transforms) is back on.
     remotePatterns: [
       { protocol: "https", hostname: "images.squarespace-cdn.com" },
       { protocol: "https", hostname: "images.unsplash.com" },
@@ -58,7 +56,10 @@ const nextConfig: NextConfig = {
       { source: "/mantels/mantel-shelves-beams/detail/:slug", destination: "/mantels/beams", permanent: true },
       { source: "/mantels/pre-cast-contemporary/detail/:slug", destination: "/mantels/contemporary", permanent: true },
       { source: "/heat-and-glo.html", destination: "/fireplaces/heat-and-glo", permanent: true },
+      { source: "/napoleon.html", destination: "/fireplaces/napoleon", permanent: true },
       { source: "/ortal.html", destination: "/fireplaces/ortal", permanent: true },
+      { source: "/stellar.html", destination: "/fireplaces/stellar", permanent: true },
+      { source: "/aboutus.html", destination: "/about", permanent: true },
       { source: "/our-locations.aspx", destination: "/showrooms", permanent: true },
       { source: "/privacy.aspx", destination: "/sms-privacy-policy", permanent: true },
       { source: "/contactus.aspx", destination: "/contact", permanent: true },
