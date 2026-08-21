@@ -105,8 +105,20 @@ export default function ChatWidget() {
       }
 
       if (data.handoff?.reason) {
-        await submitLead("chatbot_handoff", data.handoff as Record<string, string>);
-        setHandoffNotice(true);
+        const hasContactMethod = Boolean(data.handoff.phone || data.handoff.email);
+        if (hasContactMethod) {
+          await submitLead("chatbot_handoff", data.handoff as Record<string, string>);
+          setHandoffNotice(true);
+        } else {
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: "assistant",
+              content:
+                "I can help get you to the sales team. Please send your name and the best phone number or email, or call a showroom directly if you need someone right now.",
+            },
+          ]);
+        }
       }
     } catch {
       setUnavailable(true);
@@ -149,8 +161,11 @@ export default function ChatWidget() {
               <div className="text-sm text-stone-400 px-3 py-2">…</div>
             )}
             {handoffNotice && (
-              <div className="text-sm bg-[color:var(--sand)] border border-[color:var(--sand-deep)] rounded-xl px-3 py-2 text-[color:var(--ink)]">
-                Thanks — a member of our team will reach out shortly.
+              <div className="text-sm bg-[color:var(--sand)] border border-[color:var(--sand-deep)] rounded-xl px-3 py-2 text-[color:var(--ink)] space-y-2">
+                <p>Thanks — a member of our team will reach out shortly. If you'd rather talk to someone right now:</p>
+                <Link href="/showrooms" className="text-[color:var(--accent-dark)] underline block">
+                  Call a showroom
+                </Link>
               </div>
             )}
             {unavailable && (

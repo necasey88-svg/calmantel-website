@@ -9,11 +9,20 @@ import { showroomInventory } from "@/lib/showroom-inventory";
 // descriptions) to keep prompt size and latency reasonable — the assistant
 // is instructed to point to the product page or a specialist for specifics
 // beyond that rather than inventing details.
+// Source hours are 24h "HH:MM" (for schema.org markup elsewhere) — reformat
+// to 12h so the assistant naturally says "9:00 AM" instead of "09:00".
+function to12Hour(time: string): string {
+  const [h, m] = time.split(":").map(Number);
+  const period = h >= 12 ? "PM" : "AM";
+  const hour12 = h % 12 || 12;
+  return `${hour12}:${m.toString().padStart(2, "0")} ${period}`;
+}
+
 export function buildSiteKnowledge(): string {
   const showroomLines = showrooms
     .map((s) => {
       const hours = s.hours
-        .map((h) => `${h.days.map((d) => d.slice(0, 3)).join("/")} ${h.opens}-${h.closes}`)
+        .map((h) => `${h.days.map((d) => d.slice(0, 3)).join("/")} ${to12Hour(h.opens)}-${to12Hour(h.closes)}`)
         .join("; ");
       return `- ${s.city}: ${s.streetAddress}, ${s.addressLocality}, ${s.addressRegion} ${s.postalCode} — phone ${s.phone} — hours: ${hours}`;
     })
