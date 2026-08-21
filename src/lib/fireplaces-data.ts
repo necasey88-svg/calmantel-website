@@ -245,7 +245,7 @@ export const fireplaceCategories: FireplaceCategory[] = [
         url: "https://www.heatnglo.com/fireplaces/gas/indoor/mezzo-gas-fireplace",
       },
       {
-        name: "Cosmo Gas Fireplace",
+        name: "Cosmo Gas Fireplace Insert",
         description:
           "Sophisticated fire at a smaller footprint. The Cosmo fits beautifully beneath a TV with its smart heat management system, available in 32\", 36\", and 42\" widths.",
         specs: ["3 sizes: 32\" – 42\"", "TV-safe heat management", "Direct vent"],
