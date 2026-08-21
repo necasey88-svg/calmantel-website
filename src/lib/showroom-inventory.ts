@@ -54,7 +54,6 @@ export const showroomInventory: { city: string; units: ShowroomUnit[] }[] = [
       { name: "Napoleon NEFL72CFH Electric Fireplace", brand: "Napoleon" },
       { name: "SimpliFire WM94 Wall-Mount Electric Fireplace (Black)", brand: "SimpliFire" },
       { name: "Heat & Glo Escape Gas Fireplace Insert (42\")", brand: "Heat & Glo", pairedMantel: "Padthaway Mantel" },
-      { name: "Napoleon Torch Fireplace/Fire Feature (GT8NSB)", brand: "Napoleon" },
       { name: "Dimplex BFSL33 Electric Fireplace", brand: "Dimplex" },
       { name: "Outdoor Fortress Gas Fireplace (36\")", brand: "Heat & Glo" },
       { name: "Napoleon LVX74NX Gas Fireplace", brand: "Napoleon", pairedMantel: "Hollywood Park Beam" },
