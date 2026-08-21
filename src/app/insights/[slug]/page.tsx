@@ -1,7 +1,25 @@
+import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { insightPosts, getInsightPost } from "@/lib/insights-data";
 import ConsultationCTA from "@/components/ConsultationCTA";
+
+// Article body text is plain data (see insights-data.ts), but supports simple
+// [link text](/path) markdown so posts can link to product/showroom pages
+// without every InsightPost body needing to be JSX.
+function renderBodyWithLinks(body: string) {
+  const parts = body.split(/(\[[^\]]+\]\(\/[^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\((\/[^)]+)\)$/);
+    if (!match) return <Fragment key={i}>{part}</Fragment>;
+    const [, text, href] = match;
+    return (
+      <Link key={i} href={href} className="text-[color:var(--accent-dark)] underline">
+        {text}
+      </Link>
+    );
+  });
+}
 
 export function generateStaticParams() {
   return insightPosts.map((p) => ({ slug: p.slug }));
@@ -65,7 +83,7 @@ export default async function InsightPostPage({ params }: { params: Promise<{ sl
                   {block.heading}
                 </h2>
               )}
-              <p className="text-stone-600 leading-relaxed">{block.body}</p>
+              <p className="text-stone-600 leading-relaxed">{renderBodyWithLinks(block.body)}</p>
             </div>
           ))}
         </div>

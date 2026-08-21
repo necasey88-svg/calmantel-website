@@ -11,6 +11,16 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "cosmo-vs-cosmo-gas-fireplace-or-gas-insert",
+    title: "Cosmo vs. Cosmo: Is It a Gas Fireplace or a Gas Insert?",
+    excerpt:
+      "Two Heat & Glo products share the Cosmo name — one's a standalone gas fireplace, the other's a gas insert. Here's the quick answer, plus how to tell COSMO 42 from COSMOI30 and COSMOI35.",
+    date: "August 21, 2026",
+    author: "Natalie Casey",
+    category: "Buying Guide",
+    image: "/brands/ortal/room-34-black.jpg",
+  },
+  {
     slug: "modern-fireplace-design-trends-2026",
     title: "Modern Fireplace Design Trends: 2026 Edition",
     excerpt:

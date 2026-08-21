@@ -174,6 +174,43 @@ export const insightPosts: InsightPost[] = [
       },
     ],
   },
+  {
+    slug: "cosmo-vs-cosmo-gas-fireplace-or-gas-insert",
+    title: "Cosmo vs. Cosmo: Is It a Gas Fireplace or a Gas Insert?",
+    excerpt:
+      "Two Heat & Glo products share the Cosmo name — one's a standalone gas fireplace, the other's a gas insert. Here's the quick answer, plus how to tell COSMO 42 from COSMOI30 and COSMOI35.",
+    date: "August 21, 2026",
+    author: "Natalie Casey",
+    category: "Buying Guide",
+    content: [
+      {
+        body: "Yes, we know — naming a fireplace and an insert almost the same thing is a little cruel. Heat & Glo's Cosmo lineup covers two different products: the Cosmo (marketed as COSMO 42 at its largest size) is a standalone gas fireplace, while the Cosmo Insert (COSMOI30 and COSMOI35) is a separate product that fits inside an existing fireplace. Quick answer: COSMO 42 = gas fireplace, built for new construction or a full replacement. COSMOI30 / COSMOI35 = gas insert, built to go inside a fireplace opening you already have. The rest of this guide covers how to tell them apart and which one fits your project.",
+      },
+      {
+        heading: "Cosmo, the Gas Fireplace",
+        body: "The Heat & Glo Cosmo is a direct-vent gas fireplace, built for spaces without an existing firebox — new construction, remodels opening up a wall, or replacing an old masonry fireplace entirely. It's sized for a smaller footprint than most linear fireplaces and comes in 32\", 36\", and 42\" widths — \"COSMO 42\" is the largest of the three. It includes TV-safe heat management, so it's a common pick when a television will be mounted directly above it. See the full [Heat & Glo lineup](/fireplaces/heat-and-glo) for sizing and specs.",
+      },
+      {
+        heading: "Cosmo, the Gas Insert",
+        body: "The Cosmo Insert is a different product built to fit inside an existing wood-burning fireplace opening, converting it to clean-burning gas usually with less construction than a full fireplace replacement — though venting, gas or electrical work, and finish trim are still typically part of the install. It comes in two sizes: COSMOI30, rated up to 27,000 BTU at up to 76% efficiency, fitting a firebox opening of at least 32\"W x 26\"H; and COSMOI35, rated up to 33,000 BTU at up to 78% efficiency, fitting a firebox opening of at least 37\"W x 27\"H. It shares the same contemporary look as the Cosmo fireplace — a black fluted glass interior, with crushed glass media available in eight colors — plus Wi-Fi-enabled IntelliFire Touch ignition. Full specs are on the [Cosmo gas insert page](/fireplaces/gas-inserts/cosmo).",
+      },
+      {
+        heading: "Key Differences at a Glance",
+        body: "The core question is whether you already have a fireplace opening. Building new, or fully replacing an old fireplace? That's the Cosmo fireplace (COSMO 42, or the 32\"/36\" sizes). Have an existing wood-burning fireplace you want converted to gas? That's the Cosmo Insert, sized to your opening (COSMOI30 or COSMOI35). Both share the same modern glass-forward styling, so the deciding factor is almost always what's already in the wall, not the look.",
+      },
+      {
+        heading: "Which One Should You Choose?",
+        body: "If you're unsure which one your project needs, the fastest way to know is your firebox opening. No existing opening, or a full teardown-and-rebuild? That's Cosmo fireplace territory. Existing masonry fireplace you want to keep and convert? Measure the opening and compare it against the insert's 32\"x26\" (COSMOI30) or 37\"x27\" (COSMOI35) minimums. Our team can confirm the right fit in person — as currently listed, the Cosmo fireplace and the COSMOI35 insert are displayed at all three of our [showrooms](/showrooms), and the COSMOI30 is displayed in Anaheim.",
+      },
+      {
+        heading: "Frequently Asked Questions",
+        body: "Is COSMO 42 an insert? No — it's a standalone gas fireplace, the 42\" size in the Cosmo fireplace lineup. What does COSMOI30 mean? It's the 30\" size of the Cosmo gas insert, the version built to fit inside an existing fireplace opening. Which one can I see in a showroom? As currently listed, the Cosmo fireplace and COSMOI35 insert are on display in Anaheim, Dublin, and Sacramento, with COSMOI30 on display in Anaheim — always worth a quick call to confirm before you drive over, since floor units do rotate.",
+      },
+      {
+        body: "Ready to see them side by side? [Visit a showroom](/showrooms), or start with a [guided project estimate](/instant-estimate) online.",
+      },
+    ],
+  },
 ];
 
 export function getInsightPost(slug: string) {
