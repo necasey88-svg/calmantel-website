@@ -1,6 +1,7 @@
 import { business, showrooms } from "@/lib/business-data";
 import { mantelProducts } from "@/lib/mantel-products-data";
 import { fireplaceCategories } from "@/lib/fireplaces-data";
+import { showroomInventory } from "@/lib/showroom-inventory";
 
 // Server-only: builds the grounding context injected into the chat system
 // prompt. Kept out of client bundles by only being imported from the API
@@ -42,6 +43,19 @@ export function buildSiteKnowledge(): string {
     )
     .join("\n");
 
+  // On-floor display units at each showroom — separate from the full online
+  // catalog above, so the bot can answer "what's on display" accurately
+  // instead of assuming everything in the catalog is physically there.
+  const showroomInventoryLines = showroomInventory
+    .map(
+      (loc) =>
+        `${loc.city}:\n` +
+        loc.units
+          .map((u) => `- ${u.name} (${u.brand})${u.pairedMantel ? ` — paired with ${u.pairedMantel}` : ""}`)
+          .join("\n")
+    )
+    .join("\n\n");
+
   return `BUSINESS: ${business.name}, family-owned since ${business.founded}. ${business.description}
 
 SHOWROOMS:
@@ -62,5 +76,8 @@ FIREPLACE BEAMS (part of the mantel lineup):
 ${beamLines}
 
 FIREPLACE & INSERT CATALOG (brand/category, product name, key specs — customers may ask by brand, model name, or size, e.g. "Cosmo 42" means the 42" size of the Heat & Glo Cosmo):
-${fireplaceCatalogLines}`;
+${fireplaceCatalogLines}
+
+SHOWROOM DISPLAY UNITS (what's physically on the showroom floor right now, by location — use this to answer "what can I see in person" or "is X on display" questions; don't assume every catalog item above is on display, only what's listed here):
+${showroomInventoryLines}`;
 }
