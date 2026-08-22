@@ -3,22 +3,24 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const BA = "/projects/before-after/";
+const BA = "/projects/audited-before-after/";
 
 // A curated set of strong before/after transformations for the homepage scroller.
+// Sourced from the same audited project data as /projects — exact project names,
+// no work-order numbers, no generic category labels.
 const installs: { title: string; before: string; after: string }[] = [
-  { title: "Gas Insert + Traditional Mantel", before: `${BA}supreme-35-woomera-before.jpg`, after: `${BA}supreme-35-woomera-after.jpg` },
-  { title: "Precast Mantel Surround", before: `${BA}barossa-old-world-bianco-before.jpg`, after: `${BA}barossa-old-world-bianco-after.jpg` },
-  { title: "Electric + Traditional Mantel", before: `${BA}simplifire-36-mornington-before.jpg`, after: `${BA}simplifire-36-mornington-after.jpg` },
-  { title: "Direct Vent Gas + Traditional Mantel", before: `${BA}st-tropez-6kx-before.jpg`, after: `${BA}st-tropez-6kx-after.jpg` },
-  { title: "Traditional Mantel — Travertine Finish", before: `${BA}pitcairn-travertine-before.jpg`, after: `${BA}pitcairn-travertine-after.jpg` },
-  { title: "Gas Insert + Contemporary Mantel", before: `${BA}supreme-30-bolte-bianco-before.jpg`, after: `${BA}supreme-30-bolte-bianco-after.jpg` },
-  { title: "Superior DRT3540 + Clare Mantel", before: "/projects/service/superior-drt3540-before.jpg", after: "/projects/service/superior-drt3540-after.jpg" },
-  { title: "Reclaimed Beam + Masonry", before: `${BA}beam-masonry-before.jpg`, after: `${BA}beam-masonry-after.jpg` },
-  { title: "Contemporary Mantel Surround", before: `${BA}bondi-le-marais-before.jpg`, after: `${BA}bondi-le-marais-after.jpg` },
-  { title: "Direct Vent Gas + Contemporary Mantel", before: `${BA}bolte-london-fog-6kx-before.jpg`, after: `${BA}bolte-london-fog-6kx-after.jpg` },
-  { title: "Electric Fireplace — Brick Conversion", before: `${BA}redstone-3626-before.jpg`, after: `${BA}redstone-3626-after.jpg` },
-  { title: "Mantel Cap Installation", before: `${BA}sydney-mantel-cap-before.jpg`, after: `${BA}sydney-mantel-cap-after.jpg` },
+  { title: "Heat & Glo Supreme 35 with Woomera Old World", before: `${BA}13-28929-heat-and-glo-supreme-35-with-woomera-old-world-before.webp`, after: `${BA}13-28929-heat-and-glo-supreme-35-with-woomera-old-world-after.webp` },
+  { title: "Barossa Old World Bianco", before: `${BA}08-29038-barossa-old-world-bianco-before.webp`, after: `${BA}08-29038-barossa-old-world-bianco-after.webp` },
+  { title: "SimpliFire 36 inch and Mornington Smooth Kingsbury", before: `${BA}22-27965-simplifire-36-and-mornington-smooth-kingsbury-before.webp`, after: `${BA}22-27965-simplifire-36-and-mornington-smooth-kingsbury-after.webp` },
+  { title: "Heat & Glo 6KX-TG with St. Tropez Smooth Kingsbury", before: `${BA}24-27964-heat-and-glo-6kx-tg-with-st-tropez-smooth-kingsbury-before.webp`, after: `${BA}24-27964-heat-and-glo-6kx-tg-with-st-tropez-smooth-kingsbury-after.webp` },
+  { title: "Pitcairn Travertine Kingsbury", before: `${BA}09-28-171-pitcairn-travertine-kingsbury-before.webp`, after: `${BA}09-28-171-pitcairn-travertine-kingsbury-after.webp` },
+  { title: "Heat & Glo Supreme 30 and Bolte Smooth Bianco", before: `${BA}15-27650-heat-and-glo-supreme-30-and-bolte-smooth-bianco-before.webp`, after: `${BA}15-27650-heat-and-glo-supreme-30-and-bolte-smooth-bianco-after.webp` },
+  { title: "Superior DRT3540 Gas Fireplace + Clare Smooth Seaside Mantel", before: "/projects/service/superior-drt3540-before.jpg", after: "/projects/service/superior-drt3540-after.jpg" },
+  { title: "Reclaimed Beam and Masonry", before: `${BA}18-2-8788-reclaimed-beam-and-masonry-before.webp`, after: `${BA}18-2-8788-reclaimed-beam-and-masonry-after.webp` },
+  { title: "Bondi Smooth Le Marais", before: `${BA}21-27445-bondi-smooth-le-marais-before.webp`, after: `${BA}21-27445-bondi-smooth-le-marais-after.webp` },
+  { title: "Heat & Glo 6KX-TG with Cannon Balls and Bolte Smooth London Fog", before: `${BA}29-26678-heat-and-glo-6kx-tg-with-cannon-balls-and-bolte-smooth-london--before.webp`, after: `${BA}29-26678-heat-and-glo-6kx-tg-with-cannon-balls-and-bolte-smooth-london--after.webp` },
+  { title: "Modern Flames Redstone 3626", before: `${BA}14-29014-modern-flames-redstone-3626-before.webp`, after: `${BA}14-29014-modern-flames-redstone-3626-after.webp` },
+  { title: "Sydney Mantel Cap Paint Grade", before: `${BA}26-28390-sydney-mantel-cap-paint-grade-before.webp`, after: `${BA}26-28390-sydney-mantel-cap-paint-grade-after.webp` },
 ];
 
 export default function InstallationsCarousel() {
