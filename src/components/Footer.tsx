@@ -91,8 +91,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gray-800 py-4 text-center text-xs text-gray-600">
-        © {new Date().getFullYear()} California Mantel & Fireplace. All rights reserved.
+      <div className="border-t border-gray-800 py-4 text-center text-xs text-gray-600 space-x-4">
+        <span>© {new Date().getFullYear()} California Mantel & Fireplace. All rights reserved.</span>
+        <Link href="/sms-terms-of-service" className="hover:text-[#C8922A] transition-colors">
+          SMS Terms of Service
+        </Link>
+        <Link href="/sms-privacy-policy" className="hover:text-[#C8922A] transition-colors">
+          SMS Privacy Policy
+        </Link>
       </div>
     </footer>
   );

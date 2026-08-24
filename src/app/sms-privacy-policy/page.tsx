@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "SMS Privacy Policy | California Mantel & Fireplace",
   description:
@@ -64,6 +66,13 @@ export default function SmsPrivacyPolicyPage() {
           We will not share, sell, or rent your phone number to any third party for their marketing
           purposes. Your phone number is used solely for the purposes described in this policy and
           to provide the services you request from California Mantel &amp; Fireplace.
+        </p>
+
+        <h2>Terms of Service</h2>
+        <p>
+          For the full terms governing our SMS program, including opt-in and opt-out
+          details, please review our{" "}
+          <Link href="/sms-terms-of-service">SMS Terms of Service</Link>.
         </p>
 
         <h2>Contact Us</h2>

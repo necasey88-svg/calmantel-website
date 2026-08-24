@@ -33,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/instant-estimate", priority: 0.7, changeFrequency: "monthly" },
     { path: "/booking", priority: 0.7, changeFrequency: "monthly" },
     { path: "/sms-privacy-policy", priority: 0.2, changeFrequency: "yearly" },
+    { path: "/sms-terms-of-service", priority: 0.2, changeFrequency: "yearly" },
   ];
 
   // Dynamic route groups derived from the data files.
