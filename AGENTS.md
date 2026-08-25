@@ -39,10 +39,20 @@ tokens over the older `amber-*`/`stone-*` Tailwind classes when touching premium
 sections; the older classes still exist on not-yet-restyled pages/sections.
 
 **Homepage section order matters** — it was iterated with the client (Hero →
-capabilities bar → Why-CMF → What We Offer → Collection showcase → Search →
+HHT fall promo featured product → capabilities bar → Why-CMF → What We Offer →
+Thoroughbred Collection → Collection showcase → Inspiration scenes → Search →
 Process/FAQ → lifestyle break → Installations carousel → Reviews → Brands →
-Instant-Estimate CTA → Our Story → Serving California → Closing statement).
-Don't reorder without asking.
+Warehouse Clearance promo → Instant-Estimate CTA → Our Story → Serving
+California → Closing statement). Don't reorder without asking.
+
+The "HHT fall promo" section (currently the Heat & Glo SupremeX 35) is a
+seasonal featured-product slot right after the hero — swap its copy/images/CTA
+when the promoted product changes, using `public/promotions/<promo-slug>/`
+for photos. The Warehouse Clearance promo used to occupy that top slot; it's
+now relocated further down (just above the Instant-Estimate CTA) so both
+promotions stay live at once. The persistent "Warehouse Clearance: 119
+In-Stock Models" bar in `src/components/Header.tsx` is a separate, sitewide,
+always-on element — unaffected by either promo section above.
 
 ## Data conventions (`src/lib/mantel-products-data.ts`)
 - Every product has a `slug`. Product photo convention: `image: "/mantels/<slug>.png"`
