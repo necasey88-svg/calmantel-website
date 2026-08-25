@@ -189,9 +189,8 @@ export default function HomePage() {
               Make Room for Cozy.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/78 md:text-lg">
-              Fall is the perfect time to get your fireplace ready for winter. Take advantage of our Heat &amp; Glo
-              fall promotion and discover gas inserts designed to bring effortless warmth, inviting style, and cozy
-              nights home.
+              From September 21 through October 23, save up to $400 on qualifying Heat &amp; Glo gas inserts.
+              Discover inserts designed to bring effortless warmth, inviting style, and cozy nights home.
             </p>
             <p className="mt-4 text-sm uppercase tracking-[0.22em] text-white/58">
               Find your favorite for the season at one of our designer showrooms
