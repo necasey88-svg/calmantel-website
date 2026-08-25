@@ -180,7 +180,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:py-16">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#F0C676]">
-              HHT Fall Promotion · Featured Product
+              Heat &amp; Glo Fall Feature
             </p>
             <h2
               className="mt-4 text-3xl font-medium leading-tight md:text-5xl"
@@ -189,17 +189,12 @@ export default function HomePage() {
               Heat &amp; Glo Gas Inserts for Fall
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/78 md:text-lg">
-              Upgrade an existing fireplace with Heat &amp; Glo gas inserts — including the SupremeX 35 photos
-              shown here — for realistic hand-painted logs, LED ember glow, and IntelliFire Touch controls.
-              Talk with a product specialist about the right insert for your firebox and finish.
+              The SupremeX 35 photography is doing the visual work here. The offer is broader: a Heat &amp; Glo
+              gas insert upgrade, selected around your firebox, finish, and room.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3 text-sm text-white/72">
-              {["Heat & Glo gas inserts", "SupremeX 35 photo set", "Direct vent gas insert", "Product specialist support"].map((feature) => (
-                <span key={feature} className="rounded-full border border-white/18 bg-white/8 px-4 py-2">
-                  {feature}
-                </span>
-              ))}
-            </div>
+            <p className="mt-4 text-sm uppercase tracking-[0.22em] text-white/58">
+              Available through our Anaheim, Dublin, and Sacramento showrooms
+            </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/fireplaces/gas-inserts"
