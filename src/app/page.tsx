@@ -186,21 +186,21 @@ export default function HomePage() {
               className="mt-4 text-3xl font-medium leading-tight md:text-5xl"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Heat &amp; Glo Gas Inserts for Fall
+              Get Ready for Cozy Season with Heat &amp; Glo Gas Inserts
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/78 md:text-lg">
-              The SupremeX 35 photography is doing the visual work here. The offer is broader: a Heat &amp; Glo
-              gas insert upgrade, selected around your firebox, finish, and room.
+              Fall is the time to make the hearth feel ready for winter. These SupremeX 35 photos set the mood,
+              while the promo itself covers the full Heat &amp; Glo gas insert lineup for a warmer, more inviting home.
             </p>
             <p className="mt-4 text-sm uppercase tracking-[0.22em] text-white/58">
-              Available through our Anaheim, Dublin, and Sacramento showrooms
+              Visit our Anaheim, Dublin, or Sacramento showroom to get started
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/fireplaces/gas-inserts"
                 className="inline-flex items-center justify-center bg-[color:var(--accent)] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[color:var(--accent-dark)]"
               >
-                Browse Heat &amp; Glo Inserts →
+                Explore Fall Inserts →
               </Link>
               <Link
                 href="/booking"
