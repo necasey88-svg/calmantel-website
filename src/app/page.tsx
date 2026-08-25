@@ -77,6 +77,25 @@ const brands = [
   { name: "Outdoor Great Room", logo: "/brands/outdoor-great-room.webp", href: "/fireplaces" },
 ];
 
+const hhtFallPromoImages = [
+  {
+    src: "/promotions/hht-fall/supremex-35-black-glass-birch-ironage-room.jpg",
+    alt: "Heat & Glo SupremeX 35 gas insert in a light wood slat fireplace surround",
+  },
+  {
+    src: "/promotions/hht-fall/supremex-35-black-glass-birch-ironage-studio.jpg",
+    alt: "Heat & Glo SupremeX 35 gas insert studio product view with birch logs",
+  },
+  {
+    src: "/promotions/hht-fall/supremex-35-black-glass-birch-ironage-room-stone.jpg",
+    alt: "Heat & Glo SupremeX 35 gas insert in a living room with a stone fireplace surround",
+  },
+  {
+    src: "/promotions/hht-fall/supremex-35-tranquil-greige-oak-firescreen-room.jpg",
+    alt: "Heat & Glo SupremeX 35 gas insert with Tranquil Greige panels and oak logs in a living room",
+  },
+];
+
 // Google Business Profile ratings per showroom (kept in sync with our GBP listings).
 const reviews = [
   { city: "Sacramento", rating: 4.7, count: 152 },
@@ -156,29 +175,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Anaheim and Sacramento warehouse clearance promotion */}
-      <section className="border-b border-[#6F2C20] bg-[#873B2C] text-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-7 px-6 py-10 md:flex-row md:items-center md:justify-between lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#F0C676]">
-              Anaheim &amp; Sacramento Warehouse Clearance
+      {/* HHT fall promotion featured product */}
+      <section className="border-b border-[color:var(--sand-deep)] bg-[#2F2924] text-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:py-16">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#F0C676]">
+              HHT Fall Promotion · Featured Product
             </p>
             <h2
-              className="mt-3 text-3xl font-medium leading-tight md:text-4xl"
+              className="mt-4 text-3xl font-medium leading-tight md:text-5xl"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              119 fireplace models. Limited quantities. Ready for the right project.
+              Heat &amp; Glo SupremeX 35 Gas Fireplace Insert
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/75 md:text-base">
-              Shop 170 in-stock gas, electric, luxury linear, outdoor, wood-burning, and gas log set units from leading fireplace brands.
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/78 md:text-lg">
+              Upgrade an existing fireplace with a high-efficiency gas insert, realistic hand-painted logs,
+              LED ember glow, and Heat &amp; Glo&apos;s IntelliFire Touch controls. Ask our showrooms about
+              current HHT fall promotion details.
             </p>
+            <div className="mt-7 flex flex-wrap gap-3 text-sm text-white/72">
+              {["35\" viewing width", "Up to 32,000 BTU", "Direct vent gas insert", "Fall promo available"].map((feature) => (
+                <span key={feature} className="rounded-full border border-white/18 bg-white/8 px-4 py-2">
+                  {feature}
+                </span>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/fireplaces/gas-inserts/supremex"
+                className="inline-flex items-center justify-center bg-[color:var(--accent)] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[color:var(--accent-dark)]"
+              >
+                View SupremeX Details →
+              </Link>
+              <Link
+                href="/booking"
+                className="inline-flex items-center justify-center border border-white/50 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#2F2924]"
+              >
+                Ask About the Fall Promo
+              </Link>
+            </div>
           </div>
-          <Link
-            href="/fireplaces/overstock"
-            className="inline-flex shrink-0 items-center justify-center bg-white px-7 py-3.5 text-sm font-semibold text-[#873B2C] transition-colors hover:bg-[#F0C676]"
-          >
-            Shop Warehouse Clearance →
-          </Link>
+          <div className="grid grid-cols-2 gap-4">
+            {hhtFallPromoImages.map((image, index) => (
+              <div
+                key={image.src}
+                className={`relative overflow-hidden bg-black/20 ${
+                  index === 0 ? "col-span-2 aspect-[16/10]" : "aspect-[4/3]"
+                }`}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes={index === 0 ? "(min-width: 1024px) 46vw, 100vw" : "(min-width: 1024px) 22vw, 50vw"}
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
