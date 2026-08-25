@@ -180,7 +180,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:py-16">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#F0C676]">
-              Heat &amp; Glo Fall Feature
+              Fall Promotion
             </p>
             <h2
               className="mt-4 text-3xl font-medium leading-tight md:text-5xl"
@@ -189,8 +189,9 @@ export default function HomePage() {
               Make Room for Cozy.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/78 md:text-lg">
-              Fall is the perfect time to get your fireplace ready for winter. Discover Heat &amp; Glo gas inserts
-              designed to bring effortless warmth, inviting style, and cozy nights home.
+              Fall is the perfect time to get your fireplace ready for winter. Take advantage of our Heat &amp; Glo
+              fall promotion and discover gas inserts designed to bring effortless warmth, inviting style, and cozy
+              nights home.
             </p>
             <p className="mt-4 text-sm uppercase tracking-[0.22em] text-white/58">
               Find your favorite for the season at one of our designer showrooms
