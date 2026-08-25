@@ -70,6 +70,10 @@ export function buildSiteKnowledge(): string {
 SHOWROOMS:
 ${showroomLines}
 
+CURRENT PROMOTIONS (featured on the homepage right now — mention when relevant, e.g. if a customer asks about deals, gas inserts, or what's new):
+- Heat & Glo Gas Inserts for Fall: a fall promotion on Heat & Glo gas insert upgrades (converting an existing fireplace opening), selected around the customer's firebox, finish, and room. The SupremeX 35 photos on the homepage are the visual for this promo, not a limited product — the offer covers the Heat & Glo insert lineup broadly, not just the SupremeX 35. Available through the Anaheim, Dublin, and Sacramento showrooms. Point interested customers to /fireplaces/gas-inserts to browse, or /booking to talk with a product specialist.
+- Warehouse Clearance: limited-quantity, pickup-only overstock inventory (119 in-stock models as of the current sitewide header banner) at the Anaheim and Sacramento showrooms — separate from the Heat & Glo fall promo above.
+
 WHAT WE DO:
 - Manufacture custom fireplace mantels (precast concrete and wood surrounds) — contemporary, traditional, and beam styles, made in California.
 - Sell and install gas, electric, and outdoor fireplace systems — both inserts (convert an existing fireplace opening) and new-construction systems (built where no fireplace exists yet) — from brands including Heat & Glo, Heatilator, Napoleon, Mendota, Modern Flames, Ortal, Flare, and Stellar.
