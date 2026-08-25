@@ -186,15 +186,15 @@ export default function HomePage() {
               className="mt-4 text-3xl font-medium leading-tight md:text-5xl"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Heat &amp; Glo SupremeX 35 Gas Fireplace Insert
+              Heat &amp; Glo Gas Inserts for Fall
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/78 md:text-lg">
-              Upgrade an existing fireplace with a high-efficiency gas insert, realistic hand-painted logs,
-              LED ember glow, and Heat &amp; Glo&apos;s IntelliFire Touch controls. Ask our showrooms about
-              current HHT fall promotion details.
+              Upgrade an existing fireplace with Heat &amp; Glo gas inserts — including the SupremeX 35 photos
+              shown here — for realistic hand-painted logs, LED ember glow, and IntelliFire Touch controls.
+              Talk with a product specialist about the right insert for your firebox and finish.
             </p>
             <div className="mt-7 flex flex-wrap gap-3 text-sm text-white/72">
-              {["35\" viewing width", "Up to 32,000 BTU", "Direct vent gas insert", "Fall promo available"].map((feature) => (
+              {["Heat & Glo gas inserts", "SupremeX 35 photo set", "Direct vent gas insert", "Product specialist support"].map((feature) => (
                 <span key={feature} className="rounded-full border border-white/18 bg-white/8 px-4 py-2">
                   {feature}
                 </span>
@@ -202,16 +202,16 @@ export default function HomePage() {
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="/fireplaces/gas-inserts/supremex"
+                href="/fireplaces/gas-inserts"
                 className="inline-flex items-center justify-center bg-[color:var(--accent)] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[color:var(--accent-dark)]"
               >
-                View SupremeX Details →
+                Browse Heat &amp; Glo Inserts →
               </Link>
               <Link
                 href="/booking"
                 className="inline-flex items-center justify-center border border-white/50 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#2F2924]"
               >
-                Ask About the Fall Promo
+                Contact a Product Specialist
               </Link>
             </div>
           </div>
@@ -228,8 +228,14 @@ export default function HomePage() {
                   alt={image.alt}
                   fill
                   sizes={index === 0 ? "(min-width: 1024px) 46vw, 100vw" : "(min-width: 1024px) 22vw, 50vw"}
-                  className="object-cover"
+                  className={`object-cover ${
+                    index % 2 === 0 ? "animate-promo-pan-a" : "animate-promo-pan-b"
+                  }`}
+                  style={{ animationDelay: `${index * 1.7}s` }}
                 />
+                <div className={`pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/12 via-transparent to-white/8 ${
+                  index === 0 ? "animate-promo-hover" : ""
+                }`} />
               </div>
             ))}
           </div>
