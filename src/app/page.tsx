@@ -75,6 +75,8 @@ const brands = [
   { name: "HPC Fire", logo: "/brands/hpc-fire.png", href: "/fireplaces" },
   { name: "Forno Bravo", logo: "/brands/fornobravo.png", href: "/fireplaces" },
   { name: "Outdoor Great Room", logo: "/brands/outdoor-great-room.webp", href: "/fireplaces" },
+  { name: "Montigo", logo: "/brands/montigo.png", href: "/fireplaces" },
+  { name: "Empire", logo: "/brands/empire.png", href: "/fireplaces" },
 ];
 
 const hhtFallPromoImages = [
