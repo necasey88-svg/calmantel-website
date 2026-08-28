@@ -77,6 +77,7 @@ const brands = [
   { name: "Outdoor Great Room", logo: "/brands/outdoor-great-room.webp", href: "/fireplaces" },
   { name: "Montigo", logo: "/brands/montigo.png", href: "/fireplaces" },
   { name: "Empire", logo: "/brands/empire.svg", href: "/fireplaces" },
+  { name: "Superior by IHP", logo: "/brands/superior.svg", href: "/fireplaces" },
 ];
 
 const hhtFallPromoImages = [
