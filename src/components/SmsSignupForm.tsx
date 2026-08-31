@@ -122,8 +122,8 @@ export default function SmsSignupForm() {
           <span className="text-sm text-stone-600 leading-relaxed">
             By checking this box, I consent to receive recurring automated
             marketing text messages (e.g. promotions, sales, and appointment
-            updates) from <strong>California Mantel &amp; Fireplace</strong> at
-            the phone number provided above. Message frequency varies. Msg
+            updates) from <strong>California Mantel &amp; Fireplace</strong>
+            {" "}at the phone number provided above. Message frequency varies. Msg
             &amp; data rates may apply. Reply <strong>STOP</strong> to
             unsubscribe or <strong>HELP</strong> for help. Consent is not a
             condition of any purchase. View our{" "}
