@@ -93,6 +93,9 @@ export default function Footer() {
 
       <div className="border-t border-gray-800 py-4 text-center text-xs text-gray-600 space-x-4">
         <span>© {new Date().getFullYear()} California Mantel & Fireplace. All rights reserved.</span>
+        <Link href="/sms-signup" className="hover:text-[#C8922A] transition-colors">
+          SMS Sign-Up
+        </Link>
         <Link href="/sms-terms-of-service" className="hover:text-[#C8922A] transition-colors">
           SMS Terms of Service
         </Link>

@@ -32,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/estimate", priority: 0.7, changeFrequency: "monthly" },
     { path: "/instant-estimate", priority: 0.7, changeFrequency: "monthly" },
     { path: "/booking", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/sms-signup", priority: 0.3, changeFrequency: "yearly" },
     { path: "/sms-privacy-policy", priority: 0.2, changeFrequency: "yearly" },
     { path: "/sms-terms-of-service", priority: 0.2, changeFrequency: "yearly" },
   ];

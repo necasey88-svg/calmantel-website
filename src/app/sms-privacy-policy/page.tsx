@@ -22,7 +22,7 @@ export default function SmsPrivacyPolicyPage() {
       </section>
 
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 prose prose-stone">
-        <p className="text-stone-500 text-sm mb-8">Last updated: June 2025</p>
+        <p className="text-stone-500 text-sm mb-8">Last updated: August 2026</p>
 
         <h2>Overview</h2>
         <p>
