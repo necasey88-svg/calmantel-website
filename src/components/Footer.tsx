@@ -44,6 +44,9 @@ export default function Footer() {
             Aussie-American family-owned and operated since 1987. Manufacturing mantels
             and installing gas & electric fireplaces across California and Nevada, including Reno & Lake Tahoe.
           </p>
+          <p className="text-xs text-gray-500 mt-3">
+            CA Contractor License #675006 · NV Contractor License #0080468
+          </p>
         </div>
 
         {/* Quick links */}
