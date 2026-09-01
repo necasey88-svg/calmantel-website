@@ -240,6 +240,80 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Install of the Week — featured before/after project, directly beneath the gas insert promo */}
+      <section className="bg-white border-b border-[color:var(--sand-deep)]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:px-8 lg:py-20">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[color:var(--accent)]">
+              Install of the Week
+            </p>
+            <h2
+              className="mt-4 text-3xl font-medium leading-tight text-[color:var(--ink)] md:text-5xl"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              Woomera in Paint Grade, Palos Verdes Peninsula
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-[color:var(--ink)]/65 md:text-lg">
+              A dated brick fireplace becomes the room&apos;s focal point — a Woomera mantel in
+              paint grade paired with a Heat &amp; Glo Supreme 35 Inch direct vent gas insert,
+              designed with Tiu Architects.
+            </p>
+            <p className="mt-4 text-sm uppercase tracking-[0.22em] text-[color:var(--ink)]/45">
+              Palos Verdes Peninsula, CA
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/projects"
+                className="inline-flex items-center justify-center bg-[color:var(--accent)] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[color:var(--accent-dark)]"
+              >
+                See More Projects →
+              </Link>
+              <Link
+                href="/instant-estimate"
+                className="inline-flex items-center justify-center border border-[color:var(--ink)]/25 px-7 py-3.5 text-sm font-semibold text-[color:var(--ink)] transition-colors hover:border-[color:var(--ink)]"
+              >
+                Start Your Project
+              </Link>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--sand)]">
+              <Image
+                src="/projects/featured/woomera-paint-grade-palos-verdes/before.jpg"
+                alt="Dated brick fireplace before the Woomera mantel and Heat & Glo Supreme 35 install in Palos Verdes Peninsula"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 24vw, 50vw"
+              />
+              <span className="absolute top-3 left-3 bg-[color:var(--ink)]/80 text-white text-[10px] uppercase tracking-widest px-2.5 py-1">
+                Before
+              </span>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--sand)]">
+              <Image
+                src="/projects/featured/woomera-paint-grade-palos-verdes/after.jpg"
+                alt="Finished Woomera mantel in paint grade with a Heat & Glo Supreme 35 direct vent gas insert in Palos Verdes Peninsula"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 24vw, 50vw"
+              />
+              <span className="absolute top-3 left-3 bg-[color:var(--accent)]/90 text-white text-[10px] uppercase tracking-widest px-2.5 py-1">
+                After
+              </span>
+            </div>
+            <div className="relative col-span-2 aspect-[16/9] overflow-hidden bg-[color:var(--sand)]">
+              <Image
+                src="/projects/featured/woomera-paint-grade-palos-verdes/after-detail.jpg"
+                alt="Angled detail view of the finished Woomera mantel in paint grade, Palos Verdes Peninsula"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 46vw, 100vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Capabilities + trust bar — communicates the full breadth at a glance */}
       <section className="bg-[color:var(--sand)] border-b border-[color:var(--sand-deep)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
