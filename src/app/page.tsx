@@ -277,38 +277,38 @@ export default function HomePage() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--sand)]">
+            <div className="group relative row-span-2 overflow-hidden bg-[color:var(--sand)]">
+              <Image
+                src="/projects/featured/woomera-paint-grade-palos-verdes/after-detail.jpg"
+                alt="Side-profile view of the finished Woomera mantel in paint grade, Palos Verdes Peninsula"
+                fill
+                className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+                sizes="(min-width: 1024px) 24vw, 50vw"
+              />
+            </div>
+            <div className="group relative aspect-[4/3] overflow-hidden bg-[color:var(--sand)]">
               <Image
                 src="/projects/featured/woomera-paint-grade-palos-verdes/before.jpg"
                 alt="Dated brick fireplace before the Woomera mantel and Heat & Glo Supreme 35 install in Palos Verdes Peninsula"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
                 sizes="(min-width: 1024px) 24vw, 50vw"
               />
               <span className="absolute top-3 left-3 bg-[color:var(--ink)]/80 text-white text-[10px] uppercase tracking-widest px-2.5 py-1">
                 Before
               </span>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--sand)]">
+            <div className="group relative aspect-[4/3] overflow-hidden bg-[color:var(--sand)]">
               <Image
                 src="/projects/featured/woomera-paint-grade-palos-verdes/after.jpg"
                 alt="Finished Woomera mantel in paint grade with a Heat & Glo Supreme 35 direct vent gas insert in Palos Verdes Peninsula"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
                 sizes="(min-width: 1024px) 24vw, 50vw"
               />
               <span className="absolute top-3 left-3 bg-[color:var(--accent)]/90 text-white text-[10px] uppercase tracking-widest px-2.5 py-1">
                 After
               </span>
-            </div>
-            <div className="relative col-span-2 aspect-[16/9] overflow-hidden bg-[color:var(--sand)]">
-              <Image
-                src="/projects/featured/woomera-paint-grade-palos-verdes/after-detail.jpg"
-                alt="Angled detail view of the finished Woomera mantel in paint grade, Palos Verdes Peninsula"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 46vw, 100vw"
-              />
             </div>
           </div>
         </div>
