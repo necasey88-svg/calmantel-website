@@ -11,6 +11,16 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "how-to-choose-a-gas-fireplace-insert",
+    title: "Choose a Gas Fireplace Insert: Size, BTU, Venting",
+    excerpt:
+      "Learn how to choose the right gas fireplace insert for your existing firebox. Measure correctly, meet CA/NV codes, and know when to involve a specialist.",
+    date: "September 2, 2026",
+    author: "Natalie Casey",
+    category: "Buying Guide",
+    image: "/brands/mendota/firein-room.png",
+  },
+  {
     slug: "cosmo-vs-cosmo-gas-fireplace-or-gas-insert",
     title: "Cosmo vs. Cosmo: Is It a Gas Fireplace or a Gas Insert?",
     excerpt:
