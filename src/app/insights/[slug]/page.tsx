@@ -6,13 +6,29 @@ import ConsultationCTA from "@/components/ConsultationCTA";
 
 // Article body text is plain data (see insights-data.ts), but supports simple
 // [link text](/path) markdown so posts can link to product/showroom pages
-// without every InsightPost body needing to be JSX.
+// without every InsightPost body needing to be JSX. Absolute [text](https://...)
+// links (e.g. citations to external sources like the EPA or an air district)
+// render as external links that open in a new tab; relative /path links use
+// Next's Link for client-side navigation.
 function renderBodyWithLinks(body: string) {
-  const parts = body.split(/(\[[^\]]+\]\(\/[^)]+\))/g);
+  const parts = body.split(/(\[[^\]]+\]\((?:\/[^)]+|https?:\/\/[^)]+)\))/g);
   return parts.map((part, i) => {
-    const match = part.match(/^\[([^\]]+)\]\((\/[^)]+)\)$/);
+    const match = part.match(/^\[([^\]]+)\]\((\/[^)]+|https?:\/\/[^)]+)\)$/);
     if (!match) return <Fragment key={i}>{part}</Fragment>;
     const [, text, href] = match;
+    if (href.startsWith("http")) {
+      return (
+        <a
+          key={i}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[color:var(--accent-dark)] underline"
+        >
+          {text}
+        </a>
+      );
+    }
     return (
       <Link key={i} href={href} className="text-[color:var(--accent-dark)] underline">
         {text}
