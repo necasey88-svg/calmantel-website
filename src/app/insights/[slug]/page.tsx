@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { insightPosts, getInsightPost } from "@/lib/insights-data";
 import ConsultationCTA from "@/components/ConsultationCTA";
 
@@ -99,7 +100,20 @@ export default async function InsightPostPage({ params }: { params: Promise<{ sl
                   {block.heading}
                 </h2>
               )}
-              <p className="text-stone-600 leading-relaxed">{renderBodyWithLinks(block.body)}</p>
+              {block.image && (
+                <div className="relative w-full aspect-[16/10] rounded-sm overflow-hidden not-prose my-6">
+                  <Image
+                    src={block.image.src}
+                    alt={block.image.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 768px"
+                    className="object-cover"
+                  />
+                </div>
+              )}
+              {block.body && (
+                <p className="text-stone-600 leading-relaxed">{renderBodyWithLinks(block.body)}</p>
+              )}
             </div>
           ))}
         </div>

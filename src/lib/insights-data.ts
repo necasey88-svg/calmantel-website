@@ -5,7 +5,11 @@ export type InsightPost = {
   date: string;
   author: string;
   category: string;
-  content: { heading?: string; body: string }[];
+  content: {
+    heading?: string;
+    body?: string;
+    image?: { src: string; alt: string };
+  }[];
 };
 
 export const insightPosts: InsightPost[] = [
@@ -20,6 +24,12 @@ export const insightPosts: InsightPost[] = [
     content: [
       {
         body: "A gas fireplace insert can turn a drafty, unused firebox into the warmest seat in the house. But pick the wrong size, venting setup, or BTU rating and you'll spend thousands on an appliance that either overwhelms a small room or barely takes the edge off a large one. The stakes are higher than most buyers expect. Mismatched dimensions mean costly returns. Incorrect venting can violate local building codes. And in parts of California and Nevada, permitting requirements add another layer of complexity that generic online advice rarely covers. Below, you'll find a practical decision framework: how to measure, what venting options actually work for retrofit installs, how to match heat output to your space, and when to stop Googling and call a professional.",
+      },
+      {
+        image: {
+          src: "/insights/how-to-choose-a-gas-fireplace-insert/measure-firebox.webp",
+          alt: "A homeowner crouching near a traditional masonry fireplace opening with a tape measure extended across the firebox width",
+        },
       },
       {
         heading: "What Is a Gas Fireplace Insert, and Do You Actually Need One?",
@@ -42,6 +52,12 @@ export const insightPosts: InsightPost[] = [
         body: "Venting is the single biggest variable that separates a safe, code-compliant install from a problematic one. Here's how the three main types break down for inserts. Direct vent is the standard for modern gas inserts and the one we'd recommend in almost every case. It uses a coaxial liner (pipe within a pipe) that draws combustion air from outside and exhausts fumes back out through the chimney. The firebox stays sealed from your living space, which means your indoor air quality stays clean and efficiency stays high. B-vent (natural vent) pulls combustion air from the room and vents up the chimney. These units are less efficient and less common in newer inserts. They also require adequate room volume for combustion air supply. Vent-free units don't vent at all. While legal in some jurisdictions, they're restricted or banned in certain California air districts. We'd generally steer you toward direct vent unless you have a very specific use case. Your existing chimney condition determines what's feasible — a cracked flue liner or deteriorating masonry may need repair before any insert goes in. Start with a chimney inspection.",
       },
       {
+        image: {
+          src: "/insights/how-to-choose-a-gas-fireplace-insert/living-room-insert.webp",
+          alt: "Interior of a warm living room at dusk with a lit gas fireplace insert glowing inside a stone surround",
+        },
+      },
+      {
         heading: "BTU Guide: How Much Heat Output Do You Actually Need?",
         body: "BTU (British Thermal Unit) ratings tell you how much heat the unit produces. But the number on the box isn't the whole story.",
       },
@@ -60,6 +76,12 @@ export const insightPosts: InsightPost[] = [
       {
         heading: "What Does a Gas Insert Actually Cost to Install?",
         body: "The insert itself is only one line item. A realistic budget accounts for several components, and skipping any of them leads to surprise invoices mid-project: the insert unit (firebox, burner, glass front); venting and liner (a coaxial liner for direct vent through your existing chimney); gas line work (running or extending a gas line); electrical (an outlet for the blower and ignition, if not battery-powered); surround and finish (mantel, facing, tile, or stone); labor (professional installation and testing); and permits (required in most California and Nevada jurisdictions). Budget note for Bay Area homeowners: the Bay Area Air Quality Management District's Clean HEET program [does not cover gas fireplace inserts](https://www.baaqmd.gov/~/media/files/strategic-incentives/clean-heet-program/clean-heet_program-guidelines-terms-and-conditions-pdf.pdf?rev=338eaac0169c45d1b9e6772ac7212a38). Factor that into your financial planning if you were counting on rebate assistance. When you're weighing the ongoing expense, understanding [how to maintain your gas fireplace for safe and efficient use](/insights/how-to-maintain-your-gas-fireplace) helps you anticipate annual service costs and avoid deferred surprises.",
+      },
+      {
+        image: {
+          src: "/insights/how-to-choose-a-gas-fireplace-insert/insert-closeup.webp",
+          alt: "Close-up detail of a modern gas fireplace insert with realistic ceramic logs and a dancing flame",
+        },
       },
       {
         heading: "When to Stop DIY-ing and Call a Pro",
