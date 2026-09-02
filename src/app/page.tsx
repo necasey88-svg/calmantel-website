@@ -212,6 +212,15 @@ export default function HomePage() {
                 Contact Us
               </Link>
             </div>
+            <p className="mt-4 text-sm text-white/65">
+              New to inserts?{" "}
+              <Link
+                href="/insights/how-to-choose-a-gas-fireplace-insert"
+                className="underline decoration-white/35 underline-offset-4 transition-colors hover:text-white hover:decoration-white/70"
+              >
+                How to choose a gas fireplace insert
+              </Link>
+            </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {hhtFallPromoImages.map((image, index) => (
