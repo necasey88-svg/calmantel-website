@@ -48,7 +48,7 @@ const showrooms = [
     phone: "(916) 665-0627",
     tel: "9166650627",
     hours: [
-      "Mon–Sat: 8:30 AM – 5:00 PM",
+      "Mon–Sat: 10:00 AM – 2:00 PM",
     ],
     serviceArea: "Sacramento, Roseville, Elk Grove, Folsom, Rancho Cordova, Citrus Heights, Lincoln, Auburn, Davis, and surrounding Northern California communities",
     href: "/showrooms/sacramento",

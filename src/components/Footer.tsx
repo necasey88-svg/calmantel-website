@@ -5,7 +5,7 @@ const showrooms = [
   {
     city: "Sacramento",
     address: "4141 N Freeway Blvd, Sacramento, CA 95834",
-    hours: "Mon–Sat: 8:30 AM – 5:00 PM",
+    hours: "Mon–Sat: 10:00 AM – 2:00 PM",
     phone: "(916) 665-0627",
     tel: "9166650627",
   },
