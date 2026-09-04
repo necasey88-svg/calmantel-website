@@ -84,8 +84,8 @@ export const showrooms: Showroom[] = [
     hours: [
       {
         days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "08:30",
-        closes: "17:00",
+        opens: "10:00",
+        closes: "14:00",
       },
     ],
   },

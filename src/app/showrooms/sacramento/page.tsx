@@ -117,7 +117,7 @@ export default function SacramentoShowroomPage() {
               </div>
               <div>
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Hours</p>
-                <p className="text-stone-700">Mon–Sat: 8:30 AM – 5:00 PM</p>
+                <p className="text-stone-700">Mon–Sat: 10:00 AM – 2:00 PM</p>
               </div>
               <div>
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Phone</p>
