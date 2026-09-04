@@ -1,12 +1,10 @@
 import EditorialPageHero from "@/components/EditorialPageHero";
-
-const PAYCOM_CAREERS_URL =
-  "https://www.paycomonline.net/v4/ats/web.php/portal/7FC7D2AB014AA895F79932078F729892/career-page";
+import WorkableJobsEmbed from "@/components/WorkableJobsEmbed";
 
 export const metadata = {
   title: "Careers | California Mantel & Fireplace",
   description:
-    "Explore current career opportunities with California Mantel & Fireplace and apply online through our Paycom career portal.",
+    "Explore current career opportunities with California Mantel & Fireplace and apply online through our Workable job board.",
   alternates: { canonical: "/careers" },
 };
 
@@ -32,31 +30,13 @@ export default function CareersPage() {
               Find your next opportunity.
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[color:var(--ink)]/60 sm:text-base">
-              Browse available positions and submit your application through our secure Paycom career portal below.
+              Browse open roles and submit your application through our job board below.
             </p>
           </div>
 
           <div className="mx-auto max-w-4xl border border-[color:var(--sand-deep)] bg-white p-2 shadow-sm sm:p-4">
-            <iframe
-              src={PAYCOM_CAREERS_URL}
-              title="California Mantel & Fireplace current job openings and application portal"
-              loading="lazy"
-              className="h-[800px] w-full border-0 sm:h-[900px]"
-            />
+            <WorkableJobsEmbed />
           </div>
-
-          <p className="mx-auto mt-6 max-w-3xl text-center text-sm text-[color:var(--ink)]/55">
-            Having trouble viewing the application portal?{" "}
-            <a
-              href={PAYCOM_CAREERS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-[color:var(--accent)] hover:underline"
-            >
-              Open the Paycom career page in a new window
-            </a>
-            .
-          </p>
         </div>
       </section>
     </>
