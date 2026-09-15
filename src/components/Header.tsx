@@ -271,15 +271,15 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-3">
             <Link
               href="/instant-estimate"
-              className="bg-[color:var(--ink)] text-white px-5 py-2 text-[11px] uppercase tracking-[0.2em] hover:bg-[color:var(--accent)] transition-colors"
+              className="border border-[color:var(--ink)]/20 text-[color:var(--ink)] px-5 py-2 text-[11px] uppercase tracking-[0.2em] hover:border-[color:var(--ink)] transition-colors"
             >
               Guided Estimate
             </Link>
             <Link
               href="/booking"
-              className="border border-[color:var(--ink)]/20 text-[color:var(--ink)] px-5 py-2 text-[11px] uppercase tracking-[0.2em] hover:border-[color:var(--ink)] transition-colors"
+              className="bg-[color:var(--ink)] text-white px-5 py-2 text-[11px] uppercase tracking-[0.2em] hover:bg-[color:var(--accent)] transition-colors"
             >
-              Consultation
+              Book Consultation
             </Link>
           </div>
 
@@ -305,15 +305,15 @@ export default function Header() {
       {mobileOpen && (
         <div className="md:hidden bg-[#F9F7F3] border-t border-[color:var(--sand-deep)] px-6 pb-6 max-h-[calc(100dvh-7.5rem)] overflow-y-auto overscroll-contain">
           <Link
-            href="/instant-estimate"
+            href="/booking"
             className="mt-5 block bg-[color:var(--ink)] px-5 py-4 text-center text-white"
             onClick={() => setMobileOpen(false)}
           >
             <span className="block text-[10px] uppercase tracking-[0.24em] text-[color:var(--accent)]">
-              Begin With Clarity
+              Meet In Person
             </span>
             <span className="mt-1 block text-sm font-medium">
-              Get a Guided Project Estimate →
+              Book a Showroom Consultation →
             </span>
           </Link>
           {mobileGroups.map((group) => (

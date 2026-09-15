@@ -160,20 +160,22 @@ export function listAllMantels(
 
 /**
  * Best-seller slugs — the curated shortlist shown in the homepage showcase grid.
- * EDIT THIS LIST to change the homepage best sellers.
+ * EDIT THIS LIST to change the homepage best sellers. Order matters: the homepage
+ * grid is capped to the first 6, so contemporary/traditional styles are
+ * interleaved here to keep that default view balanced.
  */
 export const bestSellerSlugs: string[] = [
   "bolte",
   "barossa",
+  "woomera",
   "tonso",
+  "sausalito",
   "padthaway",
+  "turin",
   "bondi",
+  "yarra",
   "pitcairn",
   "queensland",
-  "woomera",
-  "sausalito",
-  "turin",
-  "yarra",
   "willamette",
 ];
 
