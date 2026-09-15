@@ -29,8 +29,11 @@ const products = bestSellerSlugs
 export default function BestSellersShowcase() {
   const [active, setActive] = useState<Filter>("all");
 
-  const visible =
-    active === "all" ? products : products.filter((p) => p.style === active);
+  // Capped to keep the homepage teaser tight — the full collection lives at /mantels.
+  const HOMEPAGE_LIMIT = 6;
+  const visible = (
+    active === "all" ? products : products.filter((p) => p.style === active)
+  ).slice(0, HOMEPAGE_LIMIT);
 
   return (
     <section className="bg-[#F9F7F3] py-24">

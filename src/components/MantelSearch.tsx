@@ -92,9 +92,12 @@ export default function MantelSearch() {
                       </Link>
                     </li>
                   ))}
-                  <li className="px-5 py-3 bg-stone-50 text-center">
-                    <Link href="/mantels" className="text-[color:var(--accent)] text-xs font-medium hover:underline">
+                  <li className="px-5 py-3 bg-stone-50 text-center space-y-1">
+                    <Link href="/mantels" className="block text-[color:var(--accent)] text-xs font-medium hover:underline">
                       Refine by height, wall width &amp; material in the full Fit Finder →
+                    </Link>
+                    <Link href="/booking" className="block text-stone-500 text-xs hover:text-[color:var(--accent)] hover:underline">
+                      Or book a showroom consultation →
                     </Link>
                   </li>
                 </ul>

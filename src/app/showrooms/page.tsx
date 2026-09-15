@@ -1,6 +1,12 @@
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
-import { organizationSchema } from "@/lib/business-data";
+import {
+  organizationSchema,
+  showrooms as showroomData,
+  hoursSummary,
+  closedDaysNote,
+  formatAddress,
+} from "@/lib/business-data";
 import EditorialPageHero from "@/components/EditorialPageHero";
 
 export const metadata = {
@@ -10,51 +16,41 @@ export const metadata = {
   alternates: { canonical: "/showrooms" },
 };
 
-const showrooms = [
-  {
-    city: "Anaheim",
+// Editorial copy that isn't part of the canonical NAP/hours data set.
+const showroomCopy: Record<
+  string,
+  { subtitle: string; tagline: string; serviceArea: string; note?: string }
+> = {
+  anaheim: {
     subtitle: "Southern California",
     tagline: "Orange County's most complete hearth destination",
-    address: "1430 S Anaheim Blvd, Anaheim, CA 92805",
-    phone: "(714) 908-7388",
-    tel: "7149087388",
-    hours: [
-      "Mon–Sat: 9:00 AM – 5:00 PM",
-    ],
-    serviceArea: "Anaheim, Orange, Irvine, Fullerton, Yorba Linda, Garden Grove, Tustin, Santa Ana, Brea, Placentia, and surrounding Orange County communities",
-    href: "/showrooms/anaheim",
+    serviceArea:
+      "Anaheim, Orange, Irvine, Fullerton, Yorba Linda, Garden Grove, Tustin, Santa Ana, Brea, Placentia, and surrounding Orange County communities",
     note: "Masonry services exclusively available at this location",
   },
-  {
-    city: "Dublin",
+  dublin: {
     subtitle: "Bay Area",
     tagline: "Serving the Tri-Valley and East Bay",
-    address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
-    phone: "(925) 436-1731",
-    tel: "9254361731",
-    hours: [
-      "Mon, Wed & Fri: 10:00 AM – 5:00 PM",
-      "Tue, Thu & Sat: Closed",
-    ],
-    serviceArea: "Dublin, Pleasanton, San Ramon, Livermore, Danville, Walnut Creek, Fremont, Castro Valley, Hayward, and surrounding Tri-Valley and East Bay communities",
-    href: "/showrooms/dublin",
-    note: "Open Monday, Wednesday, and Friday",
+    serviceArea:
+      "Dublin, Pleasanton, San Ramon, Livermore, Danville, Walnut Creek, Fremont, Castro Valley, Hayward, and surrounding Tri-Valley and East Bay communities",
   },
-  {
-    city: "Sacramento",
+  sacramento: {
     subtitle: "Northern California — Corporate HQ",
     tagline: "Northern California's most complete fireplace destination",
-    address: "4141 N Freeway Blvd, Sacramento, CA 95834",
-    phone: "(916) 665-0627",
-    tel: "9166650627",
-    hours: [
-      "Mon–Sat: 10:00 AM – 2:00 PM",
-    ],
-    serviceArea: "Sacramento, Roseville, Elk Grove, Folsom, Rancho Cordova, Citrus Heights, Lincoln, Auburn, Davis, and surrounding Northern California communities",
-    href: "/showrooms/sacramento",
+    serviceArea:
+      "Sacramento, Roseville, Elk Grove, Folsom, Rancho Cordova, Citrus Heights, Lincoln, Auburn, Davis, and surrounding Northern California communities",
     note: "Largest team of hearth consultants — corporate headquarters",
   },
-];
+};
+
+const showrooms = showroomData.map((s) => ({
+  ...s,
+  ...showroomCopy[s.slug],
+  address: formatAddress(s),
+  hoursLines: hoursSummary(s),
+  closedNote: closedDaysNote(s),
+  href: `/showrooms/${s.slug}`,
+}));
 
 const amenities = [
   "Live-burning fireplace displays (gas & electric)",
@@ -116,18 +112,24 @@ export default function ShowroomsPage() {
                 </h2>
                 <p className="text-stone-400 text-sm mt-1 italic">&ldquo;{s.tagline}&rdquo;</p>
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href={`/booking?showroom=${s.slug}`}
+                  className="bg-[color:var(--accent)] hover:bg-[color:var(--accent-dark)] text-white px-5 py-2.5 font-medium text-sm transition-colors"
+                >
+                  Book This Showroom
+                </Link>
                 <a
                   href={`tel:${s.tel}`}
-                  className="bg-[color:var(--ink)] hover:bg-black text-white px-5 py-2.5 font-medium text-sm transition-colors"
+                  className="border border-white text-white hover:bg-white hover:text-stone-900 px-5 py-2.5 font-medium text-sm transition-colors"
                 >
                   {s.phone}
                 </a>
                 <Link
                   href={s.href}
-                  className="border border-white text-white hover:bg-white hover:text-stone-900 px-5 py-2.5 font-medium text-sm transition-colors"
+                  className="text-white/70 hover:text-white px-2 py-2.5 font-medium text-sm transition-colors"
                 >
-                  Details
+                  Details →
                 </Link>
               </div>
             </div>
@@ -148,9 +150,12 @@ export default function ShowroomsPage() {
               </div>
               <div>
                 <h3 className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-2">Hours</h3>
-                {s.hours.map((h) => (
-                  <p key={h} className="text-stone-700 text-sm">{h}</p>
+                {s.hoursLines.map((h) => (
+                  <p key={h} className="text-stone-700 text-sm font-medium">{h}</p>
                 ))}
+                {s.closedNote && (
+                  <p className="text-stone-400 text-xs mt-1">{s.closedNote}</p>
+                )}
                 {s.note && (
                   <p className="text-[color:var(--accent)] text-xs mt-2 italic">{s.note}</p>
                 )}

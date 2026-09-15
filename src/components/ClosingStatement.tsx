@@ -25,16 +25,16 @@ export default function ClosingStatement() {
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <Link
-            href="/mantels"
+            href="/booking"
             className="bg-white text-[color:var(--ink)] hover:bg-white/90 px-8 py-3.5 text-sm uppercase tracking-[0.16em] transition-colors"
           >
-            Explore Collections
+            Book a Consultation
           </Link>
           <Link
-            href="/booking"
+            href="/mantels"
             className="border border-white/70 text-white hover:bg-white hover:text-[color:var(--ink)] px-8 py-3.5 text-sm uppercase tracking-[0.16em] transition-colors"
           >
-            Book a Consultation
+            Explore Collections
           </Link>
         </div>
       </div>

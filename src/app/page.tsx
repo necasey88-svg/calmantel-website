@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import ZoomableImage from "@/components/ZoomableImage";
 import MantelSearch from "@/components/MantelSearch";
-import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import InstallationsCarousel from "@/components/InstallationsCarousel";
 import BestSellersShowcase from "@/components/BestSellersShowcase";
 import Testimonials from "@/components/Testimonials";
@@ -155,26 +154,26 @@ export default function HomePage() {
           <p className="mt-6 text-white/85 uppercase tracking-[0.18em] text-sm md:text-base">
             Custom Mantels &nbsp;·&nbsp; Fireplace Systems &nbsp;·&nbsp; Masonry &nbsp;·&nbsp; Installation
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
-              href="/instant-estimate"
+              href="/booking"
               className="bg-[color:var(--accent)] text-white hover:bg-[color:var(--accent-dark)] px-8 py-3.5 rounded-full font-medium tracking-wide transition-colors"
             >
-              Get a Guided Estimate
+              Book a Showroom Consultation
             </Link>
             <Link
               href="/mantels"
-              className="bg-white text-[color:var(--ink)] hover:bg-white/90 px-8 py-3.5 rounded-full font-medium tracking-wide transition-colors"
+              className="border border-white/70 text-white hover:bg-white hover:text-[color:var(--ink)] px-8 py-3.5 rounded-full font-medium tracking-wide transition-colors"
             >
               Explore the Collection
             </Link>
-            <Link
-              href="/booking"
-              className="border border-white/70 text-white hover:bg-white hover:text-[color:var(--ink)] px-8 py-3.5 rounded-full font-medium tracking-wide transition-colors"
-            >
-              Book a Consultation
-            </Link>
           </div>
+          <Link
+            href="/instant-estimate"
+            className="mt-6 inline-block text-white/70 hover:text-white text-sm underline decoration-white/30 underline-offset-4 transition-colors"
+          >
+            Prefer to start with a project estimate? Get a Guided Estimate →
+          </Link>
         </div>
       </section>
 
@@ -270,7 +269,7 @@ export default function HomePage() {
             <p className="mt-4 text-sm uppercase tracking-[0.22em] text-[color:var(--ink)]/45">
               Palos Verdes Peninsula, CA
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
               <Link
                 href="/projects"
                 className="inline-flex items-center justify-center bg-[color:var(--accent)] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[color:var(--accent-dark)]"
@@ -279,9 +278,9 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/instant-estimate"
-                className="inline-flex items-center justify-center border border-[color:var(--ink)]/25 px-7 py-3.5 text-sm font-semibold text-[color:var(--ink)] transition-colors hover:border-[color:var(--ink)]"
+                className="text-sm font-medium text-[color:var(--ink)]/60 hover:text-[color:var(--ink)] underline decoration-[color:var(--ink)]/20 underline-offset-4 transition-colors"
               >
-                Start Your Project
+                Start Your Project →
               </Link>
             </div>
           </div>
@@ -467,6 +466,39 @@ export default function HomePage() {
       {/* The Collection — premium best-sellers showcase */}
       <BestSellersShowcase />
 
+      {/* Primary CTA — mid-page, right after the trust/collections story */}
+      <section className="bg-white py-24">
+        <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">
+          <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
+            Ready When You Are
+          </p>
+          <h2
+            className="text-4xl md:text-5xl font-medium text-[color:var(--ink)] tracking-tight mb-5"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            What Happens Next
+          </h2>
+          <p className="text-stone-500 leading-relaxed mb-10">
+            Most consultations take about 45 minutes. We&apos;ll answer your questions, show you
+            products in person, and provide pricing — with no obligation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+            <Link
+              href="/booking"
+              className="w-full sm:w-auto bg-[color:var(--ink)] text-white hover:bg-black px-6 sm:px-9 py-4 text-xs sm:text-sm uppercase tracking-[0.12em] sm:tracking-[0.16em] text-center leading-relaxed transition-colors"
+            >
+              Schedule Your Design Consultation
+            </Link>
+            <Link
+              href="/mantels"
+              className="text-[color:var(--ink)] hover:text-[color:var(--accent)] text-sm uppercase tracking-[0.16em] transition-colors"
+            >
+              Browse Mantels →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <InspirationScenes />
 
       {/* Find a mantel — search / help tool */}
@@ -522,39 +554,6 @@ export default function HomePage() {
                 <p className="text-stone-500 text-sm leading-relaxed">{s.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What happens next + primary CTA */}
-      <section className="bg-white pb-24">
-        <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">
-          <p className="uppercase tracking-[0.28em] text-[color:var(--accent)] text-xs mb-4">
-            Ready When You Are
-          </p>
-          <h2
-            className="text-4xl md:text-5xl font-medium text-[color:var(--ink)] tracking-tight mb-5"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            What Happens Next
-          </h2>
-          <p className="text-stone-500 leading-relaxed mb-10">
-            Most consultations take about 45 minutes. We&apos;ll answer your questions, show you
-            products in person, and provide pricing — with no obligation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-            <Link
-              href="/booking"
-              className="w-full sm:w-auto bg-[color:var(--ink)] text-white hover:bg-black px-6 sm:px-9 py-4 text-xs sm:text-sm uppercase tracking-[0.12em] sm:tracking-[0.16em] text-center leading-relaxed transition-colors"
-            >
-              Schedule Your Design Consultation
-            </Link>
-            <Link
-              href="/mantels"
-              className="text-[color:var(--ink)] hover:text-[color:var(--accent)] text-sm uppercase tracking-[0.16em] transition-colors"
-            >
-              Browse Mantels →
-            </Link>
           </div>
         </div>
       </section>
@@ -654,33 +653,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Anaheim and Sacramento warehouse clearance promotion */}
+      {/* Anaheim and Sacramento warehouse clearance promotion — kept live, sized down
+          so it doesn't compete with the booking CTAs above and below it. */}
       <section className="border-b border-[#6F2C20] bg-[#873B2C] text-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-7 px-6 py-10 md:flex-row md:items-center md:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#F0C676]">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#F0C676]">
               Anaheim &amp; Sacramento Warehouse Clearance
             </p>
-            <h2
-              className="mt-3 text-3xl font-medium leading-tight md:text-4xl"
-              style={{ fontFamily: "var(--font-playfair)" }}
-            >
-              119 fireplace models. Limited quantities. Ready for the right project.
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/75 md:text-base">
-              Shop 170 in-stock gas, electric, luxury linear, outdoor, wood-burning, and gas log set units from leading fireplace brands.
+            <p className="mt-1.5 text-sm leading-relaxed text-white/80 md:text-base">
+              119 in-stock fireplace models at limited quantities — gas, electric, luxury linear, outdoor, and wood-burning units from leading brands.
             </p>
           </div>
           <Link
             href="/fireplaces/overstock"
-            className="inline-flex shrink-0 items-center justify-center bg-white px-7 py-3.5 text-sm font-semibold text-[#873B2C] transition-colors hover:bg-[#F0C676]"
+            className="inline-flex shrink-0 items-center justify-center border border-white/60 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:bg-white hover:text-[#873B2C]"
           >
             Shop Warehouse Clearance →
           </Link>
         </div>
       </section>
-
-      <InstantEstimateCTA />
 
       {/* About strip */}
       <section className="bg-white py-24">

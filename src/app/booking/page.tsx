@@ -1,4 +1,6 @@
 import EditorialPageHero from "@/components/EditorialPageHero";
+import { getMantelProduct } from "@/lib/mantel-products-data";
+import { getShowroom } from "@/lib/business-data";
 
 const bookingUrl =
   "https://outlook.office.com/book/CaliforniaMantelFireplace@calmantel.com/?ismsaljsauthenabled";
@@ -10,7 +12,22 @@ export const metadata = {
   alternates: { canonical: "/booking" },
 };
 
-export default function BookingPage() {
+type BookingPageProps = {
+  searchParams: Promise<{
+    showroom?: string | string[];
+    mantel?: string | string[];
+  }>;
+};
+
+function firstValue(v: string | string[] | undefined): string | undefined {
+  return Array.isArray(v) ? v[0] : v;
+}
+
+export default async function BookingPage({ searchParams }: BookingPageProps) {
+  const params = await searchParams;
+  const showroom = getShowroom(firstValue(params.showroom) ?? "");
+  const mantel = getMantelProduct(firstValue(params.mantel) ?? "");
+
   return (
     <>
       <EditorialPageHero
@@ -20,10 +37,35 @@ export default function BookingPage() {
       />
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <p className="text-stone-500 mb-10 leading-relaxed max-w-2xl mx-auto">
+        <p className="text-stone-500 mb-6 leading-relaxed max-w-2xl mx-auto">
           Choose your preferred showroom, select a time, and we&apos;ll confirm
           your appointment by email.
         </p>
+
+        {(showroom || mantel) && (
+          <div className="mb-10 mx-auto max-w-xl border border-[#D9CBB8] bg-[#F9F7F3] px-6 py-4 text-left">
+            <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[color:var(--accent)] mb-2">
+              Your Appointment Details
+            </p>
+            <p className="text-sm text-stone-700 leading-relaxed">
+              {mantel && (
+                <>
+                  Interested in the <span className="font-medium">{mantel.name} Mantel</span>.
+                  {" "}
+                </>
+              )}
+              {showroom && (
+                <>
+                  Preferred showroom: <span className="font-medium">{showroom.city}</span>.
+                </>
+              )}
+            </p>
+            <p className="mt-2 text-xs text-stone-500">
+              Mention this when you schedule below (or in the appointment notes) so our
+              team can have it ready for your visit.
+            </p>
+          </div>
+        )}
 
         <div className="overflow-hidden border border-[color:var(--sand-deep)] bg-white shadow-sm">
           <iframe

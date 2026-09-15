@@ -13,7 +13,7 @@ import {
 import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import JsonLd from "@/components/JsonLd";
-import { SITE_URL } from "@/lib/business-data";
+import { SITE_URL, showrooms } from "@/lib/business-data";
 
 // Beams get their material spelled out — several precast beams look like wood.
 function productMaterialLabel(product: NonNullable<ReturnType<typeof getMantelProduct>>) {
@@ -149,17 +149,32 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href={`/estimate?product=${encodeURIComponent(product.name + " Mantel")}`}
+                href={`/booking?mantel=${encodeURIComponent(product.slug)}`}
                 className="bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white px-7 py-3 rounded font-medium text-center transition-colors"
+              >
+                Book With This Mantel in Mind
+              </Link>
+              <Link
+                href={`/estimate?product=${encodeURIComponent(product.name + " Mantel")}`}
+                className="border border-stone-300 text-stone-700 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] px-7 py-3 rounded font-medium text-center transition-colors"
               >
                 Request Project Estimate
               </Link>
-              <Link
-                href="/booking"
-                className="border border-stone-300 text-stone-700 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] px-7 py-3 rounded font-medium text-center transition-colors"
-              >
-                Book Appointment
-              </Link>
+            </div>
+
+            <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-stone-500">
+              <span>See it in person:</span>
+              {showrooms.map((s, i) => (
+                <span key={s.slug}>
+                  <Link
+                    href={`/booking?mantel=${encodeURIComponent(product.slug)}&showroom=${s.slug}`}
+                    className="text-[color:var(--accent)] font-medium hover:underline"
+                  >
+                    {s.city}
+                  </Link>
+                  {i < showrooms.length - 1 && <span className="text-stone-300"> · </span>}
+                </span>
+              ))}
             </div>
 
             {product.cadPdf && (

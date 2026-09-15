@@ -95,6 +95,69 @@ export function getShowroom(slug: string): Showroom | undefined {
   return showrooms.find((s) => s.slug === slug);
 }
 
+// ---- display formatting helpers --------------------------------------------
+// Single source of truth for "scannable" hours/address strings, so the
+// showrooms listing, Footer, and location pages can't drift out of sync.
+
+const WEEK_DAYS = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const DAY_ABBR: Record<string, string> = {
+  Monday: "Mon",
+  Tuesday: "Tue",
+  Wednesday: "Wed",
+  Thursday: "Thu",
+  Friday: "Fri",
+  Saturday: "Sat",
+  Sunday: "Sun",
+};
+
+/** "09:00" -> "9:00 AM", "17:00" -> "5:00 PM" */
+function formatTime(time: string): string {
+  const [hStr, mStr] = time.split(":");
+  const h = parseInt(hStr, 10);
+  const period = h >= 12 ? "PM" : "AM";
+  const h12 = h % 12 === 0 ? 12 : h % 12;
+  return `${h12}:${mStr} ${period}`;
+}
+
+/** Joins abbreviated day names with an en dash for a run, or commas + "&" otherwise. */
+function formatDayList(days: string[]): string {
+  const abbr = days.map((d) => DAY_ABBR[d] ?? d);
+  const indices = days.map((d) => WEEK_DAYS.indexOf(d));
+  const isConsecutiveRun =
+    days.length > 1 &&
+    indices.every((idx, i) => i === 0 || idx === indices[i - 1] + 1);
+  if (isConsecutiveRun) return `${abbr[0]}\u2013${abbr[abbr.length - 1]}`;
+  if (abbr.length <= 1) return abbr[0] ?? "";
+  return `${abbr.slice(0, -1).join(", ")} & ${abbr[abbr.length - 1]}`;
+}
+
+/** Scannable open-hours line(s), e.g. ["Mon–Sat: 9:00 AM – 5:00 PM"]. Always leads with open days. */
+export function hoursSummary(s: Showroom): string[] {
+  return s.hours.map(
+    (h) => `${formatDayList(h.days)}: ${formatTime(h.opens)} \u2013 ${formatTime(h.closes)}`,
+  );
+}
+
+/** Secondary "closed" note (e.g. "Closed Tue, Thu & Sat"), or undefined if open every weekday. */
+export function closedDaysNote(s: Showroom): string | undefined {
+  const openDays = new Set(s.hours.flatMap((h) => h.days));
+  const closedWeekdays = WEEK_DAYS.filter((d) => !openDays.has(d));
+  if (closedWeekdays.length === 0) return undefined;
+  return `Closed ${formatDayList(closedWeekdays)}`;
+}
+
+/** Single-line mailing address, e.g. "1430 S Anaheim Blvd, Anaheim, CA 92805". */
+export function formatAddress(s: Showroom): string {
+  return `${s.streetAddress}, ${s.addressLocality}, ${s.addressRegion} ${s.postalCode}`;
+}
+
 // ---- schema.org builders --------------------------------------------------
 
 export function showroomSchema(s: Showroom) {
