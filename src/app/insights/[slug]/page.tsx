@@ -2,8 +2,9 @@ import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { insightPosts, getInsightPost } from "@/lib/insights-data";
+import { insightPosts, getInsightPost, getInsightPostJsonLd } from "@/lib/insights-data";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import JsonLd from "@/components/JsonLd";
 
 // Article body text is plain data (see insights-data.ts), but supports simple
 // [link text](/path) markdown so posts can link to product/showroom pages
@@ -59,9 +60,13 @@ export default async function InsightPostPage({ params }: { params: Promise<{ sl
   if (!post) notFound();
 
   const otherPosts = insightPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const jsonLdSchemas = getInsightPostJsonLd(post.slug);
 
   return (
     <>
+      {jsonLdSchemas?.map((schema, i) => (
+        <JsonLd key={i} data={schema} />
+      ))}
       {/* Hero */}
       <section className="bg-[#F9F7F3] border-b border-[color:var(--sand-deep)] py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

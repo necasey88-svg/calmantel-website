@@ -329,6 +329,162 @@ export const insightPosts: InsightPost[] = [
   },
 ];
 
+// AEO/SEO structured data for "how-to-choose-a-gas-fireplace-insert" only, approved by
+// Natalie Casey. Kept separate from `insightPosts` (rather than inline) so it's easy to
+// see this is a one-off addition, not a pattern to replicate on every post.
+const gasFireplaceInsertJsonLd: object[] = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.calmantel.com/insights/how-to-choose-a-gas-fireplace-insert",
+    },
+    headline: "Choose a Gas Fireplace Insert: Size, BTU, Venting",
+    description:
+      "Learn how to choose the right gas fireplace insert for your existing firebox. Measure correctly, meet CA/NV codes, and know when to involve a specialist.",
+    image: [
+      "https://www.calmantel.com/insights/how-to-choose-a-gas-fireplace-insert/measure-firebox.webp",
+      "https://www.calmantel.com/insights/how-to-choose-a-gas-fireplace-insert/living-room-insert.webp",
+      "https://www.calmantel.com/insights/how-to-choose-a-gas-fireplace-insert/insert-closeup.webp",
+    ],
+    datePublished: "2026-09-02",
+    author: {
+      "@type": "Person",
+      name: "Natalie Casey",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "California Mantel & Fireplace",
+      url: "https://www.calmantel.com/",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Measure Your Fireplace Opening for a Gas Insert",
+    description:
+      "Before shopping for a gas insert, take five key measurements of your existing firebox to ensure a proper fit and avoid costly mistakes.",
+    tool: [
+      {
+        "@type": "HowToTool",
+        name: "Tape measure",
+      },
+    ],
+    step: [
+      {
+        "@type": "HowToStep",
+        name: "Measure Front Width",
+        text: "Measure across the widest point at the front opening of the firebox.",
+        url: "https://www.calmantel.com/insights/how-to-choose-a-gas-fireplace-insert#how-to-measure-for-a-gas-fireplace-insert",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Measure Rear Width",
+        text: "Measure across the back wall inside the firebox. This is typically smaller than the front width as most fireboxes taper.",
+        url: "https://www.calmantel.com/insights/how-to-choose-a-gas-fireplace-insert#how-to-measure-for-a-gas-fireplace-insert",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Measure Opening Height",
+        text: "Measure from the hearth floor to the top of the opening at the center.",
+        url: "https://www.calmantel.com/insights/how-to-choose-a-gas-fireplace-insert#how-to-measure-for-a-gas-fireplace-insert",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Measure Firebox Depth",
+        text: "Measure from the front face of the fireplace opening straight back to the rear wall.",
+        url: "https://www.calmantel.com/insights/how-to-choose-a-gas-fireplace-insert#how-to-measure-for-a-gas-fireplace-insert",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Measure Hearth Depth",
+        text: "Measure from the front of the fireplace opening outward to the edge of the hearth.",
+        url: "https://www.calmantel.com/insights/how-to-choose-a-gas-fireplace-insert#how-to-measure-for-a-gas-fireplace-insert",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Confirm Mantel Clearances",
+        text: "Check the insert's documentation for its required minimum clearances to combustible materials, like a wood mantel, to ensure a safe and code-compliant installation.",
+        url: "https://www.calmantel.com/insights/how-to-choose-a-gas-fireplace-insert#clearance-and-mantel-considerations",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Can you put a gas fireplace insert in an existing fireplace?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "In many cases, yes, but the existing fireplace and chimney must be compatible with the insert’s venting system and clearance requirements. A certified chimney inspection is the best way to confirm the flue can accept the correct liner and that the structure is in safe condition before you buy.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are the disadvantages of a gas fireplace insert?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The biggest downsides are project complexity and upfront cost, especially if venting, gas line work, electrical, or surround modifications are needed. In some California jurisdictions, permitting and air district rules can also limit certain configurations or add time to the install.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are gas fireplace inserts worth the money?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "They can be, if you want a cleaner, more controllable heat source than an open fireplace and you plan to use it regularly. Value typically comes down to choosing the right unit for your space and avoiding rework from sizing, venting, or clearance mistakes.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are the code and permit steps in California and Nevada that can delay a gas insert project?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Most projects require permits, and timelines can vary by city, county, and local air district rules. Before ordering equipment, confirm permit requirements, inspection steps, and any vent-free restrictions with your local building department and your installer.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I choose between a standing pilot and electronic ignition for a gas insert?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A standing pilot can simplify operation but uses a small amount of gas continuously, while electronic ignition reduces fuel use by lighting only when needed. If you care about performance during outages, ask whether the unit can run on battery backup or requires household power for ignition and controls.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What features should I compare beyond BTUs when selecting a specific model?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Compare glass size and viewing area, flame presentation, blower noise levels, thermostat or remote controls, and how the surround panels fit your opening. Also check warranty terms and availability of local service, since parts and support matter long after installation day.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I plan my surround and mantel design so it stays compliant and looks proportional?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Start with the insert’s published clearance requirements, then design the mantel height, depth, and side legs around those constraints. If you are changing facing materials like tile or stone, confirm final dimensions with your installer so finish thickness does not create clearance or fit issues.",
+        },
+      },
+    ],
+  },
+];
+
+// Opt-in per-slug lookup — only slugs listed here get extra JSON-LD rendered on
+// their post page. Add a new slug/array pair above and reference it here to give
+// another post its own approved schema; don't apply one post's schema to others.
+const postSchemaBySlug: Record<string, object[]> = {
+  "how-to-choose-a-gas-fireplace-insert": gasFireplaceInsertJsonLd,
+};
+
+export function getInsightPostJsonLd(slug: string): object[] | undefined {
+  return postSchemaBySlug[slug];
+}
+
 export function getInsightPost(slug: string) {
   return insightPosts.find((p) => p.slug === slug);
 }
