@@ -1,29 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
+import {
+  showrooms as showroomData,
+  hoursSummary,
+  closedDaysNote,
+  formatAddress,
+} from "@/lib/business-data";
 
-const showrooms = [
-  {
-    city: "Sacramento",
-    address: "4141 N Freeway Blvd, Sacramento, CA 95834",
-    hours: "Mon–Sat: 10:00 AM – 2:00 PM",
-    phone: "(916) 665-0627",
-    tel: "9166650627",
-  },
-  {
-    city: "Anaheim",
-    address: "1430 S Anaheim Blvd, Anaheim, CA 92805",
-    hours: "Mon–Sat: 9:00 AM – 5:00 PM",
-    phone: "(714) 908-7388",
-    tel: "7149087388",
-  },
-  {
-    city: "Dublin",
-    address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
-    hours: "Mon, Wed & Fri: 10:00 AM – 5:00 PM · Tue, Thu & Sat: Closed",
-    phone: "(925) 436-1731",
-    tel: "9254361731",
-  },
-];
+// Sacramento (HQ) leads, matching the original footer order.
+const footerShowroomOrder = ["sacramento", "anaheim", "dublin"];
+const showrooms = footerShowroomOrder
+  .map((slug) => showroomData.find((s) => s.slug === slug))
+  .filter((s): s is NonNullable<typeof s> => Boolean(s))
+  .map((s) => ({
+    city: s.city,
+    address: formatAddress(s),
+    hoursLines: hoursSummary(s),
+    closedNote: closedDaysNote(s),
+    phone: s.phone,
+    tel: s.tel,
+  }));
 
 export default function Footer() {
   return (
@@ -54,6 +50,7 @@ export default function Footer() {
           <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Explore</h3>
           <ul className="space-y-2 text-sm">
             {[
+              { label: "Book a Showroom Consultation", href: "/booking" },
               { label: "Guided Project Estimate", href: "/instant-estimate" },
               { label: "Detailed Project Request", href: "/estimate" },
               { label: "Mantels", href: "/mantels" },
@@ -84,7 +81,10 @@ export default function Footer() {
                 <p className="text-white font-medium mb-1">{s.city}</p>
                 <p className="text-gray-400 leading-relaxed">{s.address}</p>
                 <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.address)}`} target="_blank" rel="noopener noreferrer" className="text-[#C8922A] hover:text-white transition-colors mt-1 block">Get Directions →</a>
-                <p className="text-gray-400 mt-1">{s.hours}</p>
+                {s.hoursLines.map((h) => (
+                  <p key={h} className="text-gray-400 mt-1">{h}</p>
+                ))}
+                {s.closedNote && <p className="text-gray-500 text-xs">{s.closedNote}</p>}
                 <a href={`tel:${s.tel}`} className="text-[#C8922A] hover:text-white transition-colors mt-1 block">
                   {s.phone}
                 </a>

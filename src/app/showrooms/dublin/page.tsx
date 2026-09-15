@@ -139,13 +139,19 @@ export default function DublinShowroomPage() {
               Plan Your Showroom Visit
             </h3>
             <p className="text-amber-100 text-sm mb-4">
-              Visit Monday, Wednesday, or Friday, or submit a request before stopping by.
+              Book a time on Monday, Wednesday, or Friday, or submit a project estimate before stopping by.
             </p>
             <Link
-              href="/estimate"
+              href="/booking?showroom=dublin"
               className="block text-center bg-white text-[color:var(--accent)] hover:bg-amber-50 px-5 py-2.5 rounded font-medium text-sm transition-colors"
             >
-              Request Project Estimate
+              Book an Appointment
+            </Link>
+            <Link
+              href="/estimate"
+              className="block text-center mt-2 text-white/85 hover:text-white text-xs uppercase tracking-[0.14em] transition-colors"
+            >
+              Request Project Estimate →
             </Link>
           </div>
 

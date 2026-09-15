@@ -130,16 +130,22 @@ export default function SacramentoShowroomPage() {
 
           <div className="bg-[color:var(--accent)] text-white rounded-sm p-6">
             <h3 className="text-lg font-medium mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
-              Project Estimate
+              Book This Showroom
             </h3>
             <p className="text-amber-100 text-sm mb-4">
               Start your project with a private consultation from our Sacramento team.
             </p>
             <Link
-              href="/estimate"
+              href="/booking?showroom=sacramento"
               className="block text-center bg-white text-[color:var(--accent)] hover:bg-[#F9F7F3] px-5 py-2.5 rounded font-medium text-sm transition-colors"
             >
-              Request Project Estimate
+              Book an Appointment
+            </Link>
+            <Link
+              href="/estimate"
+              className="block text-center mt-2 text-white/85 hover:text-white text-xs uppercase tracking-[0.14em] transition-colors"
+            >
+              Request Project Estimate →
             </Link>
           </div>
 

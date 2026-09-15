@@ -137,16 +137,22 @@ export default function AnaheimShowroomPage() {
               className="text-lg font-medium mb-2"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Project Estimate
+              Book This Showroom
             </h3>
             <p className="text-amber-100 text-sm mb-4">
-              Tell us about your project and we&apos;ll provide a project estimate — in showroom or online.
+              Meet one-on-one with an Anaheim hearth consultant, or start with a project estimate.
             </p>
             <Link
-              href="/estimate"
+              href="/booking?showroom=anaheim"
               className="block text-center bg-white text-[color:var(--accent)] hover:bg-amber-50 px-5 py-2.5 rounded font-medium text-sm transition-colors"
             >
-              Request Project Estimate
+              Book an Appointment
+            </Link>
+            <Link
+              href="/estimate"
+              className="block text-center mt-2 text-white/85 hover:text-white text-xs uppercase tracking-[0.14em] transition-colors"
+            >
+              Request Project Estimate →
             </Link>
           </div>
 

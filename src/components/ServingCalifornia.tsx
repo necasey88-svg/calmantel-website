@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { showrooms as showroomData, formatAddress } from "@/lib/business-data";
 
 const regions = [
   "Sacramento",
@@ -10,26 +11,13 @@ const regions = [
   "Reno, NV",
 ];
 
-const showrooms = [
-  {
-    city: "Anaheim",
-    address: "1430 S Anaheim Blvd, Anaheim, CA 92805",
-    phone: "(714) 908-7388",
-    tel: "7149087388",
-  },
-  {
-    city: "Dublin",
-    address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
-    phone: "(925) 436-1731",
-    tel: "9254361731",
-  },
-  {
-    city: "Sacramento",
-    address: "4141 N Freeway Blvd, Sacramento, CA 95834",
-    phone: "(916) 665-0627",
-    tel: "9166650627",
-  },
-];
+const showrooms = showroomData.map((s) => ({
+  city: s.city,
+  slug: s.slug,
+  address: formatAddress(s),
+  phone: s.phone,
+  tel: s.tel,
+}));
 
 export default function ServingCalifornia() {
   return (
@@ -90,17 +78,14 @@ export default function ServingCalifornia() {
               >
                 Get Directions →
               </Link>
+              <Link
+                href={`/booking?showroom=${s.slug}`}
+                className="block mt-2 text-sm text-[color:var(--ink)] font-medium hover:text-[color:var(--accent)] transition-colors"
+              >
+                Book This Showroom →
+              </Link>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            href="/booking"
-            className="inline-block bg-[color:var(--ink)] text-white hover:bg-black px-9 py-3.5 text-sm uppercase tracking-[0.16em] transition-colors"
-          >
-            Book a Consultation
-          </Link>
         </div>
       </div>
     </section>
