@@ -209,6 +209,16 @@ export default function MantelFitFinder({
                 : `Showing all ${shown.length} mantels with published sizes — enter your firebox width above to find your fit.`}
         </p>
 
+        {hasFirebox && shown.length > 0 && (
+          <p className="text-sm text-stone-600 mb-6 bg-[#F9F7F3] border border-[#D9CBB8] rounded-sm px-4 py-3">
+            Found a good fit?{" "}
+            <Link href="/booking" className="text-[color:var(--accent)] font-medium hover:underline">
+              Book a showroom consultation
+            </Link>{" "}
+            to see it in person and confirm the exact fit.
+          </p>
+        )}
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {shown.map(({ product, fittingSizes, clearance, overallHeight }) => {
               const snug = fittingSizes[0];
