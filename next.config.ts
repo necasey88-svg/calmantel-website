@@ -17,6 +17,50 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "5208252.fs1.hubspotusercontent-na1.net" },
     ],
   },
+  // ── GSC crawl-waste reduction (2026-09-21) ────────────────────────────────
+  // Two buckets of "Crawled - currently not indexed" noise, fixed at the HTTP
+  // layer rather than by blocking anything in robots.txt (Google's own
+  // guidance is explicit: don't robots.txt-block pages/assets you want
+  // Googlebot to still read a noindex signal from, and don't block the JS/CSS
+  // it needs to render the page — see robots.txt for the reasoning):
+  //   1. /estimate?product=... — every product CTA links to its own query
+  //      variant purely to prefill the form. The page-level `generateMetadata`
+  //      in src/app/estimate/page.tsx already emits a `<meta name="robots"
+  //      content="noindex, follow">` for any query string; this header is a
+  //      belt-and-suspenders duplicate of that same signal (X-Robots-Tag has
+  //      identical semantics to the meta tag, per Google's docs) so it still
+  //      applies even if a caching layer ever strips the meta tag.
+  //   2. Hashed, per-deploy asset URLs Google discovers via the HTML itself
+  //      (favicon.ico?<hash>, /opengraph-image?<hash>, /twitter-image?<hash>,
+  //      /_next/static/...) — these aren't content pages, so tell Google not
+  //      to index them, without disallowing them in robots.txt (which would
+  //      also hide them from Googlebot's renderer and hurt rendering-based
+  //      indexing of real pages).
+  async headers() {
+    return [
+      {
+        source: "/estimate",
+        has: [{ type: "query", key: "product" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }],
+      },
+      {
+        source: "/favicon.ico",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+      {
+        source: "/opengraph-image",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+      {
+        source: "/twitter-image",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+      {
+        source: "/_next/static/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+    ];
+  },
   async redirects() {
     return [
       // ── Dealeron legacy (.html pages & old URL structure) ──────────────────
