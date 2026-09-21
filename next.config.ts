@@ -212,6 +212,12 @@ const nextConfig: NextConfig = {
       { source: "/blog-1/modern-fireplace-design-trends-2026-edition", destination: "/insights/modern-fireplace-design-trends-2026", permanent: true },
       { source: "/blog", destination: "/insights", permanent: true },
       { source: "/blog-1", destination: "/insights", permanent: true },
+      // GSC redirect audit (2026-09-17): flagged /blog/Blog Post Title
+      // One-35jy2 — a stray Squarespace demo/placeholder post (literal
+      // space in the slug) that never had real content and isn't linked
+      // from anywhere in this codebase. It 308s cleanly to /insights via
+      // the /blog/:slug* wildcard below; called out explicitly so it
+      // isn't mistaken for a live bug during future audits.
       { source: "/blog/:slug*", destination: "/insights", permanent: true },
       { source: "/blog-1/:slug*", destination: "/insights", permanent: true },
 
@@ -223,6 +229,29 @@ const nextConfig: NextConfig = {
       { source: "/overstock-sale-1/p/nullarbor-1", destination: "/overstock-sale/p/nullarbor", permanent: true },
       { source: "/overstock-sale-1/p/manly", destination: "/overstock-sale/p/manly", permanent: true },
       { source: "/overstock-sale-1/p/sausalito", destination: "/overstock-sale/p/sausalito", permanent: true },
+
+      // GSC redirect audit (2026-09-17): these items dropped out of the
+      // overstock section but are still sold as regular-priced mantels
+      // under the same slug, so send them to their live product page
+      // instead of the generic /overstock-sale listing.
+      { source: "/overstock-sale-1/p/belmont", destination: "/mantels/p/belmont", permanent: true },
+      { source: "/overstock-sale-1/p/darlinghurst", destination: "/mantels/p/darlinghurst", permanent: true },
+      { source: "/overstock-sale-1/p/eudunda", destination: "/mantels/p/eudunda", permanent: true },
+      { source: "/overstock-sale-1/p/dominique", destination: "/mantels/p/dominique", permanent: true },
+      { source: "/overstock-sale-1/p/kensington", destination: "/mantels/p/kensington", permanent: true },
+      { source: "/overstock-sale-1/p/torrens", destination: "/mantels/p/torrens", permanent: true },
+      { source: "/overstock-sale-1/p/australian", destination: "/mantels/p/australian", permanent: true },
+      { source: "/overstock-sale-1/p/gosford", destination: "/mantels/p/gosford", permanent: true },
+      { source: "/overstock-sale-1/p/brighton", destination: "/mantels/p/brighton", permanent: true },
+      // Typo/rename fixes (same pattern as the /labor-day-sale-1 rules above)
+      { source: "/overstock-sale-1/p/reynalla", destination: "/mantels/p/reynella", permanent: true },
+      { source: "/overstock-sale-1/p/rockhamptonqueensland", destination: "/mantels/p/rockhampton", permanent: true },
+      // Hearths were never their own overstock line item — route to the
+      // hearths category instead of the generic overstock listing.
+      { source: "/overstock-sale-1/p/raised-hearth", destination: "/mantels/hearths", permanent: true },
+
+      // Anything else under the old overstock section with no live match
+      // falls back to the current listing page.
       { source: "/overstock-sale-1/p/:slug*", destination: "/overstock-sale", permanent: true },
     ];
   },
