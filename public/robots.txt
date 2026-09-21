@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+
+# Note on /_next/: intentionally NOT disallowed here. Googlebot needs to
+# fetch these JS/CSS assets to render pages, and blocking them would hurt
+# rendering-based indexing of real content. Per Google's own guidance, seeing
+# /_next/static/... show up as "Crawled - currently not indexed" in Search
+# Console is expected/harmless for build assets — they're resources, not
+# pages. We instead send an X-Robots-Tag: noindex header on those asset
+# responses (see next.config.ts `headers()`), which tells Google not to treat
+# them as indexable pages without blocking Googlebot from fetching them.
 
 Sitemap: https://www.calmantel.com/sitemap.xml
