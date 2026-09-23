@@ -4,6 +4,7 @@ import Image from "next/image";
 import PricingCTA from "@/components/PricingCTA";
 
 const BASE = "/masonry-gallery";
+const RECENT = `${BASE}/2026-06-09`;
 
 const residential = [
   {
@@ -30,6 +31,101 @@ const residential = [
     src: `${BASE}/673bc382-353e-46c6-a60a-ec02a3c5c039.webp`,
     alt: "Apartment complex with trees and parking area",
     caption: "Apartment Complex",
+  },
+  {
+    src: `${RECENT}/IMG_2490.webp`,
+    alt: "Outdoor stone fireplace under construction with a wood timber frame on a backyard patio",
+    caption: "Outdoor Fireplace Construction",
+  },
+  {
+    src: `${RECENT}/IMG_2491.webp`,
+    alt: "Outdoor stone fireplace with tile veneer taking shape under a covered patio",
+    caption: "Outdoor Fireplace & Covered Patio",
+  },
+  {
+    src: `${RECENT}/IMG_2500.webp`,
+    alt: "Stone veneer chimney and covered porch under construction on a two-story home",
+    caption: "Residential Chimney & Porch",
+  },
+  {
+    src: `${RECENT}/IMG_2644.webp`,
+    alt: "Stacked stone accent wall and vaulted wood ceiling in an unfinished great room",
+    caption: "Stone Accent Wall — Great Room",
+  },
+  {
+    src: `${RECENT}/IMG_2651.webp`,
+    alt: "Masons on scaffolding installing stone veneer on a multi-story residential building",
+    caption: "Multi-Story Stone Veneer Installation",
+  },
+  {
+    src: `${RECENT}/IMG_2768.webp`,
+    alt: "Finished stacked stone fireplace surround in a living room with wood flooring",
+    caption: "Living Room Stone Fireplace",
+  },
+  {
+    src: `${RECENT}/IMG_2785.webp`,
+    alt: "Masonry crew on scaffolding installing stone veneer on a large two-story home",
+    caption: "Custom Home Stone Veneer",
+  },
+  {
+    src: `${RECENT}/IMG_2787.webp`,
+    alt: "Masonry crew installing stone veneer around a turret window on a home exterior",
+    caption: "Stone Veneer Detail Work",
+  },
+  {
+    src: `${RECENT}/IMG_2809.webp`,
+    alt: "Precast concrete structure and framing on a multi-unit residential building under construction",
+    caption: "Multi-Unit Residential Construction",
+  },
+  {
+    src: `${RECENT}/IMG_2874.webp`,
+    alt: "Brick veneer corner detail at a covered home entryway",
+    caption: "Brick Veneer Entry Detail",
+  },
+  {
+    src: `${RECENT}/IMG_2892.webp`,
+    alt: "Painted brick wainscot installed along the base of a home under construction",
+    caption: "Brick Wainscot Installation",
+  },
+  {
+    src: `${RECENT}/IMG_2917.webp`,
+    alt: "Mason installing stone veneer wainscot on a home exterior",
+    caption: "Stone Veneer Wainscot",
+  },
+  {
+    src: `${RECENT}/IMG_3033.webp`,
+    alt: "New home construction with brick veneer porch columns and gray shingle siding",
+    caption: "Brick Porch Columns",
+  },
+  {
+    src: `${RECENT}/IMG_3035.webp`,
+    alt: "Stacked stone fireplace wall with built-in shelving flanking a mounted TV",
+    caption: "Stone Fireplace & Media Wall",
+  },
+  {
+    src: `${RECENT}/IMG_3036.webp`,
+    alt: "Scaffolding on a stone veneer home exterior with arched window details",
+    caption: "Stone Veneer Home Exterior",
+  },
+  {
+    src: `${RECENT}/IMG_3055.webp`,
+    alt: "Stone veneer columns supporting a covered patio with a wood beam",
+    caption: "Covered Patio Stone Columns",
+  },
+  {
+    src: `${RECENT}/IMG_3056.webp`,
+    alt: "Stone veneer columns and a wood beam framing a home's covered entry",
+    caption: "Stone Column Entry",
+  },
+  {
+    src: `${RECENT}/IMG_3097.webp`,
+    alt: "Stone veneer garage and exterior wall on a home under construction",
+    caption: "Stone Veneer Garage Exterior",
+  },
+  {
+    src: `${RECENT}/IMG_3154.webp`,
+    alt: "Mason leveling a brick foundation course along a home under construction",
+    caption: "Brick Foundation Course",
   },
 ];
 
@@ -78,6 +174,81 @@ const commercial = [
     src: `${BASE}/f43c8ee5-383f-4055-97e5-6e1d608c8a26.webp`,
     alt: "Outdoor courtyard with red umbrellas and seating at sunset",
     caption: "Commercial Courtyard",
+  },
+  {
+    src: `${RECENT}/IMG_2595.webp`,
+    alt: "Precast concrete curb wall along a landscaped commercial street frontage",
+    caption: "Commercial Curb Wall",
+  },
+  {
+    src: `${RECENT}/IMG_2615.webp`,
+    alt: "Precast capped block wall along a commercial parking lot",
+    caption: "Parking Lot Retaining Wall",
+  },
+  {
+    src: `${RECENT}/IMG_2617.webp`,
+    alt: "Precast capped block wall along a commercial sidewalk and parking lot",
+    caption: "Commercial Sidewalk Wall",
+  },
+  {
+    src: `${RECENT}/IMG_2776.webp`,
+    alt: "Pallets of brick staged for installation outside a commercial building",
+    caption: "Brick Material Staging",
+  },
+  {
+    src: `${RECENT}/IMG_2836.webp`,
+    alt: "Stone-clad fountain in the University Village retail plaza courtyard",
+    caption: "University Village — Stone Fountain",
+  },
+  {
+    src: `${RECENT}/IMG_2848.webp`,
+    alt: "Masonry crew on scaffolding installing brick veneer on a commercial building",
+    caption: "Commercial Brick Veneer Installation",
+  },
+  {
+    src: `${RECENT}/IMG_2849.webp`,
+    alt: "Masonry crew plastering and finishing a commercial block wall from scaffolding",
+    caption: "Commercial Wall Finishing",
+  },
+  {
+    src: `${RECENT}/IMG_2913.webp`,
+    alt: "Close-up of red brick veneer with banded accent courses on a commercial building",
+    caption: "Brick Veneer Detail",
+  },
+  {
+    src: `${RECENT}/IMG_2936.webp`,
+    alt: "Stacked stone bar surround inside a LongHorn Steakhouse under construction",
+    caption: "LongHorn Steakhouse — Interior Stonework",
+  },
+  {
+    src: `${RECENT}/IMG_2937.webp`,
+    alt: "Stone veneer entrance columns on a LongHorn Steakhouse building exterior",
+    caption: "LongHorn Steakhouse — Exterior",
+  },
+  {
+    src: `${RECENT}/IMG_2983.webp`,
+    alt: "Scaffolding along a brick and block commercial building under construction",
+    caption: "Commercial Building Masonry",
+  },
+  {
+    src: `${RECENT}/IMG_3010.webp`,
+    alt: "Brick and stone columns on a commercial building behind construction screening",
+    caption: "Commercial Facade Columns",
+  },
+  {
+    src: `${RECENT}/IMG_3015.webp`,
+    alt: "Mason on scaffolding finishing a brick veneer wall on a retail building",
+    caption: "Retail Building Brick Veneer",
+  },
+  {
+    src: `${RECENT}/IMG_3138.webp`,
+    alt: "Masons on scaffolding installing brick veneer on a large block building",
+    caption: "Large-Scale Brick Veneer",
+  },
+  {
+    src: `${RECENT}/IMG_3139.webp`,
+    alt: "Block and brick veneer construction on a commercial retail building",
+    caption: "Commercial Retail Construction",
   },
 ];
 
