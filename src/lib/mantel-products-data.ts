@@ -411,7 +411,7 @@ export const mantelProducts: MantelProduct[] = [
     type: "precast",
     style: "traditional",
     subStyle: "classical",
-    cadPdf: "/cad/bathurst-picture-frame.pdf",
+    cadPdf: "/cad/bathurst-line-drawing-2026-09.pdf",
     image: "/mantels/bathurst.png",
     description:
       "The Bathurst Mantel is a stately precast fireplace surround that balances classic symmetry with refined architectural detail. Featuring clean pilaster legs, elegant crown molding, and a broad shelf, the Bathurst adds presence and sophistication to traditional and transitional interiors alike. Constructed from high-quality precast concrete for lasting beauty and durability.",
