@@ -403,16 +403,17 @@ export const mantelDimensions: Record<string, MantelDimensions> = {
   },
 
   // ── Batch 9: earlier-skipped b-range CADs (awaiting verification) ─────────
-  // (bathurst uses bathurst-picture-frame.pdf — its only drawing. barossa-picture-frame.pdf
-  //  and bolte-picture-frame.pdf are alternates not tied to a slug — barossa/bolte
-  //  products use barossa.pdf/bolte.pdf; skipped. barossa already in Batch 1.)
+  // (barossa-picture-frame.pdf and bolte-picture-frame.pdf are alternates not
+  //  tied to a slug — barossa/bolte products use barossa.pdf/bolte.pdf; skipped.
+  //  barossa already in Batch 1.)
   bathurst: {
-    openingWidths: [43], // single; picture-frame surround
-    openingHeight: 17.25, // shallow picture-frame slot — VERIFY
-    overallWidths: [73], // shelf/cap; body base reads 66
-    overallHeight: 45,
-    shelfDepth: 9.75, // shelf height reads 16¼
-    cadVerified: false,
+    // Sourced from bathurst-line-drawing-2026-09.pdf (Opera House Collection).
+    openingWidths: [39.5],
+    openingHeight: 36.5,
+    overallWidths: [70], // shelf width; hearth/plinth reads 72
+    overallHeight: 54.5,
+    shelfDepth: 10,
+    cadVerified: true,
   },
   bolte: {
     openingWidths: [37.25, 43.25], // two sizes; frame surround (Tasmania)
