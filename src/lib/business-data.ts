@@ -66,7 +66,8 @@ export const showrooms: Showroom[] = [
     tel: "9254361731",
     hours: [
       {
-        days: ["Monday", "Wednesday", "Friday"],
+        // Temporary extended hours (through Oct 13, 2026): Mon–Fri, closed Sat.
+        days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         opens: "10:00",
         closes: "17:00",
       },

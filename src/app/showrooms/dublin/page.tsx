@@ -59,8 +59,8 @@ export default function DublinShowroomPage() {
                 from wood to gas, or installing a brand-new electric unit in a condo.
               </p>
               <p>
-                Walk-ins are welcome Monday, Wednesday, and Friday from 10:00 AM to
-                5:00 PM. The showroom is closed Tuesday, Thursday, and Saturday.
+                Walk-ins are welcome Monday through Friday from 10:00 AM to
+                5:00 PM. The showroom is closed Saturday and Sunday.
               </p>
             </div>
           </div>
@@ -116,14 +116,7 @@ export default function DublinShowroomPage() {
               </div>
               <div>
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Hours</p>
-                <div className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-stone-700">
-                  <span>Monday</span><span>10:00 AM–5:00 PM</span>
-                  <span>Tuesday</span><span>Closed</span>
-                  <span>Wednesday</span><span>10:00 AM–5:00 PM</span>
-                  <span>Thursday</span><span>Closed</span>
-                  <span>Friday</span><span>10:00 AM–5:00 PM</span>
-                  <span>Saturday</span><span>Closed</span>
-                </div>
+                <p className="text-stone-700">Mon–Fri: 10:00 AM – 5:00 PM</p>
               </div>
               <div>
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Phone</p>
@@ -139,7 +132,7 @@ export default function DublinShowroomPage() {
               Plan Your Showroom Visit
             </h3>
             <p className="text-amber-100 text-sm mb-4">
-              Book a time on Monday, Wednesday, or Friday, or submit a project estimate before stopping by.
+              Book a time Monday through Friday, or submit a project estimate before stopping by.
             </p>
             <Link
               href="/booking?showroom=dublin"
