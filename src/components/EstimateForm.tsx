@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 
+import CommunicationPreference from "@/components/CommunicationPreference";
 import EditorialPageHero from "@/components/EditorialPageHero";
 import { trackEvent, trackLeadConversion } from "@/lib/analytics";
 const ACCESS_KEY = "77eca617-9eb9-4352-8b5a-c89bf8870232";
@@ -165,16 +166,7 @@ export default function EstimateForm({ initialProductInterest = "" }: EstimateFo
               />
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-stone-700 mb-1">
-                Phone
-              </label>
-              <input
-                type="tel"
-                name="phone"
-                className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
-              />
-            </div>
+            <CommunicationPreference includePhone />
 
             <div>
               <label className="block text-sm font-medium text-stone-700 mb-1">

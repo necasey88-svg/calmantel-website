@@ -1,3 +1,4 @@
+import CommunicationPreference from "@/components/CommunicationPreference";
 import Link from "next/link";
 
 export const metadata = {
@@ -144,6 +145,8 @@ export default async function OverstockInquiryPage({
                 className="w-full border border-[color:var(--sand-deep)] bg-white px-4 py-3 text-[color:var(--ink)] outline-none transition-colors focus:border-[color:var(--accent)]"
               />
             </div>
+
+            <CommunicationPreference includePhone />
 
             <div>
               <label

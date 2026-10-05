@@ -1,5 +1,6 @@
 "use client";
 
+import CommunicationPreference from "@/components/CommunicationPreference";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
@@ -287,15 +288,7 @@ export default function OverstockInventory({
                   className="w-full border border-[color:var(--sand-deep)] bg-white px-4 py-3 text-sm outline-none focus:border-[color:var(--accent)]"
                 />
               </label>
-              <label className="block">
-                <span className="mb-2 block text-sm font-medium text-[color:var(--ink)]">Phone</span>
-                <input
-                  type="tel"
-                  name="phone"
-                  autoComplete="tel"
-                  className="w-full border border-[color:var(--sand-deep)] bg-white px-4 py-3 text-sm outline-none focus:border-[color:var(--accent)]"
-                />
-              </label>
+              <CommunicationPreference includePhone />
               <button
                 type="submit"
                 className="w-full bg-[color:var(--ink)] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[color:var(--accent)]"

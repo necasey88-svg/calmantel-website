@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import CommunicationPreference from "@/components/CommunicationPreference";
+
 
 import { trackEvent, trackLeadConversion } from "@/lib/analytics";
 
@@ -9,6 +11,7 @@ import { trackEvent, trackLeadConversion } from "@/lib/analytics";
 const ACCESS_KEY = "77eca617-9eb9-4352-8b5a-c89bf8870232";
 
 export default function ContactForm() {
+  const [communicationPreference, setCommunicationPreference] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -102,15 +105,18 @@ export default function ContactForm() {
 
       <div>
         <label className="block text-sm font-medium text-stone-700 mb-1">
-          Email <span className="text-stone-400 font-normal">(optional)</span>
+          Email {communicationPreference === "Email" ? "*" : <span className="text-stone-400 font-normal">(optional)</span>}
         </label>
         <input
           type="email"
           name="email"
           autoComplete="email"
+          required={communicationPreference === "Email"}
           className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
         />
       </div>
+
+      <CommunicationPreference value={communicationPreference} onChange={setCommunicationPreference} />
 
       <div>
         <label className="block text-sm font-medium text-stone-700 mb-1">
