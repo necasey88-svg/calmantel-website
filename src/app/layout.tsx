@@ -95,6 +95,11 @@ export default function RootLayout({
           src="//cdn.rlets.com/capture_static/mms/mms.js"
           strategy="afterInteractive"
         />
+        {/* Klaviyo Active on Site — identifies email click-throughs via _kx. */}
+        <Script
+          src="https://static.klaviyo.com/onsite/js/UBt8Pc/klaviyo.js"
+          strategy="afterInteractive"
+        />
         {/* Pinterest tag (ID carried over from the legacy GTM container) */}
         <Script id="pinterest-tag" strategy="afterInteractive">
           {`
