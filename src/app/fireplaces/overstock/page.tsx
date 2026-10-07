@@ -384,17 +384,6 @@ const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
   },
   {
     manufacturer: "Modern Flames",
-    name: 'Landscape Pro Multi 56" Electric Fireplace',
-    sku: "LPM-5616",
-    image: "/overstock/lpm-5616.jpg",
-    quantity: 1,
-    category: "Electric",
-    configuration: "Built-in linear",
-    fuel: "Electric",
-    details: "A 56-inch Landscape Pro Multi built-in electric fireplace with a wide, low-profile flame presentation.",
-  },
-  {
-    manufacturer: "Modern Flames",
     name: 'RedStone 30" Electric Fireplace',
     sku: "RS-3021",
     image: "/overstock/rs-3021.jpg",
