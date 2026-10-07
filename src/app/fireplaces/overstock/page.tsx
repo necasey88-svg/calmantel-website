@@ -61,18 +61,6 @@ const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
     note: "Pickup only. No shipping.",
   },
   {
-    manufacturer: "Dimplex",
-    name: 'IgniteXL 50" Linear Electric Fireplace',
-    sku: "XLF50",
-    image: "/overstock/xlf50.jpg",
-    quantity: 1,
-    category: "Electric",
-    configuration: "Front-facing linear",
-    fuel: "120V / 240V electric",
-    details:
-      'A low-profile 50-inch built-in electric fireplace with Multi-Fire flame effects, color themes, and supplemental heat.',
-  },
-  {
     manufacturer: "Faber by Glen Dimplex",
     name: "MatriX 4326 Right-Facing Built-In Gas Fireplace",
     sku: "FMG4726R",
@@ -254,17 +242,6 @@ const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
     configuration: "Right-corner two-sided",
     fuel: "Natural gas",
     details: "A 40-inch traditional corner fireplace with front and right-side viewing and electronic ignition.",
-  },
-  {
-    manufacturer: "Napoleon",
-    name: 'Ascent Linear 46" Direct-Vent Fireplace',
-    sku: "BL46NTE",
-    image: "/overstock/bl46nte.png",
-    quantity: 1,
-    category: "Gas",
-    configuration: "Front-facing linear",
-    fuel: "Natural gas",
-    details: "A 46-inch linear direct-vent fireplace with a contemporary glass ember bed and clean modern opening.",
   },
   {
     manufacturer: "Napoleon",
@@ -603,16 +580,6 @@ const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
     configuration: "Pilot control kit",
     fuel: "For compatible gas burner",
     details: "An electronic pilot-control kit for compatible Real Fyre gas log burners.",
-  },
-  {
-    manufacturer: "Real Fyre",
-    name: 'G45 16/19" Burner System',
-    sku: "G45-16/19",
-    quantity: 1,
-    category: "Gas Log Set",
-    configuration: "Vented burner",
-    fuel: "Gas configuration to confirm",
-    details: "A Real Fyre G45 burner system sized for compatible 16- to 19-inch log sets.",
   },
   {
     manufacturer: "Real Fyre",
