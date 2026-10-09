@@ -371,6 +371,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/turin.png",
     type: "precast",
     style: "contemporary",
+    cadPdf: "/cad/turin-line-drawing-2026-10.pdf",
     description:
       "The Turin Mantel is a contemporary precast fireplace surround that combines modern design with exceptional craftsmanship, creating a refined architectural statement for today's homes. With its clean lines, sleek profile, and minimalist aesthetic, this fireplace mantel serves as an elegant focal point for any living space. Expertly manufactured from high-quality, durable precast materials, the Turin ensures long-lasting beauty, strength, and easy maintenance.",
   },

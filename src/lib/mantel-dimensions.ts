@@ -439,4 +439,15 @@ export const mantelDimensions: Record<string, MantelDimensions> = {
     shelfDepth: 2.75, // thin
     cadVerified: false,
   },
+
+  // ── Batch 10: Turin line drawing (owner-verified) ─────────────────────────
+  turin: {
+    // Sourced from turin-line-drawing-2026-10.pdf.
+    openingWidths: [45.75],
+    openingHeight: 36,
+    overallWidths: [73.75], // single size; no separate hearth width shown
+    overallHeight: 50,
+    shelfDepth: 12, // side profile: body depth 12" at shelf; base plinth projects to 20"
+    cadVerified: true,
+  },
 };
