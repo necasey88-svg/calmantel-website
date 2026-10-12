@@ -117,7 +117,7 @@ export default function ShowroomsPage() {
                   href={`/booking?showroom=${s.slug}`}
                   className="bg-[color:var(--accent)] hover:bg-[color:var(--accent-dark)] text-white px-5 py-2.5 font-medium text-sm transition-colors"
                 >
-                  Book This Showroom
+                  {s.appointmentOnly ? "Book an Appointment" : "Book This Showroom"}
                 </Link>
                 <a
                   href={`tel:${s.tel}`}
@@ -151,7 +151,16 @@ export default function ShowroomsPage() {
               <div>
                 <h3 className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-2">Hours</h3>
                 {s.hoursLines.map((h) => (
-                  <p key={h} className="text-stone-700 text-sm font-medium">{h}</p>
+                  <p
+                    key={h}
+                    className={
+                      s.appointmentOnly
+                        ? "text-[color:var(--accent)] text-sm font-semibold"
+                        : "text-stone-700 text-sm font-medium"
+                    }
+                  >
+                    {h}
+                  </p>
                 ))}
                 {s.closedNote && (
                   <p className="text-stone-400 text-xs mt-1">{s.closedNote}</p>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
-import { getShowroom, showroomSchema } from "@/lib/business-data";
+import { DUBLIN_APPOINTMENT_ONLY_COPY, getShowroom, showroomSchema } from "@/lib/business-data";
 
 import EditorialPageHero from "@/components/EditorialPageHero";
 export const metadata = {
@@ -59,10 +59,17 @@ export default function DublinShowroomPage() {
                 from wood to gas, or installing a brand-new electric unit in a condo.
               </p>
               <p>
-                Walk-ins are welcome Monday through Friday from 10:00 AM to
-                5:00 PM. The showroom is closed Saturday and Sunday.
+                This showroom is <strong>by appointment only — call to schedule</strong>.
+                Booking ahead means a hearth consultant is ready for you the moment
+                you arrive, with no walk-in hours to work around.
               </p>
             </div>
+            <Link
+              href="/booking?showroom=dublin"
+              className="inline-block mt-5 bg-[color:var(--accent)] hover:bg-[color:var(--accent-dark)] text-white px-6 py-3 rounded font-medium text-sm transition-colors"
+            >
+              Book an Appointment →
+            </Link>
           </div>
 
           <div>
@@ -116,7 +123,13 @@ export default function DublinShowroomPage() {
               </div>
               <div>
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Hours</p>
-                <p className="text-stone-700">Mon–Fri: 10:00 AM – 5:00 PM</p>
+                <p className="text-stone-700 font-medium">{DUBLIN_APPOINTMENT_ONLY_COPY}</p>
+                <Link
+                  href="/booking?showroom=dublin"
+                  className="inline-block mt-1.5 text-[color:var(--accent)] hover:underline font-medium"
+                >
+                  Book an Appointment →
+                </Link>
               </div>
               <div>
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Phone</p>
@@ -132,7 +145,8 @@ export default function DublinShowroomPage() {
               Plan Your Showroom Visit
             </h3>
             <p className="text-amber-100 text-sm mb-4">
-              Book a time Monday through Friday, or submit a project estimate before stopping by.
+              This showroom is by appointment only. Book a time below, or submit a
+              project estimate before stopping by.
             </p>
             <Link
               href="/booking?showroom=dublin"

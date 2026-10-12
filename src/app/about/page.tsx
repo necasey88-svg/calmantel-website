@@ -27,9 +27,10 @@ const showrooms = [
   {
     city: "Dublin",
     address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
-    hours: "Mon–Fri: 10:00 AM – 5:00 PM",
+    hours: "By appointment only – call to schedule.",
     phone: "(925) 436-1731",
     tel: "9254361731",
+    bookingHref: "/booking?showroom=dublin",
   },
 ];
 
@@ -180,6 +181,14 @@ export default function AboutPage() {
                 >
                   {s.phone}
                 </a>
+                {s.bookingHref && (
+                  <Link
+                    href={s.bookingHref}
+                    className="block mt-3 text-center bg-[color:var(--accent)] hover:bg-[color:var(--accent-dark)] text-white px-4 py-2 rounded font-medium text-sm transition-colors"
+                  >
+                    Book an Appointment →
+                  </Link>
+                )}
               </div>
             ))}
           </div>
