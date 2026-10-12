@@ -21,10 +21,11 @@ const showrooms = [
   {
     city: "Dublin",
     address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
-    hours: "Mon–Fri: 10:00 AM – 5:00 PM",
+    hours: "By appointment only – call to schedule.",
     phone: "(925) 436-1731",
     tel: "9254361731",
     href: "/showrooms/dublin",
+    bookingHref: "/booking?showroom=dublin",
   },
   {
     city: "Sacramento",
@@ -72,9 +73,17 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
+              {s.bookingHref && (
+                <Link
+                  href={s.bookingHref}
+                  className="block mt-5 text-center bg-[color:var(--accent)] hover:bg-[color:var(--accent-dark)] text-white px-4 py-2.5 rounded font-medium text-sm transition-colors"
+                >
+                  Book an Appointment →
+                </Link>
+              )}
               <Link
                 href={s.href}
-                className="inline-block mt-5 text-sm text-stone-500 hover:text-[color:var(--accent)] transition-colors"
+                className="inline-block mt-3 text-sm text-stone-500 hover:text-[color:var(--accent)] transition-colors"
               >
                 Showroom details →
               </Link>

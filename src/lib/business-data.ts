@@ -27,14 +27,21 @@ export type Showroom = {
   postalCode: string;
   phone: string; // display format
   tel: string; // digits only
-  // opening hours in schema.org OpeningHoursSpecification shape
+  // opening hours in schema.org OpeningHoursSpecification shape.
+  // Leave empty (and set appointmentOnly) for locations with no walk-in hours.
   hours: {
     days: string[];
     opens: string; // 24h "HH:MM"
     closes: string;
   }[];
+  // When true, this location has no walk-in hours — don't advertise any
+  // (including in schema.org markup). Always pair with hours: [].
+  appointmentOnly?: boolean;
   geo?: { lat: number; lng: number };
 };
+
+/** Exact copy used wherever Dublin's hours would otherwise be shown. */
+export const DUBLIN_APPOINTMENT_ONLY_COPY = "By appointment only – call to schedule.";
 
 // Canonical values taken from the dedicated location pages.
 export const showrooms: Showroom[] = [
@@ -64,14 +71,11 @@ export const showrooms: Showroom[] = [
     postalCode: "94568",
     phone: "(925) 436-1731",
     tel: "9254361731",
-    hours: [
-      {
-        // Temporary extended hours (through Oct 13, 2026): Mon–Fri, closed Sat.
-        days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "10:00",
-        closes: "17:00",
-      },
-    ],
+    // By appointment only starting Oct 13, 2026 — no walk-in hours. Keep
+    // hours empty and don't add OpeningHoursSpecification entries for this
+    // location (see showroomSchema below).
+    hours: [],
+    appointmentOnly: true,
   },
   {
     city: "Sacramento",
@@ -141,6 +145,7 @@ function formatDayList(days: string[]): string {
 
 /** Scannable open-hours line(s), e.g. ["Mon–Sat: 9:00 AM – 5:00 PM"]. Always leads with open days. */
 export function hoursSummary(s: Showroom): string[] {
+  if (s.appointmentOnly) return [DUBLIN_APPOINTMENT_ONLY_COPY];
   return s.hours.map(
     (h) => `${formatDayList(h.days)}: ${formatTime(h.opens)} \u2013 ${formatTime(h.closes)}`,
   );
@@ -148,6 +153,7 @@ export function hoursSummary(s: Showroom): string[] {
 
 /** Secondary "closed" note (e.g. "Closed Tue, Thu & Sat"), or undefined if open every weekday. */
 export function closedDaysNote(s: Showroom): string | undefined {
+  if (s.appointmentOnly) return undefined;
   const openDays = new Set(s.hours.flatMap((h) => h.days));
   const closedWeekdays = WEEK_DAYS.filter((d) => !openDays.has(d));
   if (closedWeekdays.length === 0) return undefined;
@@ -180,12 +186,18 @@ export function showroomSchema(s: Showroom) {
       postalCode: s.postalCode,
       addressCountry: "US",
     },
-    openingHoursSpecification: s.hours.map((h) => ({
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: h.days,
-      opens: h.opens,
-      closes: h.closes,
-    })),
+    // Appointment-only locations have no walk-in hours — omit
+    // openingHoursSpecification entirely rather than advertise any.
+    ...(s.appointmentOnly || s.hours.length === 0
+      ? {}
+      : {
+          openingHoursSpecification: s.hours.map((h) => ({
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: h.days,
+            opens: h.opens,
+            closes: h.closes,
+          })),
+        }),
   };
 }
 

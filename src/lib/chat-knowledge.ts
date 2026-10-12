@@ -21,9 +21,11 @@ function to12Hour(time: string): string {
 export function buildSiteKnowledge(): string {
   const showroomLines = showrooms
     .map((s) => {
-      const hours = s.hours
-        .map((h) => `${h.days.map((d) => d.slice(0, 3)).join("/")} ${to12Hour(h.opens)}-${to12Hour(h.closes)}`)
-        .join("; ");
+      const hours = s.appointmentOnly
+        ? "by appointment only — no walk-in hours, call to schedule"
+        : s.hours
+            .map((h) => `${h.days.map((d) => d.slice(0, 3)).join("/")} ${to12Hour(h.opens)}-${to12Hour(h.closes)}`)
+            .join("; ");
       return `- ${s.city}: ${s.streetAddress}, ${s.addressLocality}, ${s.addressRegion} ${s.postalCode} — phone ${s.phone} — hours: ${hours}`;
     })
     .join("\n");
