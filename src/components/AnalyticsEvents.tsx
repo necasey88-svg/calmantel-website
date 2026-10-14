@@ -30,10 +30,21 @@ function getLinkEvent(anchor: HTMLAnchorElement) {
     };
   }
 
-  if (href === "/booking") {
+  if (href.startsWith("/booking")) {
     return {
       name: "booking_page_click",
       leadType: "booking_page",
+      params: {
+        destination: href,
+        link_text: label,
+      },
+    };
+  }
+
+  if (href.startsWith("/contact?topic=dublin-visit")) {
+    return {
+      name: "dublin_visit_request_click",
+      leadType: "dublin_visit_request",
       params: {
         destination: href,
         link_text: label,

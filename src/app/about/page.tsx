@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import EditorialPageHero from "@/components/EditorialPageHero";
+import {
+  DUBLIN_VIRTUAL_COPY,
+  DUBLIN_VIRTUAL_BOOKING_LABEL,
+  DUBLIN_VISIT_REQUEST_LABEL,
+  DUBLIN_VISIT_REQUEST_HREF,
+} from "@/lib/business-data";
 
 export const metadata = {
   title: "About Us | California Mantel & Fireplace",
@@ -27,10 +33,11 @@ const showrooms = [
   {
     city: "Dublin",
     address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
-    hours: "By appointment only – call to schedule.",
+    hours: DUBLIN_VIRTUAL_COPY,
     phone: "(925) 436-1731",
     tel: "9254361731",
     bookingHref: "/booking?showroom=dublin",
+    virtualOnly: true,
   },
 ];
 
@@ -186,7 +193,15 @@ export default function AboutPage() {
                     href={s.bookingHref}
                     className="block mt-3 text-center bg-[color:var(--accent)] hover:bg-[color:var(--accent-dark)] text-white px-4 py-2 rounded font-medium text-sm transition-colors"
                   >
-                    Book an Appointment →
+                    {s.virtualOnly ? DUBLIN_VIRTUAL_BOOKING_LABEL : "Book an Appointment"} →
+                  </Link>
+                )}
+                {s.virtualOnly && (
+                  <Link
+                    href={DUBLIN_VISIT_REQUEST_HREF}
+                    className="block mt-2 text-center border border-[color:var(--accent)] text-[color:var(--accent)] hover:bg-[color:var(--accent)] hover:text-white px-4 py-2 rounded font-medium text-sm transition-colors"
+                  >
+                    {DUBLIN_VISIT_REQUEST_LABEL} →
                   </Link>
                 )}
               </div>

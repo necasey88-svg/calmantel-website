@@ -10,7 +10,20 @@ import { trackEvent, trackLeadConversion } from "@/lib/analytics";
 // full estimate requests.
 const ACCESS_KEY = "77eca617-9eb9-4352-8b5a-c89bf8870232";
 
-export default function ContactForm() {
+type ContactFormProps = {
+  /** Overrides the default email subject sent to the team. */
+  defaultSubject?: string;
+  /** Pre-fills the message textarea (e.g. for a Dublin showroom visit request). */
+  defaultMessage?: string;
+  /** Shows an extra "Preferred visit date(s)" field for in-person visit requests. */
+  showPreferredDates?: boolean;
+};
+
+export default function ContactForm({
+  defaultSubject,
+  defaultMessage,
+  showPreferredDates = false,
+}: ContactFormProps) {
   const [communicationPreference, setCommunicationPreference] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -23,7 +36,7 @@ export default function ContactForm() {
 
     const formData = new FormData(e.currentTarget);
     formData.set("access_key", ACCESS_KEY);
-    formData.set("subject", "New Contact Request — calmantel.com");
+    formData.set("subject", defaultSubject ?? "New Contact Request — calmantel.com");
     formData.set("from_name", "California Mantel & Fireplace Website");
 
     try {
@@ -118,6 +131,20 @@ export default function ContactForm() {
 
       <CommunicationPreference value={communicationPreference} onChange={setCommunicationPreference} />
 
+      {showPreferredDates && (
+        <div>
+          <label className="block text-sm font-medium text-stone-700 mb-1">
+            Preferred visit date(s) <span className="text-stone-400 font-normal">(optional)</span>
+          </label>
+          <input
+            type="text"
+            name="Preferred Visit Dates"
+            placeholder="e.g. weekday afternoons, or a specific date"
+            className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
+          />
+        </div>
+      )}
+
       <div>
         <label className="block text-sm font-medium text-stone-700 mb-1">
           Best time to call back <span className="text-stone-400 font-normal">(optional)</span>
@@ -140,6 +167,7 @@ export default function ContactForm() {
         <textarea
           name="message"
           rows={3}
+          defaultValue={defaultMessage}
           className="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] resize-none"
           placeholder="What can we help with?"
         />

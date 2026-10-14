@@ -5,6 +5,9 @@ import {
   hoursSummary,
   closedDaysNote,
   formatAddress,
+  DUBLIN_VIRTUAL_BOOKING_LABEL,
+  DUBLIN_VISIT_REQUEST_LABEL,
+  DUBLIN_VISIT_REQUEST_HREF,
 } from "@/lib/business-data";
 
 // Sacramento (HQ) leads, matching the original footer order.
@@ -19,6 +22,7 @@ const showrooms = footerShowroomOrder
     closedNote: closedDaysNote(s),
     phone: s.phone,
     tel: s.tel,
+    virtualOnly: s.virtualOnly,
   }));
 
 export default function Footer() {
@@ -88,6 +92,22 @@ export default function Footer() {
                 <a href={`tel:${s.tel}`} className="text-[#C8922A] hover:text-white transition-colors mt-1 block">
                   {s.phone}
                 </a>
+                {s.virtualOnly && (
+                  <>
+                    <Link
+                      href="/booking?showroom=dublin"
+                      className="text-[#C8922A] hover:text-white transition-colors mt-1 block"
+                    >
+                      {DUBLIN_VIRTUAL_BOOKING_LABEL} →
+                    </Link>
+                    <Link
+                      href={DUBLIN_VISIT_REQUEST_HREF}
+                      className="text-gray-400 hover:text-white transition-colors mt-1 block"
+                    >
+                      {DUBLIN_VISIT_REQUEST_LABEL} →
+                    </Link>
+                  </>
+                )}
               </div>
             ))}
           </div>

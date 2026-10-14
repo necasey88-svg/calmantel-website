@@ -1,6 +1,13 @@
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
-import { DUBLIN_APPOINTMENT_ONLY_COPY, getShowroom, showroomSchema } from "@/lib/business-data";
+import {
+  DUBLIN_VIRTUAL_COPY,
+  DUBLIN_VIRTUAL_BOOKING_LABEL,
+  DUBLIN_VISIT_REQUEST_LABEL,
+  DUBLIN_VISIT_REQUEST_HREF,
+  getShowroom,
+  showroomSchema,
+} from "@/lib/business-data";
 
 import EditorialPageHero from "@/components/EditorialPageHero";
 export const metadata = {
@@ -59,17 +66,27 @@ export default function DublinShowroomPage() {
                 from wood to gas, or installing a brand-new electric unit in a condo.
               </p>
               <p>
-                This showroom is <strong>by appointment only — call to schedule</strong>.
-                Booking ahead means a hearth consultant is ready for you the moment
-                you arrive, with no walk-in hours to work around.
+                This showroom now offers <strong>virtual consultations</strong> — meet
+                one-on-one with a hearth specialist by video or phone from wherever you
+                are. Want to see the mantels and live-burning displays in person instead?
+                You can request an in-person visit and our team will coordinate a date
+                with you.
               </p>
             </div>
-            <Link
-              href="/booking?showroom=dublin"
-              className="inline-block mt-5 bg-[color:var(--accent)] hover:bg-[color:var(--accent-dark)] text-white px-6 py-3 rounded font-medium text-sm transition-colors"
-            >
-              Book an Appointment →
-            </Link>
+            <div className="flex flex-wrap gap-3 mt-5">
+              <Link
+                href="/booking?showroom=dublin"
+                className="inline-block bg-[color:var(--accent)] hover:bg-[color:var(--accent-dark)] text-white px-6 py-3 rounded font-medium text-sm transition-colors"
+              >
+                {DUBLIN_VIRTUAL_BOOKING_LABEL} →
+              </Link>
+              <Link
+                href={DUBLIN_VISIT_REQUEST_HREF}
+                className="inline-block border border-[color:var(--ink)]/25 text-[color:var(--ink)] hover:border-[color:var(--ink)] px-6 py-3 rounded font-medium text-sm transition-colors"
+              >
+                {DUBLIN_VISIT_REQUEST_LABEL} →
+              </Link>
+            </div>
           </div>
 
           <div>
@@ -123,12 +140,18 @@ export default function DublinShowroomPage() {
               </div>
               <div>
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Hours</p>
-                <p className="text-stone-700 font-medium">{DUBLIN_APPOINTMENT_ONLY_COPY}</p>
+                <p className="text-stone-700 font-medium">{DUBLIN_VIRTUAL_COPY}</p>
                 <Link
                   href="/booking?showroom=dublin"
                   className="inline-block mt-1.5 text-[color:var(--accent)] hover:underline font-medium"
                 >
-                  Book an Appointment →
+                  {DUBLIN_VIRTUAL_BOOKING_LABEL} →
+                </Link>
+                <Link
+                  href={DUBLIN_VISIT_REQUEST_HREF}
+                  className="block mt-1 text-stone-500 hover:underline text-sm"
+                >
+                  {DUBLIN_VISIT_REQUEST_LABEL} →
                 </Link>
               </div>
               <div>
@@ -145,18 +168,30 @@ export default function DublinShowroomPage() {
               Plan Your Showroom Visit
             </h3>
             <p className="text-amber-100 text-sm mb-4">
-              This showroom is by appointment only. Book a time below, or submit a
-              project estimate before stopping by.
+              {DUBLIN_VIRTUAL_COPY} Book a virtual consultation below, or request a
+              date to see the showroom in person.
             </p>
             <Link
               href="/booking?showroom=dublin"
               className="block text-center bg-white text-[color:var(--accent)] hover:bg-amber-50 px-5 py-2.5 rounded font-medium text-sm transition-colors"
             >
-              Book an Appointment
+              {DUBLIN_VIRTUAL_BOOKING_LABEL}
             </Link>
             <Link
+              href={DUBLIN_VISIT_REQUEST_HREF}
+              className="block text-center mt-2 border border-white/60 text-white hover:bg-white/10 px-5 py-2.5 rounded font-medium text-sm transition-colors"
+            >
+              {DUBLIN_VISIT_REQUEST_LABEL}
+            </Link>
+            <p className="text-center text-white/80 text-xs mt-3">
+              Prefer to call?{" "}
+              <a href="tel:9254361731" className="font-medium text-white hover:underline">
+                (925) 436-1731
+              </a>
+            </p>
+            <Link
               href="/estimate"
-              className="block text-center mt-2 text-white/85 hover:text-white text-xs uppercase tracking-[0.14em] transition-colors"
+              className="block text-center mt-3 text-white/85 hover:text-white text-xs uppercase tracking-[0.14em] transition-colors"
             >
               Request Project Estimate →
             </Link>
