@@ -6,6 +6,9 @@ import {
   hoursSummary,
   closedDaysNote,
   formatAddress,
+  DUBLIN_VIRTUAL_BOOKING_LABEL,
+  DUBLIN_VISIT_REQUEST_LABEL,
+  DUBLIN_VISIT_REQUEST_HREF,
 } from "@/lib/business-data";
 import EditorialPageHero from "@/components/EditorialPageHero";
 
@@ -117,8 +120,20 @@ export default function ShowroomsPage() {
                   href={`/booking?showroom=${s.slug}`}
                   className="bg-[color:var(--accent)] hover:bg-[color:var(--accent-dark)] text-white px-5 py-2.5 font-medium text-sm transition-colors"
                 >
-                  {s.appointmentOnly ? "Book an Appointment" : "Book This Showroom"}
+                  {s.virtualOnly
+                    ? DUBLIN_VIRTUAL_BOOKING_LABEL
+                    : s.appointmentOnly
+                      ? "Book an Appointment"
+                      : "Book This Showroom"}
                 </Link>
+                {s.virtualOnly && (
+                  <Link
+                    href={DUBLIN_VISIT_REQUEST_HREF}
+                    className="border border-white text-white hover:bg-white hover:text-stone-900 px-5 py-2.5 font-medium text-sm transition-colors"
+                  >
+                    {DUBLIN_VISIT_REQUEST_LABEL}
+                  </Link>
+                )}
                 <a
                   href={`tel:${s.tel}`}
                   className="border border-white text-white hover:bg-white hover:text-stone-900 px-5 py-2.5 font-medium text-sm transition-colors"

@@ -1,6 +1,12 @@
+import Link from "next/link";
 import EditorialPageHero from "@/components/EditorialPageHero";
 import { getMantelProduct } from "@/lib/mantel-products-data";
-import { getShowroom } from "@/lib/business-data";
+import {
+  getShowroom,
+  DUBLIN_VIRTUAL_BOOKING_LABEL,
+  DUBLIN_VISIT_REQUEST_LABEL,
+  DUBLIN_VISIT_REQUEST_HREF,
+} from "@/lib/business-data";
 
 const bookingUrl =
   "https://outlook.office.com/book/CaliforniaMantelFireplace@calmantel.com/?ismsaljsauthenabled";
@@ -27,19 +33,25 @@ export default async function BookingPage({ searchParams }: BookingPageProps) {
   const params = await searchParams;
   const showroom = getShowroom(firstValue(params.showroom) ?? "");
   const mantel = getMantelProduct(firstValue(params.mantel) ?? "");
+  const isDublin = showroom?.virtualOnly === true;
 
   return (
     <>
       <EditorialPageHero
-        eyebrow="Private Consultation"
-        title="Book a Showroom Appointment"
-        description="Meet one-on-one with a hearth specialist, experience the mantel and fireplace collection in person, and shape a clear direction for your project."
+        eyebrow={isDublin ? "Virtual Consultation" : "Private Consultation"}
+        title={isDublin ? DUBLIN_VIRTUAL_BOOKING_LABEL : "Book a Showroom Appointment"}
+        description={
+          isDublin
+            ? "Meet one-on-one with a Dublin hearth specialist by video or phone — review the mantel and fireplace collection together and shape a clear direction for your project from wherever you are."
+            : "Meet one-on-one with a hearth specialist, experience the mantel and fireplace collection in person, and shape a clear direction for your project."
+        }
       />
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <p className="text-stone-500 mb-6 leading-relaxed max-w-2xl mx-auto">
-          Choose your preferred showroom, select a time, and we&apos;ll confirm
-          your appointment by email.
+          {isDublin
+            ? "The Dublin showroom now offers virtual consultations only. Select a time below and we\u2019ll confirm your virtual appointment by email."
+            : "Choose your preferred showroom, select a time, and we\u2019ll confirm your appointment by email."}
         </p>
 
         {(showroom || mantel) && (
@@ -56,7 +68,8 @@ export default async function BookingPage({ searchParams }: BookingPageProps) {
               )}
               {showroom && (
                 <>
-                  Preferred showroom: <span className="font-medium">{showroom.city}</span>.
+                  Preferred showroom: <span className="font-medium">{showroom.city}</span>
+                  {isDublin && <span className="font-medium"> (virtual consultation)</span>}.
                 </>
               )}
             </p>
@@ -67,10 +80,20 @@ export default async function BookingPage({ searchParams }: BookingPageProps) {
           </div>
         )}
 
+        {isDublin && (
+          <p className="mb-6 text-sm font-medium text-[color:var(--accent)]">
+            When scheduling below, select &ldquo;Virtual Consultation&rdquo; as your appointment type.
+          </p>
+        )}
+
         <div className="overflow-hidden border border-[color:var(--sand-deep)] bg-white shadow-sm">
           <iframe
             src={bookingUrl}
-            title="Schedule a showroom consultation with California Mantel & Fireplace"
+            title={
+              isDublin
+                ? "Schedule a virtual consultation with California Mantel & Fireplace"
+                : "Schedule a showroom consultation with California Mantel & Fireplace"
+            }
             className="block w-full h-[760px] md:h-[820px]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -89,6 +112,26 @@ export default async function BookingPage({ searchParams }: BookingPageProps) {
           </a>
           .
         </p>
+
+        {isDublin && (
+          <div className="mt-10 mx-auto max-w-xl border border-[color:var(--sand-deep)] bg-[#F9F7F3] px-6 py-6 text-center">
+            <p className="text-stone-700 font-medium mb-3">
+              Want to see the Dublin showroom in person? Request a visit.
+            </p>
+            <Link
+              href={DUBLIN_VISIT_REQUEST_HREF}
+              className="inline-block bg-[color:var(--ink)] hover:bg-[color:var(--accent)] text-white px-6 py-3 rounded font-medium text-sm transition-colors"
+            >
+              {DUBLIN_VISIT_REQUEST_LABEL} →
+            </Link>
+            <p className="mt-3 text-sm text-stone-500">
+              Prefer to call?{" "}
+              <a href="tel:9254361731" className="text-[color:var(--accent)] font-medium hover:underline">
+                (925) 436-1731
+              </a>
+            </p>
+          </div>
+        )}
 
         <div className="mt-12 border-t border-stone-100 pt-10 text-sm text-stone-500">
           Prefer to call?{" "}

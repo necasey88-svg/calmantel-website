@@ -37,11 +37,22 @@ export type Showroom = {
   // When true, this location has no walk-in hours — don't advertise any
   // (including in schema.org markup). Always pair with hours: [].
   appointmentOnly?: boolean;
+  // When true, this location no longer takes in-person showroom bookings —
+  // the primary booking flow is a virtual consultation, with in-person
+  // visits available only on request (see DUBLIN_VISIT_REQUEST_HREF).
+  // Always pair with appointmentOnly: true and hours: [].
+  virtualOnly?: boolean;
   geo?: { lat: number; lng: number };
 };
 
 /** Exact copy used wherever Dublin's hours would otherwise be shown. */
-export const DUBLIN_APPOINTMENT_ONLY_COPY = "By appointment only – call to schedule.";
+export const DUBLIN_VIRTUAL_COPY =
+  "Virtual consultations available – in-person visits by request.";
+
+export const DUBLIN_VIRTUAL_BOOKING_LABEL = "Book a Virtual Consultation";
+export const DUBLIN_VISIT_REQUEST_LABEL = "Request an In-Person Visit";
+/** Pre-filled /contact link for visitors who want to see the Dublin showroom in person. */
+export const DUBLIN_VISIT_REQUEST_HREF = "/contact?topic=dublin-visit#contact-form";
 
 // Canonical values taken from the dedicated location pages.
 export const showrooms: Showroom[] = [
@@ -76,6 +87,10 @@ export const showrooms: Showroom[] = [
     // location (see showroomSchema below).
     hours: [],
     appointmentOnly: true,
+    // Closed to walk-in/regular in-person visits starting Oct 14, 2026 —
+    // the showroom now books virtual consultations by default, with
+    // in-person visits available only by request through /contact.
+    virtualOnly: true,
   },
   {
     city: "Sacramento",
@@ -145,7 +160,8 @@ function formatDayList(days: string[]): string {
 
 /** Scannable open-hours line(s), e.g. ["Mon–Sat: 9:00 AM – 5:00 PM"]. Always leads with open days. */
 export function hoursSummary(s: Showroom): string[] {
-  if (s.appointmentOnly) return [DUBLIN_APPOINTMENT_ONLY_COPY];
+  // virtualOnly locations are always also appointmentOnly (no walk-in hours).
+  if (s.appointmentOnly) return [DUBLIN_VIRTUAL_COPY];
   return s.hours.map(
     (h) => `${formatDayList(h.days)}: ${formatTime(h.opens)} \u2013 ${formatTime(h.closes)}`,
   );

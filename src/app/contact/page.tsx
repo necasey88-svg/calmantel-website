@@ -1,6 +1,11 @@
 import Link from "next/link";
 import EditorialPageHero from "@/components/EditorialPageHero";
 import ContactForm from "@/components/ContactForm";
+import {
+  DUBLIN_VIRTUAL_COPY,
+  DUBLIN_VIRTUAL_BOOKING_LABEL,
+  DUBLIN_VISIT_REQUEST_LABEL,
+} from "@/lib/business-data";
 
 export const metadata = {
   title: "Contact Us | California Mantel & Fireplace",
@@ -21,11 +26,12 @@ const showrooms = [
   {
     city: "Dublin",
     address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
-    hours: "By appointment only – call to schedule.",
+    hours: DUBLIN_VIRTUAL_COPY,
     phone: "(925) 436-1731",
     tel: "9254361731",
     href: "/showrooms/dublin",
     bookingHref: "/booking?showroom=dublin",
+    virtualOnly: true,
   },
   {
     city: "Sacramento",
@@ -37,7 +43,15 @@ const showrooms = [
   },
 ];
 
-export default function ContactPage() {
+type ContactPageProps = {
+  searchParams: Promise<{ topic?: string | string[] }>;
+};
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const params = await searchParams;
+  const topic = Array.isArray(params.topic) ? params.topic[0] : params.topic;
+  const isDublinVisitRequest = topic === "dublin-visit";
+
   return (
     <>
       <EditorialPageHero
@@ -78,8 +92,16 @@ export default function ContactPage() {
                   href={s.bookingHref}
                   className="block mt-5 text-center bg-[color:var(--accent)] hover:bg-[color:var(--accent-dark)] text-white px-4 py-2.5 rounded font-medium text-sm transition-colors"
                 >
-                  Book an Appointment →
+                  {s.virtualOnly ? DUBLIN_VIRTUAL_BOOKING_LABEL : "Book an Appointment"} →
                 </Link>
+              )}
+              {s.virtualOnly && (
+                <a
+                  href="#contact-form"
+                  className="block mt-2 text-center border border-[color:var(--sand-deep)] text-stone-700 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] px-4 py-2.5 rounded font-medium text-sm transition-colors"
+                >
+                  {DUBLIN_VISIT_REQUEST_LABEL} →
+                </a>
               )}
               <Link
                 href={s.href}
@@ -92,17 +114,42 @@ export default function ContactPage() {
         </div>
 
         {/* Quick contact form */}
-        <div className="bg-[#F9F7F3] p-8 sm:p-10 max-w-2xl mx-auto">
-          <h2
-            className="text-2xl font-medium text-stone-900 mb-2"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            Send us a message
-          </h2>
-          <p className="text-stone-500 mb-6">
-            A member of our team will follow up within one business day.
-          </p>
-          <ContactForm />
+        <div id="contact-form" className="bg-[#F9F7F3] p-8 sm:p-10 max-w-2xl mx-auto">
+          {isDublinVisitRequest ? (
+            <>
+              <h2
+                className="text-2xl font-medium text-stone-900 mb-2"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Request a Dublin showroom visit
+              </h2>
+              <p className="text-stone-500 mb-6">
+                Tell us your preferred date(s) below and a Dublin team member will confirm
+                a time to see the showroom in person. Prefer to call?{" "}
+                <a href="tel:9254361731" className="text-[color:var(--accent)] font-medium hover:underline">
+                  (925) 436-1731
+                </a>
+                .
+              </p>
+            </>
+          ) : (
+            <>
+              <h2
+                className="text-2xl font-medium text-stone-900 mb-2"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Send us a message
+              </h2>
+              <p className="text-stone-500 mb-6">
+                A member of our team will follow up within one business day.
+              </p>
+            </>
+          )}
+          <ContactForm
+            defaultSubject={isDublinVisitRequest ? "Dublin showroom visit request" : undefined}
+            defaultMessage={isDublinVisitRequest ? "Dublin showroom visit request — " : undefined}
+            showPreferredDates={isDublinVisitRequest}
+          />
         </div>
 
         {/* Online estimate CTA */}

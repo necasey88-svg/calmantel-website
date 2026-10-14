@@ -21,11 +21,13 @@ function to12Hour(time: string): string {
 export function buildSiteKnowledge(): string {
   const showroomLines = showrooms
     .map((s) => {
-      const hours = s.appointmentOnly
-        ? "by appointment only — no walk-in hours, call to schedule"
-        : s.hours
-            .map((h) => `${h.days.map((d) => d.slice(0, 3)).join("/")} ${to12Hour(h.opens)}-${to12Hour(h.closes)}`)
-            .join("; ");
+      const hours = s.virtualOnly
+        ? "closed to walk-in/regular in-person visits — virtual consultations available by booking at /booking; in-person visits are by request only via /contact (mention 'Dublin showroom visit request')"
+        : s.appointmentOnly
+          ? "by appointment only — no walk-in hours, call to schedule"
+          : s.hours
+              .map((h) => `${h.days.map((d) => d.slice(0, 3)).join("/")} ${to12Hour(h.opens)}-${to12Hour(h.closes)}`)
+              .join("; ");
       return `- ${s.city}: ${s.streetAddress}, ${s.addressLocality}, ${s.addressRegion} ${s.postalCode} — phone ${s.phone} — hours: ${hours}`;
     })
     .join("\n");
