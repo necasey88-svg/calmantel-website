@@ -1273,8 +1273,9 @@ export const mantelProducts: MantelProduct[] = [
     type: "beam",
     image: "/mantels/darlinghurst.png",
     style: "transitional",
+    specs: '6" wall projection (depth)',
     description:
-      "The Darlinghurst Beam Mantel is a sleek, transitional precast concrete fireplace beam with clean lines and a refined finish. Its understated profile works beautifully in modern, transitional, and contemporary interiors where warmth and simplicity are equally valued.",
+      "The Darlinghurst Beam Mantel is a sleek, transitional precast concrete fireplace beam with clean lines, a 6\" wall projection, and a refined finish. Its understated profile works beautifully in modern, transitional, and contemporary interiors where warmth and simplicity are equally valued.",
   },
   {
     slug: "hackney",
