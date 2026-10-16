@@ -450,4 +450,13 @@ export const mantelDimensions: Record<string, MantelDimensions> = {
     shelfDepth: 12, // side profile: body depth 12" at shelf; base plinth projects to 20"
     cadVerified: true,
   },
+  whyalla: {
+    // Sourced from whyalla-line-drawing-2026-10.pdf.
+    openingWidths: [38.25, 44.125],
+    openingHeight: 55.125,
+    overallWidths: [54.25, 60.25], // shelf; hearth reads 60/66
+    overallHeight: 65.125,
+    shelfDepth: 4, // side profile: body depth 4" at shelf/leg; base plinth projects to 20"
+    cadVerified: true,
+  },
 };

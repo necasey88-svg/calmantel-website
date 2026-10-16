@@ -277,6 +277,7 @@ export const mantelProducts: MantelProduct[] = [
     image: "/mantels/whyalla.png",
     type: "precast",
     style: "contemporary",
+    cadPdf: "/cad/whyalla-line-drawing-2026-10.pdf",
     description:
       "The Whyalla Mantel is a sleek precast fireplace surround that combines modern elegance with minimalist geometry, creating a refined architectural focal point for today's homes. Featuring clean lines, a smooth polished finish, and durable craftsmanship, this fireplace mantel delivers both long-lasting beauty and reliable performance. Suited for gas fireplaces, electric fireplaces, or traditional hearth installations, the Whyalla enhances warmth, ambiance, and sophistication in any living space.",
   },
