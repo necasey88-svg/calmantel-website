@@ -127,13 +127,35 @@ export default function ServiceRepairPage() {
           </div>
 
           <div className="border border-[color:var(--sand-deep)] bg-white p-2 shadow-sm sm:p-4">
+            {/*
+              The embedded ServiceProz form sets `overflow: hidden` on its own
+              <body>, so it never shows an internal scrollbar — if this iframe
+              is shorter than the form's full content, the Submit button (and
+              reCAPTCHA) get clipped off with no way to reach them. The form's
+              actual content is taller on narrow/mobile widths (fields stack
+              into a single column), so this height is sized generously for
+              the tallest case rather than left tight to the desktop layout.
+            */}
             <iframe
               title="California Mantel and Fireplace service request"
               src="https://solution.serviceproz.net/WorkOrderRequestFormSP.aspx?id=425"
               sandbox="allow-top-navigation allow-forms allow-scripts allow-same-origin allow-modals"
-              className="h-[740px] w-full border-0 bg-white"
+              scrolling="auto"
+              className="h-[1100px] w-full border-0 bg-white"
             />
           </div>
+          <p className="mt-4 text-xs text-[color:var(--ink)]/50">
+            If the form above does not display the Submit button,{" "}
+            <a
+              href="https://solution.serviceproz.net/WorkOrderRequestFormSP.aspx?id=425"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[color:var(--accent)] hover:underline"
+            >
+              open the service request form in a new tab
+            </a>
+            .
+          </p>
         </div>
       </section>
 
