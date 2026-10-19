@@ -297,6 +297,200 @@ const nextConfig: NextConfig = {
       // Anything else under the old overstock section with no live match
       // falls back to the current listing page.
       { source: "/overstock-sale-1/p/:slug*", destination: "/overstock-sale", permanent: true },
+
+      // ── rank-1019 404 cleanup (2026-10-19) ──────────────────────────────────
+      // 196 historical URLs (ASP.NET + DealerOn eras) were still 404ing on the
+      // current Next.js site, costing crawled link equity across three past
+      // rebuilds. ~68 were junk (jQuery UI / mCustomScrollbar plugin asset
+      // files crawled as if they were pages — ui-icons_*.html,
+      // glyphicons-*.html, mCSB_buttons.html — skipped, no real content) plus
+      // /cgi-sys/suspendedpage.cgi (hosting-provider artifact) and
+      // /sitemap.aspx (legacy ASP.NET sitemap stub, superseded by
+      // /sitemap.xml). The remaining 126 are mapped below to the closest live
+      // equivalent, verified against the current route tree (see PR for the
+      // full old→new table). Checked the Jul 2025 DealerOn-era Wayback
+      // capture for additional .html/.aspx city/service pages per the task —
+      // none beyond what's already covered here or above ever existed for
+      // this domain (confirmed via CDX API; the example
+      // /fireplace-installation-repair-sacramento-anaheim-dublin-ca/ URL has
+      // no capture history).
+
+      // Accessories — old fire-glass/fire-pit-glass/fire-rocks catalog
+      // (bare category + pagination + per-item detail pages). Existing
+      // /accessories/fire-glass/detail/:slug rule above already covers that
+      // one detail subtree; these cover the rest, all to the live outdoor
+      // accessories section.
+      { source: "/accessories/fire-glass", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/accessories/fire-glass/1", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/accessories/fire-glass/2", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/accessories/fire-glass/3", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/accessories/fire-pit-glass", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/accessories/fire-pit-glass/detail/:slug", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/accessories/fire-rocks", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/accessories/fire-rocks/2", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/accessories/fire-rocks/3", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/accessories/fire-rocks/4", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/accessories/fire-rocks/detail/:slug", destination: "/fireplaces/outdoor", permanent: true },
+
+      // Mantels — old /mantels/wood/detail/<name> product pages. All 8 have
+      // a live, identically-named product under /mantels/p/ except "the
+      // nelson", which dropped the "the-" prefix.
+      { source: "/mantels/wood/detail/benedict", destination: "/mantels/p/benedict", permanent: true },
+      { source: "/mantels/wood/detail/brisbane", destination: "/mantels/p/brisbane", permanent: true },
+      { source: "/mantels/wood/detail/fremantle", destination: "/mantels/p/fremantle", permanent: true },
+      { source: "/mantels/wood/detail/hobart", destination: "/mantels/p/hobart", permanent: true },
+      { source: "/mantels/wood/detail/kendall", destination: "/mantels/p/kendall", permanent: true },
+      { source: "/mantels/wood/detail/perth", destination: "/mantels/p/perth", permanent: true },
+      { source: "/mantels/wood/detail/peterborough", destination: "/mantels/p/peterborough", permanent: true },
+      { source: "/mantels/wood/detail/the-nelson", destination: "/mantels/p/nelson", permanent: true },
+
+      // Mantels — precast category index pages (the /detail/:slug product
+      // pages under these are already redirected above).
+      { source: "/mantels/pre-cast-contemporary", destination: "/mantels/contemporary", permanent: true },
+      { source: "/mantels/pre-cast-traditional", destination: "/mantels/traditional", permanent: true },
+      { source: "/mantels/mantel-shelves-beams", destination: "/mantels/beams", permanent: true },
+      // The combined old "hearths & overmantels" category → the closer-named
+      // live category (hearths), matching /hearths-overmantels.html above;
+      // its one product (a custom overmantel) goes to the more specific
+      // live overmantels category instead.
+      { source: "/mantels/hearths-overmantels", destination: "/mantels/hearths", permanent: true },
+      { source: "/mantels/hearths-overmantels/detail/custom-overmantel", destination: "/mantels/overmantels", permanent: true },
+
+      // Fireplaces — gas insert detail pages. All 4 Heat & Glo models have a
+      // live model page under the current slug naming.
+      { source: "/fireplaces/gas-inserts/detail/heat-glo-cosmo", destination: "/fireplaces/gas-inserts/cosmo", permanent: true },
+      { source: "/fireplaces/gas-inserts/detail/heat-glo-escape", destination: "/fireplaces/gas-inserts/escape", permanent: true },
+      { source: "/fireplaces/gas-inserts/detail/heat-glo-provident", destination: "/fireplaces/gas-inserts/provident", permanent: true },
+      { source: "/fireplaces/gas-inserts/detail/heat-glo-supreme", destination: "/fireplaces/gas-inserts/supreme", permanent: true },
+
+      // Fireplaces — old style-browsing categories (contemporary / modern /
+      // traditional) have no equivalent style pages on the current site
+      // (fireplaces are organized by type/brand instead), so the category
+      // index + pagination fall back to the general hub. Named-residence
+      // "detail" pages under these were project case studies, not products,
+      // so they go to the project gallery instead; the one real product
+      // (Heat & Glo Foundation Series) goes to its brand page.
+      { source: "/fireplaces/contemporary", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces/contemporary/2", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces/contemporary/3", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces/contemporary/4", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces/contemporary/5", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces/traditional", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces/traditional/1", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces/traditional/2", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces/modern", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces/modern/detail/acosta-residence", destination: "/projects", permanent: true },
+      { source: "/fireplaces/modern/detail/oakcrest", destination: "/projects", permanent: true },
+      { source: "/fireplaces/modern/detail/tenaya-lodge", destination: "/projects", permanent: true },
+      { source: "/fireplaces/modern/detail/heat-glo-foundation-series", destination: "/fireplaces/heat-and-glo", permanent: true },
+      // Old wood-burning category — its one product (Heatilator Birmingham)
+      // and the category itself go to the Heatilator brand page, which
+      // still lists a wood-burning fireplace product.
+      { source: "/fireplaces/woodburning", destination: "/fireplaces/heatilator", permanent: true },
+      { source: "/fireplaces/woodburning/detail/heatilator-birmingham", destination: "/fireplaces/heatilator", permanent: true },
+
+      { source: "/fireplaces/electric/1", destination: "/fireplaces/electric", permanent: true },
+      { source: "/fireplaces/electric/2", destination: "/fireplaces/electric", permanent: true },
+
+      { source: "/fireplaces/our-locations", destination: "/showrooms", permanent: true },
+
+      // Fireplaces — outdoor living / outdoor fireplace subtree. Bare
+      // category + pagination pages (the /detail/:slug product pages are
+      // already covered by the broader wildcards above). Outdoor kitchens
+      // specifically route to the masonry section, matching the existing
+      // /fireplaces/outdoor-living/outdoor-kitchens/detail/:slug rule above.
+      { source: "/fireplaces/fire-bowls", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/fire-pits", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/fire-tables", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/torches", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-fireplaces", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-fireplaces/detail/superior-vre4342-outdoor-vent-free-fireplace", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-kitchens", destination: "/masonry-new-page", permanent: true },
+      { source: "/fireplaces/outdoor-living", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/fire-bowls", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/fire-bowls/1", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/fire-bowls/2", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/fire-pits", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/fire-pits/1", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/fire-pits/2", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/fire-tables", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/gas-fireplaces", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/outdoor-fireplaces", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/outdoor-fireplaces/1", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/outdoor-fireplaces/2", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/outdoor-fireplaces/3", destination: "/fireplaces/outdoor", permanent: true },
+      { source: "/fireplaces/outdoor-living/outdoor-kitchens", destination: "/masonry-new-page", permanent: true },
+      { source: "/fireplaces/outdoor-living/torches", destination: "/fireplaces/outdoor", permanent: true },
+
+      // Old Squarespace-era "-new" sections (mirrors the /mantels-new
+      // pattern already redirected above, which only covered the bare path —
+      // these cover its subpaths). Category index pages fall back to the
+      // closest live section; named-residence/project pages go to the
+      // project gallery since they were case studies, not products.
+      { source: "/fireplaces-new", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces-new/electric-1", destination: "/fireplaces/electric", permanent: true },
+      { source: "/fireplaces-new/electric-1/custom-electric-cabinet-1", destination: "/projects", permanent: true },
+      { source: "/fireplaces-new/modern", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces-new/modern/acosta-residence", destination: "/projects", permanent: true },
+      { source: "/fireplaces-new/modern/oakcrest", destination: "/projects", permanent: true },
+      { source: "/fireplaces-new/modern/tenaya-lodge", destination: "/projects", permanent: true },
+      { source: "/fireplaces-new/traditional-1", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces-new/traditional-1/bristol", destination: "/projects", permanent: true },
+      { source: "/fireplaces-new/traditional-1/canyon-view", destination: "/projects", permanent: true },
+      { source: "/fireplaces-new/traditional-1/delta-coves", destination: "/projects", permanent: true },
+      // Ambiguous: a page literally named "fireplaces-traditional" nested
+      // under /traditional-1 — not a named project, likely a stray nav/
+      // thumbnail link from the old theme. No specific equivalent; falls
+      // back to the fireplaces hub.
+      { source: "/fireplaces-new/traditional-1/fireplaces-traditional", destination: "/fireplaces", permanent: true },
+      { source: "/fireplaces-new/traditional-1/patel-residence", destination: "/projects", permanent: true },
+      { source: "/fireplaces-new/traditional-1/silvercrest", destination: "/projects", permanent: true },
+      { source: "/mantels-new/traditional-2", destination: "/mantels", permanent: true },
+      { source: "/mantels-new/traditional-2/hendricks-residence", destination: "/projects", permanent: true },
+      { source: "/mantels-new/traditional-2/the-showcase-by-design", destination: "/projects", permanent: true },
+      { source: "/mantels-new/traditional-2/villa-lago-at-promentory", destination: "/projects", permanent: true },
+      { source: "/mantels-new/electric-2/custom-electric-cabinet", destination: "/projects", permanent: true },
+      { source: "/mantels-new/modern-2/delta-coves-1", destination: "/projects", permanent: true },
+
+      // Project / inspiration galleries (no individual project pages exist
+      // on the current site — just the gallery).
+      { source: "/before-after", destination: "/projects", permanent: true },
+      { source: "/before-after/howle-residence-remodel", destination: "/projects", permanent: true },
+      { source: "/project-photos", destination: "/projects", permanent: true },
+      { source: "/inspiration/project-photos", destination: "/projects", permanent: true },
+      { source: "/inspiration/idea-gallery", destination: "/projects", permanent: true },
+      // A specific named masonry project page → the masonry project gallery
+      // (not /masonry-new-page, which is the masonry services page).
+      { source: "/masonry/rolling-hills-country-club", destination: "/masonry-gallery", permanent: true },
+      { source: "/masonary", destination: "/masonry-new-page", permanent: true },
+
+      // Use-care videos / troubleshooting FAQs — brand-specific pages route
+      // to the matching brand page (matching the existing
+      // /troubleshooting-faqs/flare-1 and /troubleshooting-faqs/isokern
+      // rules above); the rest fall back to Insights.
+      { source: "/troubleshooting--faqs.html", destination: "/insights", permanent: true },
+      { source: "/troubleshooting-faqs", destination: "/insights", permanent: true },
+      { source: "/troubleshooting-faqs/heat-glo", destination: "/fireplaces/heat-and-glo", permanent: true },
+      { source: "/troubleshooting-faqs/napoleon-1", destination: "/fireplaces/napoleon", permanent: true },
+      { source: "/use-care-videos", destination: "/insights", permanent: true },
+      { source: "/use-care-videos/flare", destination: "/fireplaces/flare", permanent: true },
+      { source: "/use-care-videos/heat-amp-glo", destination: "/fireplaces/heat-and-glo", permanent: true },
+      { source: "/use-care-videos/napoleon", destination: "/fireplaces/napoleon", permanent: true },
+      { source: "/fireplace-safety", destination: "/insights", permanent: true },
+
+      // Misc single pages
+      { source: "/careers.html", destination: "/careers", permanent: true },
+      { source: "/current-specials", destination: "/overstock-sale", permanent: true },
+      { source: "/gas-insert-remodel", destination: "/fireplaces/gas-inserts", permanent: true },
+      { source: "/request-a-quote", destination: "/contact", permanent: true },
+      { source: "/service_support", destination: "/contact", permanent: true },
+      // General privacy policy, consolidated the same way /privacy.aspx
+      // already is above.
+      { source: "/privacy-policy", destination: "/sms-privacy-policy", permanent: true },
+      // Ambiguous: a 2020-era pandemic announcement page with no current
+      // equivalent content; routes to About as the closest general company
+      // info page rather than the homepage.
+      { source: "/covid-19", destination: "/about", permanent: true },
     ];
   },
 };
