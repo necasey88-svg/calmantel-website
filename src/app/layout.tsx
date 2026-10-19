@@ -90,7 +90,9 @@ export default function RootLayout({
           src="//cdn.callrail.com/companies/736627927/dec286ffc96a36928e01/12/swap.js"
           strategy="afterInteractive"
         />
-        {/* LocaliQ / ReachLocal capture script for paid-search attribution. */}
+        {/* LocaliQ / ReachLocal capture script for paid-search attribution.
+            Natalie still has active paid budget with LocaliQ (2026-10-19) —
+            leave this in place until she has it removed on her end. */}
         <Script
           src="//cdn.rlets.com/capture_static/mms/mms.js"
           strategy="afterInteractive"
