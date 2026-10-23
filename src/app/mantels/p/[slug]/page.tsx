@@ -9,9 +9,11 @@ import {
   mantelProducts,
   typeLabel,
   styleLabel,
+  isSolidWoodProduct,
 } from "@/lib/mantel-products-data";
 import InstantEstimateCTA from "@/components/InstantEstimateCTA";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import WoodSpeciesOptions from "@/components/WoodSpeciesOptions";
 import JsonLd from "@/components/JsonLd";
 import { SITE_URL, showrooms } from "@/lib/business-data";
 
@@ -196,6 +198,8 @@ export default async function MantelProductPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </section>
+
+      {isSolidWoodProduct(product) && <WoodSpeciesOptions />}
 
       <section className="border-y border-[color:var(--sand-deep)] bg-[#F9F7F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

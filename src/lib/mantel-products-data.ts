@@ -1364,6 +1364,28 @@ export function getOverstockProduct(slug: string): OverstockProduct | undefined 
   return overstockProducts.find((p) => p.slug === slug);
 }
 
+// --- Wood species options (solid-wood mantels & wood beams only) ---
+// Photographed unfinished, face-grain only. Source photography cropped into
+// public/mantels/wood-species/. Add new species here — every wood product page
+// renders this list automatically, nothing is hardcoded per product.
+export interface WoodSpeciesOption {
+  name: string;
+  slug: string;
+  image: string; // path relative to /public
+}
+
+export const woodSpeciesOptions: WoodSpeciesOption[] = [
+  { name: "Oak", slug: "oak", image: "/mantels/wood-species/oak.webp" },
+  { name: "Pecan", slug: "pecan", image: "/mantels/wood-species/pecan.webp" },
+  { name: "Maple", slug: "maple", image: "/mantels/wood-species/maple.webp" },
+  { name: "Beech", slug: "beech", image: "/mantels/wood-species/beech.webp" },
+];
+
+/** True for solid-wood mantel surrounds and wood beams — precast (incl. precast beams that look like wood) is excluded. */
+export function isSolidWoodProduct(product: Pick<MantelProduct, "type" | "beamMaterial">): boolean {
+  return product.type === "wood" || product.beamMaterial === "wood";
+}
+
 const typeLabel: Record<MantelProduct["type"], string> = {
   precast: "Precast Concrete",
   wood: "Wood Surround",
