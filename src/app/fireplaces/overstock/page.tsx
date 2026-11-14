@@ -368,7 +368,7 @@ const sacramentoFireplaces: Omit<OverstockFireplace, "location">[] = [
     name: 'RedStone 30" Electric Fireplace',
     sku: "RS-3021",
     image: "/overstock/rs-3021.jpg",
-    quantity: 1,
+    quantity: 0,
     category: "Electric",
     configuration: "Built-in traditional",
     fuel: "Electric",
