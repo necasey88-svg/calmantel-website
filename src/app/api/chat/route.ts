@@ -26,7 +26,14 @@ function isRateLimited(ip: string): boolean {
   return entry.count > RATE_LIMIT_MAX_REQUESTS;
 }
 
-const SYSTEM_PROMPT = `You are the website chat assistant for California Mantel & Fireplace (calmantel.com), a family-owned fireplace mantel manufacturer and installer serving California and Nevada.
+// A function, not a module-level constant — this route handler can stay warm
+// across requests on a serverless instance, and a constant computed once at
+// cold start would freeze buildSiteKnowledge()'s holiday-hours note (and any
+// other date-sensitive content in it) at whatever the clock read when that
+// instance started, rather than checking it fresh on every request as
+// intended.
+function buildSystemPrompt(): string {
+  return `You are the website chat assistant for California Mantel & Fireplace (calmantel.com), a family-owned fireplace mantel manufacturer and installer serving California and Nevada.
 
 Scope: only answer questions about CMF's products, services, showrooms, and scheduling, using the reference info below. Do not discuss unrelated topics. Keep replies short and conversational (2-4 sentences), not open-ended chit-chat.
 
@@ -50,6 +57,7 @@ Hard aggregation questions (e.g. "what's on display at all three showrooms," "ho
 
 REFERENCE INFO:
 ${buildSiteKnowledge()}`;
+}
 
 const TOOLS = [
   {
@@ -140,7 +148,7 @@ export async function POST(req: NextRequest) {
         // with no need for extended reasoning, so thinking is disabled
         // outright rather than just given more headroom.
         thinking: { type: "disabled" },
-        system: SYSTEM_PROMPT,
+        system: buildSystemPrompt(),
         tools: TOOLS,
         messages,
       }),
