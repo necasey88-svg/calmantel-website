@@ -2,13 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   showrooms as showroomData,
-  hoursSummary,
-  closedDaysNote,
   formatAddress,
   DUBLIN_VIRTUAL_BOOKING_LABEL,
   DUBLIN_VISIT_REQUEST_LABEL,
   DUBLIN_VISIT_REQUEST_HREF,
 } from "@/lib/business-data";
+import ShowroomHoursLines from "@/components/ShowroomHoursLines";
 
 // Sacramento (HQ) leads, matching the original footer order.
 const footerShowroomOrder = ["sacramento", "anaheim", "dublin"];
@@ -17,9 +16,8 @@ const showrooms = footerShowroomOrder
   .filter((s): s is NonNullable<typeof s> => Boolean(s))
   .map((s) => ({
     city: s.city,
+    slug: s.slug,
     address: formatAddress(s),
-    hoursLines: hoursSummary(s),
-    closedNote: closedDaysNote(s),
     phone: s.phone,
     tel: s.tel,
     virtualOnly: s.virtualOnly,
@@ -85,10 +83,12 @@ export default function Footer() {
                 <p className="text-white font-medium mb-1">{s.city}</p>
                 <p className="text-gray-400 leading-relaxed">{s.address}</p>
                 <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.address)}`} target="_blank" rel="noopener noreferrer" className="text-[#C8922A] hover:text-white transition-colors mt-1 block">Get Directions →</a>
-                {s.hoursLines.map((h) => (
-                  <p key={h} className="text-gray-400 mt-1">{h}</p>
-                ))}
-                {s.closedNote && <p className="text-gray-500 text-xs">{s.closedNote}</p>}
+                <ShowroomHoursLines
+                  slug={s.slug}
+                  lineClassName="text-gray-400 mt-1"
+                  noteClassName="text-gray-500 text-xs"
+                  showRegularClosedNote
+                />
                 <a href={`tel:${s.tel}`} className="text-[#C8922A] hover:text-white transition-colors mt-1 block">
                   {s.phone}
                 </a>

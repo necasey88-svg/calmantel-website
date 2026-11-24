@@ -3,14 +3,13 @@ import JsonLd from "@/components/JsonLd";
 import {
   organizationSchema,
   showrooms as showroomData,
-  hoursSummary,
-  closedDaysNote,
   formatAddress,
   DUBLIN_VIRTUAL_BOOKING_LABEL,
   DUBLIN_VISIT_REQUEST_LABEL,
   DUBLIN_VISIT_REQUEST_HREF,
 } from "@/lib/business-data";
 import EditorialPageHero from "@/components/EditorialPageHero";
+import ShowroomHoursLines from "@/components/ShowroomHoursLines";
 
 export const metadata = {
   title: "Anaheim, Dublin & Sacramento Showrooms | California Mantel",
@@ -50,8 +49,6 @@ const showrooms = showroomData.map((s) => ({
   ...s,
   ...showroomCopy[s.slug],
   address: formatAddress(s),
-  hoursLines: hoursSummary(s),
-  closedNote: closedDaysNote(s),
   href: `/showrooms/${s.slug}`,
 }));
 
@@ -165,21 +162,15 @@ export default function ShowroomsPage() {
               </div>
               <div>
                 <h3 className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-2">Hours</h3>
-                {s.hoursLines.map((h) => (
-                  <p
-                    key={h}
-                    className={
-                      s.appointmentOnly
-                        ? "text-[color:var(--accent)] text-sm font-semibold"
-                        : "text-stone-700 text-sm font-medium"
-                    }
-                  >
-                    {h}
-                  </p>
-                ))}
-                {s.closedNote && (
-                  <p className="text-stone-400 text-xs mt-1">{s.closedNote}</p>
-                )}
+                <ShowroomHoursLines
+                  slug={s.slug}
+                  lineClassName={
+                    s.appointmentOnly
+                      ? "text-[color:var(--accent)] text-sm font-semibold"
+                      : "text-stone-700 text-sm font-medium"
+                  }
+                  showRegularClosedNote
+                />
                 {s.note && (
                   <p className="text-[color:var(--accent)] text-xs mt-2 italic">{s.note}</p>
                 )}
