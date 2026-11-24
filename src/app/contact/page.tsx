@@ -1,6 +1,7 @@
 import Link from "next/link";
 import EditorialPageHero from "@/components/EditorialPageHero";
 import ContactForm from "@/components/ContactForm";
+import ShowroomHoursLines from "@/components/ShowroomHoursLines";
 import {
   DUBLIN_VIRTUAL_COPY,
   DUBLIN_VIRTUAL_BOOKING_LABEL,
@@ -17,14 +18,15 @@ export const metadata = {
 const showrooms = [
   {
     city: "Anaheim",
+    slug: "anaheim",
     address: "1430 S Anaheim Blvd, Anaheim, CA 92805",
-    hours: "Mon–Sat: 9:00 AM – 5:00 PM",
     phone: "(714) 908-7388",
     tel: "7149087388",
     href: "/showrooms/anaheim",
   },
   {
     city: "Dublin",
+    slug: "dublin",
     address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
     hours: DUBLIN_VIRTUAL_COPY,
     phone: "(925) 436-1731",
@@ -35,8 +37,8 @@ const showrooms = [
   },
   {
     city: "Sacramento",
+    slug: "sacramento",
     address: "4141 N Freeway Blvd, Sacramento, CA 95834",
-    hours: "Mon–Sat: 10:00 AM – 2:00 PM",
     phone: "(916) 665-0627",
     tel: "9166650627",
     href: "/showrooms/sacramento",
@@ -78,7 +80,11 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                 </div>
                 <div>
                   <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Hours</p>
-                  <p className="text-stone-600">{s.hours}</p>
+                  {s.virtualOnly ? (
+                    <p className="text-stone-600">{s.hours}</p>
+                  ) : (
+                    <ShowroomHoursLines slug={s.slug} lineClassName="text-stone-600" />
+                  )}
                 </div>
                 <div>
                   <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Phone</p>

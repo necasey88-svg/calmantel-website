@@ -115,6 +115,100 @@ export function getShowroom(slug: string): Showroom | undefined {
   return showrooms.find((s) => s.slug === slug);
 }
 
+// ---- Thanksgiving weekend 2026 holiday hours ------------------------------
+// Temporary override for Thu 11/26–Sat 11/28/2026 only. Does NOT touch the
+// regular `hours` data above — `isHolidayNoticeActive()` gates every caller
+// so the override (and any banner built on it) disappears on its own after
+// the cutoff, with no redeploy required, as long as callers check it at
+// render/request time rather than baking the result in at build time (see
+// `src/components/ShowroomHoursLines.tsx`, a client component that checks on
+// mount for exactly this reason).
+
+type HolidayDayOverride = {
+  /** ISO date, for the schema.org special-hours builder below. */
+  date: string;
+  /** Short display label, e.g. "Thu 11/26". */
+  label: string;
+  status: "closed" | "open";
+  opens?: string; // 24h "HH:MM", required when status is "open"
+  closes?: string;
+  note?: string; // e.g. "Thanksgiving", "Black Friday"
+};
+
+const THANKSGIVING_2026_HOLIDAY_HOURS: { slug: string; days: HolidayDayOverride[] }[] = [
+  {
+    slug: "anaheim",
+    days: [
+      { date: "2026-11-26", label: "Thu 11/26", status: "closed", note: "Thanksgiving" },
+      { date: "2026-11-27", label: "Fri 11/27", status: "open", opens: "09:00", closes: "17:00", note: "Black Friday" },
+      { date: "2026-11-28", label: "Sat 11/28", status: "closed" },
+    ],
+  },
+  {
+    slug: "sacramento",
+    days: [
+      { date: "2026-11-26", label: "Thu 11/26", status: "closed", note: "Thanksgiving" },
+      { date: "2026-11-27", label: "Fri 11/27", status: "closed" },
+      { date: "2026-11-28", label: "Sat 11/28", status: "open", opens: "10:00", closes: "14:00" },
+    ],
+  },
+  // Dublin is intentionally omitted — appointment-only/virtual, no change.
+];
+
+export const THANKSGIVING_2026_RESUME_NOTE = "Regular hours resume Mon 11/30.";
+
+// Window: start of Thanksgiving week (Mon 11/23/2026) through end of day Sat
+// 11/28/2026, both in America/Los_Angeles. Pacific is on standard time
+// (UTC-8) by late November (DST ends the first Sunday of November), so
+// midnight PST on 11/23 is 2026-11-23T08:00:00.000Z and 11:59:59.999 PM PST
+// on 11/28 is 2026-11-29T07:59:59.999Z. The start gate matters just as much
+// as the cutoff: without it the notice (and its "closed Thu/Fri/Sat" copy)
+// would otherwise read as live from the moment this ships, weeks early.
+const THANKSGIVING_2026_NOTICE_START_UTC_MS = Date.parse("2026-11-23T08:00:00.000Z");
+const THANKSGIVING_2026_NOTICE_CUTOFF_UTC_MS = Date.parse("2026-11-29T07:59:59.999Z");
+
+/** True from the start of Thanksgiving week through end-of-day Sat 11/28/2026 Pacific time, false otherwise. */
+export function isHolidayNoticeActive(now: Date = new Date()): boolean {
+  const t = now.getTime();
+  return t >= THANKSGIVING_2026_NOTICE_START_UTC_MS && t <= THANKSGIVING_2026_NOTICE_CUTOFF_UTC_MS;
+}
+
+/**
+ * Holiday-hours display lines for a showroom (e.g. "Thu 11/26: Closed
+ * (Thanksgiving)"), or null when there's no override for that slug or the
+ * notice window has passed. Always check at render/request time — see the
+ * module comment above.
+ */
+export function getHolidayHoursLines(slug: string, now: Date = new Date()): string[] | null {
+  if (!isHolidayNoticeActive(now)) return null;
+  const override = THANKSGIVING_2026_HOLIDAY_HOURS.find((o) => o.slug === slug);
+  if (!override) return null;
+  return override.days.map((d) => {
+    const suffix = d.note ? ` (${d.note})` : "";
+    if (d.status === "closed") return `${d.label}: Closed${suffix}`;
+    return `${d.label}: ${formatTime(d.opens!)} \u2013 ${formatTime(d.closes!)}${suffix}`;
+  });
+}
+
+/**
+ * Optional schema.org specialOpeningHoursSpecification entries for a
+ * showroom's holiday override, or [] when none applies. Per Google's
+ * structured-data guidance, a closed day is represented with equal
+ * opens/closes times rather than omitting them.
+ */
+export function specialOpeningHoursSpecification(slug: string, now: Date = new Date()) {
+  if (!isHolidayNoticeActive(now)) return [];
+  const override = THANKSGIVING_2026_HOLIDAY_HOURS.find((o) => o.slug === slug);
+  if (!override) return [];
+  return override.days.map((d) => ({
+    "@type": "OpeningHoursSpecification",
+    validFrom: d.date,
+    validThrough: d.date,
+    opens: d.status === "open" ? d.opens : "00:00",
+    closes: d.status === "open" ? d.closes : "00:00",
+  }));
+}
+
 // ---- display formatting helpers --------------------------------------------
 // Single source of truth for "scannable" hours/address strings, so the
 // showrooms listing, Footer, and location pages can't drift out of sync.
@@ -214,6 +308,14 @@ export function showroomSchema(s: Showroom) {
             closes: h.closes,
           })),
         }),
+    // Thanksgiving weekend 2026 override — only added while active, and only
+    // for locations with a base openingHoursSpecification above.
+    ...(!s.appointmentOnly && s.hours.length > 0
+      ? (() => {
+          const special = specialOpeningHoursSpecification(s.slug);
+          return special.length > 0 ? { specialOpeningHoursSpecification: special } : {};
+        })()
+      : {}),
   };
 }
 

@@ -1,4 +1,4 @@
-import { business, showrooms } from "@/lib/business-data";
+import { business, showrooms, getHolidayHoursLines, isHolidayNoticeActive, THANKSGIVING_2026_RESUME_NOTE } from "@/lib/business-data";
 import { mantelProducts } from "@/lib/mantel-products-data";
 import { fireplaceCategories } from "@/lib/fireplaces-data";
 import { showroomInventory } from "@/lib/showroom-inventory";
@@ -69,10 +69,26 @@ export function buildSiteKnowledge(): string {
     )
     .join("\n\n");
 
+  // This route is dynamically rendered per-request (route handlers aren't
+  // statically cached), so checking the real clock here is safe — no
+  // redeploy needed for this note to stop appearing after the cutoff.
+  const holidayNote = isHolidayNoticeActive()
+    ? "\n\nTHANKSGIVING WEEKEND 2026 HOLIDAY HOURS (mention when a customer asks about hours, visiting, or Thanksgiving/Black Friday — overrides the regular showroom hours above for these three dates only):\n" +
+      showrooms
+        .filter((s) => !s.appointmentOnly)
+        .map((s) => {
+          const lines = getHolidayHoursLines(s.slug);
+          return lines ? `- ${s.city}: ${lines.join("; ")}` : null;
+        })
+        .filter((l): l is string => Boolean(l))
+        .join("\n") +
+      `\n${THANKSGIVING_2026_RESUME_NOTE} Dublin's hours are unaffected (virtual consultations / by-appointment as usual).`
+    : "";
+
   return `BUSINESS: ${business.name}, family-owned since ${business.founded}. ${business.description}
 
 SHOWROOMS:
-${showroomLines}
+${showroomLines}${holidayNote}
 
 CURRENT PROMOTIONS (featured on the homepage right now — mention when relevant, e.g. if a customer asks about deals, gas inserts, or what's new):
 - Heat & Glo Gas Inserts for Fall: September 21 through October 23, save up to $400 on qualifying Heat & Glo gas insert upgrades (converting an existing fireplace opening) — Cosmo, Escape, Supreme, SupremeX, and Provident qualify. Selected around the customer's firebox, finish, and room. The SupremeX 35 photos on the homepage are the visual for this promo, not a limited product — the discount covers the qualifying Heat & Glo insert lineup broadly, not just the SupremeX 35. Available through the Anaheim, Dublin, and Sacramento showrooms. Point interested customers to /fireplaces/gas-inserts to browse, or /contact to talk with a product specialist.

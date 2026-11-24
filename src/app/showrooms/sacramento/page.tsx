@@ -3,6 +3,7 @@ import JsonLd from "@/components/JsonLd";
 import { getShowroom, showroomSchema } from "@/lib/business-data";
 
 import EditorialPageHero from "@/components/EditorialPageHero";
+import ShowroomHoursLines from "@/components/ShowroomHoursLines";
 export const metadata = {
   title: "Sacramento Fireplace & Mantel Showroom | California Mantel",
   description:
@@ -117,7 +118,7 @@ export default function SacramentoShowroomPage() {
               </div>
               <div>
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Hours</p>
-                <p className="text-stone-700">Mon–Sat: 10:00 AM – 2:00 PM</p>
+                <ShowroomHoursLines slug="sacramento" lineClassName="text-stone-700" />
               </div>
               <div>
                 <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Phone</p>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import EditorialPageHero from "@/components/EditorialPageHero";
+import ShowroomHoursLines from "@/components/ShowroomHoursLines";
 import {
   DUBLIN_VIRTUAL_COPY,
   DUBLIN_VIRTUAL_BOOKING_LABEL,
@@ -18,20 +19,21 @@ export const metadata = {
 const showrooms = [
   {
     city: "Sacramento",
+    slug: "sacramento",
     address: "4141 N Freeway Blvd, Sacramento, CA 95834",
-    hours: "Mon–Sat: 10:00 AM – 2:00 PM",
     phone: "(916) 665-0627",
     tel: "9166650627",
   },
   {
     city: "Anaheim",
+    slug: "anaheim",
     address: "1430 S Anaheim Blvd, Anaheim, CA 92805",
-    hours: "Mon–Sat: 9:00 AM – 5:00 PM",
     phone: "(714) 908-7388",
     tel: "7149087388",
   },
   {
     city: "Dublin",
+    slug: "dublin",
     address: "6681 Sierra Ln Ste D, Dublin, CA 94568",
     hours: DUBLIN_VIRTUAL_COPY,
     phone: "(925) 436-1731",
@@ -181,7 +183,13 @@ export default function AboutPage() {
                   {s.city}
                 </h3>
                 <p className="text-stone-500 text-sm mb-2">{s.address}</p>
-                <p className="text-stone-500 text-sm mb-3">{s.hours}</p>
+                <div className="mb-3">
+                  {s.virtualOnly ? (
+                    <p className="text-stone-500 text-sm">{s.hours}</p>
+                  ) : (
+                    <ShowroomHoursLines slug={s.slug} lineClassName="text-stone-500 text-sm" />
+                  )}
+                </div>
                 <a
                   href={`tel:${s.tel}`}
                   className="text-[color:var(--accent)] font-medium hover:text-[color:var(--accent-dark)] transition-colors"
